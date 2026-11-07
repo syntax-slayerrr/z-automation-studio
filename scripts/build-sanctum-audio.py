@@ -334,6 +334,10 @@ def main():
     place(dry_tactile_bus, taptic_thump, 7.36, gain_db=-8.5, pan_start=0.0)
     place(dry_tactile_bus, site_focus1, 7.38, gain_db=-10.5, pan_start=0.0)
 
+    # 7.62s: Subtle iOS Glass Touch-Ripple on Live 3D Hero Card Inside Phone Screen!
+    place(dry_tactile_bus, site_hover0, 7.62, gain_db=-13.8, pan_start=0.04)
+    place(motion_air_bus, highpass(sfx_glass1, 1800.0), 7.63, gain_db=-15.5, pan_start=0.06)
+
     # 8.44s - 8.96s: 3D iPhone Zoom-Out & Right Showcase Dock + Crisp Lock Tick!
     place(motion_air_bus, sfx_chop_fast, 8.45, gain_db=-6.8, pan_start=0.0, pan_end=0.34)
     place(dry_tactile_bus, kit_tick, 8.95, gain_db=-9.0, pan_start=0.30)

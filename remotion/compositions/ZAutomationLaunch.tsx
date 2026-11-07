@@ -377,6 +377,17 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 
   const totalAct1Blur = Math.max(introBlur, whipPanBlurX * 0.55);
 
+  // Angle-Reactive Apple Specular Rim Caustics & Surface Sheen (driven by camera panX & click!)
+  const causticTopLeftPct = 28 - (panX / 740) * 32;
+  const causticBottomLeftPct = 46 + (panX / 740) * 28;
+  const pillSheenPct = 50 - (panX / 740) * 56;
+  const btnClickSheenPct = interpolate(
+    clamp01((timeSec - 3.12) / 0.38),
+    [0, 1],
+    [-35, 130]
+  );
+  const showBtnSheen = timeSec >= 3.12 && timeSec <= 3.52;
+
   return (
     <AbsoluteFill
       style={{
@@ -480,18 +491,44 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               '0 0 55px rgba(96, 198, 255, 0.26), inset 0 4px 26px rgba(255, 255, 255, 0.32), inset 0 -6px 28px rgba(90, 195, 255, 0.25)',
           }}
         >
-          {/* Top Specular Caustic Hotspot Streak */}
+          {/* Top Angle-Reactive Specular Caustic Hotspot Streak */}
           <div
             style={{
               position: 'absolute',
-              top: -2,
-              left: '26%',
+              top: -2.5,
+              left: `${causticTopLeftPct.toFixed(2)}%`,
               width: '38%',
               height: 7,
               borderRadius: 999,
               background:
-                'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%)',
-              filter: 'blur(1.5px)',
+                'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.98) 50%, rgba(255,255,255,0) 100%)',
+              boxShadow: '0 0 16px rgba(185, 240, 255, 0.85)',
+              filter: 'blur(1.2px)',
+              pointerEvents: 'none',
+            }}
+          />
+          {/* Bottom Counter-Moving Specular Caustic Rim Glint */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: -2.5,
+              left: `${causticBottomLeftPct.toFixed(2)}%`,
+              width: '32%',
+              height: 6,
+              borderRadius: 999,
+              background:
+                'linear-gradient(90deg, rgba(160,230,255,0) 0%, rgba(225,248,255,0.92) 50%, rgba(160,230,255,0) 100%)',
+              filter: 'blur(1.2px)',
+              pointerEvents: 'none',
+            }}
+          />
+          {/* Dynamic Diagonal Glass Surface Specular Sweep During Camera Pan */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: 999,
+              background: `linear-gradient(112deg, rgba(255,255,255,0) ${(pillSheenPct - 22).toFixed(1)}%, rgba(255,255,255,0.14) ${pillSheenPct.toFixed(1)}%, rgba(255,255,255,0) ${(pillSheenPct + 22).toFixed(1)}%)`,
               pointerEvents: 'none',
             }}
           />
@@ -623,6 +660,19 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
                   border: '3px solid rgba(255, 255, 255, 0.88)',
                   opacity: 1 - Math.pow(uRipple, 1.4),
                   zIndex: 3,
+                  pointerEvents: 'none',
+                }}
+              />
+            ) : null}
+            {/* Specular Light Bar Sweeping Across Button On Click */}
+            {showBtnSheen ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: 999,
+                  background: `linear-gradient(108deg, rgba(255,255,255,0) ${(btnClickSheenPct - 24).toFixed(1)}%, rgba(255,255,255,0.52) ${btnClickSheenPct.toFixed(1)}%, rgba(255,255,255,0) ${(btnClickSheenPct + 24).toFixed(1)}%)`,
+                  zIndex: 4,
                   pointerEvents: 'none',
                 }}
               />

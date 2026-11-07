@@ -7,6 +7,7 @@ import {
   useVideoConfig,
   Series,
   Img,
+  Audio,
   staticFile,
 } from 'remotion';
 
@@ -14,25 +15,31 @@ interface ZAutomationSquarePromoProps {
   headline?: string;
   subheadline?: string;
   domain?: string;
+  audioSrc?: string;
 }
 
 export const ZAutomationSquarePromo: React.FC<ZAutomationSquarePromoProps> = ({
   headline = 'REKAYASA WEB 3D & AGEN AI OTONOM',
   subheadline = 'Bukan sekadar website biasa. Kami membangun pengalaman interaktif & agen cerdas.',
   domain = 'z-automation.my.id',
+  audioSrc = '',
 }) => {
   return (
     <AbsoluteFill
       style={{
         backgroundColor: '#07090e',
         color: '#ffffff',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
+        fontFamily: "'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif",
         overflow: 'hidden',
       }}
     >
-      {/* Dynamic Background */}
+      {/* 1. Dynamic Background & Grid */}
       <BackgroundGlow />
 
+      {/* 2. Lemo-Opuscar Cyber Telemetry */}
+      <SquareTelemetryOverlay />
+
+      {/* 3. Scenes */}
       <Series>
         {/* Scene 1: Hook / Intro (0-60 frames / 2.0s) */}
         <Series.Sequence durationInFrames={60}>
@@ -49,6 +56,9 @@ export const ZAutomationSquarePromo: React.FC<ZAutomationSquarePromoProps> = ({
           <SquareCtaScene domain={domain} />
         </Series.Sequence>
       </Series>
+
+      {/* 4. Audio Voiceover */}
+      {audioSrc ? <Audio src={staticFile(audioSrc)} volume={1} /> : null}
     </AbsoluteFill>
   );
 };
@@ -67,7 +77,7 @@ const BackgroundGlow: React.FC = () => {
           width: '130%',
           height: '130%',
           background:
-            'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.18) 0%, rgba(26, 47, 251, 0.08) 40%, transparent 70%)',
+            'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.20) 0%, rgba(26, 47, 251, 0.08) 40%, transparent 70%)',
           transform: `rotate(${rotate}deg)`,
         }}
       />
@@ -77,10 +87,49 @@ const BackgroundGlow: React.FC = () => {
           position: 'absolute',
           inset: 0,
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            'linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />
+    </AbsoluteFill>
+  );
+};
+
+const SquareTelemetryOverlay: React.FC = () => {
+  const frame = useCurrentFrame();
+  const ringRotate = frame * 0.6;
+
+  return (
+    <AbsoluteFill style={{ pointerEvents: 'none', padding: 40 }}>
+      {/* Rotating Cyber Ring */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: 580,
+          height: 580,
+          marginLeft: -290,
+          marginTop: -290,
+          borderRadius: '50%',
+          border: '1px dashed rgba(0, 240, 255, 0.15)',
+          transform: `rotate(${ringRotate}deg)`,
+        }}
+      />
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          fontSize: 16,
+          fontFamily: 'monospace',
+          color: 'rgba(0, 240, 255, 0.6)',
+          letterSpacing: '0.15em',
+        }}
+      >
+        <span>[ Z-STUDIO // OPUSCAR ]</span>
+        <span>REC ● 60FPS</span>
+      </div>
     </AbsoluteFill>
   );
 };
@@ -276,4 +325,3 @@ const SquareCtaScene: React.FC<{ domain: string }> = ({ domain }) => {
     </AbsoluteFill>
   );
 };
-

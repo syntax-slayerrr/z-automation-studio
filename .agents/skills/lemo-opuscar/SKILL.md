@@ -56,3 +56,4 @@ In `d:\PROJECTS\z-automation-studio`:
 - **Visual & Style Directing**: Use `lemo-opuscar` styles (e.g. `dark-keynote` or `hologram-hud`) for aesthetic and animation logic.
 - **Compositing & Animation Layering**: Use `remotion` for timing springs, sequences, and GPU rendering.
 - **Voiceover**: Generate synchronized audio with `voicestudio` via `scripts/generate-vo.ps1`.
+

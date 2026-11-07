@@ -9,6 +9,8 @@
     "render:reel": "remotion render remotion/index.ts ZAutomationLaunch out/reels/z-automation-launch.mp4",
     "render:square": "remotion render remotion/index.ts ZAutomationSquarePromo out/feed/z-automation-promo.mp4",
     "render:all": "npm run render:reel && npm run render:square",
+    "produce:reel": "powershell -ExecutionPolicy Bypass -File scripts/produce.ps1 -Format reel",
+    "produce:feed": "powershell -ExecutionPolicy Bypass -File scripts/produce.ps1 -Format feed",
     "still:thumbnail": "remotion still remotion/index.ts ZAutomationLaunch out/thumbnails/reel-cover.png --frame=60",
     "still:square": "remotion still remotion/index.ts ZAutomationSquarePromo out/thumbnails/feed-cover.png --frame=45"
   },

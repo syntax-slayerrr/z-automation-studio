@@ -18,6 +18,7 @@ export const RemotionRoot: React.FC = () => {
           title: 'Z-AUTOMATION',
           tagline: 'Rekayasa Web 3D & Solusi Agen AI Otonom',
           domain: 'z-automation.my.id',
+          audioSrc: 'assets/audio/voiceover.mp3',
         }}
       />
 
@@ -34,6 +35,7 @@ export const RemotionRoot: React.FC = () => {
           subheadline:
             'Bukan sekadar website biasa. Kami membangun pengalaman interaktif & agen cerdas.',
           domain: 'z-automation.my.id',
+          audioSrc: 'assets/audio/voiceover.mp3',
         }}
       />
     </>

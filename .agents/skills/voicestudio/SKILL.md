@@ -132,3 +132,4 @@ To use the stdio shim:
 ```bash
 python -m backend.mcp_shim
 ```
+

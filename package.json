@@ -1,0 +1,31 @@
+{
+  "name": "z-automation-studio",
+  "version": "1.0.0",
+  "description": "Motion graphics, promotional reels, and video automation studio for Z-Automation",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio remotion/index.ts",
+    "studio": "remotion studio remotion/index.ts",
+    "render:reel": "remotion render remotion/index.ts ZAutomationLaunch out/reels/z-automation-launch.mp4",
+    "render:square": "remotion render remotion/index.ts ZAutomationSquarePromo out/feed/z-automation-promo.mp4",
+    "render:all": "npm run render:reel && npm run render:square",
+    "still:thumbnail": "remotion still remotion/index.ts ZAutomationLaunch out/thumbnails/reel-cover.png --frame=60",
+    "still:square": "remotion still remotion/index.ts ZAutomationSquarePromo out/thumbnails/feed-cover.png --frame=45"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.541",
+    "@remotion/player": "^4.0.541",
+    "@remotion/transitions": "^4.0.541",
+    "lucide-react": "^1.16.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "^4.0.541"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
+

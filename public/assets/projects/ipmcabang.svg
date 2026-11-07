@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="100%" stop-color="#121926"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#0077ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="16"/>
+  <rect x="2" y="2" width="796" height="496" fill="none" stroke="#1f293d" stroke-width="2" rx="14"/>
+  <circle cx="40" cy="40" r="6" fill="#ff5f56"/>
+  <circle cx="60" cy="40" r="6" fill="#ffbd2e"/>
+  <circle cx="80" cy="40" r="6" fill="#27c93f"/>
+  <line x1="20" y1="70" x2="780" y2="70" stroke="#1f293d" stroke-width="1"/>
+  <text x="40" y="160" font-family="system-ui, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">Sistem Informasi Manajemen Organisasi & Keanggotaan</text>
+  <rect x="40" y="190" width="120" height="4" fill="url(#accent)" rx="2"/>
+  <text x="40" y="240" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8">Stack Teknologi:</text>
+  <text x="40" y="270" font-family="monospace" font-size="20" fill="#38bdf8">JavaScript, Node.js, Express, MongoDB</text>
+  <rect x="40" y="350" width="200" height="45" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="65" y="378" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#38bdf8">Z-AUTOMATION</text>
+  <text x="720" y="460" font-family="monospace" font-size="14" fill="#475569" text-anchor="end">syntax-slayerrr</text>
+</svg>

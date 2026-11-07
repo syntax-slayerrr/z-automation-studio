@@ -1,0 +1,2210 @@
+/* ==========================================================================
+   Z-AUTOMATION // A-SPACE ORBITAL UI DESIGN SYSTEM (HIGH-CRAFT EDITION)
+   Scoped to /layanan (public/layanan.html)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --as-void: #020408;
+  --as-deep: #040912;
+  --as-card: rgba(10, 19, 33, 0.92);
+  --as-card-solid: #0a1321;
+  --as-blue: #4a95e6;
+  --as-blue-hover: #5aa3f2;
+  --as-cyan: #58b8ff;
+  --as-line: rgba(74, 149, 230, 0.52);
+  --as-border: rgba(74, 149, 230, 0.18);
+  --as-text: #ffffff;
+  --as-muted: #9cb0c9;
+  --as-dim: #5e738f;
+  --font-display: 'Michroma', 'Orbitron', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================================================
+   1. GLOBAL SHELL & ISOLATION FROM LEGACY LUSION STYLES
+   ========================================================================== */
+html.is-ready body.az-cosmic-body,
+body.az-cosmic-body {
+  background-color: var(--as-void) !important;
+  color: var(--as-text) !important;
+  font-family: var(--font-body) !important;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.az-cosmic-body #canvas {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the official Lusion letter 'L' geometric transition preloader canvas renders seamlessly */
+#transition-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure the central shared header functions seamlessly */
+body.az-cosmic-body #header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Scoped specifically to header bar so it does not leak into the opened menu */
+body.az-cosmic-body #header-container a,
+body.az-cosmic-body #header-logo,
+body.az-cosmic-body #header-logo a,
+body.az-cosmic-body #header-right a {
+  color: #ffffff !important;
+}
+
+body.az-cosmic-body #header #header-logo svg text {
+  fill: #ffffff !important;
+}
+
+/* Harmonized Header Menu: crisp readable typography & card styling */
+body.az-cosmic-body #header-menu {
+  color: var(--color-black, #020022) !important;
+  z-index: 10000 !important;
+}
+
+body.az-cosmic-body #header-menu .header-menu-link {
+  color: var(--color-black, #020022) !important;
+}
+
+body.az-cosmic-body #header-menu .header-menu-link-text,
+body.az-cosmic-body #header-menu .header-menu-link-text-clone {
+  color: var(--color-black, #020022) !important;
+}
+
+body.az-cosmic-body #header-menu .header-menu-link svg {
+  stroke: var(--color-black, #020022) !important;
+}
+
+body.az-cosmic-body #ui,
+body.az-cosmic-body #page-container,
+body.az-cosmic-body #page-container #layanan {
+  background: transparent !important;
+  color: var(--as-text) !important;
+  position: relative !important;
+  z-index: 2;
+}
+
+.aspace-shell {
+  position: relative;
+  width: 100%;
+  background-color: var(--as-void);
+  overflow: hidden;
+}
+
+.aspace-container {
+  position: relative;
+  z-index: 4;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 48px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. NAVBAR STYLING - REMOVED SEPARATE NAVBAR TO MATCH OTHER PAGES
+   ========================================================================== */
+.aspace-topbar {
+  display: none !important;
+}
+
+.aspace-topbar-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4.5vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.aspace-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+.aspace-logo-mark {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+}
+
+.aspace-logo-text {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+
+.aspace-nav-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.6vw, 34px);
+}
+
+.aspace-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 30px);
+}
+
+.aspace-nav-link {
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.aspace-nav-link:hover,
+.aspace-nav-link.is-active {
+  color: var(--as-cyan) !important;
+}
+
+/* Outlined Rectangular Box CTA on Far Right */
+.aspace-header-box {
+  display: none !important;
+}
+
+/* ==========================================================================
+   3. A-SPACE BUTTONS (CLEAN RECTANGULAR SKY-BLUE)
+   ========================================================================== */
+.aspace-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 146px;
+  padding: 12px 28px;
+  background: var(--as-blue) !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aspace-btn:hover {
+  background: var(--as-blue-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(74, 149, 230, 0.35);
+}
+
+.aspace-btn--ghost {
+  background: rgba(11, 22, 38, 0.75) !important;
+  border: 1px solid rgba(74, 149, 230, 0.48) !important;
+  color: #e2e8f0 !important;
+}
+
+.aspace-btn--ghost:hover {
+  background: rgba(74, 149, 230, 0.2) !important;
+  border-color: var(--as-cyan) !important;
+}
+
+/* ==========================================================================
+   4. CINEMATIC 3-ACT SCROLL CHOREOGRAPHY HERO + 3D WEBGL GLOBE EARTH
+   ========================================================================== */
+.aspace-hero-track {
+  position: relative;
+  width: 100%;
+  height: 340vh;
+  z-index: 3;
+}
+
+.aspace-hero {
+  position: relative;
+  min-height: 600px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: max(84px, 10vh);
+  padding-bottom: max(68px, 8vh);
+  box-sizing: border-box;
+  overflow: hidden;
+  will-change: transform;
+  background:
+    /* Deep celestial nebula glow directly centered behind the 3D Earth */
+    radial-gradient(circle at 66% 40%, rgba(56, 189, 248, 0.24) 0%, rgba(30, 90, 185, 0.15) 30%, rgba(8, 20, 48, 0.55) 55%, transparent 75%),
+    /* Soft dark cosmic vignette anchoring the left text area */
+    radial-gradient(circle at 18% 50%, rgba(4, 10, 24, 0.88) 0%, rgba(2, 6, 16, 0.65) 55%, transparent 85%),
+    /* Base deep void */
+    #020408;
+}
+
+#aspace-earth-canvas {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+#aspace-earth-canvas:active {
+  cursor: grabbing;
+}
+
+/* Continuous Panoramic Lunar Crater Horizon at Bottom of Hero */
+.aspace-lunar-horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 110px;
+  z-index: 2;
+  background: url('/assets/images/aspace/lunar-horizon.png') center bottom / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.aspace-hero-inner,
+.aspace-hero .aspace-container {
+  position: relative;
+  z-index: 4;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding-left: var(--base-padding-x, max(5vw, 40px)) !important;
+  padding-right: var(--base-padding-x, max(5vw, 40px)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Atmospheric Seamless Text Area (No Grid / Box, Pure Ambient Zone) */
+.aspace-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 550px;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left;
+  pointer-events: auto;
+  padding: 16px 0;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Organic Feathered Atmospheric Shadow & Blur Area (Zero Hard Box Edges) */
+.aspace-hero-content::before {
+  content: "";
+  position: absolute;
+  inset: -45px -90px -45px -45px;
+  z-index: -1;
+  background: radial-gradient(ellipse 90% 85% at 25% 50%, rgba(2, 6, 16, 0.84) 0%, rgba(3, 8, 20, 0.54) 55%, transparent 85%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: radial-gradient(ellipse 85% 80% at 30% 50%, black 45%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 30% 50%, black 45%, transparent 85%);
+  pointer-events: none;
+}
+
+/* Orbital Act Switcher HUD */
+.aspace-act-hud {
+  margin-bottom: 22px;
+  max-width: 440px;
+}
+
+.aspace-act-tabs {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.aspace-act-tab {
+  background: none;
+  border: none;
+  padding: 4px 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: rgba(148, 163, 184, 0.55);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.aspace-act-tab .act-num {
+  color: rgba(56, 189, 248, 0.5);
+  font-weight: 700;
+}
+
+.aspace-act-tab.is-active,
+.aspace-act-tab:hover {
+  color: #ffffff;
+}
+
+.aspace-act-tab.is-active .act-num {
+  color: var(--as-cyan);
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+}
+
+.aspace-act-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(74, 149, 230, 0.18);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.aspace-act-bar-fill {
+  width: 33.33%;
+  height: 100%;
+  background: linear-gradient(90deg, #4a95e6, #38bdf8);
+  box-shadow: 0 0 12px #38bdf8;
+  transition: width 0.12s linear;
+}
+
+/* 3 Seamless Narrative Slides Stack (Zero Layout Shift / Zero Pulsing) */
+.aspace-act-slides {
+  display: grid;
+  grid-template-areas: "act-stage";
+  align-items: center;
+  position: relative;
+  min-height: 295px;
+}
+
+.aspace-act-slide {
+  grid-area: act-stage;
+  width: 100%;
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+
+.aspace-act-slide.is-active {
+  pointer-events: auto;
+}
+
+/* Act 02 Spectrum Pills */
+.aspace-act-spectrum {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.aspace-spectrum-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 16px;
+  background: rgba(8, 18, 36, 0.72);
+  border: 1px solid rgba(74, 149, 230, 0.24);
+  border-left: 3px solid var(--as-blue);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.aspace-spectrum-pill:hover {
+  background: rgba(18, 38, 68, 0.88);
+  border-color: var(--as-cyan);
+  transform: translateX(6px);
+}
+
+.aspace-spectrum-pill--glow {
+  border-left-color: var(--as-cyan);
+  background: linear-gradient(90deg, rgba(16, 38, 72, 0.82) 0%, rgba(8, 18, 36, 0.75) 100%);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.14);
+}
+
+.aspace-spectrum-pill .sp-tier {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--as-cyan);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.aspace-spectrum-pill .sp-name {
+  font-size: 12.5px;
+  color: #f1f5f9;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Act 03 Telemetry Metric Boxes */
+.aspace-act-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.aspace-metric-box {
+  padding: 12px 14px;
+  background: rgba(8, 18, 36, 0.72);
+  border: 1px solid rgba(74, 149, 230, 0.24);
+  border-radius: 6px;
+}
+
+.aspace-metric-box strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--as-cyan);
+  margin-bottom: 4px;
+}
+
+.aspace-metric-box span {
+  font-size: 11px;
+  color: var(--as-muted);
+  display: block;
+  line-height: 1.35;
+}
+
+/* Scroll Choreography Bottom Hint */
+.aspace-scroll-choreo-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: rgba(148, 163, 184, 0.75);
+}
+
+.choreo-mouse {
+  width: 16px;
+  height: 26px;
+  border: 1.5px solid rgba(56, 189, 248, 0.55);
+  border-radius: 99px;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.choreo-wheel {
+  width: 3px;
+  height: 6px;
+  background: var(--as-cyan);
+  border-radius: 99px;
+  animation: choreoWheelAnim 1.8s ease-in-out infinite;
+}
+
+@keyframes choreoWheelAnim {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(8px); opacity: 0; }
+}
+
+.aspace-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--as-cyan);
+  text-transform: uppercase;
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.55);
+}
+
+.aspace-kicker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8, 0 0 18px #38bdf8;
+  animation: aspacePulseDot 2.2s ease-in-out infinite;
+}
+
+@keyframes aspacePulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+
+.aspace-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.25vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  text-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.95),
+    0 0 40px rgba(56, 189, 248, 0.25);
+}
+
+.aspace-hero-desc {
+  font-family: var(--font-body);
+  font-size: 12.8px;
+  line-height: 1.62;
+  color: rgba(226, 234, 245, 0.92);
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.aspace-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   5. 3 ORBITAL TELEMETRY CARDS + FLOWING BLUE WAVE RIBBON (ZERO COLLISION)
+   ========================================================================== */
+.aspace-trio-section {
+  position: relative;
+  z-index: 5;
+  margin-top: 28px;
+  padding-top: 12px;
+  padding-bottom: 56px;
+}
+
+.aspace-wave-bg {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  max-width: 1600px;
+  height: 170px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.aspace-trio-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.aspace-trio-card {
+  background: var(--as-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 149, 230, 0.16);
+  border-radius: 3px;
+  padding: 36px 24px 32px;
+  text-align: center;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.88);
+  cursor: pointer;
+  transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+}
+
+.aspace-trio-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(74, 149, 230, 0.55);
+  background: rgba(14, 26, 44, 0.96);
+}
+
+.aspace-trio-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--as-blue);
+}
+
+.aspace-trio-label {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.aspace-trio-metric {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.aspace-trio-sub {
+  font-size: 12px;
+  color: var(--as-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   6. ZIG-ZAG MISSION SECTIONS (RAPIDSCAT & SATELLITE -> HERMES & OPENCLAW)
+   ========================================================================== */
+.aspace-mission-sec {
+  position: relative;
+  padding: clamp(50px, 6.5vw, 80px) 0;
+  z-index: 3;
+}
+
+.aspace-zigzag {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.aspace-zigzag--reverse {
+  grid-template-columns: 1.08fr 0.92fr;
+}
+
+/* Exact L-Bracket Frame Line from Reference */
+.aspace-zigzag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78%;
+  border-bottom: 1px solid var(--as-line);
+  border-right: 1px solid var(--as-line);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aspace-zigzag--reverse::after {
+  border-right: none;
+  border-left: 1px solid var(--as-line);
+}
+
+.aspace-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--as-blue);
+  margin-bottom: 10px;
+}
+
+.aspace-kicker::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  background: var(--as-blue);
+}
+
+.aspace-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+  line-height: 1.28;
+}
+
+.aspace-desc {
+  font-size: 13.5px;
+  line-height: 1.78;
+  color: var(--as-muted);
+  margin: 0 0 26px 0;
+}
+
+/* Editorial Dark Telemetry Viewport for Hermes & OpenClaw */
+.aspace-holo-viewport {
+  position: relative;
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 60%, rgba(42, 108, 184, 0.22) 0%, rgba(6, 13, 24, 0.94) 65%, #02050a 100%);
+  border: 1px solid rgba(74, 149, 230, 0.18);
+  min-height: 330px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px 24px 0;
+}
+
+/* Subtle horizon light arc at bottom of viewport matching satellite Earth limb in reference */
+.aspace-holo-viewport::after {
+  content: "";
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -65px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(74, 149, 230, 0.42) 0%, transparent 70%);
+  border-top: 1px solid rgba(125, 211, 252, 0.45);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aspace-avatar-hermes {
+  position: relative;
+  z-index: 2;
+  max-height: 300px;
+  width: auto;
+  object-fit: contain;
+  filter: contrast(1.05) drop-shadow(0 12px 32px rgba(0, 0, 0, 0.9));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aspace-holo-viewport:hover .aspace-avatar-hermes {
+  transform: scale(1.03);
+}
+
+.aspace-avatar-openclaw {
+  position: relative;
+  z-index: 2;
+  max-height: 225px;
+  width: auto;
+  margin-bottom: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(56, 189, 248, 0.25));
+  animation: aspaceFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes aspaceFloat {
+  0% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+.aspace-hud-tag {
+  position: absolute;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(186, 230, 253, 0.78);
+  background: rgba(3, 8, 16, 0.78);
+  border: 1px solid rgba(74, 149, 230, 0.28);
+  padding: 5px 10px;
+}
+
+/* Interactive Workflow Sandbox */
+.aspace-sandbox-box {
+  background: rgba(7, 14, 26, 0.92);
+  border: 1px solid rgba(74, 149, 230, 0.22);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.aspace-sandbox-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.aspace-sandbox-tab {
+  background: rgba(12, 23, 40, 0.9);
+  border: 1px solid rgba(74, 149, 230, 0.24);
+  color: var(--as-muted);
+  padding: 6px 12px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aspace-sandbox-tab.is-active,
+.aspace-sandbox-tab:hover {
+  background: var(--as-blue);
+  color: #ffffff;
+  border-color: var(--as-blue);
+}
+
+.aspace-sandbox-log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.2px;
+  line-height: 1.55;
+}
+
+.aspace-log-row {
+  padding: 8px 12px;
+  background: rgba(2, 5, 11, 0.85);
+  border-left: 2px solid var(--as-blue);
+  color: #cbd5e1;
+}
+
+.aspace-log-row--openclaw {
+  border-left-color: #f87171;
+}
+
+.aspace-log-row strong {
+  color: var(--as-cyan);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.aspace-log-row--openclaw strong {
+  color: #fca5a5;
+}
+
+/* Flowing Blue Wave Divider Between Sections */
+.aspace-wave-divider {
+  width: 100%;
+  height: 105px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.aspace-wave-divider svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   7. 6-PACKAGE WEBSITE CATALOG (RP 150.000 - RP 1.500.000)
+   ========================================================================== */
+.aspace-sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(74, 149, 230, 0.18);
+}
+
+#katalog-website,
+#order-wizard {
+  scroll-margin-top: 96px;
+}
+
+/* 6-Package Website Catalog Header & Filters */
+.aspace-catalog-head {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 32px auto;
+}
+
+.aspace-catalog-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 0 auto 48px auto;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.aspace-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  clear: both;
+}
+
+.aspace-global-share {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(6, 14, 28, 0.85);
+  border: 1px solid rgba(74, 149, 230, 0.24);
+  border-radius: 99px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.gs-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--as-muted);
+  margin-right: 4px;
+}
+
+.gs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: rgba(12, 24, 44, 0.9);
+  border: 1px solid rgba(74, 149, 230, 0.28);
+  color: #e2e8f0;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gs-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--as-cyan);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.gs-btn--wa {
+  border-color: rgba(34, 197, 94, 0.42);
+  color: #86efac;
+}
+
+.gs-btn--wa:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #4ade80;
+  color: #ffffff;
+}
+
+.aspace-filter-btn {
+  padding: 10px 22px;
+  background: rgba(10, 19, 33, 0.92);
+  border: 1px solid rgba(74, 149, 230, 0.28);
+  border-radius: 4px;
+  color: var(--as-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.aspace-filter-btn.is-active,
+.aspace-filter-btn:hover {
+  background: var(--as-blue);
+  border-color: var(--as-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(74, 149, 230, 0.35);
+}
+
+/* ==========================================================================
+   7B. ASYMMETRIC BENTO GRID ARCHITECTURE + 3D DEVICE MOCKUPS + SPOTLIGHT
+   ========================================================================== */
+.aspace-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+  clear: both;
+  perspective: 1400px;
+}
+
+.bento-span-7 { grid-column: span 7; }
+.bento-span-5 { grid-column: span 5; }
+.bento-span-4 { grid-column: span 4; }
+.bento-span-12 { grid-column: span 12; }
+
+/* When filtering by category, auto-fit visible cards cleanly */
+.aspace-bento-grid.is-filtered .bento-span-7,
+.aspace-bento-grid.is-filtered .bento-span-5,
+.aspace-bento-grid.is-filtered .bento-span-4 {
+  grid-column: span 6;
+}
+
+.aspace-pkg-card {
+  position: relative;
+  background: linear-gradient(165deg, rgba(10, 21, 38, 0.92) 0%, rgba(5, 11, 22, 0.96) 100%);
+  border: 1px solid rgba(74, 149, 230, 0.22);
+  border-radius: 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aspace-pkg-card:hover {
+  border-color: rgba(56, 189, 248, 0.58);
+  box-shadow:
+    0 30px 75px rgba(0, 0, 0, 0.92),
+    0 0 45px rgba(56, 189, 248, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.aspace-pkg-card--flagship {
+  border-color: rgba(56, 189, 248, 0.48);
+  background: linear-gradient(165deg, rgba(14, 30, 56, 0.95) 0%, rgba(6, 14, 28, 0.98) 100%);
+}
+
+.aspace-pkg-card--popular {
+  border-color: rgba(74, 149, 230, 0.45);
+  background: linear-gradient(165deg, rgba(12, 26, 48, 0.95) 0%, rgba(6, 13, 25, 0.98) 100%);
+}
+
+/* Linear / Vercel Cursor Spotlight Overlay */
+.bento-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    520px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.15),
+    transparent 45%
+  );
+}
+
+.aspace-bento-card:hover .bento-spotlight {
+  opacity: 1;
+}
+
+.bento-card-body {
+  position: relative;
+  z-index: 3;
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.aspace-pkg-list--2col {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px !important;
+}
+
+/* ==========================================================================
+   7C. 3D DEVICE & SCENE VISUAL MOCKUP STAGES (INSIDE BENTO CARDS)
+   ========================================================================== */
+.bento-visual-stage {
+  position: relative;
+  width: 100%;
+  height: 228px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(74, 149, 230, 0.2);
+  background: radial-gradient(circle at 50% 35%, rgba(28, 68, 128, 0.35) 0%, rgba(3, 8, 18, 0.96) 80%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.bento-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.78;
+  filter: saturate(1.12) contrast(1.06);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+
+.aspace-bento-card:hover .bento-bg-img {
+  transform: scale(1.06);
+  opacity: 0.92;
+}
+
+.bento-stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 6, 14, 0.08) 0%, rgba(4, 10, 22, 0.86) 100%);
+}
+
+/* 1. Flagship Hologram & Live Neural Node Stage */
+.bento-holo-hud {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 520px;
+  background: rgba(4, 11, 24, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
+}
+
+.holo-hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--as-cyan);
+  margin-bottom: 12px;
+}
+
+.holo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: aspacePulseDot 1.8s infinite;
+}
+
+.holo-nodes-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.holo-node {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 11px;
+  background: rgba(12, 26, 48, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+}
+
+.holo-node--red {
+  border-color: rgba(248, 113, 113, 0.45);
+}
+
+.holo-node img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.holo-node strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #ffffff;
+}
+
+.holo-node span {
+  font-size: 10px;
+  color: var(--as-muted);
+}
+
+.holo-beam {
+  flex-grow: 1;
+  height: 2px;
+  background: rgba(56, 189, 248, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.beam-packet {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #38bdf8, #f87171, transparent);
+  animation: beamPacketFlow 2s linear infinite;
+}
+
+@keyframes beamPacketFlow {
+  0% { left: -35%; }
+  100% { left: 105%; }
+}
+
+.holo-terminal-ticker {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: #bae6fd;
+  background: rgba(2, 6, 14, 0.85);
+  padding: 7px 10px;
+  border-radius: 5px;
+  border-left: 2px solid var(--as-cyan);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2. Contextual Glass Architectural Window Stages (All Bento Cards) */
+.bento-arch-window {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 340px;
+  background: rgba(4, 10, 22, 0.84);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+
+.aspace-bento-card:hover .bento-arch-window {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.62);
+}
+
+.arch-win-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  background: rgba(12, 25, 46, 0.92);
+  border-bottom: 1px solid rgba(74, 149, 230, 0.2);
+}
+
+.aw-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.aw-dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.45);
+}
+
+.aw-domain {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: #cbd5e1;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aw-badge {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.16);
+  color: var(--as-cyan);
+  border: 1px solid rgba(56, 189, 248, 0.38);
+  white-space: nowrap;
+}
+
+.aw-badge--green {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.aw-badge--cyan {
+  background: rgba(56, 189, 248, 0.18);
+  color: #7dd3fc;
+}
+
+.arch-win-body {
+  padding: 10px 12px;
+}
+
+.arch-metric-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.am-lbl {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: var(--as-muted);
+}
+
+.am-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #ffffff;
+}
+
+.am-val--cyan {
+  color: var(--as-cyan);
+}
+
+.mb-chart-svg {
+  width: 100%;
+  height: 48px;
+  display: block;
+}
+
+.mb-chart-pulse {
+  animation: aspacePulseDot 1.5s infinite;
+}
+
+/* Gift Capsule Contextual Stage (Paket 01 - 150rb) */
+.arch-gift-stage {
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arch-gift-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arch-gift-seal {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arch-gift-meta strong {
+  display: block;
+  font-size: 11.5px;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.arch-gift-meta span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--as-muted);
+}
+
+.gift-audio-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(2, 6, 14, 0.88);
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+}
+
+.eq-icon,
+.eq-time {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: var(--as-cyan);
+}
+
+.eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 11px;
+}
+
+.eq-bars i {
+  display: inline-block;
+  width: 2.5px;
+  background: var(--as-cyan);
+  border-radius: 2px;
+  animation: eqBounce 0.9s ease-in-out infinite alternate;
+}
+
+.eq-bars i:nth-child(1) { height: 4px; animation-delay: 0.1s; }
+.eq-bars i:nth-child(2) { height: 10px; animation-delay: 0.3s; }
+.eq-bars i:nth-child(3) { height: 6px; animation-delay: 0.2s; }
+.eq-bars i:nth-child(4) { height: 11px; animation-delay: 0.4s; }
+.eq-bars i:nth-child(5) { height: 5px; animation-delay: 0.15s; }
+.eq-bars i:nth-child(6) { height: 9px; animation-delay: 0.35s; }
+
+@keyframes eqBounce {
+  0% { transform: scaleY(0.35); }
+  100% { transform: scaleY(1); }
+}
+
+/* VIP Digital Invitation Stage (Paket 02 - 250rb) */
+.arch-invite-body {
+  padding: 11px 12px;
+}
+
+.invite-countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 9px;
+}
+
+.cd-box {
+  background: rgba(3, 8, 18, 0.92);
+  border: 1px solid rgba(74, 149, 230, 0.28);
+  border-radius: 6px;
+  padding: 5px 4px;
+  text-align: center;
+}
+
+.cd-box strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.cd-box span {
+  font-size: 8px;
+  color: var(--as-muted);
+  font-family: var(--font-mono);
+}
+
+.invite-map-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: #cbd5e1;
+}
+
+.radar-pin {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: aspacePulseDot 1.6s infinite;
+}
+
+/* Portfolio & UMKM Stage (Paket 03 - 350rb) */
+.arch-portfolio-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.arch-pf-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 9px;
+  background: rgba(2, 6, 14, 0.85);
+  border: 1px solid rgba(74, 149, 230, 0.2);
+  border-radius: 6px;
+}
+
+.pf-code {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  color: var(--as-cyan);
+  white-space: nowrap;
+}
+
+.arch-pf-row strong {
+  font-size: 10.5px;
+  color: #f1f5f9;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-tag {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.14);
+  color: #7dd3fc;
+}
+
+.pf-tag--green {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ade80;
+}
+
+/* Per-Card Action & Social Share Row */
+.pkg-action-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.pkg-main-btn {
+  flex: 1;
+  min-width: 0 !important;
+  padding: 12px 16px !important;
+}
+
+.pkg-share-btn {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 18, 34, 0.92);
+  border: 1px solid rgba(74, 149, 230, 0.32);
+  border-radius: 6px;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pkg-share-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
+  border-color: var(--as-cyan);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.pkg-share-btn--wa {
+  border-color: rgba(34, 197, 94, 0.38);
+  color: #4ade80;
+}
+
+.pkg-share-btn--wa:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #4ade80;
+  color: #ffffff;
+}
+
+/* 6. Horizontal Executive Bento Card (Paket 05 — 950rb) */
+.aspace-bento-card--horizontal {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  align-items: stretch;
+}
+
+.bento-horiz-content {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.bento-horiz-visual {
+  position: relative;
+  border-left: 1px solid rgba(74, 149, 230, 0.18);
+  background: radial-gradient(circle at 50% 50%, rgba(28, 68, 128, 0.3) 0%, rgba(4, 10, 20, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.corporate-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85);
+}
+
+.corporate-frame img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.72;
+}
+
+.corporate-gauges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: rgba(4, 10, 22, 0.95);
+  border-top: 1px solid rgba(74, 149, 230, 0.22);
+}
+
+.lh-gauge {
+  text-align: center;
+  padding: 6px 4px;
+  background: rgba(10, 22, 42, 0.85);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 6px;
+}
+
+.lh-score {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.lh-label {
+  display: block;
+  font-size: 9px;
+  color: var(--as-muted);
+  margin-top: 2px;
+}
+
+/* Interactive Configurator Tier Chips & Live Invoice HUD */
+.aspace-tier-chips {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tier-chip {
+  background: rgba(6, 14, 28, 0.9);
+  border: 1px solid rgba(74, 149, 230, 0.24);
+  border-radius: 6px;
+  padding: 9px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tier-chip .tc-code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--as-muted);
+  margin-bottom: 3px;
+}
+
+.tier-chip strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: #ffffff;
+}
+
+.tier-chip.is-active,
+.tier-chip:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: var(--as-cyan);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.22);
+}
+
+.tier-chip.is-active .tc-code {
+  color: var(--as-cyan);
+}
+
+.hud-telemetry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hud-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #4ade80;
+  letter-spacing: 0.08em;
+}
+
+@keyframes hudFlashPulse {
+  0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.65), 0 22px 55px rgba(0, 0, 0, 0.88); border-color: #38bdf8; }
+  100% { box-shadow: 0 0 0 18px rgba(56, 189, 248, 0), 0 22px 55px rgba(0, 0, 0, 0.88); border-color: rgba(74, 149, 230, 0.22); }
+}
+
+.aspace-summary-card.is-flashing {
+  animation: hudFlashPulse 0.65s ease-out;
+}
+
+.aspace-pkg-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.aspace-pkg-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  background: rgba(74, 149, 230, 0.12);
+  border: 1px solid rgba(74, 149, 230, 0.3);
+  color: var(--as-cyan);
+}
+
+.aspace-pkg-tag--hot {
+  background: var(--as-blue);
+  color: #ffffff;
+  border-color: var(--as-blue);
+}
+
+.aspace-pkg-time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--as-dim);
+}
+
+.aspace-pkg-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+.aspace-pkg-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.04em;
+}
+
+.aspace-pkg-price small {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--as-dim);
+  font-weight: 400;
+}
+
+.aspace-pkg-desc {
+  font-size: 13px;
+  line-height: 1.62;
+  color: var(--as-muted);
+  margin: 0 0 18px 0;
+}
+
+.aspace-pkg-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aspace-pkg-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #dbe4f0;
+  line-height: 1.45;
+}
+
+.aspace-pkg-list li span.ck {
+  color: var(--as-blue);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.aspace-pkg-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(74, 149, 230, 0.14);
+}
+
+/* ==========================================================================
+   8. ARCHITECTURAL COMPARISON MATRIX
+   ========================================================================== */
+.aspace-compare-wrap {
+  margin-top: 48px;
+  background: var(--as-card);
+  border: 1px solid rgba(74, 149, 230, 0.2);
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+.aspace-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.aspace-compare-table th,
+.aspace-compare-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(74, 149, 230, 0.12);
+}
+
+.aspace-compare-table th {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(14, 26, 44, 0.95);
+  color: #ffffff;
+}
+
+.aspace-compare-table td.col-bad {
+  color: var(--as-muted);
+}
+
+.aspace-compare-table td.col-good {
+  color: #ffffff;
+  font-weight: 500;
+  background: rgba(74, 149, 230, 0.06);
+}
+
+/* ==========================================================================
+   9. ORDER WIZARD FORM + DATABASE + WHATSAPP PIPELINE (#order-wizard)
+   ========================================================================== */
+.aspace-order-grid {
+  display: grid;
+  grid-template-columns: 1.32fr 0.98fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.aspace-form-card,
+.aspace-summary-card {
+  background: var(--as-card);
+  border: 1px solid rgba(74, 149, 230, 0.22);
+  border-radius: 3px;
+  padding: clamp(24px, 3vw, 34px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.88);
+}
+
+.aspace-step-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--as-blue);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.aspace-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.aspace-field {
+  margin-bottom: 16px;
+}
+
+.aspace-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #dbe4f0;
+  margin-bottom: 7px;
+}
+
+.aspace-input,
+.aspace-select,
+.aspace-textarea {
+  width: 100%;
+  background: rgba(3, 7, 14, 0.92) !important;
+  border: 1px solid rgba(74, 149, 230, 0.26) !important;
+  border-radius: 3px !important;
+  padding: 11px 14px !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.aspace-input:focus,
+.aspace-select:focus,
+.aspace-textarea:focus {
+  outline: none;
+  border-color: var(--as-blue) !important;
+}
+
+.aspace-addons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.aspace-addon-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(3, 7, 14, 0.85);
+  border: 1px solid rgba(74, 149, 230, 0.2);
+  border-radius: 3px;
+  font-size: 12px;
+  color: var(--as-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aspace-addon-chip input {
+  accent-color: var(--as-blue);
+}
+
+.aspace-addon-chip:has(input:checked) {
+  background: rgba(74, 149, 230, 0.14);
+  border-color: var(--as-blue);
+  color: #ffffff;
+}
+
+.aspace-order-success {
+  display: none;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 3px;
+  background: rgba(74, 149, 230, 0.12);
+  border: 1px solid var(--as-blue);
+  color: #f0f9ff;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.aspace-order-success.is-visible {
+  display: block;
+}
+
+/* Remove any bottom gap or ghost margins from Lusion layout */
+#page-container,
+#page-container-inner,
+#layanan {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Hide ONLY the 350vh end-section tunnel to eliminate the empty gap before footer */
+#end-section,
+#end-section * {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+/* Restore the official Z-Automation Footer & Next-Page Navigation */
+#page-extra-sections {
+  display: block !important;
+  position: relative !important;
+  z-index: 5 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#footer-section {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  margin-top: 0 !important;
+  pointer-events: auto !important;
+  color: var(--color-black, #020022) !important;
+}
+
+#footer-section a {
+  color: var(--color-black, #020022) !important;
+}
+
+#footer-section .footer-address-line,
+#footer-section .footer-socials-text,
+#footer-section #footer-enquires-header,
+#footer-section #footer-business-header,
+#footer-section #footer-newsletter-header,
+#footer-section #footer-bottom-copyright,
+#footer-section #footer-bottom-labs,
+#footer-section #footer-bottom-tagline {
+  color: var(--color-black, #020022) !important;
+}
+
+#footer-section .footer-socials-line-svg path {
+  fill: var(--color-black, #020022) !important;
+}
+
+#scroll-nav-section {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+.aspace-footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.aspace-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+}
+
+.aspace-footer-links a {
+  color: rgba(255, 255, 255, 0.78) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.aspace-footer-links a:hover {
+  color: var(--as-cyan) !important;
+}
+
+@media (max-width: 1024px) {
+  .bento-span-7,
+  .bento-span-5 {
+    grid-column: span 12;
+  }
+  .bento-span-4 {
+    grid-column: span 6;
+  }
+  .aspace-bento-card--horizontal {
+    grid-template-columns: 1fr;
+  }
+  .bento-horiz-visual {
+    border-left: none;
+    border-top: 1px solid rgba(74, 149, 230, 0.18);
+  }
+  .aspace-tier-chips {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .aspace-zigzag,
+  .aspace-zigzag--reverse,
+  .aspace-order-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .aspace-nav {
+    display: none;
+  }
+  .aspace-hero-track {
+    height: auto;
+    min-height: 100vh;
+  }
+  .bento-span-7,
+  .bento-span-5,
+  .bento-span-4,
+  .bento-span-12,
+  .aspace-bento-grid.is-filtered .bento-span-7,
+  .aspace-bento-grid.is-filtered .bento-span-5,
+  .aspace-bento-grid.is-filtered .bento-span-4 {
+    grid-column: span 12;
+  }
+  .aspace-pkg-list--2col {
+    grid-template-columns: 1fr !important;
+  }
+  .aspace-tier-chips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aspace-act-metrics,
+  .aspace-trio-grid,
+  .aspace-field-row,
+  .aspace-addons-grid {
+    grid-template-columns: 1fr;
+  }
+  .aspace-footer-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

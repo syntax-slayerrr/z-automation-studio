@@ -1,0 +1,551 @@
+/* ==========================================================================
+   HERMES 3D EXPERIENCE: LUSION ARCHITECTURAL STAGE & HUD
+   Applied strictly to public/edukasi-eksplorasi.html
+   ========================================================================== */
+
+#hermes-stage-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-radius: var(--global-border-radius, 20px);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: var(--color-off-white, #f0f1fa);
+  overflow: hidden;
+}
+
+#hermes-viewport {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  min-height: 560px;
+  background: var(--color-off-white, #f0f1fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hermes-3d-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  touch-action: pan-y;
+  outline: none;
+}
+
+/* HUD Top Telemetry Bar */
+.hermes-hud-overlay {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hermes-hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: #000000;
+  color: #ffffff;
+  font-family: IBMPlexMono, ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hermes-hud-pulse {
+  width: 7px;
+  height: 7px;
+  background: var(--color-green, #c1ff00);
+  display: inline-block;
+}
+
+.hermes-hud-chapter {
+  text-align: right;
+  background: rgba(240, 241, 250, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  padding: 10px 18px;
+  backdrop-filter: blur(10px);
+}
+
+.hermes-hud-chapter-index {
+  font-family: IBMPlexMono, ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--color-blue, #1a2ffb);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.hermes-hud-chapter-name {
+  font-family: Aeonik, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+/* Narrative Dialogue Box — Lusion Architectural Dossier Box */
+.hermes-dialogue-panel {
+  position: absolute;
+  bottom: 92px;
+  left: 28px;
+  max-width: 540px;
+  background: #000000;
+  color: #ffffff;
+  padding: 24px 28px;
+  z-index: 25;
+  pointer-events: auto;
+  border-left: 4px solid var(--color-green, #c1ff00);
+}
+
+.hermes-dialogue-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.hermes-dialogue-speaker {
+  font-family: IBMPlexMono, ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--color-green, #c1ff00);
+  text-transform: uppercase;
+}
+
+.hermes-dialogue-nav {
+  display: flex;
+  gap: 6px;
+}
+
+.hermes-chapter-arrow {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: IBMPlexMono, monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hermes-chapter-arrow:hover {
+  background: var(--color-green, #c1ff00);
+  color: #000000;
+  border-color: var(--color-green, #c1ff00);
+}
+
+.hermes-dialogue-text {
+  font-family: Aeonik, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+/* Chapter Step Index Rail (Right Side) */
+.hermes-step-nav {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.hermes-step-dot {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  color: #000000;
+  font-family: IBMPlexMono, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hermes-step-dot:hover {
+  border-color: #000000;
+}
+
+.hermes-step-dot.is-active {
+  background: var(--color-blue, #1a2ffb);
+  border-color: var(--color-blue, #1a2ffb);
+  color: #ffffff;
+}
+
+/* Bottom Controls Bar */
+.hermes-controls-bar {
+  position: absolute;
+  bottom: 24px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  pointer-events: auto;
+  gap: 16px;
+}
+
+.hermes-mode-selector {
+  display: flex;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 4px;
+  gap: 4px;
+}
+
+.hermes-mode-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000000;
+  font-family: IBMPlexMono, ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hermes-mode-btn.is-active,
+.hermes-mode-btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.hermes-anim-selector {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 4px;
+}
+
+.hermes-anim-btn {
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-family: IBMPlexMono, ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hermes-anim-btn.is-active,
+.hermes-anim-btn:hover {
+  background: var(--color-blue, #1a2ffb);
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  #hermes-viewport {
+    height: 560px;
+    min-height: 520px;
+  }
+  .hermes-hud-overlay {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+  .hermes-hud-chapter {
+    display: none;
+  }
+  .hermes-dialogue-panel {
+    bottom: 112px;
+    left: 16px;
+    right: 60px;
+    max-width: none;
+    padding: 16px 18px;
+  }
+  .hermes-dialogue-text {
+    font-size: 13.5px;
+  }
+  .hermes-step-nav {
+    right: 12px;
+  }
+  .hermes-step-dot {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+  .hermes-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    bottom: 14px;
+    left: 16px;
+    right: 16px;
+    gap: 8px;
+  }
+  .hermes-mode-selector,
+  .hermes-anim-selector {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hermes-mode-btn,
+  .hermes-anim-btn {
+    padding: 7px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   MODULAR LEARNING & SHAREABLE EDITORIAL SYSTEM STYLES (Z-AUTOMATION)
+   ========================================================================== */
+
+/* Progress Header Bar */
+.hub-progress-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  border: 1px solid rgba(10, 11, 14, 0.12);
+  border-radius: 16px;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.hub-progress-bar-bg {
+  width: 140px;
+  height: 8px;
+  background: #F0F1FA;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.hub-progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #1A2FFB;
+  transition: width 0.3s ease;
+}
+
+/* Paradigm Switcher Tabs */
+.paradigm-tabs-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.paradigm-tab-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 11, 14, 0.15);
+  background: #FFFFFF;
+  font-family: IBMPlexMono, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0A0B0E;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paradigm-tab-btn.is-active {
+  background: #1A2FFB;
+  color: #FFFFFF;
+  border-color: #1A2FFB;
+}
+
+/* Module Filter Controls */
+.module-directory-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.module-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillar-filter-btn,
+.level-filter-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(10, 11, 14, 0.15);
+  background: #FFFFFF;
+  font-family: IBMPlexMono, monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #0A0B0E;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pillar-filter-btn.is-active,
+.level-filter-btn.is-active {
+  background: #0A0B0E;
+  color: #FFFFFF;
+  border-color: #0A0B0E;
+}
+
+.module-search-input {
+  width: 100%;
+  max-width: 480px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(10, 11, 14, 0.18);
+  background: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 13.5px;
+  color: #0A0B0E;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.module-search-input:focus {
+  border-color: #1A2FFB;
+  box-shadow: 0 0 0 3px rgba(26, 47, 251, 0.12);
+}
+
+/* Module Directory Cards Grid */
+.module-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.module-directory-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid rgba(10, 11, 14, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.module-directory-card:hover {
+  transform: translateY(-3px);
+  border-color: #1A2FFB;
+  box-shadow: 0 12px 30px rgba(26, 47, 251, 0.08);
+}
+
+.module-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.module-card-badge {
+  font-family: IBMPlexMono, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.module-card-badge--ai {
+  background: rgba(26, 47, 251, 0.1);
+  color: #1A2FFB;
+}
+
+.module-card-badge--web {
+  background: rgba(14, 165, 233, 0.12);
+  color: #0284C7;
+}
+
+.module-card-title {
+  font-family: Aeonik, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0A0B0E;
+  margin: 0 0 10px 0;
+}
+
+.module-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #525866;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.module-card-artifact {
+  font-family: IBMPlexMono, monospace;
+  font-size: 11px;
+  color: #0A0B0E;
+  background: #F0F1FA;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.module-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(10, 11, 14, 0.08);
+}
+
+.module-card-btn-open {
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: #0A0B0E;
+  color: #FFFFFF;
+  font-family: IBMPlexMono, monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.module-card-btn-open:hover {
+  background: #1A2FFB;
+}
+
+.module-card-btn-share {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(10, 11, 14, 0.15);
+  color: #0A0B0E;
+  font-family: IBMPlexMono, monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.module-card-btn-share:hover {
+  background: #F0F1FA;
+}
+

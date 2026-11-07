@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Z-AUTOMATION — Satu Orang, Banyak AI</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden}
+body{background:#050509}body.embed{background:transparent}
+#zaai{position:absolute;inset:0;width:100%;height:100%;display:block}
+#pv{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;font:12px system-ui,sans-serif;color:#b9aef0;background:#0d0a1ccc;padding:8px 14px;border-radius:99px;border:1px solid #2b2352;z-index:5}
+#pv button{background:#6d3df0;color:#fff;border:0;border-radius:99px;width:28px;height:28px;cursor:pointer}
+#pv input{width:min(46vw,380px);accent-color:#8b5cf6}
+</style><link rel="image_src" href="https://z-automation.my.id/og-image.jpg"></head><body>
+<svg id="zaai" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+<defs>
+<radialGradient id="wh" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#e8e8f4"/><stop offset="1" stop-color="#9696b4"/></radialGradient>
+<radialGradient id="whD" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#d0d0e2"/><stop offset="1" stop-color="#62628a"/></radialGradient>
+<linearGradient id="pu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b08cff"/><stop offset=".5" stop-color="#6a38e8"/><stop offset="1" stop-color="#36199a"/></linearGradient>
+<linearGradient id="rim" x1="0" x2="1"><stop offset=".55" stop-color="#8b5cf6" stop-opacity="0"/><stop offset="1" stop-color="#8b5cf6" stop-opacity=".55"/></linearGradient>
+<radialGradient id="sh"><stop offset="0" stop-color="#7c4dff" stop-opacity=".5"/><stop offset="1" stop-color="#7c4dff" stop-opacity="0"/></radialGradient>
+<linearGradient id="vis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2254"/><stop offset="1" stop-color="#0a0818"/></linearGradient>
+<linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#40338a"/><stop offset="1" stop-color="#191340"/></linearGradient>
+<linearGradient id="gline" x1="0" x2="1"><stop offset="0" stop-color="#7c4dff" stop-opacity="0"/><stop offset=".5" stop-color="#a78bfa" stop-opacity=".8"/><stop offset="1" stop-color="#7c4dff" stop-opacity="0"/></linearGradient>
+<radialGradient id="bg"><stop offset="0" stop-color="#6d3df0" stop-opacity=".5"/><stop offset="1" stop-color="#6d3df0" stop-opacity="0"/></radialGradient>
+<filter id="gl2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<ellipse id="floor" cx="600" cy="482" rx="580" ry="74" fill="url(#bg)"/>
+<g id="spd"></g><g id="gnd"><rect x="0" y="470" width="1200" height="2" fill="url(#gline)"/></g>
+<g id="wgs"></g><g id="cpl"></g><g id="cartL"></g>
+<g id="rope"><path id="rp1" fill="none" stroke="#8d80d8" stroke-width="4.5" stroke-linecap="round"/><path id="rp2" fill="none" stroke="#e4defd" stroke-width="4.5" stroke-dasharray="2 7" opacity=".55"/></g>
+<g id="pul"></g><g id="hum"></g><g id="bm"></g><g id="rob"></g>
+</svg>
+<div id="pv"><button id="pp" aria-label="Play/Pause">❚❚</button><input id="sl" type="range" min="0" max="1" step="0.001" value="0"><span id="pt">0%</span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(()=>{
+'use strict';
+const NS='http://www.w3.org/2000/svg',GY=470,D=180/Math.PI,PI2=Math.PI*2;
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),lerp=(a,b,t)=>a+(b-a)*t;
+const svg=document.getElementById('zaai'),$=id=>document.getElementById(id),q=(g,c)=>g.querySelector('.'+c);
+const mk=(t,a,par)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);par&&par.appendChild(e);return e};
+const G=(par,html,cls)=>{const g=mk('g',cls?{class:cls}:{},par);g.innerHTML=html;return g};
+
+/* ---------- asset templates ---------- */
+const WH=r=>{let m='';for(let i=0;i<4;i++)m+=`<rect x="-1.6" y="${-r*.95}" width="3.2" height="${r*.3}" rx="1.6" fill="#7c4dff" transform="rotate(${i*90})"/>`;
+return `<g class="wr"><circle r="${r}" fill="url(#wh)"/><circle r="${r*.68}" fill="none" stroke="url(#pu)" stroke-width="${r*.26}"/><circle r="${r*.24}" fill="#6d3df0"/>${m}</g>`};
+const LEG=f=>{const u=`url(#${f=='F'?'wh':'whD'})`;return `<g class="l${f}"><rect x="-8" y="-6" width="16" height="41" rx="8" fill="${u}"/><g class="k${f}"><rect x="-7" y="-6" width="14" height="41" rx="7" fill="${u}"/><ellipse cx="4" cy="30" rx="10" ry="5" fill="${u}"/></g></g>`};
+const ARM=f=>`<g class="a${f}"><rect x="-6" y="-5" width="12" height="51" rx="6" fill="url(#${f=='F'?'wh':'whD'})"/></g>`;
+const FIG=`<g class="b">${LEG('B')}${ARM('B')}<rect x="-15" y="-60" width="30" height="64" rx="15" fill="url(#wh)"/><rect x="-15" y="-60" width="30" height="64" rx="15" fill="url(#rim)"/><circle cx="3" cy="-78" r="15" fill="url(#wh)"/><circle cx="3" cy="-78" r="15" fill="url(#rim)"/>${LEG('F')}${ARM('F')}</g>`;
+const ROB=`<circle class="rg" r="30" fill="none" stroke="#a78bfa" stroke-width="3" opacity="0"/><ellipse class="th" cy="50" rx="14" ry="5" fill="#8b5cf6" filter="url(#gl2)"/><ellipse cy="28" rx="16" ry="18" fill="url(#wh)"/><ellipse cy="28" rx="16" ry="18" fill="url(#rim)"/><ellipse cy="34" rx="12" ry="3.2" fill="none" stroke="#8b5cf6" stroke-width="2"/><g class="hd"><g class="an"><line y1="-24" y2="-38" stroke="#bdb4e8" stroke-width="3" stroke-linecap="round"/><circle cy="-40" r="4.5" fill="#c4b5fd" filter="url(#gl2)"/></g><circle cx="-28" cy="-6" r="4.5" fill="url(#pu)"/><circle cx="28" cy="-6" r="4.5" fill="url(#pu)"/><rect x="-27" y="-26" width="54" height="40" rx="19" fill="url(#wh)"/><rect x="-27" y="-26" width="54" height="40" rx="19" fill="url(#rim)"/><rect x="-21" y="-18" width="42" height="24" rx="12" fill="url(#vis)"/><g class="ey"><ellipse cx="-8.5" cy="-6" rx="4.6" ry="5.4" fill="#cdb0ff" filter="url(#gl2)"/><ellipse cx="8.5" cy="-6" rx="4.6" ry="5.4" fill="#cdb0ff" filter="url(#gl2)"/></g></g>`;
+const GLY=['<circle r="5" fill="none" stroke="#c4b5fd" stroke-width="2"/>','<path d="M0-6C1-2 2-1 6 0 2 1 1 2 0 6-1 2-2 1-6 0-2-1-1-2 0-6Z" fill="#c4b5fd"/>','<path d="M0-6V6M-6 0H6M-4-4L4 4M4-4L-4 4" stroke="#fdba74" stroke-width="1.6" stroke-linecap="round"/>','<path d="M-6 0C-6-5-1-5 0 0S6 5 6 0 1-5 0 0-6 5-6 0Z" fill="none" stroke="#93c5fd" stroke-width="1.8"/>','<path d="M0-6L5.2-3V3L0 6-5.2 3V-3Z" fill="none" stroke="#e9d5ff" stroke-width="1.8"/>'];
+const CRATE=`<rect x="-28" y="-40" width="56" height="40" rx="6" fill="url(#cb)" stroke="#7c5ce6" stroke-width="1.5"/><rect x="-28" y="-40" width="56" height="8" rx="4" fill="url(#pu)"/><path d="M-14-22H14M-14-14H4" stroke="#8b72e8" stroke-width="2.4" stroke-linecap="round"/>`;
+
+/* ---------- build scene ---------- */
+const mkSh=()=>mk('ellipse',{rx:34,ry:7,fill:'url(#sh)'},$('gnd'));
+const mkFig=par=>{const g=G(par,FIG,'fg');return{root:g,b:q(g,'b'),lF:q(g,'lF'),lB:q(g,'lB'),kF:q(g,'kF'),kB:q(g,'kB'),aF:q(g,'aF'),aB:q(g,'aB'),sh:mkSh()}};
+const mkRob=()=>{const g=G($('rob'),ROB);return{g,hd:q(g,'hd'),an:q(g,'an'),th:q(g,'th'),ey:q(g,'ey'),rg:q(g,'rg')}};
+const cart=G($('cartL'),`<ellipse cy="3" rx="100" ry="9" fill="url(#sh)"/>
+<g class="chair"><rect x="-68" y="-152" width="16" height="66" rx="8" fill="url(#pu)"/><rect x="-62" y="-98" width="84" height="14" rx="7" fill="url(#pu)"/><rect x="-62" y="-98" width="84" height="5" rx="2.5" fill="#fff" opacity=".25"/></g>
+<rect x="-78" y="-84" width="156" height="48" rx="11" fill="url(#wh)"/><rect x="-78" y="-84" width="156" height="12" rx="6" fill="url(#pu)"/><rect x="-78" y="-84" width="156" height="48" rx="11" fill="url(#rim)"/>
+<path d="M-12-62H12L-12-44H12" fill="none" stroke="#6d3df0" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect class="nose" x="-72" y="-40" width="144" height="3" rx="1.5" fill="#b69cff" filter="url(#gl2)" opacity="0"/>
+<circle cx="80" cy="-80" r="5" fill="url(#pu)"/>
+<g class="cr">${CRATE}</g><g class="cr">${CRATE}</g><g class="cr">${CRATE}</g>
+<g class="cw" transform="translate(-46 -22)">${WH(22)}</g><g class="cw" transform="translate(46 -22)">${WH(22)}</g>`);
+const CP=[[-38,-84],[36,-84],[0,-124]],cr=[...cart.querySelectorAll('.cr')],chair=q(cart,'chair'),nose=q(cart,'nose');
+const wrC=[...cart.querySelectorAll('.cw .wr')];
+const wg=[0,1,2,3,4].map(i=>{const g=G($('wgs'),`<ellipse cy="3" rx="64" ry="7" fill="url(#sh)"/><rect x="-54" y="-70" width="108" height="36" rx="9" fill="url(#wh)"/><rect x="-54" y="-70" width="108" height="9" rx="4.5" fill="url(#pu)"/><rect x="-54" y="-70" width="108" height="36" rx="9" fill="url(#rim)"/><circle cy="-49" r="11" fill="#14102a" stroke="#7c4dff" stroke-width="2"/><g transform="translate(0 -49)">${GLY[i]}</g><g transform="translate(-30 -18)">${WH(18)}</g><g transform="translate(30 -18)">${WH(18)}</g>`);return{g,wr:[...g.querySelectorAll('.wr')]}});
+const cpl=[0,1,2,3,4].map(()=>mk('path',{stroke:'#8b5cf6','stroke-width':4,'stroke-linecap':'round',fill:'none',filter:'url(#gl2)'},$('cpl')));
+const pu=[0,1,2,3].map(()=>mkFig($('pul'))),H=mkFig($('hum'));
+const rob=[0,1,2,3,4].map(mkRob);
+const bm=rob.map(()=>mk('path',{fill:'none',stroke:'#a78bfa','stroke-width':2,'stroke-dasharray':'4 8','stroke-linecap':'round',filter:'url(#gl2)',opacity:0},$('bm')));
+const hook=mk('line',{stroke:'#c4b5fd','stroke-width':2,opacity:0},$('bm'));
+const ticks=[...Array(14)].map(()=>mk('rect',{y:GY+14,width:34,height:4,rx:2,fill:'#2d2360'},$('gnd')));
+const far=[...Array(10)].map(()=>mk('circle',{cy:GY+36,r:2,fill:'#3a2c80'},$('gnd')));
+const spl=[...Array(8)].map((_,i)=>mk('rect',{y:150+(i*83)%300,width:70+(i*37)%90,height:2,rx:1,fill:'#a78bfa',opacity:0},$('spd')));
+const rp1=$('rp1'),rp2=$('rp2'),floor=$('floor');
+
+/* ---------- phase copy (driven by timeline, fully reversible) ---------- */
+const PH=[['01','Boss','Mengambil kredit, orang lain yang mengerjakan'],['02','Leader','Memimpin dari depan, semua bergerak bersama'],['03','Solo','Bekerja sendiri, tenang tapi terbatas tenaga'],['04','Solo + AI agent','Satu AI ikut bekerja, lebih cepat tapi tetap mandiri'],['05','Solo + banyak AI','Satu orang mengatur banyak sistem AI, <b>dampaknya berlipat</b>']];
+const FF="Inter,'Segoe UI',system-ui,sans-serif",txt=mk('g',{id:'txt'},svg);
+const tx=PH.map(([n,t,d])=>{const g=mk('g',{'pointer-events':'none'},txt);
+ g.innerHTML=`<text x="60" y="96" font-family="${FF}" font-size="36" font-weight="700" fill="#fff"><tspan fill="#8b5cf6">${n}</tspan><tspan dx="18">${t}</tspan></text><text x="60" y="130" font-family="${FF}" font-size="19" fill="#b9b6d6">${d.replace('<b>','<tspan font-weight="700" fill="#fff">').replace('</b>','</tspan>')}</text>`;return g});
+const seg=PH.map((_,i)=>{const g=mk('g',{style:'cursor:pointer'},txt),x=60+i*58;
+ g.innerHTML=`<rect x="${x}" y="34" width="50" height="5" rx="2.5" fill="#2d2360"/><rect class="fl" x="${x}" y="34" width="0" height="5" rx="2.5" fill="#a78bfa"/><rect x="${x}" y="22" width="50" height="28" fill="transparent"/>`;
+ return{g,fl:q(g,'fl')}});
+let curPh=-1;const phCbs=[];
+const sm=x=>{x=clamp(x);return x*x*(3-2*x)};
+
+/* ---------- motion maths ---------- */
+const SP=[[0,1],[.2,1],[.4,.9],[.5,.62],[.6,.6],[.7,.85],[.8,1],[.9,1.9],[.955,2.1],[1,5.5]];
+const sp=p=>{for(let i=1;i<SP.length;i++)if(p<=SP[i][0]){const a=SP[i-1],b=SP[i];return lerp(a[1],b[1],(p-a[0])/(b[0]-a[0]))}return 5.5};
+const N=1000,CUM=[0];for(let i=1;i<=N;i++)CUM[i]=CUM[i-1]+sp((i-.5)/N)*2400/N;
+const DF=p=>{const x=clamp(p)*N,i=Math.min(N-1,Math.floor(x));return lerp(CUM[i],CUM[i+1],x-i)};
+const R={x0:0,y0:0,x1:0,y1:GY-96,cy:0};
+const ropeY=x=>{const t=clamp((x-R.x0)/(R.x1-R.x0));return(1-t)*(1-t)*R.y0+2*t*(1-t)*R.cy+t*t*R.y1};
+
+function setFig(f,o){
+ const A=o.A,ph=o.ph,sit=o.sit||0,l=o.lean,s=o.s||1,gr=o.grip||0,sF=Math.sin(ph),al=o.a??1;
+ const bob=70*(1-Math.cos(A/D))*sF*sF*(1-sit),kk=clamp(A/20);
+ f.root.setAttribute('transform',`translate(${o.x} ${o.y+bob}) scale(${s})`);
+ f.root.setAttribute('opacity',al);f.root.style.display=al<.01?'none':'';
+ f.sh.style.display=al<.01?'none':'';
+ f.sh.setAttribute('cx',o.x);f.sh.setAttribute('cy',(o.gy??GY)+5);f.sh.setAttribute('rx',34*s);f.sh.setAttribute('opacity',al*(o.sa??1));
+ f.b.setAttribute('transform',`rotate(${l})`);
+ f.lF.setAttribute('transform',`rotate(${lerp(-A*sF,-88,sit)})`);
+ f.lB.setAttribute('transform',`rotate(${lerp(A*sF,-74,sit)})`);
+ f.kF.setAttribute('transform',`translate(0 35) rotate(${lerp(50*kk*Math.max(0,Math.cos(ph)),88,sit)})`);
+ f.kB.setAttribute('transform',`translate(0 35) rotate(${lerp(50*kk*Math.max(0,-Math.cos(ph)),80,sit)})`);
+ const lr=l/D,sx=o.x+46*Math.sin(lr)*s,sy=o.y+bob-46*Math.cos(lr)*s;
+ [['F',(o.afF||0)+(o.sw||0)*30*sF,0,0],['B',(o.afB||0)-(o.sw||0)*30*sF,-10,4]].forEach(([k,fr,dx,dy])=>{
+  const vx=o.T.x+dx-sx,vy=o.T.y+dy-sy,tot=Math.atan2(-vx,vy)*D-l,len=clamp(Math.hypot(vx,vy)/(46*s),.7,1.5);
+  f['a'+k].setAttribute('transform',`translate(0 -46) rotate(${lerp(fr,tot,gr)}) scale(1 ${lerp(1,len,gr)})`);
+ });
+}
+function setRob(r,x,y,sc,al,ph,th,eye,rq,P){
+ r.g.setAttribute('transform',`translate(${x} ${y+Math.sin(ph)*4}) scale(${Math.max(sc,.001)})`);
+ r.g.style.display=al<.01?'none':'';r.g.setAttribute('opacity',clamp(al));
+ r.hd.setAttribute('transform',`translate(0 10) rotate(${Math.sin(ph-1)*5}) translate(0 -10)`);
+ r.an.setAttribute('transform',`rotate(${Math.sin(ph*1.7-2)*9} 0 -24)`);
+ r.th.setAttribute('opacity',th);r.th.setAttribute('rx',13+Math.sin(ph*2)*2);
+ const bf=(P*9)%1,bl=1-.9*Math.max(0,1-Math.abs(bf-.02)/.02);
+ r.ey.setAttribute('transform',`translate(0 -6) scale(1 ${bl}) translate(0 6)`);r.ey.setAttribute('opacity',clamp(eye));
+ r.rg.setAttribute('r',30+rq*85);r.rg.setAttribute('opacity',rq>0&&rq<1?(1-rq)*.9:0);
+}
+
+/* ---------- master timeline (duration = 1, time == progress) ---------- */
+const S={};
+const tl=gsap.timeline({paused:true,defaults:{ease:'none'},onUpdate:()=>render()});
+const T=(k,a,b,t0,t1,e)=>{if(S[k]===undefined)S[k]=a;tl.fromTo(S,{[k]:a},{[k]:b,duration:t1-t0,ease:e||'none',immediateRender:false},t0)};
+const io='power2.inOut';
+[ // boss -> leader -> solo -> conductor
+['sit',1,0,.19,.235,'power2.out'],
+['hy',-104,-138,.205,.216,'power2.out'],['hy',-138,-70,.216,.24,'power2.in'],['hy',-70,-205,.885,.905,'power2.out'],['hy',-205,-154,.905,.925,'power2.in'],
+['hx',290,880,.21,.30,'power1.inOut'],['hx',880,810,.30,.40,io],
+['hl',0,8,.20,.25,io],['hl',8,22,.30,.40,io],['hl',22,10,.60,.70,io],['hl',10,-2,.86,.93,io],
+['hA',0,26,.21,.26,io],['hA',26,18,.36,.42,io],['hA',18,24,.62,.70,io],['hA',24,0,.88,.94,io],
+['lane',0,34,.215,.24,io],['lane',34,0,.285,.31,io],['hs',1,1.12,.215,.24,io],['hs',1.12,1,.285,.31,io],
+['afF',-35,-105,.21,.27,io],['afB',-15,18,.21,.27,io],
+['sw',0,1,.21,.26,io],['sw',1,0,.34,.40,io],
+['grip',0,1,.35,.40,io],['grip',1,0,.84,.88,io],['cond',0,1,.92,.98,io],['riding',0,1,.915,.925],
+// cart + load
+['cx',330,770,.80,.91,io],
+['c0',0,1,.36,.43,'bounce.out'],['c1',0,1,.385,.45,'bounce.out'],['c2',0,1,.41,.47,'bounce.out'],['cO',0,1,.80,.86,'power2.in'],
+['chA',1,0,.21,.27,io],['nose',0,1,.86,.94,io],
+// team dissolves
+['pd3',0,-110,.30,.355,'power1.in'],['pa3',1,0,.30,.355],['pd2',0,-110,.315,.37,'power1.in'],['pa2',1,0,.315,.37],
+['pd1',0,-110,.33,.385,'power1.in'],['pa1',1,0,.33,.385],['pd0',0,-110,.345,.40,'power1.in'],['pa0',1,0,.345,.40],
+// rope
+['reX',728,788,.30,.40,io],['sag',10,5,.20,.30,io],['sag',5,2,.36,.42,io],['sag',2,9,.60,.66,io],['sag',9,46,.80,.88,io],['ra',1,0,.84,.88],
+// AI agent
+['rp0',0,1,.60,.67,'power3.out'],['hook',0,1,.66,.69],['hook',1,0,.78,.80],['land',0,1,.80,.90,io],
+// AI fleet
+['w1',0,1,.80,.8525,'power3.out'],['w2',0,1,.8225,.875,'power3.out'],['w3',0,1,.845,.8975,'power3.out'],['w4',0,1,.8675,.92,'power3.out'],['w5',0,1,.89,.9425,'power3.out'],
+['r2',0,1,.8525,.89,'back.out(1.6)'],['r3',0,1,.875,.9125,'back.out(1.6)'],['r4',0,1,.8975,.935,'back.out(1.6)'],['r5',0,1,.9125,.95,'back.out(1.6)'],
+['beam',0,1,.9125,.95],['glow',0,1,.80,.95,'power1.inOut'],['glow',1,.15,.96,1,'power2.in'],['spd',0,1,.85,.95,io],['spd',1,2.2,.955,1,'power2.in'],
+// cinematic exit: whole convoy accelerates off-screen to the right
+['hl',-2,-10,.95,1,'power2.in'],['ex',0,1400,.955,1,'power3.in']
+].forEach(a=>T(...a));
+T('endPad',0,1,.9999,1);
+
+/* ---------- renderer: pure function of timeline time ---------- */
+const PX=[480,570,660,750];
+function render(){
+ const P=tl.time(),dist=DF(P),ph=dist/120*PI2,cx=S.cx+S.ex,bob=Math.sin(dist/13)*1.1;
+ ticks.forEach((t,i)=>t.setAttribute('x',((i*104-dist)%1456+1456)%1456-100));
+ far.forEach((t,i)=>t.setAttribute('cx',((i*150-dist*.4)%1500+1500)%1500-60));
+ spl.forEach((t,i)=>{t.setAttribute('x',((i*211-dist*3.4)%1500+1500)%1500-150);t.setAttribute('opacity',S.spd*.3)});
+ floor.setAttribute('opacity',.3+S.glow*.7);
+ // cart
+ cart.setAttribute('transform',`translate(${cx} ${GY+bob})`);
+ wrC.forEach(w=>w.setAttribute('transform',`rotate(${(dist+cx-330)/22*D})`));
+ cr.forEach((e,i)=>{const c=S['c'+i],o=S.cO;e.setAttribute('transform',`translate(${CP[i][0]} ${CP[i][1]-(1-c)*260-o*60}) rotate(${Math.sin(ph*2+i)*.8*c}) scale(${1-.5*o})`);e.setAttribute('opacity',clamp(c*5)*(1-o))});
+ chair.setAttribute('opacity',S.chA);nose.setAttribute('opacity',S.nose);
+ // rope
+ R.x0=cx+80;R.y0=GY-80+bob;R.x1=S.reX;R.cy=(R.y0+R.y1)/2+2*(S.sag+Math.sin(ph*2)*1.2);
+ const d=`M${R.x0} ${R.y0}Q${(R.x0+R.x1)/2} ${R.cy} ${R.x1} ${R.y1}`;
+ rp1.setAttribute('d',d);rp2.setAttribute('d',d);$('rope').setAttribute('opacity',S.ra);
+ // team
+ pu.forEach((f,i)=>{const hx=PX[i]+S['pd'+i],tx=hx-22;
+  setFig(f,{x:hx,y:GY-70,lean:18,A:24,ph:ph+i*.9,grip:1,a:S['pa'+i],T:{x:tx,y:ropeY(tx)}})});
+ // human
+ const height=-70-S.hy,gyH=GY+S.lane;
+ const hy=S.hy+bob*S.riding+0;
+ const hxE=S.hx+S.ex*S.riding;
+ setFig(H,{x:hxE,y:gyH+hy,gy:GY+S.lane,s:S.hs,lean:S.hl,A:S.hA,ph:ph+.5,sit:S.sit,grip:S.grip,afF:S.afF-S.cond*10+S.cond*8*Math.sin(P*70),afB:S.afB,sw:S.sw,sa:clamp(1-height/90),T:{x:R.x1,y:R.y1}});
+ // wagons + robots
+ const WX=k=>cx-(150+138*(k-1))*S['w'+k],WS=k=>.4+.6*S['w'+k],pts=[],al=[];
+ wg.forEach((w,i)=>{const k=i+1,s=WS(k),a=clamp(S['w'+k]*3);
+  w.g.setAttribute('transform',`translate(${WX(k)} ${GY+bob*.6}) scale(${s})`);w.g.setAttribute('opacity',a);w.g.style.display=a<.01?'none':'';
+  w.wr.forEach(r=>r.setAttribute('transform',`rotate(${(dist+cx-330)/18*D})`));
+  const xr=WX(k)+54*s,xl=k==1?cx-78:WX(k-1)-54*WS(k-1);
+  cpl[i].setAttribute('d',`M${xr} ${GY-44}L${xl} ${GY-44}`);cpl[i].setAttribute('opacity',a)});
+ const fp=dist/90;
+ // R0: arrives, helps pull, then lands on wagon 1
+ {const rp=S.rp0,ln=S.land,s1=.8*WS(1),hx=570,hy2=GY-215,
+  sx=lerp(lerp(430,hx,rp),WX(1),ln),sy=lerp(lerp(-60,hy2,rp),GY-70*WS(1)-40*s1-8,ln),sc=lerp(lerp(.2,1.05,rp),s1,ln);
+  setRob(rob[0],sx,sy,sc,rp*4,fp,(1-ln)*.9+ln*.3,rp*2,rp,P);
+  pts[0]=[sx,sy-14*sc];al[0]=ln;
+  hook.setAttribute('x1',sx);hook.setAttribute('x2',sx);hook.setAttribute('y1',sy+40*sc);hook.setAttribute('y2',ropeY(sx));
+  hook.setAttribute('opacity',S.hook*(1-ln)*S.ra)}
+ for(let k=2;k<=5;k++){const rp=S['r'+k],s=WS(k),sc=.8*s*rp,x=WX(k),y=GY-70*s-40*sc-8;
+  setRob(rob[k-1],x,y,sc,rp*4,fp+k,.3,rp*1.5,rp,P);pts[k-1]=[x,y-14*sc];al[k-1]=clamp(rp*2)}
+ const ox=hxE-6,oy=GY+hy-58;
+ bm.forEach((b,i)=>{const[tx,ty]=pts[i];b.setAttribute('d',`M${ox} ${oy}Q${(ox+tx)/2} ${Math.min(oy,ty)-70} ${tx} ${ty}`);
+  b.setAttribute('stroke-dashoffset',-dist*.8);b.setAttribute('opacity',S.beam*al[i])});
+ // phase text: crossfade centred on each boundary (0.2, 0.4, 0.6, 0.8)
+ tx.forEach((g,i)=>{const a=i==0?1:sm((P-(i*.2-.025))/.05),b=i==4?sm((P-.96)/.04):sm((P-((i+1)*.2-.025))/.05);
+  g.setAttribute('opacity',a*(1-b));g.setAttribute('transform',`translate(${(1-a)*28-b*28} 0)`)});
+ const pi=Math.min(4,Math.floor(P*5));
+ seg.forEach((s,i)=>{s.fl.setAttribute('width',50*clamp((P-i*.2)/.2));s.g.setAttribute('opacity',i==pi?1:.55)});
+ if(pi!==curPh){curPh=pi;phCbs.forEach(f=>f(pi))}
+ if(sl&&!drag){sl.value=P;pt.textContent=Math.round(P*100)+'%'}
+}
+
+/* ---------- global API ---------- */
+let alive=true;
+window.addEventListener('message', function(e) {
+  if (!e.data || typeof e.data !== 'object') return;
+  if (e.data.type === 'ZAAI_SET_PROGRESS') {
+    if (window.ZAAILeverage && typeof window.ZAAILeverage.setProgress === 'function') {
+      window.ZAAILeverage.setProgress(e.data.progress);
+    }
+  }
+});
+if (window.parent && window.parent !== window) {
+  window.parent.postMessage({ type: 'ZAAI_FRAME_READY' }, '*');
+}
+
+const API = window.ZAAILeverage = {
+  tl: tl,
+  getProgress() { return tl.time(); },
+  setProgress(v) { if(!alive) return; gsap.killTweensOf(tl); tl.pause(); tl.time(clamp(+v||0), false); render(); setPP(); },
+ play(){if(!alive)return;gsap.killTweensOf(tl);if(tl.time()>=1)tl.time(0);tl.timeScale(1/36).play();setPP()},
+ pause(){if(!alive)return;gsap.killTweensOf(tl);tl.pause();setPP()},
+ goTo(i){if(!alive)return;tl.pause();setPP();gsap.to(tl,{progress:clamp(i*.2+.1),duration:1.6,ease:'power2.inOut',overwrite:true})},
+ onPhase(cb){phCbs.push(cb);cb(curPh);return()=>{const k=phCbs.indexOf(cb);k>-1&&phCbs.splice(k,1)}},
+ destroy(){alive=false;gsap.killTweensOf(tl);tl.kill();svg.remove();pv&&pv.remove()}
+};
+
+/* ---------- minimal preview (hidden with ?embed) ---------- */
+const embed=/embed/.test(location.search),pv=$('pv'),sl=$('sl'),pt=$('pt'),pp=$('pp');let drag=false;
+function setPP(){if(pp)pp.textContent=tl.paused()?'▶':'❚❚'}
+seg.forEach((s,i)=>{s.g.addEventListener('click',()=>API.goTo(i));if(embed)s.g.style.pointerEvents='none'});
+if(embed){document.body.classList.add('embed');pv.remove()}else{
+ sl.addEventListener('pointerdown',()=>drag=true);sl.addEventListener('pointerup',()=>drag=false);
+ sl.addEventListener('input',()=>{API.setProgress(sl.value);pt.textContent=Math.round(sl.value*100)+'%';setPP()});
+ pp.addEventListener('click',()=>tl.paused()?API.play():API.pause());
+}
+tl.time(0);render();
+/* no autoplay in embed */
+})();
+</script><script>
+(function() {
+  function setupMenu() {
+    var btn = document.getElementById("header-right-menu-btn");
+    var header = document.getElementById("header");
+    var menu = document.getElementById("header-menu");
+    var bg = document.getElementById("header-background");
+    if (!btn || !header || !menu) return;
+    
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpened = btn.classList.contains("--opened");
+      var next = !isOpened;
+      btn.classList.toggle("--opened", next);
+      header.classList.toggle("--menu-opened", next);
+      menu.classList.toggle("--opened", next);
+      if (bg) {
+        bg.classList.toggle("--opened", next);
+        bg.style.opacity = next ? "0.95" : "0";
+      }
+      menu.style.pointerEvents = next ? "auto" : "none";
+      menu.style.opacity = next ? "1" : "0";
+      menu.style.visibility = next ? "visible" : "hidden";
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupMenu);
+  } else {
+    setupMenu();
+  }
+})();
+</script>
+</body></html>

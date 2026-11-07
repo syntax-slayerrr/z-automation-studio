@@ -4,6 +4,7 @@ import {
   Audio,
   Easing,
   interpolate,
+  spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
@@ -19,19 +20,19 @@ export interface ZAutomationLaunchProps {
 }
 
 // ============================================================================
-// Exact Measured Reference Easing Curves (1:1 from Sanctum 30fps Frame Study)
+// Seamless Continuous Apple / Lusion Easing Curves
 // ============================================================================
 const EASE_OUT_EXPO = Easing.bezier(0.16, 1.0, 0.3, 1.0);
-const EASE_MACRO_PUSH = Easing.bezier(0.24, 0.9, 0.3, 1.0);
-const EASE_WHIP_PAN = Easing.bezier(0.68, 0.0, 0.24, 1.0);
+const EASE_MACRO_PUSH = Easing.bezier(0.22, 0.88, 0.28, 1.0);
+const EASE_WHIP_PAN = Easing.bezier(0.64, 0.0, 0.20, 1.0);
 const EASE_CURSOR_GLIDE = Easing.bezier(0.20, 0.95, 0.30, 1.0);
-const EASE_CURSOR_EXIT = Easing.bezier(0.45, 0.0, 0.85, 0.6);
-const EASE_DROP_DOWN = Easing.bezier(0.55, 0.0, 0.92, 0.42);
-const EASE_RUBBER_SNAP = Easing.bezier(0.18, 1.0, 0.32, 1.0);
-const EASE_WHIP_SPIN = Easing.bezier(0.55, 0.0, 0.95, 0.45);
+const EASE_CURSOR_EXIT = Easing.bezier(0.42, 0.0, 0.85, 0.62);
+const EASE_CAMERA_TILT = Easing.bezier(0.50, 0.0, 0.16, 1.0);
+const EASE_RUBBER_SNAP = Easing.bezier(0.16, 1.0, 0.30, 1.0);
+const EASE_SPIN_ACCEL = Easing.bezier(0.62, 0.0, 0.96, 0.68);
+const EASE_SPIN_DECEL = Easing.bezier(0.06, 0.74, 0.20, 1.0);
 
 // Exact millisecond-synced keystroke timestamps for "z-automation.my.id" (18 chars)
-// Matches scripts/build-sanctum-audio.py 1:1!
 const TYPED_DOMAIN = 'z-automation.my.id';
 const CHAR_TIMES = [
   0.70, 0.76, // z -
@@ -46,11 +47,17 @@ function clamp01(v: number): number {
   return Math.max(0, Math.min(1, v));
 }
 
+function smoothBell(t: number, start: number, end: number): number {
+  if (t <= start || t >= end) return 0;
+  const u = (t - start) / (end - start);
+  const s = Math.sin(u * Math.PI);
+  return s * s; // C1-continuous zero-derivative entry & exit!
+}
+
 // ============================================================================
-// Minimalist Pure-White Z-Automation Mascot Mark (Act 4 Lockup, Ref F326-F396)
-// Friendly rounded OpenClaw/Bot geometric silhouette with cobalt cutout eyes & smile
+// Minimalist Pure-White Z-Automation Mascot Mark (Act 4 Lockup)
 // ============================================================================
-const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
+const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 308 }) => {
   return (
     <svg
       width={size}
@@ -62,10 +69,8 @@ const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
       <defs>
         <mask id="z-mascot-cutout">
           <rect x="-20" y="-20" width="240" height="220" fill="white" />
-          {/* Friendly Expressive Cutout Eyes */}
           <circle cx="76" cy="92" r="12.5" fill="black" />
           <circle cx="124" cy="92" r="12.5" fill="black" />
-          {/* Joyful Open D-Smile Cutout (matching Sanctum's charming mascot expression!) */}
           <path
             d="M78 117 C78 114, 122 114, 122 117 C122 138, 78 138, 78 117 Z"
             fill="black"
@@ -74,7 +79,6 @@ const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
       </defs>
 
       <g mask="url(#z-mascot-cutout)">
-        {/* Cute Curved Twin Antennae + Glowing Round Tips */}
         <path
           d="M74 44 C68 24, 54 18, 46 20"
           stroke="#FFFFFF"
@@ -91,13 +95,11 @@ const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
         />
         <circle cx="156" cy="20" r="10" fill="#FFFFFF" />
 
-        {/* Plump, Tactile Rounded Cloud-Bot Silhouette + Side Earpiece/Claw Bumps */}
         <rect x="24" y="38" width="152" height="122" rx="61" fill="#FFFFFF" />
         <circle cx="24" cy="104" r="18" fill="#FFFFFF" />
         <circle cx="176" cy="104" r="18" fill="#FFFFFF" />
       </g>
 
-      {/* Cute White Tongue Highlight Inside the Smile Cutout */}
       <path
         d="M89 130 C94 125, 106 125, 111 130 C106 134, 94 134, 89 130 Z"
         fill="#FFFFFF"
@@ -107,7 +109,7 @@ const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
 };
 
 // ============================================================================
-// 4-Point Concave Sparkle Star SVG (Ref F131-F401)
+// 4-Point Concave Sparkle Star SVG
 // ============================================================================
 const FourPointStar: React.FC<{
   size: number;
@@ -135,15 +137,24 @@ const FourPointStar: React.FC<{
 );
 
 // ============================================================================
-// Shared Bright Z-Automation Cobalt Sky World (Acts 2, 3 & 4, 3.90s -> 14.50s)
+// Shared Bright Z-Automation Cobalt Sky World (Acts 2, 3 & 4)
+// Includes Subtle Camera Parallax on Act 1->2 Portal Arrival & Act 2->3 Tilt!
 // ============================================================================
-const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
-  // Initial macro DoF blur right at the 4.00s portal burst, racking sharp by 4.55s (Ref F121->F137)
-  const rackBlur = interpolate(timeSec, [4.0, 4.55], [14, 0], {
+const CobaltSkyBackdrop: React.FC<{
+  timeSec: number;
+  camTiltProgress: number;
+}> = ({ timeSec, camTiltProgress }) => {
+  const rackBlur = interpolate(timeSec, [3.95, 4.55], [14, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
+  // Continues forward camera momentum as we fly through the Act 1 portal!
+  const pPortalSettle = EASE_OUT_EXPO(clamp01((timeSec - 3.92) / 0.68));
+  const bgScale = interpolate(pPortalSettle, [0, 1], [1.14, 1.0]);
+
+  // Subtle parallax downward shift when camera tilts up to catch the 3D iPhone
+  const parallaxY = camTiltProgress * 115;
   const drift = timeSec - 4.0;
 
   return (
@@ -152,6 +163,7 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         background:
           'linear-gradient(180deg, #2C88FF 0%, #0E5BFF 46%, #1A2FFB 100%)',
         overflow: 'hidden',
+        transform: `scale(${bgScale.toFixed(4)})`,
         filter: rackBlur > 0.15 ? `blur(${rackBlur.toFixed(2)}px)` : undefined,
       }}
     >
@@ -160,7 +172,7 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         style={{
           position: 'absolute',
           left: -180 + Math.sin(drift * 0.4) * 28,
-          top: -160,
+          top: -160 + parallaxY * 0.45,
           width: 780,
           height: 540,
           borderRadius: '50%',
@@ -170,12 +182,12 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         }}
       />
 
-      {/* Bottom-Left Warm Coral-Peach Cloud (1:1 Ref F136-F396) */}
+      {/* Bottom-Left Warm Coral-Peach Cloud */}
       <div
         style={{
           position: 'absolute',
           left: -150 + Math.cos(drift * 0.35) * 30,
-          bottom: -210,
+          bottom: -210 - parallaxY * 0.35,
           width: 820,
           height: 680,
           borderRadius: '50%',
@@ -190,7 +202,7 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         style={{
           position: 'absolute',
           right: -140,
-          top: -150 + Math.sin(drift * 0.45) * 24,
+          top: -150 + Math.sin(drift * 0.45) * 24 + parallaxY * 0.4,
           width: 860,
           height: 600,
           borderRadius: '50%',
@@ -200,12 +212,12 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         }}
       />
 
-      {/* Bottom-Right Fresh Mint-Lime Cloud (--color-green #C1FF00 + Spring Mint, Ref F136-F401) */}
+      {/* Bottom-Right Fresh Mint-Lime Cloud */}
       <div
         style={{
           position: 'absolute',
           right: -180 + Math.cos(drift * 0.38) * 32,
-          bottom: -190,
+          bottom: -190 - parallaxY * 0.35,
           width: 920,
           height: 760,
           borderRadius: '50%',
@@ -215,27 +227,26 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         }}
       />
 
-      {/* Floating Crisp 4-Point Stars & Micro-Diamonds */}
-      {/* Large Green 4-Point Star (Bottom-Right Quadrant, 1:1 Ref F156-F401 size & position!) */}
+      {/* Large Green 4-Point Star */}
       <FourPointStar
         size={215}
         color="#3FE659"
         rotateDeg={-4 + Math.sin(drift * 1.1) * 5}
         style={{
           right: 175 + Math.sin(drift * 0.7) * 18,
-          bottom: 58 + Math.cos(drift * 0.6) * 16,
+          bottom: 58 + Math.cos(drift * 0.6) * 16 - parallaxY * 0.18,
           opacity: 0.96,
         }}
       />
 
-      {/* Medium Crisp White 4-Point Star (Lower-Left, 1:1 Ref F216-F401 size!) */}
+      {/* Medium Crisp White 4-Point Star */}
       <FourPointStar
         size={78}
         color="#FFFFFF"
         rotateDeg={8 + Math.cos(drift * 1.3) * 8}
         style={{
           left: 295 + Math.cos(drift * 0.8) * 22,
-          bottom: 195 + Math.sin(drift * 0.9) * 18,
+          bottom: 195 + Math.sin(drift * 0.9) * 18 - parallaxY * 0.22,
           opacity: 0.96,
         }}
       />
@@ -246,14 +257,14 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         color="rgba(255,255,255,0.75)"
         style={{
           left: 590,
-          top: 95 + Math.sin(drift * 1.4) * 10,
+          top: 95 + Math.sin(drift * 1.4) * 10 + parallaxY * 0.25,
         }}
       />
       <div
         style={{
           position: 'absolute',
           right: 525,
-          top: 325 + Math.cos(drift * 1.2) * 12,
+          top: 325 + Math.cos(drift * 1.2) * 12 + parallaxY * 0.2,
           width: 12,
           height: 12,
           backgroundColor: '#FFB85C',
@@ -266,7 +277,7 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         style={{
           position: 'absolute',
           right: 265,
-          bottom: 265 + Math.sin(drift * 1.5) * 14,
+          bottom: 265 + Math.sin(drift * 1.5) * 14 - parallaxY * 0.2,
           width: 13,
           height: 13,
           backgroundColor: '#FF86B2',
@@ -280,38 +291,42 @@ const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 };
 
 // ============================================================================
-// Act 1 (0.00s - 4.03s): Liquid Glass Input Pill, Macro Pan & 3D Glass Cursor
-// Built at 2.5x native macro resolution so close-up zoom is 100% razor-sharp!
+// Act 1 (0.00s - 4.06s): Continuous Camera Drift, Whip-Pan Shutter Blur &
+// True Geometric SVG Rounded-Pill Portal Mask!
 // ============================================================================
 const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
-  if (timeSec > 4.03) return null;
+  if (timeSec > 4.06) return null;
 
-  // 1. Pill Entrance Scale & Rack Focus (0.00s -> 0.55s, Ref F001-F017)
-  const pIntro = EASE_OUT_EXPO(clamp01(timeSec / 0.55));
+  // 1. Pill Entrance Scale & Rack Focus (0.00s -> 0.56s)
+  const pIntro = EASE_OUT_EXPO(clamp01(timeSec / 0.56));
   const introScale = interpolate(pIntro, [0, 1], [0.28, 1.0]);
   const introBlur = interpolate(clamp01(timeSec / 0.45), [0, 1], [18, 0]);
   const introOpacity = interpolate(clamp01(timeSec / 0.18), [0, 1], [0, 1]);
 
-  // 2. Virtual Camera Push to Left of Pill (0.58s -> 1.85s, Ref F018-F056)
-  const pPush = EASE_MACRO_PUSH(clamp01((timeSec - 0.58) / (1.85 - 0.58)));
+  // 2. Overlapping Camera Push -> Continuous Drift -> Whip-Pan -> Portal Plunge (ZERO dead-stop!)
+  const pPush = EASE_MACRO_PUSH(clamp01((timeSec - 0.50) / (1.96 - 0.50)));
+  const pPan = EASE_WHIP_PAN(clamp01((timeSec - 1.94) / (2.38 - 1.94)));
+  const ambientZoomDrift = clamp01((timeSec - 1.8) / 2.0) * 0.08;
 
-  // 3. Smooth S-Curve Whip-Pan to Right CTA Button (2.00s -> 2.34s, Ref F061-F071)
-  const pPan = EASE_WHIP_PAN(clamp01((timeSec - 2.00) / (2.34 - 2.00)));
+  // Exponential Portal Plunge right through the "Mulai Otomasi" capsule (3.72s -> 4.05s)
+  const uPortal = clamp01((timeSec - 3.72) / (4.05 - 3.72));
+  const portalScaleMult = 1.0 + Math.pow(uPortal, 2.85) * 8.2;
 
-  // 4. Exponential Portal Zoom Into Button (3.80s -> 4.02s, Ref F115-F121)
-  const uPortal = clamp01((timeSec - 3.80) / (4.02 - 3.80));
-  const portalScaleMult = 1.0 + Math.pow(uPortal, 3.0) * 6.8;
+  const baseRigScale =
+    (interpolate(pPush, [0, 1], [0.43, 1.84]) + ambientZoomDrift) *
+    introScale *
+    portalScaleMult;
 
-  // Native Pill is 1460 x 296; at base scale 0.43 it renders as 628 x 127 centered (1:1 Ref F016);
-  // at macro scale 1.86 it fills ~545px height (51% of 1080p) matching Ref F046-F106 1:1!
-  const baseRigScale = interpolate(pPush, [0, 1], [0.43, 1.86]) * introScale * portalScaleMult;
-
-  // Pan X in native pill coordinates:
-  // Push pans +355px right so left half of pill fills screen & right button goes off-screen right (1:1 Ref F046!);
-  // Whip-pan shifts to -385px so right CTA button sits hero-centered while trailing ".id" peeks on far left (1:1 Ref F071!)
-  const panX =
+  // Continuous horizontal pan + gentle cursor-following micro-drift; re-centers on button portal during plunge!
+  const rawPanX =
     interpolate(pPush, [0, 1], [0, 355]) +
-    interpolate(pPan, [0, 1], [0, -740]);
+    interpolate(pPan, [0, 1], [0, -740]) +
+    Math.sin(timeSec * 1.4) * 6 * (1 - uPortal);
+  // As uPortal -> 1, shift panX slightly toward -436 so the expanding button center (local +436) aligns dead-center on screen!
+  const panX = interpolate(Math.pow(uPortal, 1.8), [0, 1], [rawPanX, -436]);
+
+  // True Horizontal Shutter Blur during the fast Whip-Pan (1.94s -> 2.38s)!
+  const whipPanBlurX = smoothBell(timeSec, 1.94, 2.40) * 11.5;
 
   // Typed domain characters ("z-automation.my.id")
   let typedCount = 0;
@@ -324,18 +339,13 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
     timeSec <= 2.25 &&
     (timeSec < 1.78 || Math.floor((timeSec - 1.78) * 4.5) % 2 === 0);
 
-  // 5. 3D Frosted Glass Cursor Choreography (2.66s -> 3.74s, Ref F080-F112)
+  // 3D Frosted Glass Cursor Choreography (2.66s -> 3.74s)
   const showCursor = timeSec >= 2.66 && timeSec <= 3.76;
   const pCurIn = EASE_CURSOR_GLIDE(clamp01((timeSec - 2.66) / (3.08 - 2.66)));
   const pCurExit = EASE_CURSOR_EXIT(clamp01((timeSec - 3.38) / (3.74 - 3.38)));
 
-  // Cursor press squish right at 3.15s (Ref F095)
-  const pressPulse =
-    timeSec >= 3.11 && timeSec <= 3.34
-      ? Math.sin(((timeSec - 3.11) / 0.23) * Math.PI)
-      : 0;
+  const pressPulse = smoothBell(timeSec, 3.10, 3.35);
 
-  // Cursor coords relative to the CTA button center
   const curX =
     interpolate(pCurIn, [0, 1], [-580, -34]) +
     interpolate(pCurExit, [0, 1], [0, 480]);
@@ -344,71 +354,101 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
     interpolate(pCurExit, [0, 1], [0, 75]);
   const curScale = 1.0 - pressPulse * 0.18;
 
-  // Button press + luminous frosted white-sky flood (3.15s -> 3.85s, Ref F095-F116)
   const btnScale = 1.0 - pressPulse * 0.045;
-  const btnFlood = EASE_OUT_EXPO(clamp01((timeSec - 3.22) / (3.72 - 3.22)));
-
-  // In Ref F016 (0.50s), the zoomed-out mini button glows bright white-sky, then settles into dark recessed glass by F071 (2.33s)!
+  const btnFlood = EASE_OUT_EXPO(clamp01((timeSec - 3.20) / (3.68 - 3.20)));
   const initialWhiteBtnGlow = 1.0 - pPan;
 
-  // Circular shock-ripple at click impact (3.14s -> 3.48s, Ref F095-F104)
   const uRipple = clamp01((timeSec - 3.14) / 0.34);
   const showRipple = timeSec >= 3.14 && timeSec <= 3.48;
 
-  // Crossfade dark Act 1 wrapper from 3.86s -> 4.01s so at 3.93s (Ref F119) the blurred Cobalt Sky glows right through the frosted portal!
-  const act1FadeOut = interpolate(timeSec, [3.85, 4.01], [1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+  // =========================================================================
+  // True Geometric Rounded-Pill Portal Mask Coordinates in 1920x1080 Space!
+  // Local button center relative to 1460x284 pill center is (+436, 0).
+  // CSS transform on pill is `scale(baseRigScale) translate3d(panX, 0, 0)`,
+  // so screenPos = 960 + baseRigScale * (panX + 436)!
+  // =========================================================================
+  const portalOpenOpacity = EASE_OUT_EXPO(clamp01((timeSec - 3.58) / (3.92 - 3.58)));
+  const holeCenterX = 960 + baseRigScale * (panX + 436);
+  const holeCenterY = 540;
+  // Inset by 3px locally so the glowing frosted button rim frames the expanding portal edge!
+  const holeW = Math.max(0, (500 - 6) * btnScale * baseRigScale);
+  const holeH = Math.max(0, (196 - 6) * btnScale * baseRigScale);
+  const holeRx = holeH / 2;
+
+  const totalAct1Blur = Math.max(introBlur, whipPanBlurX * 0.55);
 
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: '#061017',
         overflow: 'hidden',
-        opacity: act1FadeOut,
+        maskImage: portalOpenOpacity > 0.005 ? 'url(#act1-portal-mask)' : undefined,
+        WebkitMaskImage:
+          portalOpenOpacity > 0.005 ? 'url(#act1-portal-mask)' : undefined,
       }}
     >
-      {/* Out-of-Focus Atmospheric Bokeh Orbs (Zero grid, zero HUD!) */}
-      <div
-        style={{
-          position: 'absolute',
-          left: '24%',
-          top: '-18%',
-          width: 960,
-          height: 620,
-          borderRadius: '50%',
-          background:
-            'radial-gradient(circle, rgba(110, 134, 186, 0.36) 0%, rgba(20, 40, 68, 0) 70%)',
-          filter: 'blur(90px)',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: '18%',
-          bottom: '-22%',
-          width: 1120,
-          height: 700,
-          borderRadius: '50%',
-          background:
-            'radial-gradient(circle, rgba(44, 122, 168, 0.42) 0%, rgba(16, 48, 72, 0) 72%)',
-          filter: 'blur(95px)',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          right: '-8%',
-          bottom: '-12%',
-          width: 760,
-          height: 580,
-          borderRadius: '50%',
-          background:
-            'radial-gradient(circle, rgba(22, 102, 88, 0.28) 0%, rgba(8, 28, 28, 0) 72%)',
-          filter: 'blur(85px)',
-        }}
-      />
+      {/* Geometric SVG Portal Mask Definition */}
+      {portalOpenOpacity > 0.005 ? (
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <defs>
+            <mask id="act1-portal-mask">
+              <rect x="0" y="0" width="1920" height="1080" fill="white" />
+              <rect
+                x={holeCenterX - holeW / 2}
+                y={holeCenterY - holeH / 2}
+                width={holeW}
+                height={holeH}
+                rx={holeRx}
+                ry={holeRx}
+                fill="black"
+                fillOpacity={portalOpenOpacity}
+              />
+            </mask>
+          </defs>
+        </svg>
+      ) : null}
+
+      {/* Dark Atmospheric Bokeh Backdrop */}
+      <AbsoluteFill style={{ backgroundColor: '#061017' }}>
+        <div
+          style={{
+            position: 'absolute',
+            left: '24%',
+            top: '-18%',
+            width: 960,
+            height: 620,
+            borderRadius: '50%',
+            background:
+              'radial-gradient(circle, rgba(110, 134, 186, 0.36) 0%, rgba(20, 40, 68, 0) 70%)',
+            filter: 'blur(90px)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            left: '18%',
+            bottom: '-22%',
+            width: 1120,
+            height: 700,
+            borderRadius: '50%',
+            background:
+              'radial-gradient(circle, rgba(44, 122, 168, 0.42) 0%, rgba(16, 48, 72, 0) 72%)',
+            filter: 'blur(95px)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            right: '-8%',
+            bottom: '-12%',
+            width: 760,
+            height: 580,
+            borderRadius: '50%',
+            background:
+              'radial-gradient(circle, rgba(22, 102, 88, 0.28) 0%, rgba(8, 28, 28, 0) 72%)',
+            filter: 'blur(85px)',
+          }}
+        />
+      </AbsoluteFill>
 
       {/* Camera Rig Centering the High-DPI Liquid Glass Pill */}
       <AbsoluteFill
@@ -417,7 +457,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
           alignItems: 'center',
           justifyContent: 'center',
           opacity: introOpacity,
-          filter: introBlur > 0.2 ? `blur(${introBlur.toFixed(1)}px)` : undefined,
+          filter: totalAct1Blur > 0.25 ? `blur(${totalAct1Blur.toFixed(1)}px)` : undefined,
         }}
       >
         <div
@@ -433,7 +473,6 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
             boxSizing: 'border-box',
             transform: `scale(${baseRigScale}) translate3d(${panX}px, 0px, 0px)`,
             transformOrigin: 'center center',
-            // Authentic Refractive Liquid-Glass Shader (matching Ref F016-F096 caustics!)
             background:
               'linear-gradient(122deg, rgba(155, 214, 248, 0.16) 0%, rgba(36, 78, 108, 0.28) 28%, rgba(145, 218, 255, 0.30) 56%, rgba(28, 66, 92, 0.32) 82%, rgba(175, 232, 255, 0.22) 100%)',
             border: '3px solid rgba(186, 236, 255, 0.72)',
@@ -441,7 +480,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               '0 0 55px rgba(96, 198, 255, 0.26), inset 0 4px 26px rgba(255, 255, 255, 0.32), inset 0 -6px 28px rgba(90, 195, 255, 0.25)',
           }}
         >
-          {/* Top Specular Caustic Hotspot Streak (Ref F036-F056) */}
+          {/* Top Specular Caustic Hotspot Streak */}
           <div
             style={{
               position: 'absolute',
@@ -456,7 +495,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               pointerEvents: 'none',
             }}
           />
-          {/* Right Curve Caustic Specular Rim Glow (Ref F071-F106) */}
+          {/* Right Curve Caustic Specular Rim Glow */}
           <div
             style={{
               position: 'absolute',
@@ -472,7 +511,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
             }}
           />
 
-          {/* Left Input Field: Crisp Typed Domain ("z-automation.my.id|") */}
+          {/* Left Input Field: Crisp Typed Domain */}
           <div
             style={{
               display: 'flex',
@@ -514,12 +553,11 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               overflow: 'hidden',
               background:
                 'radial-gradient(125% 140% at 30% 20%, rgba(24, 64, 90, 0.92) 0%, rgba(8, 25, 38, 0.96) 68%, rgba(16, 48, 68, 0.94) 100%)',
-              border: '3px solid rgba(176, 234, 255, 0.62)',
+              border: '3px solid rgba(176, 234, 255, 0.72)',
               boxShadow:
                 'inset 0 6px 20px rgba(215, 245, 255, 0.38), inset 0 -6px 18px rgba(0, 0, 0, 0.55), 0 8px 28px rgba(0, 0, 0, 0.35)',
             }}
           >
-            {/* Initial Bright Frosted Ice Glow when zoomed out at 0.50s (Ref F016!) */}
             {initialWhiteBtnGlow > 0.01 ? (
               <div
                 style={{
@@ -534,7 +572,6 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               />
             ) : null}
 
-            {/* Button Text: Sky-Blue -> Crisp White Gradient (matching "Join Waitlist" in Ref F071!) */}
             <span
               style={{
                 fontFamily: "'Aeonik', sans-serif",
@@ -544,9 +581,11 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
                 ...(initialWhiteBtnGlow > 0.5
                   ? { color: '#3988C4' }
                   : {
-                      background:
+                      backgroundImage:
                         'linear-gradient(90deg, #6AC2FF 0%, #BEE5FF 36%, #FFFFFF 72%)',
                       WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                      color: 'transparent',
                       WebkitTextFillColor: 'transparent',
                     }),
                 opacity: 1 - btnFlood * 0.96,
@@ -557,7 +596,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
               Mulai Otomasi
             </span>
 
-            {/* Translucent Luminous Frosted Sky-Blue Portal Flood After Click (Ref F106-F120!) */}
+            {/* Frosted Luminous Portal Flood */}
             <div
               style={{
                 position: 'absolute',
@@ -565,13 +604,13 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
                 borderRadius: 999,
                 opacity: btnFlood,
                 background:
-                  'radial-gradient(110% 130% at 38% 45%, rgba(226, 245, 255, 0.88) 0%, rgba(125, 202, 255, 0.72) 55%, rgba(88, 185, 245, 0.68) 100%)',
-                boxShadow: 'inset 0 0 38px rgba(255, 255, 255, 0.92)',
+                  'radial-gradient(110% 130% at 38% 45%, rgba(236, 248, 255, 0.94) 0%, rgba(155, 218, 255, 0.85) 55%, rgba(112, 198, 255, 0.80) 100%)',
+                boxShadow: 'inset 0 0 38px rgba(255, 255, 255, 0.95)',
                 zIndex: 2,
               }}
             />
 
-            {/* Circular Frosted Click Shock-Ripple (Ref F096-F101) */}
+            {/* Circular Frosted Click Shock-Ripple */}
             {showRipple ? (
               <div
                 style={{
@@ -590,7 +629,7 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
             ) : null}
           </div>
 
-          {/* 3D Frosted Glass Dart Cursor (Ref F081-F111) */}
+          {/* 3D Frosted Glass Dart Cursor */}
           {showCursor ? (
             <div
               style={{
@@ -606,18 +645,31 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
             >
               <svg width="210" height="156" viewBox="0 0 176 132" fill="none">
                 <defs>
-                  <linearGradient id="glass-cursor-fill" x1="12" y1="14" x2="156" y2="96" gradientUnits="userSpaceOnUse">
+                  <linearGradient
+                    id="glass-cursor-fill"
+                    x1="12"
+                    y1="14"
+                    x2="156"
+                    y2="96"
+                    gradientUnits="userSpaceOnUse"
+                  >
                     <stop offset="0%" stopColor="rgba(165, 228, 255, 0.52)" />
                     <stop offset="55%" stopColor="rgba(235, 250, 255, 0.82)" />
                     <stop offset="100%" stopColor="rgba(255, 255, 255, 0.96)" />
                   </linearGradient>
-                  <linearGradient id="glass-cursor-rim" x1="10" y1="10" x2="162" y2="80" gradientUnits="userSpaceOnUse">
+                  <linearGradient
+                    id="glass-cursor-rim"
+                    x1="10"
+                    y1="10"
+                    x2="162"
+                    y2="80"
+                    gradientUnits="userSpaceOnUse"
+                  >
                     <stop offset="0%" stopColor="#8EE4FF" />
                     <stop offset="65%" stopColor="#FFFFFF" />
                     <stop offset="100%" stopColor="#C2F0FF" />
                   </linearGradient>
                 </defs>
-                {/* 3D Sleek Right-Pointing Glass Dart */}
                 <path
                   d="M18 18 L158 66 L26 112 L46 66 Z"
                   fill="url(#glass-cursor-fill)"
@@ -625,7 +677,6 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
                   strokeWidth="4.5"
                   strokeLinejoin="round"
                 />
-                {/* Upper Facet Specular Highlight */}
                 <path
                   d="M22 22 L152 66 L48 66 Z"
                   fill="rgba(255, 255, 255, 0.34)"
@@ -640,27 +691,45 @@ const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 };
 
 // ============================================================================
-// Act 2 Typography (4.83s - 7.16s, Ref F146-F215):
-// "Bangun Sistem / Otomasi / sekarang"
+// Act 2 Typography (4.80s - 7.56s):
+// Bound to the EXACT Shared Camera Whip-Tilt + Vertical Shutter Blur!
 // ============================================================================
-const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
-  if (timeSec < 4.80 || timeSec > 7.18) return null;
+const Act2HeroText: React.FC<{
+  timeSec: number;
+  camTiltProgress: number;
+  tiltBlurY: number;
+}> = ({ timeSec, camTiltProgress, tiltBlurY }) => {
+  const { fps } = useVideoConfig();
+  if (timeSec < 4.78 || timeSec > 7.56) return null;
 
-  const pW1 = EASE_OUT_EXPO(clamp01((timeSec - 4.83) / 0.24)); // Bangun
-  const pW2 = EASE_OUT_EXPO(clamp01((timeSec - 5.00) / 0.24)); // Sistem
-  const pW3 = EASE_OUT_EXPO(clamp01((timeSec - 5.17) / 0.28)); // Otomasi
-  const pW4 = EASE_OUT_EXPO(clamp01((timeSec - 5.33) / 0.26)); // sekarang
+  // Silky spring pop-ins with subtle continuous upward breathing float
+  const s1 = spring({
+    frame: Math.max(0, (timeSec - 4.83) * fps),
+    fps,
+    config: { damping: 16, stiffness: 190, mass: 0.7 },
+  });
+  const s2 = spring({
+    frame: Math.max(0, (timeSec - 5.00) * fps),
+    fps,
+    config: { damping: 16, stiffness: 190, mass: 0.7 },
+  });
+  const s3 = spring({
+    frame: Math.max(0, (timeSec - 5.17) * fps),
+    fps,
+    config: { damping: 15, stiffness: 175, mass: 0.78 },
+  });
+  const s4 = spring({
+    frame: Math.max(0, (timeSec - 5.33) * fps),
+    fps,
+    config: { damping: 16, stiffness: 190, mass: 0.7 },
+  });
 
-  // Downward exit in sync with Hermes (6.84s -> 7.16s, Ref F206-F215)
-  const pExit = EASE_DROP_DOWN(clamp01((timeSec - 6.84) / (7.16 - 6.84)));
-  const dropY = pExit * 690;
+  // Bound 1:1 to Phone3DShowcase's 1220px camera crane sweep!
+  const ambientFloatY = Math.sin((timeSec - 5.0) * 2.1) * 5 * (1 - camTiltProgress);
+  const dropY = camTiltProgress * 1220;
 
-  // Iridescent warm peach-gold-rose-to-white shimmer across "Otomasi" (5.62s -> 6.50s, Ref F170-F195)
-  const shimmerBell =
-    timeSec >= 5.58 && timeSec <= 6.58
-      ? Math.sin(((timeSec - 5.58) / 1.0) * Math.PI)
-      : 0;
-  const gradPos = interpolate(clamp01((timeSec - 5.58) / 1.0), [0, 1], [120, -20]);
+  const shimmerBell = smoothBell(timeSec, 5.56, 6.62);
+  const gradPos = interpolate(clamp01((timeSec - 5.56) / 1.06), [0, 1], [120, -20]);
 
   return (
     <AbsoluteFill
@@ -669,7 +738,8 @@ const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        transform: `translate3d(0px, ${-34 + dropY}px, 0px)`,
+        transform: `translate3d(0px, ${-34 + ambientFloatY + dropY}px, 0px) scaleY(${(1 + tiltBlurY * 0.012).toFixed(3)})`,
+        filter: tiltBlurY > 0.35 ? `blur(${(tiltBlurY * 0.65).toFixed(1)}px)` : undefined,
         pointerEvents: 'none',
       }}
     >
@@ -688,33 +758,32 @@ const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
       >
         <span
           style={{
-            opacity: pW1,
-            transform: `translateY(${(1 - pW1) * 16}px) scale(${0.86 + 0.14 * pW1})`,
+            opacity: clamp01((timeSec - 4.83) / 0.12),
+            transform: `translateY(${(1 - s1) * 20}px) scale(${0.84 + 0.16 * s1})`,
           }}
         >
           Bangun
         </span>
         <span
           style={{
-            opacity: pW2,
-            transform: `translateY(${(1 - pW2) * 16}px) scale(${0.86 + 0.14 * pW2})`,
+            opacity: clamp01((timeSec - 5.00) / 0.12),
+            transform: `translateY(${(1 - s2) * 20}px) scale(${0.84 + 0.16 * s2})`,
           }}
         >
           Sistem
         </span>
       </div>
 
-      {/* Line 2: "Otomasi" (Large Hero Word + Clean Warm Iridescent Shimmer Sweep, Zero Box Artifact!) */}
+      {/* Line 2: "Otomasi" */}
       <div
         style={{
           position: 'relative',
           marginTop: 2,
           marginBottom: 4,
-          opacity: pW3,
-          transform: `translateY(${(1 - pW3) * 20}px) scale(${0.84 + 0.16 * pW3})`,
+          opacity: clamp01((timeSec - 5.17) / 0.14),
+          transform: `translateY(${(1 - s3) * 24}px) scale(${0.82 + 0.18 * s3})`,
         }}
       >
-        {/* Base Pure White Text */}
         <span
           style={{
             fontFamily: "'Aeonik', sans-serif",
@@ -729,7 +798,6 @@ const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
           Otomasi
         </span>
 
-        {/* Warm Peach-Gold-Rose Shimmer Overlay (Ref F176-F191, no CSS filter so bounding-box never paints!) */}
         {shimmerBell > 0.01 ? (
           <span
             style={{
@@ -762,8 +830,8 @@ const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
           lineHeight: 1.08,
           letterSpacing: '-0.022em',
           color: '#FFFFFF',
-          opacity: pW4,
-          transform: `translateY(${(1 - pW4) * 16}px) scale(${0.86 + 0.14 * pW4})`,
+          opacity: clamp01((timeSec - 5.33) / 0.12),
+          transform: `translateY(${(1 - s4) * 20}px) scale(${0.84 + 0.16 * s4})`,
         }}
       >
         sekarang
@@ -773,8 +841,8 @@ const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 };
 
 // ============================================================================
-// Act 3 Left-Side Rubber-Band Stretch Typography (8.67s - 10.72s, Ref F261-F321):
-// "lewat Web 3D / dan Agen AI"
+// Act 3 Left-Side Rubber-Band Stretch Typography (8.67s - 10.700s):
+// Exact 90-deg Match-Spin at t = 10.700s with Horizontal Shutter Blur!
 // ============================================================================
 const RubberWord: React.FC<{
   text: string;
@@ -784,12 +852,21 @@ const RubberWord: React.FC<{
   fontWeight: number;
   gradient?: string;
 }> = ({ text, timeSec, startSec, fontSize, fontWeight, gradient }) => {
+  const { fps } = useVideoConfig();
   if (timeSec < startSec) return null;
-  const p = EASE_RUBBER_SNAP(clamp01((timeSec - startSec) / 0.28));
+
+  // Silky physical elastic settle on horizontal rubber-band snap
+  const sp = spring({
+    frame: Math.max(0, (timeSec - startSec) * fps),
+    fps,
+    config: { damping: 14, stiffness: 210, mass: 0.65 },
+  });
+  const p = EASE_RUBBER_SNAP(clamp01((timeSec - startSec) / 0.30));
+  const blend = p * 0.55 + sp * 0.45;
+
   const opacity = clamp01((timeSec - startSec) / 0.08);
-  // Signature Sanctum horizontal rubber-band stretch (scaleX: 1.62 -> 1.00, Ref F262->F268!)
-  const scaleX = interpolate(p, [0, 1], [1.62, 1.0]);
-  const scaleY = interpolate(p, [0, 1], [0.88, 1.0]);
+  const scaleX = interpolate(blend, [0, 1], [1.62, 1.0]);
+  const scaleY = interpolate(blend, [0, 1], [0.88, 1.0]);
 
   return (
     <span
@@ -820,18 +897,16 @@ const RubberWord: React.FC<{
 };
 
 const Act3RubberHeadline: React.FC<{ timeSec: number }> = ({ timeSec }) => {
-  if (timeSec < 8.65 || timeSec > 10.72) return null;
+  if (timeSec < 8.65 || timeSec >= 10.705) return null;
 
-  // Synchronized 3D Y-axis whip-spin into center (10.50s -> 10.71s, Ref F316-F321)
-  const pWhip = EASE_WHIP_SPIN(clamp01((timeSec - 10.50) / (10.71 - 10.50)));
-  const whipX = interpolate(pWhip, [0, 1], [0, 260]);
-  const whipRotY = interpolate(pWhip, [0, 1], [0, 84]);
-  const whipScale = interpolate(pWhip, [0, 1], [1.0, 0.78]);
-  const whipBlur = interpolate(pWhip, [0, 0.35, 1], [0, 6, 26]);
-  const opacity = interpolate(timeSec, [10.61, 10.71], [1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+  // Exact 90-degree Y-axis angular acceleration match-cut (10.48s -> 10.700s)
+  const pWhip = EASE_SPIN_ACCEL(clamp01((timeSec - 10.48) / (10.70 - 10.48)));
+  const floatY = Math.sin((timeSec - 8.7) * 2.0) * 4 * (1 - pWhip);
+
+  const whipX = interpolate(pWhip, [0, 1], [0, 390]); // Sweeps right into screen center (960px)!
+  const whipRotY = interpolate(pWhip, [0, 1], [0, 89.5]); // Exact edge-on 89.5deg at t=10.700s!
+  const whipScale = interpolate(pWhip, [0, 1], [1.0, 0.82]);
+  const blurX = interpolate(pWhip, [0, 0.3, 1], [0, 5, 24]);
 
   return (
     <div
@@ -839,12 +914,11 @@ const Act3RubberHeadline: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         position: 'absolute',
         left: 315,
         top: '50%',
-        transform: `translate3d(${whipX}px, -52%, 0px) perspective(1200px) rotateY(${whipRotY}deg) scale(${whipScale})`,
+        transform: `translate3d(${whipX}px, calc(-52% + ${floatY.toFixed(1)}px), 0px) perspective(1400px) rotateY(${whipRotY}deg) scale(${whipScale})`,
         display: 'flex',
         flexDirection: 'column',
         gap: 4,
-        opacity,
-        filter: whipBlur > 0.2 ? `blur(${whipBlur.toFixed(1)}px)` : undefined,
+        filter: blurX > 0.35 ? `blur(${(blurX * 0.72).toFixed(1)}px)` : undefined,
         pointerEvents: 'none',
       }}
     >
@@ -889,56 +963,62 @@ const Act3RubberHeadline: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 };
 
 // ============================================================================
-// Act 4 (10.66s - 14.84s, Ref F320-F445):
-// Mascot Spin-In, Squash-&-Stretch Bounce & "z-automation" Brand Lockup
+// Act 4 (10.700s - 14.84s):
+// Exact 90° Match-Spin Continuation + Continuous Spring Squash-Bounce & Lockup!
 // ============================================================================
 const Act4BrandLockup: React.FC<{ timeSec: number }> = ({ timeSec }) => {
-  if (timeSec < 10.65) return null;
+  const { fps } = useVideoConfig();
+  if (timeSec < 10.70) return null;
 
-  // 1. Spin-in out of close-up blur (10.66s -> 10.98s, Ref F320-F330)
-  const pArrive = EASE_OUT_EXPO(clamp01((timeSec - 10.66) / (10.98 - 10.66)));
-  const arriveBlur = interpolate(clamp01((timeSec - 10.66) / 0.26), [0, 1], [24, 0]);
-  const arriveOpacity = clamp01((timeSec - 10.66) / 0.10);
+  // 1. Seamless continuation out of the 90-degree match-spin (10.700s -> 11.06s)
+  const pSpinIn = EASE_SPIN_DECEL(clamp01((timeSec - 10.70) / (11.06 - 10.70)));
+  const spinRotY = interpolate(pSpinIn, [0, 1], [-89.5, 0]);
+  const spinBlurX = interpolate(pSpinIn, [0, 0.65, 1], [24, 4, 0]);
+  const spinScale = interpolate(pSpinIn, [0, 1], [1.75, 1.0]);
 
-  // 2. Signature Squash-and-Stretch Anticipation Lean & Bounce (11.35s -> 11.94s, Ref F341-F358)
-  let mascotSkewX = 0;
-  let mascotRot = 0;
-  let squashX = 1.0;
-  let squashY = 1.0;
+  // 2. C1-Continuous Smooth Anticipation Lean -> Joyful Upward Stretch -> Spring Settle!
+  // Zero sharp velocity kinks: smooth overlapping sin^2 bells!
+  const leanBell = smoothBell(timeSec, 11.30, 11.62); // Peaks at 11.46s (Ref F345!)
+  const hopBell = smoothBell(timeSec, 11.52, 11.88);  // Peaks at 11.70s (Ref F351!)
 
-  if (timeSec >= 11.35 && timeSec < 11.55) {
-    // Lean back-left & squash (Ref F346!)
-    const u = Math.sin(((timeSec - 11.35) / 0.20) * (Math.PI / 2));
-    mascotSkewX = -21 * u;
-    mascotRot = -10 * u;
-    squashX = 1.0 + 0.22 * u;
-    squashY = 1.0 - 0.16 * u;
-  } else if (timeSec >= 11.55 && timeSec < 11.78) {
-    // Spring upright & stretch joyfully (Ref F351-F353!)
-    const u = (timeSec - 11.55) / 0.23;
-    mascotSkewX = interpolate(u, [0, 0.55, 1], [-21, 6, 0]);
-    mascotRot = interpolate(u, [0, 0.55, 1], [-10, 7, 0]);
-    squashX = interpolate(u, [0, 0.55, 1], [1.22, 0.91, 1.0]);
-    squashY = interpolate(u, [0, 0.55, 1], [0.84, 1.12, 1.0]);
-  }
+  const mascotSkewX = -21 * leanBell + 6.5 * hopBell;
+  const mascotRot = -10.5 * leanBell + 7.0 * hopBell;
+  const squashX = 1.0 + 0.22 * leanBell - 0.09 * hopBell;
+  const squashY = 1.0 - 0.16 * leanBell + 0.12 * hopBell;
+  const hopY = 10 * leanBell - 18 * hopBell;
 
-  // 3. Scale down & slide left into clean horizontal lockup (11.82s -> 12.24s, Ref F355-F367)
-  const pShrink = EASE_OUT_EXPO(clamp01((timeSec - 11.80) / 0.24));
-  const pSlide = EASE_OUT_EXPO(clamp01((timeSec - 11.94) / 0.32));
+  // 3. Critically-Damped Physical Springs for Lockup Shrink, Slide & Wordmark Reveal!
+  const shrinkSpring = spring({
+    frame: Math.max(0, (timeSec - 11.78) * fps),
+    fps,
+    config: { damping: 16, stiffness: 175, mass: 0.78 },
+  });
+  const slideSpring = spring({
+    frame: Math.max(0, (timeSec - 11.90) * fps),
+    fps,
+    config: { damping: 16, stiffness: 165, mass: 0.82 },
+  });
+  const wordSpring = spring({
+    frame: Math.max(0, (timeSec - 11.94) * fps),
+    fps,
+    config: { damping: 15, stiffness: 175, mass: 0.78 },
+  });
 
-  const baseScale =
-    interpolate(pArrive, [0, 1], [2.35, 1.0]) *
-    interpolate(pShrink, [0, 1], [1.0, 0.46]);
+  // Subtle living breath during final hold so frame feels organically alive
+  const holdFloatY = Math.sin((timeSec - 12.0) * 1.8) * 3 * slideSpring;
 
-  // Center the combined [Icon + "z-automation"] lockup cleanly around screen center (0, 0)
-  const iconX = interpolate(pSlide, [0, 1], [0, -345]);
+  const baseScale = spinScale * interpolate(shrinkSpring, [0, 1], [1.0, 0.46]);
+  const iconX = interpolate(slideSpring, [0, 1], [0, -345]);
 
-  // Wordmark elastic reveal (11.96s -> 12.34s, Ref F359-F370)
-  const showWordmark = timeSec >= 11.95;
-  const pWord = EASE_RUBBER_SNAP(clamp01((timeSec - 11.95) / 0.38));
-  const wordOpacity = clamp01((timeSec - 11.95) / 0.10);
-  const wordScaleX = interpolate(pWord, [0, 1], [1.22, 1.0]);
-  const wordX = interpolate(pWord, [0, 1], [-48, -242]);
+  const showWordmark = timeSec >= 11.93;
+  const wordOpacity = clamp01((timeSec - 11.93) / 0.14);
+  const wordScaleX = interpolate(wordSpring, [0, 1], [1.18, 1.0]);
+  const wordX = interpolate(wordSpring, [0, 1], [-85, -242]);
+  const wordClipRight = interpolate(
+    EASE_OUT_EXPO(clamp01((timeSec - 11.93) / 0.34)),
+    [0, 1],
+    [85, 0]
+  );
 
   return (
     <AbsoluteFill
@@ -946,16 +1026,16 @@ const Act4BrandLockup: React.FC<{ timeSec: number }> = ({ timeSec }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: arriveOpacity,
-        filter: arriveBlur > 0.2 ? `blur(${arriveBlur.toFixed(1)}px)` : undefined,
+        perspective: 1400,
+        filter: spinBlurX > 0.35 ? `blur(${(spinBlurX * 0.72).toFixed(1)}px)` : undefined,
         pointerEvents: 'none',
       }}
     >
-      {/* Pure-White Mascot Icon (308px hero -> 142px lockup, 1:1 Ref F346 & F376!) */}
+      {/* Pure-White Mascot Icon */}
       <div
         style={{
           position: 'absolute',
-          transform: `translate3d(${iconX}px, 0px, 0px) rotate(${mascotRot}deg) skewX(${mascotSkewX}deg) scale(${(
+          transform: `translate3d(${iconX}px, ${(hopY + holdFloatY).toFixed(2)}px, 0px) rotateY(${spinRotY}deg) rotate(${mascotRot}deg) skewX(${mascotSkewX}deg) scale(${(
             baseScale * squashX
           ).toFixed(3)}, ${(baseScale * squashY).toFixed(3)})`,
         }}
@@ -969,9 +1049,11 @@ const Act4BrandLockup: React.FC<{ timeSec: number }> = ({ timeSec }) => {
           style={{
             position: 'absolute',
             left: '50%',
-            transform: `translate3d(${wordX}px, -4px, 0px) scaleX(${wordScaleX.toFixed(3)})`,
+            transform: `translate3d(${wordX}px, ${(-4 + holdFloatY).toFixed(2)}px, 0px) scaleX(${wordScaleX.toFixed(3)})`,
             transformOrigin: 'left center',
             opacity: wordOpacity,
+            clipPath:
+              wordClipRight > 0.2 ? `inset(-15% ${wordClipRight.toFixed(1)}% -15% -5%)` : undefined,
             fontFamily: "'Aeonik', sans-serif",
             fontWeight: 500,
             fontSize: 112,
@@ -988,7 +1070,7 @@ const Act4BrandLockup: React.FC<{ timeSec: number }> = ({ timeSec }) => {
 };
 
 // ============================================================================
-// Master 1:1 Composition (1920 x 1080, 60 FPS, 890 Frames = 14.833s)
+// Master Seamless 1:1 Composition (1920 x 1080, 60 FPS, 890 Frames = 14.833s)
 // ============================================================================
 export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
   audioSrc = 'assets/audio/z-launch-1to1.wav',
@@ -997,11 +1079,17 @@ export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
   const { fps } = useVideoConfig();
   const timeSec = frame / fps;
 
-  // Authentic Z-Automation Website Font Faces (Aeonik Regular & Medium)
   const aeonikRegularUrl = staticFile('assets/fonts/Aeonik-Regular.woff2');
   const aeonikMediumUrl = staticFile('assets/fonts/Aeonik-Medium.woff2');
 
-  // Final Cinematic Fade-to-Black matching Ref F401-F436 (13.33s -> 14.50s)
+  // Shared Unified Camera Whip-Tilt (Act 2 -> Act 3: 6.82s -> 7.56s)
+  const camTiltProgress = EASE_CAMERA_TILT(
+    clamp01((timeSec - 6.82) / (7.56 - 6.82))
+  );
+  // Smooth vertical shutter blur peaking right at max camera velocity (~7.12s)!
+  const tiltBlurY = smoothBell(timeSec, 6.84, 7.52) * 9.5;
+
+  // Final Cinematic Fade-to-Black (13.33s -> 14.48s)
   const fadeToBlack = interpolate(timeSec, [13.33, 14.48], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -1032,36 +1120,53 @@ export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
         `}
       </style>
 
-      {/* Acts 2, 3 & 4 Shared Cobalt Sky World (Rendered underneath Act 1 from 3.90s so the portal zoom seamlessly reveals it!) */}
-      {timeSec >= 3.90 ? (
+      {/* Acts 2, 3 & 4 Shared Cobalt Sky World (Rendered underneath Act 1 from 3.55s so the true geometric portal hole reveals it!) */}
+      {timeSec >= 3.55 ? (
         <AbsoluteFill>
-          <CobaltSkyBackdrop timeSec={timeSec} />
+          <CobaltSkyBackdrop
+            timeSec={timeSec}
+            camTiltProgress={camTiltProgress}
+          />
 
-          {/* Act 2: 3D OpenClaw Foreground Fly-By + 3D Hermes Portrait Float + Mini OpenClaw */}
-          {timeSec <= 7.26 ? (
+          {/* Act 2: 3D OpenClaw Fly-By + 3D Hermes + Mini OpenClaw */}
+          {timeSec <= 7.58 ? (
             <AbsoluteFill>
-              <Sanctum3DMascots timeSec={timeSec} width={1920} height={1080} />
+              <Sanctum3DMascots
+                timeSec={timeSec}
+                camTiltProgress={camTiltProgress}
+                tiltBlurY={tiltBlurY}
+                width={1920}
+                height={1080}
+              />
             </AbsoluteFill>
           ) : null}
 
-          {/* Act 2: Centered 3-Line Aeonik Typography ("Bangun Sistem / Otomasi / sekarang") */}
-          <Act2HeroText timeSec={timeSec} />
+          {/* Act 2: Centered 3-Line Aeonik Typography */}
+          <Act2HeroText
+            timeSec={timeSec}
+            camTiltProgress={camTiltProgress}
+            tiltBlurY={tiltBlurY}
+          />
 
-          {/* Act 3: Left-Side Rubber-Band Stretch Headline ("lewat Web 3D / dan Agen AI") */}
+          {/* Act 3: Left-Side Rubber-Band Stretch Headline */}
           <Act3RubberHeadline timeSec={timeSec} />
 
-          {/* Act 3: 3D Extruded Titanium iPhone Showcase with Real z-automation.my.id Screenshot */}
-          <Phone3DShowcase timeSec={timeSec} />
+          {/* Act 3: 3D Extruded Titanium iPhone Showcase */}
+          <Phone3DShowcase
+            timeSec={timeSec}
+            camTiltProgress={camTiltProgress}
+            tiltBlurY={tiltBlurY}
+          />
 
-          {/* Act 4: Mascot Spin-In, Squash-&-Stretch Bounce & "z-automation" Lockup */}
+          {/* Act 4: Exact 90° Match-Spin Continuation & Brand Lockup */}
           <Act4BrandLockup timeSec={timeSec} />
         </AbsoluteFill>
       ) : null}
 
-      {/* Act 1: Liquid Glass Input Pill, Macro Pan & 3D Frosted Glass Cursor Portal (0.00s - 4.03s) */}
+      {/* Act 1: Liquid Glass Pill & True Geometric Portal Window (0.00s - 4.06s) */}
       <Act1LiquidGlassIntro timeSec={timeSec} />
 
-      {/* Final Fade to Black (13.33s -> 14.48s, holding clean black to 14.83s) */}
+      {/* Final Fade to Black */}
       {fadeToBlack > 0.001 ? (
         <AbsoluteFill
           style={{
@@ -1072,7 +1177,7 @@ export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
         />
       ) : null}
 
-      {/* Frame-Locked Foley + 120 BPM Rhodes/Synth-Funk Audio */}
+      {/* Apple-Grade Crispy Tactile Sound Design + Real Studio Music Bed */}
       {audioSrc ? <Audio src={staticFile(audioSrc)} volume={1} /> : null}
     </AbsoluteFill>
   );

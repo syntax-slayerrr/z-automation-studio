@@ -1,94 +1,108 @@
 import React from 'react';
-import { Easing, Img, interpolate, staticFile } from 'remotion';
+import { Easing, Img, interpolate, spring, staticFile, useVideoConfig } from 'remotion';
 
 export interface Phone3DShowcaseProps {
   /** Current timeline time in seconds */
   timeSec: number;
+  /** Shared vertical camera whip-tilt progress (0 = Act 2, 1 = Act 3 arrived) */
+  camTiltProgress: number;
+  /** Shared vertical shutter blur amount (px) during Act 2 -> Act 3 camera tilt */
+  tiltBlurY?: number;
 }
 
-const EASE_DROP_IN = Easing.bezier(0.18, 0.95, 0.3, 1.0);
-const EASE_DOCK = Easing.bezier(0.62, 0.0, 0.22, 1.0);
-const EASE_WHIP_OUT = Easing.bezier(0.55, 0.0, 0.95, 0.45);
+const EASE_DOCK = Easing.bezier(0.56, 0.0, 0.18, 1.0);
+const EASE_SPIN_ACCEL = Easing.bezier(0.62, 0.0, 0.96, 0.68);
 
 function clamp01(v: number): number {
   return Math.max(0, Math.min(1, v));
 }
 
-export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => {
-  // Active only during Act 3 + Whip-Spin transition (6.98s -> 10.74s)
-  if (timeSec < 6.98 || timeSec > 10.75) {
+export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({
+  timeSec,
+  camTiltProgress,
+  tiltBlurY = 0,
+}) => {
+  const { fps } = useVideoConfig();
+
+  // Active from start of shared camera tilt (6.82s) until exact 90-deg match-spin (10.70s)
+  if (timeSec < 6.82 || timeSec >= 10.705) {
     return null;
   }
 
-  // ---------------------------------------------------------------------------
-  // 1:1 Reference Motion Curves (F211 -> F322)
-  // ---------------------------------------------------------------------------
-  const pDrop = EASE_DROP_IN(clamp01((timeSec - 7.0) / (7.56 - 7.0)));
-  const pMacroDrift = clamp01((timeSec - 7.56) / (8.48 - 7.56));
-  const pDock = EASE_DOCK(clamp01((timeSec - 8.48) / (8.96 - 8.48)));
-  const pHold = clamp01((timeSec - 8.96) / (10.50 - 8.96));
-  const pWhip = EASE_WHIP_OUT(clamp01((timeSec - 10.50) / (10.72 - 10.50)));
-
-  // Position X (px from screen center)
-  let posX = interpolate(pDrop, [0, 1], [65, -18]);
-  posX += interpolate(pDock, [0, 1], [0, 342]); // Docks cleanly at x = +324px (1:1 Ref F286!)
-  posX += interpolate(pWhip, [0, 1], [0, -295]); // Whips inward during spin
-
-  // Position Y (px from screen center)
-  let posY = interpolate(pDrop, [0, 1], [-1260, 155]);
-  posY += pMacroDrift * 65 * (1 - pDock); // Gentle macro scroll-glide (+155 -> +220)
-  posY = posY * (1 - pDock) + 18 * pDock; // Docks cleanly at y = +18px
-  posY += Math.sin((timeSec - 8.9) * 2.4) * 6 * pDock * (1 - pWhip);
-
-  // Scale (Bold Macro 2.02 matching Ref F221-F256 -> Docked 1.12 matching Ref F286!)
-  let scale = interpolate(pDrop, [0, 1], [1.85, 2.02]);
-  scale = scale * (1 - pDock) + 1.12 * pDock;
-  scale *= interpolate(pWhip, [0, 1], [1.0, 0.86]);
-
-  // 3D Rotations (matching exact Sanctum perspective slope where top bezel angles UP-right!)
-  let rotY = interpolate(pDrop, [0, 1], [-22, -11]);
-  rotY = rotY * (1 - pDock) + -31 * pDock;
-  rotY += pHold * 2.2 * (1 - pWhip); // Subtle proud turn (-31 -> -28.8)
-  rotY += interpolate(pWhip, [0, 1], [0, -60]); // Whips edge-on to -89deg!
-
-  let rotX = interpolate(pDrop, [0, 1], [12, 4.0]);
-  rotX = rotX * (1 - pDock) + 8.5 * pDock;
-  rotX *= 1 - pWhip;
-
-  let rotZ = interpolate(pDrop, [0, 1], [-7.5, -3.4]);
-  rotZ += pMacroDrift * 0.8 * (1 - pDock);
-  rotZ = rotZ * (1 - pDock) + -5.8 * pDock; // Negative Z tilt + rotY(-31) makes top bezel slope sleekly UP-right like Ref F286!
-  rotZ *= 1 - pWhip;
-
-  // Whip-spin motion blur & opacity fade (10.50s -> 10.72s)
-  const whipBlurPx = interpolate(pWhip, [0, 0.35, 1], [0, 6, 28]);
-  const opacity = interpolate(timeSec, [10.62, 10.73], [1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+  // Smooth spring settle layered on top of shared camera whip-tilt so arrival feels weightless & fluid
+  const settleSpring = spring({
+    frame: Math.max(0, (timeSec - 6.86) * fps),
+    fps,
+    config: { damping: 18, stiffness: 115, mass: 0.9 },
   });
 
-  // Subtle internal scroll & live 3D viewport pulse inside our Z-Automation mobile site!
-  const imgScrollY = interpolate(
-    timeSec,
-    [7.15, 7.85, 8.50, 8.95],
-    [-26, 0, 0, 0],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  // Continuous drift from 7.0s -> 8.55s (never freezes at velocity = 0!)
+  const pContinuousMacro = clamp01((timeSec - 7.05) / (8.55 - 7.05));
+
+  // Smooth S-curve dock to right third (8.44s -> 9.04s)
+  const pDock = EASE_DOCK(clamp01((timeSec - 8.44) / (9.04 - 8.44)));
+
+  // Exact 90-degree Y-axis angular acceleration match-cut (10.48s -> 10.70s)
+  const pWhip = EASE_SPIN_ACCEL(clamp01((timeSec - 10.48) / (10.70 - 10.48)));
+
+  // Continuous ambient breathing float
+  const floatY = Math.sin((timeSec - 7.2) * 2.2) * 7 * (1 - pWhip);
+  const floatRotY = Math.cos((timeSec - 7.2) * 1.8) * 1.1 * (1 - pWhip);
+
+  // Position X (seamless arc from slight right -> macro center -> right showcase -> center spin axis!)
+  const macroX = interpolate(camTiltProgress, [0, 1], [72, -16]);
+  const dockedX = 324;
+  let posX = macroX * (1 - pDock) + dockedX * pDock;
+  posX = interpolate(pWhip, [0, 1], [posX, 0]); // Converges to exact center (x=0) at 90deg!
+
+  // Position Y (unified with Act 2's downward exit via camTiltProgress!)
+  const macroEnterY = interpolate(camTiltProgress, [0, 1], [-1220, 148]);
+  const macroGlideY = macroEnterY + pContinuousMacro * 68;
+  let posY = macroGlideY * (1 - pDock) + 18 * pDock + floatY;
+  posY = interpolate(pWhip, [0, 1], [posY, 0]);
+
+  // Scale (Macro 2.02 -> Docked 1.12 -> 0.72 at 90deg match-spin)
+  const macroScale =
+    interpolate(settleSpring, [0, 1], [1.82, 2.00]) + pContinuousMacro * 0.04;
+  let scale = macroScale * (1 - pDock) + 1.12 * pDock;
+  scale = interpolate(pWhip, [0, 1], [scale, 0.72]);
+
+  // 3D Rotations (Continuous smooth glide; hits exact -89.5deg edge-on at t = 10.70s!)
+  const macroRotY = interpolate(camTiltProgress, [0, 1], [-24, -10.5]) - pContinuousMacro * 2.0;
+  let rotY = macroRotY * (1 - pDock) + -31 * pDock + floatRotY;
+  rotY = interpolate(pWhip, [0, 1], [rotY, -89.5]);
+
+  const macroRotX = interpolate(camTiltProgress, [0, 1], [13, 3.8]);
+  let rotX = macroRotX * (1 - pDock) + 8.5 * pDock;
+  rotX = interpolate(pWhip, [0, 1], [rotX, 0]);
+
+  const macroRotZ = interpolate(camTiltProgress, [0, 1], [-8.0, -3.2]) + pContinuousMacro * 0.8;
+  let rotZ = macroRotZ * (1 - pDock) + -5.8 * pDock;
+  rotZ = interpolate(pWhip, [0, 1], [rotZ, 0]);
+
+  // Lightweight Native GPU Motion Blur during fast moves (zero offscreen SVG VRAM bloat!)
+  const motionBlur = Math.max(
+    interpolate(pWhip, [0, 0.3, 1], [0, 4, 18]),
+    tiltBlurY * (1 - pDock) * 0.75
   );
 
+  // Smooth inertial internal website scroll inside the phone screen
+  const scrollEase = Easing.bezier(0.22, 0.6, 0.35, 1.0)(
+    clamp01((timeSec - 7.10) / 1.35)
+  );
+  const imgScrollY = interpolate(scrollEase, [0, 1], [-30, 0]);
+
   // Live glowing packet travelling across Hermes <-> OpenClaw synapse inside the phone screenshot!
-  const packetPhase = ((timeSec - 7.1) * 0.85) % 1.0;
+  const packetPhase = ((timeSec - 7.0) * 0.85) % 1.0;
   const packetAngle = Math.PI * (0.82 - packetPhase * 0.64);
   const packetX = 50 + Math.cos(packetAngle) * 24;
   const packetY = 53 - Math.sin(packetAngle) * 9;
 
-  // Phone physical dimensions (iPhone 15 Pro aspect 390 x 844 + 13px bezel = 416 x 870)
   const CHASSIS_W = 416;
   const CHASSIS_H = 870;
   const RADIUS = 58;
   const SCREEN_RADIUS = 46;
-
-  // 18 tightly-stacked extrusion layers for a 100% solid brushed-titanium 3D side rail
-  const extrusionSlices = Array.from({ length: 18 }, (_, i) => i + 1);
+  const extrusionSlices = Array.from({ length: 14 }, (_, i) => i + 1);
 
   return (
     <div
@@ -100,11 +114,11 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
         justifyContent: 'center',
         perspective: 1800,
         pointerEvents: 'none',
-        opacity,
-        filter: whipBlurPx > 0.2 ? `blur(${whipBlurPx.toFixed(1)}px)` : undefined,
+        filter: motionBlur > 0.3 ? `blur(${motionBlur.toFixed(1)}px)` : undefined,
       }}
     >
-      {/* Warm Golden-Peach & Soft Violet Halo Behind Phone (1:1 Reference F226-F316) */}
+
+      {/* Warm Golden-Peach & Soft Violet Halo Behind Phone */}
       <div
         style={{
           position: 'absolute',
@@ -112,6 +126,7 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
           height: 980,
           borderRadius: '50%',
           transform: `translate3d(${posX + 26}px, ${posY + 10}px, 0px) scale(${scale})`,
+          opacity: 1 - pWhip * 0.7,
           background:
             'radial-gradient(52% 52% at 58% 52%, rgba(255, 198, 138, 0.88) 0%, rgba(255, 166, 158, 0.52) 38%, rgba(196, 178, 255, 0.28) 64%, rgba(26, 47, 251, 0) 100%)',
           filter: 'blur(36px)',
@@ -128,7 +143,7 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
           transform: `translate3d(${posX}px, ${posY}px, 0px) scale(${scale}) rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)`,
         }}
       >
-        {/* Solid Extruded Titanium Side Rail Layers (Z = -1.3px .. -23.4px) */}
+        {/* Solid Extruded Titanium Side Rail Layers */}
         {extrusionSlices.map((idx) => {
           const z = -idx * 1.3;
           const isBackEdge = idx >= 17;
@@ -150,7 +165,6 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                   : undefined,
               }}
             >
-              {/* Subtle Titanium Power Button Detail on Right Rail */}
               {isButtonRegion ? (
                 <div
                   style={{
@@ -168,7 +182,7 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
           );
         })}
 
-        {/* Front Obsidian Glass Bezel Frame (Z = 0) */}
+        {/* Front Obsidian Glass Bezel Frame */}
         <div
           style={{
             position: 'absolute',
@@ -216,7 +230,7 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                 }}
               />
 
-              {/* Live Animated Synapse Sparkle & Ambient Breathing Inside the 3D Hero Card */}
+              {/* Live Animated Synapse Sparkle Inside the 3D Hero Card */}
               <div
                 style={{
                   position: 'absolute',
@@ -229,7 +243,6 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                   pointerEvents: 'none',
                 }}
               >
-                {/* Travelling Cyan Synapse Data Pulse Between Hermes & OpenClaw */}
                 <div
                   style={{
                     position: 'absolute',
@@ -245,18 +258,17 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                       '0 0 16px 5px rgba(0, 245, 212, 0.85), 0 0 32px 10px rgba(26, 47, 251, 0.55)',
                   }}
                 />
-                {/* Soft Dynamic Specular Sheen Across the Interactive 3D Card */}
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: `linear-gradient(115deg, transparent ${20 + pMacroDrift * 25}%, rgba(255,255,255,0.07) ${38 + pMacroDrift * 25}%, transparent ${56 + pMacroDrift * 25}%)`,
+                    background: `linear-gradient(115deg, transparent ${20 + pContinuousMacro * 25}%, rgba(255,255,255,0.08) ${38 + pContinuousMacro * 25}%, transparent ${56 + pContinuousMacro * 25}%)`,
                   }}
                 />
               </div>
             </div>
 
-            {/* Clean Editorial Bottom Floating Pill CTA (matching Sanctum's black pill CTA & Z-Automation's #0D0F17 button!) */}
+            {/* Clean Editorial Bottom Floating Pill CTA */}
             <div
               style={{
                 position: 'absolute',
@@ -321,7 +333,6 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                 9:41
               </span>
 
-              {/* Dynamic Island */}
               <div
                 style={{
                   width: 92,
@@ -331,7 +342,6 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
                 }}
               />
 
-              {/* Signal + Wi-Fi + Battery SVG */}
               <svg width="54" height="12" viewBox="0 0 54 12" fill="none">
                 <rect x="0" y="7" width="2.5" height="4" rx="1" fill="#0D0F17" />
                 <rect x="4" y="5.5" width="2.5" height="5.5" rx="1" fill="#0D0F17" />
@@ -388,4 +398,3 @@ export const Phone3DShowcase: React.FC<Phone3DShowcaseProps> = ({ timeSec }) => 
     </div>
   );
 };
-

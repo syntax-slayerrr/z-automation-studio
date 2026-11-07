@@ -4,6 +4,10 @@ import * as THREE from 'three';
 export interface Sanctum3DMascotsProps {
   /** Exact timeline time in seconds */
   timeSec: number;
+  /** Shared vertical camera whip-tilt progress (0 = Act 2, 1 = Act 3 arrived) */
+  camTiltProgress?: number;
+  /** Shared vertical shutter blur amount (px) during Act 2 -> Act 3 camera tilt */
+  tiltBlurY?: number;
   width?: number;
   height?: number;
   style?: React.CSSProperties;
@@ -63,17 +67,17 @@ function createOpenClawInstance(scaleFactor: number = 1.0): MascotRig {
   bodyPivot.scale.setScalar(scaleFactor);
   group.add(bodyPivot);
 
-  // Joyful glossy coral-crimson vinyl shader tailored for bright cobalt daylight
+  // Joyful glossy crimson-coral vinyl shader tailored for bright cobalt daylight
   const crimsonMat = new THREE.MeshPhysicalMaterial({
-    color: '#F23338',
-    emissive: '#59080E',
-    emissiveIntensity: 0.28,
-    roughness: 0.20,
+    color: '#E8222B',
+    emissive: '#4D060B',
+    emissiveIntensity: 0.30,
+    roughness: 0.22,
     metalness: 0.04,
     clearcoat: 0.85,
     clearcoatRoughness: 0.14,
-    sheen: 0.75,
-    sheenColor: new THREE.Color('#FFA3A8'),
+    sheen: 0.52,
+    sheenColor: new THREE.Color('#FF7580'),
   });
 
   const cheekBlushMat = new THREE.MeshBasicMaterial({
@@ -691,54 +695,52 @@ function buildScene(
   };
 }
 
-function updateSceneAtTime(h: SceneHandles, t: number) {
+function updateSceneAtTime(h: SceneHandles, t: number, camTiltProgress: number) {
   // -------------------------------------------------------------------------
-  // A. Foreground OpenClaw Fly-By (3.94s -> 4.38s | Ref F119 -> F131)
-  // At z = 10.65 (dist = 3.35 from camera z=14, FOV=36deg), frustum half-height = 1.09,
-  // so OpenClaw (r=1.18) fills ~75% of screen height right at 4.13s (Ref F125)!
+  // A. Foreground OpenClaw Fly-By (3.92s -> 4.40s | Ref F119 -> F131)
+  // Continuous smooth S-curve fly-by across foreground lens
   // -------------------------------------------------------------------------
-  if (t >= 3.92 && t <= 4.42) {
+  if (t >= 3.90 && t <= 4.42) {
     h.flybyClaw.group.visible = true;
-    const u = clamp01((t - 3.97) / (4.36 - 3.97));
-    // Trajectory: bottom-center-right (+0.38, -1.55) -> center-left (-0.36, +0.08 at 4.13s) -> top-left (-1.28, +2.05)
-    const x = 0.42 + (-1.35 - 0.42) * u;
-    const y = -1.62 + (2.15 - -1.62) * Math.pow(u, 0.86);
-    const z = 10.55 + Math.sin(u * Math.PI) * 0.22;
+    const u = clamp01((t - 3.96) / (4.38 - 3.96));
+    const uSmooth = u * u * (3 - 2 * u);
+    const x = 0.45 + (-1.42 - 0.45) * u;
+    const y = -1.68 + (2.22 - -1.68) * Math.pow(u, 0.88);
+    const z = 10.55 + Math.sin(uSmooth * Math.PI) * 0.24;
 
     h.flybyClaw.group.position.set(x, y, z);
-    // Joyful -22deg counter-clockwise tilt facing the lens (1:1 Ref F125!)
     h.flybyClaw.bodyPivot.rotation.set(0.08 - u * 0.14, -0.10 + u * 0.18, 0.40);
 
     h.flybyClaw.arms.forEach(({ group, dir }) => {
-      group.rotation.z = dir * (0.42 + Math.sin(t * 24.0) * 0.22);
+      group.rotation.z = dir * (0.42 + Math.sin(t * 22.0) * 0.22);
       group.rotation.x = -0.30;
     });
     h.flybyClaw.antennae.forEach(({ pivot, dir }) => {
-      pivot.rotation.z = -dir * 0.14 + Math.sin(t * 20.0 + dir) * 0.10;
+      pivot.rotation.z = -dir * 0.14 + Math.sin(t * 18.0 + dir) * 0.10;
     });
   } else {
     h.flybyClaw.group.visible = false;
   }
 
   // -------------------------------------------------------------------------
-  // B. Hero 3D Hermes Float-In & Portrait Hold (4.20s -> 7.20s | Ref F126-F216)
+  // B. Hero 3D Hermes Float-In & Unified Camera Whip-Tilt Exit (4.16s -> 7.56s)
   // -------------------------------------------------------------------------
-  if (t >= 4.18 && t <= 7.22) {
+  if (t >= 4.16 && t <= 7.56) {
     h.hermesGroup.visible = true;
-    const uIn = easeOutCubic(clamp01((t - 4.24) / (6.35 - 4.24)));
-    const uExit = easeInCubic(clamp01((t - 6.84) / (7.16 - 6.84)));
+    const uIn = easeOutCubic(clamp01((t - 4.20) / (6.45 - 4.20)));
 
-    // Screen-matched path from distant mid-left to bottom-left foreground portrait (slightly higher so full face + chin show!)
+    // Continuous slow forward drift even after arriving so Hermes never freezes!
+    const liveDriftZ = clamp01((t - 5.5) / 1.8) * 0.22;
     const baseX = -3.65 + (-2.36 - -3.65) * uIn;
     const baseY = -0.45 + (-1.42 - -0.45) * Math.pow(uIn, 0.85);
-    const baseZ = -2.5 + (7.85 - -2.5) * uIn;
+    const baseZ = -2.5 + (7.85 - -2.5) * uIn + liveDriftZ;
 
-    const bobY = Math.sin((t - 4.2) * 2.6) * 0.08 * uIn;
-    const exitDropY = -4.2 * uExit;
+    const bobY = Math.sin((t - 4.2) * 2.5) * 0.09 * uIn;
+    // Bound to the EXACT shared camera tilt curve so Hermes & iPhone move as ONE camera!
+    const exitDropY = -5.6 * camTiltProgress;
 
     h.hermesGroup.position.set(baseX, baseY + bobY + exitDropY, baseZ);
 
-    // Tilted playfully (+20deg) & angled slightly toward center text
     h.hermesGroup.rotation.set(
       -0.06 * uIn,
       0.26 + Math.sin(t * 1.8) * 0.05,
@@ -748,18 +750,15 @@ function updateSceneAtTime(h: SceneHandles, t: number) {
     h.hermesHead.rotation.y = 0.08 + Math.sin(t * 2.1) * 0.04;
     h.hermesHead.rotation.x = -0.06 + Math.cos(t * 1.7) * 0.03;
 
-    // Pupils glance warmly up-right toward "Bangun Sistem Otomasi sekarang"
     const lookX = 0.032 * smoothstep(4.7, 5.2, t);
     const lookY = 0.022 * smoothstep(4.7, 5.2, t);
     h.hermesLeftPupil.position.set(lookX, -0.008 + lookY, 0.064);
     h.hermesRightPupil.position.set(lookX, -0.008 + lookY, 0.064);
 
-    // Natural quick blink at 5.95s
     const blink =
       t > 5.92 && t < 6.06 ? Math.sin(((t - 5.92) / 0.14) * Math.PI) : 0;
     h.hermesEyesGroup.scale.y = Math.max(0.08, 1.0 - blink * 0.92);
 
-    // Gentle orbital halo rotation
     h.orbitRing1.rotation.z = t * 0.55;
     h.orbitRing2.rotation.z = -t * 0.42;
   } else {
@@ -767,16 +766,18 @@ function updateSceneAtTime(h: SceneHandles, t: number) {
   }
 
   // -------------------------------------------------------------------------
-  // C. Top-Right Mini OpenClaw Companion (4.22s -> 7.22s | Ref F127-F216)
-  // Floats playfully at screen (74%, 39%) -> bobbing gently, then drops at 6.9s
+  // C. Top-Right Mini OpenClaw Companion (4.20s -> 7.56s)
   // -------------------------------------------------------------------------
-  if (t >= 4.20 && t <= 7.24) {
+  if (t >= 4.20 && t <= 7.56) {
     h.buddyClaw.group.visible = true;
     const uGrow = easeOutExpo(clamp01((t - 4.22) / 0.85));
-    const uExit = easeInCubic(clamp01((t - 6.88) / (7.22 - 6.88)));
 
     const bx = 2.65 + 0.35 * smoothstep(4.5, 6.8, t);
-    const by = 0.88 - 0.18 * smoothstep(4.5, 6.8, t) + Math.sin(t * 3.8) * 0.10 - 3.6 * uExit;
+    const by =
+      0.88 -
+      0.18 * smoothstep(4.5, 6.8, t) +
+      Math.sin(t * 3.6) * 0.10 -
+      6.2 * camTiltProgress;
     const bz = 5.2;
 
     h.buddyClaw.group.position.set(bx, by, bz);
@@ -803,6 +804,8 @@ function updateSceneAtTime(h: SceneHandles, t: number) {
 
 export const Sanctum3DMascots: React.FC<Sanctum3DMascotsProps> = ({
   timeSec,
+  camTiltProgress = 0,
+  tiltBlurY = 0,
   width = 1920,
   height = 1080,
   style,
@@ -816,8 +819,8 @@ export const Sanctum3DMascots: React.FC<Sanctum3DMascotsProps> = ({
     if (!handlesRef.current) {
       handlesRef.current = buildScene(canvas, width, height);
     }
-    updateSceneAtTime(handlesRef.current, timeSec);
-  }, [timeSec, width, height]);
+    updateSceneAtTime(handlesRef.current, timeSec, camTiltProgress);
+  }, [timeSec, camTiltProgress, width, height]);
 
   useEffect(() => {
     return () => {
@@ -828,11 +831,11 @@ export const Sanctum3DMascots: React.FC<Sanctum3DMascotsProps> = ({
     };
   }, []);
 
-  // Subtle macro depth-of-field blur right at the 4.00s portal burst (matching Ref F121-F124!)
   const burstDofBlur =
-    timeSec >= 3.95 && timeSec <= 4.22
-      ? (1.0 - clamp01((timeSec - 3.98) / 0.22)) * 6.5
+    timeSec >= 3.90 && timeSec <= 4.24
+      ? (1.0 - clamp01((timeSec - 3.96) / 0.26)) * 6.0
       : 0;
+  const totalBlur = Math.max(burstDofBlur, tiltBlurY * 0.65);
 
   return (
     <canvas
@@ -844,7 +847,7 @@ export const Sanctum3DMascots: React.FC<Sanctum3DMascotsProps> = ({
         height: '100%',
         display: 'block',
         pointerEvents: 'none',
-        filter: burstDofBlur > 0.15 ? `blur(${burstDofBlur.toFixed(2)}px)` : undefined,
+        filter: totalBlur > 0.25 ? `blur(${totalBlur.toFixed(1)}px)` : undefined,
         ...style,
       }}
     />

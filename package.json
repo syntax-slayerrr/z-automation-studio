@@ -18,10 +18,12 @@
     "@remotion/cli": "^4.0.541",
     "@remotion/player": "^4.0.541",
     "@remotion/transitions": "^4.0.541",
+    "@types/three": "^0.187.0",
     "lucide-react": "^1.16.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "remotion": "^4.0.541"
+    "remotion": "^4.0.541",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -30,4 +32,3 @@
     "typescript": "^5.9.3"
   }
 }
-

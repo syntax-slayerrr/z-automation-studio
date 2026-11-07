@@ -6,19 +6,19 @@ import { ZAutomationSquarePromo } from './compositions/ZAutomationSquarePromo';
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 9:16 Vertical Reel (Instagram Reels / TikTok / YouTube Shorts) */}
+      {/* 9:16 Vertical Reel (Instagram Reels / TikTok / YouTube Shorts) — 16.0s @ 60fps (128 BPM) */}
       <Composition
         id="ZAutomationLaunch"
         component={ZAutomationLaunch}
-        durationInFrames={210} // 7 seconds at 30 fps
-        fps={30}
+        durationInFrames={960} // 16.0 seconds at 60 fps (32 beats @ 128 BPM)
+        fps={60}
         width={1080}
         height={1920}
         defaultProps={{
           title: 'Z-AUTOMATION',
           tagline: 'Rekayasa Web 3D & Solusi Agen AI Otonom',
           domain: 'z-automation.my.id',
-          audioSrc: 'assets/audio/voiceover.mp3',
+          audioSrc: 'assets/audio/masterpiece-128bpm.wav',
         }}
       />
 

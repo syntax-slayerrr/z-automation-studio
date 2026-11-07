@@ -41,3 +41,4 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host "`n❌ Error saat rendering video." -ForegroundColor Red
     exit 1
 }
+

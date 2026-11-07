@@ -2,1234 +2,1078 @@ import React from 'react';
 import {
   AbsoluteFill,
   Audio,
+  Easing,
+  interpolate,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
-import { HermesOpenClaw3DStage } from '../components/HermesOpenClaw3DStage';
+import { Sanctum3DMascots } from '../components/Sanctum3DMascots';
+import { Phone3DShowcase } from '../components/Phone3DShowcase';
 
 export interface ZAutomationLaunchProps {
-  title: string;
-  tagline: string;
-  domain: string;
+  title?: string;
+  tagline?: string;
+  domain?: string;
   audioSrc?: string;
 }
 
-const BPM = 128;
-const BEAT = 60 / BPM; // 0.46875s
+// ============================================================================
+// Exact Measured Reference Easing Curves (1:1 from Sanctum 30fps Frame Study)
+// ============================================================================
+const EASE_OUT_EXPO = Easing.bezier(0.16, 1.0, 0.3, 1.0);
+const EASE_MACRO_PUSH = Easing.bezier(0.24, 0.9, 0.3, 1.0);
+const EASE_WHIP_PAN = Easing.bezier(0.68, 0.0, 0.24, 1.0);
+const EASE_CURSOR_GLIDE = Easing.bezier(0.20, 0.95, 0.30, 1.0);
+const EASE_CURSOR_EXIT = Easing.bezier(0.45, 0.0, 0.85, 0.6);
+const EASE_DROP_DOWN = Easing.bezier(0.55, 0.0, 0.92, 0.42);
+const EASE_RUBBER_SNAP = Easing.bezier(0.18, 1.0, 0.32, 1.0);
+const EASE_WHIP_SPIN = Easing.bezier(0.55, 0.0, 0.95, 0.45);
+
+// Exact millisecond-synced keystroke timestamps for "z-automation.my.id" (18 chars)
+// Matches scripts/build-sanctum-audio.py 1:1!
+const TYPED_DOMAIN = 'z-automation.my.id';
+const CHAR_TIMES = [
+  0.70, 0.76, // z -
+  0.83, 0.88, 0.93, 0.98, 1.04, 1.09, 1.15, 1.20, 1.25, 1.31, // automation
+  1.39, // .
+  1.46, 1.52, // my
+  1.60, // .
+  1.67, 1.74, // id
+];
 
 function clamp01(v: number): number {
   return Math.max(0, Math.min(1, v));
 }
 
-function smoothstep(edge0: number, edge1: number, x: number): number {
-  const t = clamp01((x - edge0) / (edge1 - edge0));
-  return t * t * (3 - 2 * t);
-}
-
-/**
- * Analytical underdamped harmonic spring (Barty-Bart / Apple physical curve)
- */
-function dampedSpring(dt: number, w = 15, z = 0.8): number {
-  if (dt <= 0) return 0;
-  if (dt > 2.5) return 1;
-  const wd = w * Math.sqrt(Math.max(0.001, 1 - z * z));
+// ============================================================================
+// Minimalist Pure-White Z-Automation Mascot Mark (Act 4 Lockup, Ref F326-F396)
+// Friendly rounded OpenClaw/Bot geometric silhouette with cobalt cutout eyes & smile
+// ============================================================================
+const ZMascotEmblem: React.FC<{ size?: number }> = ({ size = 186 }) => {
   return (
-    1 -
-    Math.exp(-z * w * dt) *
-      (Math.cos(wd * dt) + ((z * w) / wd) * Math.sin(wd * dt))
-  );
-}
+    <svg
+      width={size}
+      height={size * 0.88}
+      viewBox="0 0 200 176"
+      fill="none"
+      style={{ display: 'block', overflow: 'visible' }}
+    >
+      <defs>
+        <mask id="z-mascot-cutout">
+          <rect x="-20" y="-20" width="240" height="220" fill="white" />
+          {/* Friendly Expressive Cutout Eyes */}
+          <circle cx="76" cy="92" r="12.5" fill="black" />
+          <circle cx="124" cy="92" r="12.5" fill="black" />
+          {/* Joyful Open D-Smile Cutout (matching Sanctum's charming mascot expression!) */}
+          <path
+            d="M78 117 C78 114, 122 114, 122 117 C122 138, 78 138, 78 117 Z"
+            fill="black"
+          />
+        </mask>
+      </defs>
 
-/**
- * Word-level invisible clip-mask with Variable Font Weight Morph (200 -> 800)
- */
-const ClipWord: React.FC<{
+      <g mask="url(#z-mascot-cutout)">
+        {/* Cute Curved Twin Antennae + Glowing Round Tips */}
+        <path
+          d="M74 44 C68 24, 54 18, 46 20"
+          stroke="#FFFFFF"
+          strokeWidth="12"
+          strokeLinecap="round"
+        />
+        <circle cx="44" cy="20" r="10" fill="#FFFFFF" />
+
+        <path
+          d="M126 44 C132 24, 146 18, 154 20"
+          stroke="#FFFFFF"
+          strokeWidth="12"
+          strokeLinecap="round"
+        />
+        <circle cx="156" cy="20" r="10" fill="#FFFFFF" />
+
+        {/* Plump, Tactile Rounded Cloud-Bot Silhouette + Side Earpiece/Claw Bumps */}
+        <rect x="24" y="38" width="152" height="122" rx="61" fill="#FFFFFF" />
+        <circle cx="24" cy="104" r="18" fill="#FFFFFF" />
+        <circle cx="176" cy="104" r="18" fill="#FFFFFF" />
+      </g>
+
+      {/* Cute White Tongue Highlight Inside the Smile Cutout */}
+      <path
+        d="M89 130 C94 125, 106 125, 111 130 C106 134, 94 134, 89 130 Z"
+        fill="#FFFFFF"
+      />
+    </svg>
+  );
+};
+
+// ============================================================================
+// 4-Point Concave Sparkle Star SVG (Ref F131-F401)
+// ============================================================================
+const FourPointStar: React.FC<{
+  size: number;
+  color: string;
+  rotateDeg?: number;
+  style?: React.CSSProperties;
+}> = ({ size, color, rotateDeg = 0, style }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 100 100"
+    fill="none"
+    style={{
+      position: 'absolute',
+      transform: `rotate(${rotateDeg}deg)`,
+      pointerEvents: 'none',
+      ...style,
+    }}
+  >
+    <path
+      d="M50 0 C53 34, 66 47, 100 50 C66 53, 53 66, 50 100 C47 66, 34 53, 0 50 C34 47, 47 34, 50 0 Z"
+      fill={color}
+    />
+  </svg>
+);
+
+// ============================================================================
+// Shared Bright Z-Automation Cobalt Sky World (Acts 2, 3 & 4, 3.90s -> 14.50s)
+// ============================================================================
+const CobaltSkyBackdrop: React.FC<{ timeSec: number }> = ({ timeSec }) => {
+  // Initial macro DoF blur right at the 4.00s portal burst, racking sharp by 4.55s (Ref F121->F137)
+  const rackBlur = interpolate(timeSec, [4.0, 4.55], [14, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  const drift = timeSec - 4.0;
+
+  return (
+    <AbsoluteFill
+      style={{
+        background:
+          'linear-gradient(180deg, #2C88FF 0%, #0E5BFF 46%, #1A2FFB 100%)',
+        overflow: 'hidden',
+        filter: rackBlur > 0.15 ? `blur(${rackBlur.toFixed(2)}px)` : undefined,
+      }}
+    >
+      {/* Top-Left Soft Sky-Periwinkle Cloud */}
+      <div
+        style={{
+          position: 'absolute',
+          left: -180 + Math.sin(drift * 0.4) * 28,
+          top: -160,
+          width: 780,
+          height: 540,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(168, 218, 255, 0.72) 0%, rgba(120, 190, 255, 0) 70%)',
+          filter: 'blur(55px)',
+        }}
+      />
+
+      {/* Bottom-Left Warm Coral-Peach Cloud (1:1 Ref F136-F396) */}
+      <div
+        style={{
+          position: 'absolute',
+          left: -150 + Math.cos(drift * 0.35) * 30,
+          bottom: -210,
+          width: 820,
+          height: 680,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(238, 148, 166, 0.85) 0%, rgba(214, 138, 178, 0.38) 48%, rgba(26, 47, 251, 0) 75%)',
+          filter: 'blur(62px)',
+        }}
+      />
+
+      {/* Top-Right Bright Ice-Sky Cloud */}
+      <div
+        style={{
+          position: 'absolute',
+          right: -140,
+          top: -150 + Math.sin(drift * 0.45) * 24,
+          width: 860,
+          height: 600,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(182, 226, 255, 0.78) 0%, rgba(132, 200, 255, 0) 72%)',
+          filter: 'blur(56px)',
+        }}
+      />
+
+      {/* Bottom-Right Fresh Mint-Lime Cloud (--color-green #C1FF00 + Spring Mint, Ref F136-F401) */}
+      <div
+        style={{
+          position: 'absolute',
+          right: -180 + Math.cos(drift * 0.38) * 32,
+          bottom: -190,
+          width: 920,
+          height: 760,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(114, 238, 132, 0.84) 0%, rgba(193, 255, 110, 0.42) 45%, rgba(26, 47, 251, 0) 74%)',
+          filter: 'blur(64px)',
+        }}
+      />
+
+      {/* Floating Crisp 4-Point Stars & Micro-Diamonds */}
+      {/* Large Green 4-Point Star (Bottom-Right Quadrant, 1:1 Ref F156-F401 size & position!) */}
+      <FourPointStar
+        size={215}
+        color="#3FE659"
+        rotateDeg={-4 + Math.sin(drift * 1.1) * 5}
+        style={{
+          right: 175 + Math.sin(drift * 0.7) * 18,
+          bottom: 58 + Math.cos(drift * 0.6) * 16,
+          opacity: 0.96,
+        }}
+      />
+
+      {/* Medium Crisp White 4-Point Star (Lower-Left, 1:1 Ref F216-F401 size!) */}
+      <FourPointStar
+        size={78}
+        color="#FFFFFF"
+        rotateDeg={8 + Math.cos(drift * 1.3) * 8}
+        style={{
+          left: 295 + Math.cos(drift * 0.8) * 22,
+          bottom: 195 + Math.sin(drift * 0.9) * 18,
+          opacity: 0.96,
+        }}
+      />
+
+      {/* Tiny Upper Sparkles & Micro-Confetti Diamonds */}
+      <FourPointStar
+        size={18}
+        color="rgba(255,255,255,0.75)"
+        style={{
+          left: 590,
+          top: 95 + Math.sin(drift * 1.4) * 10,
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          right: 525,
+          top: 325 + Math.cos(drift * 1.2) * 12,
+          width: 12,
+          height: 12,
+          backgroundColor: '#FFB85C',
+          transform: `rotate(${35 + drift * 18}deg)`,
+          borderRadius: 2,
+          opacity: 0.9,
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          right: 265,
+          bottom: 265 + Math.sin(drift * 1.5) * 14,
+          width: 13,
+          height: 13,
+          backgroundColor: '#FF86B2',
+          transform: `rotate(${20 - drift * 15}deg)`,
+          borderRadius: 2,
+          opacity: 0.85,
+        }}
+      />
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// Act 1 (0.00s - 4.03s): Liquid Glass Input Pill, Macro Pan & 3D Glass Cursor
+// Built at 2.5x native macro resolution so close-up zoom is 100% razor-sharp!
+// ============================================================================
+const Act1LiquidGlassIntro: React.FC<{ timeSec: number }> = ({ timeSec }) => {
+  if (timeSec > 4.03) return null;
+
+  // 1. Pill Entrance Scale & Rack Focus (0.00s -> 0.55s, Ref F001-F017)
+  const pIntro = EASE_OUT_EXPO(clamp01(timeSec / 0.55));
+  const introScale = interpolate(pIntro, [0, 1], [0.28, 1.0]);
+  const introBlur = interpolate(clamp01(timeSec / 0.45), [0, 1], [18, 0]);
+  const introOpacity = interpolate(clamp01(timeSec / 0.18), [0, 1], [0, 1]);
+
+  // 2. Virtual Camera Push to Left of Pill (0.58s -> 1.85s, Ref F018-F056)
+  const pPush = EASE_MACRO_PUSH(clamp01((timeSec - 0.58) / (1.85 - 0.58)));
+
+  // 3. Smooth S-Curve Whip-Pan to Right CTA Button (2.00s -> 2.34s, Ref F061-F071)
+  const pPan = EASE_WHIP_PAN(clamp01((timeSec - 2.00) / (2.34 - 2.00)));
+
+  // 4. Exponential Portal Zoom Into Button (3.80s -> 4.02s, Ref F115-F121)
+  const uPortal = clamp01((timeSec - 3.80) / (4.02 - 3.80));
+  const portalScaleMult = 1.0 + Math.pow(uPortal, 3.0) * 6.8;
+
+  // Native Pill is 1460 x 296; at base scale 0.43 it renders as 628 x 127 centered (1:1 Ref F016);
+  // at macro scale 1.86 it fills ~545px height (51% of 1080p) matching Ref F046-F106 1:1!
+  const baseRigScale = interpolate(pPush, [0, 1], [0.43, 1.86]) * introScale * portalScaleMult;
+
+  // Pan X in native pill coordinates:
+  // Push pans +355px right so left half of pill fills screen & right button goes off-screen right (1:1 Ref F046!);
+  // Whip-pan shifts to -385px so right CTA button sits hero-centered while trailing ".id" peeks on far left (1:1 Ref F071!)
+  const panX =
+    interpolate(pPush, [0, 1], [0, 355]) +
+    interpolate(pPan, [0, 1], [0, -740]);
+
+  // Typed domain characters ("z-automation.my.id")
+  let typedCount = 0;
+  for (let i = 0; i < CHAR_TIMES.length; i++) {
+    if (timeSec >= CHAR_TIMES[i]) typedCount = i + 1;
+  }
+  const visibleDomain = TYPED_DOMAIN.slice(0, typedCount);
+  const showCaret =
+    timeSec >= 0.62 &&
+    timeSec <= 2.25 &&
+    (timeSec < 1.78 || Math.floor((timeSec - 1.78) * 4.5) % 2 === 0);
+
+  // 5. 3D Frosted Glass Cursor Choreography (2.66s -> 3.74s, Ref F080-F112)
+  const showCursor = timeSec >= 2.66 && timeSec <= 3.76;
+  const pCurIn = EASE_CURSOR_GLIDE(clamp01((timeSec - 2.66) / (3.08 - 2.66)));
+  const pCurExit = EASE_CURSOR_EXIT(clamp01((timeSec - 3.38) / (3.74 - 3.38)));
+
+  // Cursor press squish right at 3.15s (Ref F095)
+  const pressPulse =
+    timeSec >= 3.11 && timeSec <= 3.34
+      ? Math.sin(((timeSec - 3.11) / 0.23) * Math.PI)
+      : 0;
+
+  // Cursor coords relative to the CTA button center
+  const curX =
+    interpolate(pCurIn, [0, 1], [-580, -34]) +
+    interpolate(pCurExit, [0, 1], [0, 480]);
+  const curY =
+    interpolate(pCurIn, [0, 1], [-195, 10]) +
+    interpolate(pCurExit, [0, 1], [0, 75]);
+  const curScale = 1.0 - pressPulse * 0.18;
+
+  // Button press + luminous frosted white-sky flood (3.15s -> 3.85s, Ref F095-F116)
+  const btnScale = 1.0 - pressPulse * 0.045;
+  const btnFlood = EASE_OUT_EXPO(clamp01((timeSec - 3.22) / (3.72 - 3.22)));
+
+  // In Ref F016 (0.50s), the zoomed-out mini button glows bright white-sky, then settles into dark recessed glass by F071 (2.33s)!
+  const initialWhiteBtnGlow = 1.0 - pPan;
+
+  // Circular shock-ripple at click impact (3.14s -> 3.48s, Ref F095-F104)
+  const uRipple = clamp01((timeSec - 3.14) / 0.34);
+  const showRipple = timeSec >= 3.14 && timeSec <= 3.48;
+
+  // Crossfade dark Act 1 wrapper from 3.86s -> 4.01s so at 3.93s (Ref F119) the blurred Cobalt Sky glows right through the frosted portal!
+  const act1FadeOut = interpolate(timeSec, [3.85, 4.01], [1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        backgroundColor: '#061017',
+        overflow: 'hidden',
+        opacity: act1FadeOut,
+      }}
+    >
+      {/* Out-of-Focus Atmospheric Bokeh Orbs (Zero grid, zero HUD!) */}
+      <div
+        style={{
+          position: 'absolute',
+          left: '24%',
+          top: '-18%',
+          width: 960,
+          height: 620,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(110, 134, 186, 0.36) 0%, rgba(20, 40, 68, 0) 70%)',
+          filter: 'blur(90px)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          left: '18%',
+          bottom: '-22%',
+          width: 1120,
+          height: 700,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(44, 122, 168, 0.42) 0%, rgba(16, 48, 72, 0) 72%)',
+          filter: 'blur(95px)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          right: '-8%',
+          bottom: '-12%',
+          width: 760,
+          height: 580,
+          borderRadius: '50%',
+          background:
+            'radial-gradient(circle, rgba(22, 102, 88, 0.28) 0%, rgba(8, 28, 28, 0) 72%)',
+          filter: 'blur(85px)',
+        }}
+      />
+
+      {/* Camera Rig Centering the High-DPI Liquid Glass Pill */}
+      <AbsoluteFill
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: introOpacity,
+          filter: introBlur > 0.2 ? `blur(${introBlur.toFixed(1)}px)` : undefined,
+        }}
+      >
+        <div
+          style={{
+            width: 1460,
+            height: 284,
+            borderRadius: 999,
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0 44px 0 96px',
+            boxSizing: 'border-box',
+            transform: `scale(${baseRigScale}) translate3d(${panX}px, 0px, 0px)`,
+            transformOrigin: 'center center',
+            // Authentic Refractive Liquid-Glass Shader (matching Ref F016-F096 caustics!)
+            background:
+              'linear-gradient(122deg, rgba(155, 214, 248, 0.16) 0%, rgba(36, 78, 108, 0.28) 28%, rgba(145, 218, 255, 0.30) 56%, rgba(28, 66, 92, 0.32) 82%, rgba(175, 232, 255, 0.22) 100%)',
+            border: '3px solid rgba(186, 236, 255, 0.72)',
+            boxShadow:
+              '0 0 55px rgba(96, 198, 255, 0.26), inset 0 4px 26px rgba(255, 255, 255, 0.32), inset 0 -6px 28px rgba(90, 195, 255, 0.25)',
+          }}
+        >
+          {/* Top Specular Caustic Hotspot Streak (Ref F036-F056) */}
+          <div
+            style={{
+              position: 'absolute',
+              top: -2,
+              left: '26%',
+              width: '38%',
+              height: 7,
+              borderRadius: 999,
+              background:
+                'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%)',
+              filter: 'blur(1.5px)',
+              pointerEvents: 'none',
+            }}
+          />
+          {/* Right Curve Caustic Specular Rim Glow (Ref F071-F106) */}
+          <div
+            style={{
+              position: 'absolute',
+              right: -3,
+              top: '14%',
+              bottom: '14%',
+              width: 9,
+              borderRadius: 999,
+              background:
+                'linear-gradient(180deg, rgba(180,235,255,0) 0%, rgba(235,250,255,0.96) 50%, rgba(180,235,255,0) 100%)',
+              filter: 'blur(1.5px)',
+              pointerEvents: 'none',
+            }}
+          />
+
+          {/* Left Input Field: Crisp Typed Domain ("z-automation.my.id|") */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              fontFamily: "'Aeonik', sans-serif",
+              fontWeight: 400,
+              fontSize: 64,
+              letterSpacing: '-0.015em',
+              color: '#FFFFFF',
+              whiteSpace: 'nowrap',
+              textShadow: '0 2px 14px rgba(0, 0, 0, 0.25)',
+            }}
+          >
+            <span>{visibleDomain}</span>
+            <span
+              style={{
+                display: 'inline-block',
+                width: 4,
+                height: 68,
+                marginLeft: 6,
+                borderRadius: 2,
+                backgroundColor: '#E2F4FF',
+                opacity: showCaret ? 1 : 0,
+              }}
+            />
+          </div>
+
+          {/* Right Recessed Liquid-Glass CTA Button ("Mulai Otomasi") */}
+          <div
+            style={{
+              width: 500,
+              height: 196,
+              borderRadius: 999,
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transform: `scale(${btnScale})`,
+              overflow: 'hidden',
+              background:
+                'radial-gradient(125% 140% at 30% 20%, rgba(24, 64, 90, 0.92) 0%, rgba(8, 25, 38, 0.96) 68%, rgba(16, 48, 68, 0.94) 100%)',
+              border: '3px solid rgba(176, 234, 255, 0.62)',
+              boxShadow:
+                'inset 0 6px 20px rgba(215, 245, 255, 0.38), inset 0 -6px 18px rgba(0, 0, 0, 0.55), 0 8px 28px rgba(0, 0, 0, 0.35)',
+            }}
+          >
+            {/* Initial Bright Frosted Ice Glow when zoomed out at 0.50s (Ref F016!) */}
+            {initialWhiteBtnGlow > 0.01 ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: 999,
+                  background:
+                    'linear-gradient(110deg, #E8F6FF 0%, #BFE4FF 100%)',
+                  opacity: initialWhiteBtnGlow * 0.92,
+                  zIndex: 0,
+                }}
+              />
+            ) : null}
+
+            {/* Button Text: Sky-Blue -> Crisp White Gradient (matching "Join Waitlist" in Ref F071!) */}
+            <span
+              style={{
+                fontFamily: "'Aeonik', sans-serif",
+                fontWeight: 500,
+                fontSize: 52,
+                letterSpacing: '-0.02em',
+                ...(initialWhiteBtnGlow > 0.5
+                  ? { color: '#3988C4' }
+                  : {
+                      background:
+                        'linear-gradient(90deg, #6AC2FF 0%, #BEE5FF 36%, #FFFFFF 72%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }),
+                opacity: 1 - btnFlood * 0.96,
+                position: 'relative',
+                zIndex: 1,
+              }}
+            >
+              Mulai Otomasi
+            </span>
+
+            {/* Translucent Luminous Frosted Sky-Blue Portal Flood After Click (Ref F106-F120!) */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                borderRadius: 999,
+                opacity: btnFlood,
+                background:
+                  'radial-gradient(110% 130% at 38% 45%, rgba(226, 245, 255, 0.88) 0%, rgba(125, 202, 255, 0.72) 55%, rgba(88, 185, 245, 0.68) 100%)',
+                boxShadow: 'inset 0 0 38px rgba(255, 255, 255, 0.92)',
+                zIndex: 2,
+              }}
+            />
+
+            {/* Circular Frosted Click Shock-Ripple (Ref F096-F101) */}
+            {showRipple ? (
+              <div
+                style={{
+                  position: 'absolute',
+                  width: interpolate(uRipple, [0, 1], [72, 290]),
+                  height: interpolate(uRipple, [0, 1], [72, 290]),
+                  borderRadius: '50%',
+                  background:
+                    'radial-gradient(circle, rgba(255,255,255,0.94) 0%, rgba(190,235,255,0.62) 54%, rgba(140,215,255,0) 78%)',
+                  border: '3px solid rgba(255, 255, 255, 0.88)',
+                  opacity: 1 - Math.pow(uRipple, 1.4),
+                  zIndex: 3,
+                  pointerEvents: 'none',
+                }}
+              />
+            ) : null}
+          </div>
+
+          {/* 3D Frosted Glass Dart Cursor (Ref F081-F111) */}
+          {showCursor ? (
+            <div
+              style={{
+                position: 'absolute',
+                right: 280,
+                top: '50%',
+                marginTop: -76,
+                transform: `translate3d(${curX}px, ${curY}px, 0px) scale(${curScale})`,
+                zIndex: 10,
+                pointerEvents: 'none',
+                filter: 'drop-shadow(0 18px 28px rgba(4, 16, 28, 0.55))',
+              }}
+            >
+              <svg width="210" height="156" viewBox="0 0 176 132" fill="none">
+                <defs>
+                  <linearGradient id="glass-cursor-fill" x1="12" y1="14" x2="156" y2="96" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="rgba(165, 228, 255, 0.52)" />
+                    <stop offset="55%" stopColor="rgba(235, 250, 255, 0.82)" />
+                    <stop offset="100%" stopColor="rgba(255, 255, 255, 0.96)" />
+                  </linearGradient>
+                  <linearGradient id="glass-cursor-rim" x1="10" y1="10" x2="162" y2="80" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#8EE4FF" />
+                    <stop offset="65%" stopColor="#FFFFFF" />
+                    <stop offset="100%" stopColor="#C2F0FF" />
+                  </linearGradient>
+                </defs>
+                {/* 3D Sleek Right-Pointing Glass Dart */}
+                <path
+                  d="M18 18 L158 66 L26 112 L46 66 Z"
+                  fill="url(#glass-cursor-fill)"
+                  stroke="url(#glass-cursor-rim)"
+                  strokeWidth="4.5"
+                  strokeLinejoin="round"
+                />
+                {/* Upper Facet Specular Highlight */}
+                <path
+                  d="M22 22 L152 66 L48 66 Z"
+                  fill="rgba(255, 255, 255, 0.34)"
+                />
+              </svg>
+            </div>
+          ) : null}
+        </div>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// Act 2 Typography (4.83s - 7.16s, Ref F146-F215):
+// "Bangun Sistem / Otomasi / sekarang"
+// ============================================================================
+const Act2HeroText: React.FC<{ timeSec: number }> = ({ timeSec }) => {
+  if (timeSec < 4.80 || timeSec > 7.18) return null;
+
+  const pW1 = EASE_OUT_EXPO(clamp01((timeSec - 4.83) / 0.24)); // Bangun
+  const pW2 = EASE_OUT_EXPO(clamp01((timeSec - 5.00) / 0.24)); // Sistem
+  const pW3 = EASE_OUT_EXPO(clamp01((timeSec - 5.17) / 0.28)); // Otomasi
+  const pW4 = EASE_OUT_EXPO(clamp01((timeSec - 5.33) / 0.26)); // sekarang
+
+  // Downward exit in sync with Hermes (6.84s -> 7.16s, Ref F206-F215)
+  const pExit = EASE_DROP_DOWN(clamp01((timeSec - 6.84) / (7.16 - 6.84)));
+  const dropY = pExit * 690;
+
+  // Iridescent warm peach-gold-rose-to-white shimmer across "Otomasi" (5.62s -> 6.50s, Ref F170-F195)
+  const shimmerBell =
+    timeSec >= 5.58 && timeSec <= 6.58
+      ? Math.sin(((timeSec - 5.58) / 1.0) * Math.PI)
+      : 0;
+  const gradPos = interpolate(clamp01((timeSec - 5.58) / 1.0), [0, 1], [120, -20]);
+
+  return (
+    <AbsoluteFill
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transform: `translate3d(0px, ${-34 + dropY}px, 0px)`,
+        pointerEvents: 'none',
+      }}
+    >
+      {/* Line 1: "Bangun Sistem" */}
+      <div
+        style={{
+          display: 'flex',
+          gap: 15,
+          fontFamily: "'Aeonik', sans-serif",
+          fontWeight: 500,
+          fontSize: 56,
+          lineHeight: 1.08,
+          letterSpacing: '-0.022em',
+          color: '#FFFFFF',
+        }}
+      >
+        <span
+          style={{
+            opacity: pW1,
+            transform: `translateY(${(1 - pW1) * 16}px) scale(${0.86 + 0.14 * pW1})`,
+          }}
+        >
+          Bangun
+        </span>
+        <span
+          style={{
+            opacity: pW2,
+            transform: `translateY(${(1 - pW2) * 16}px) scale(${0.86 + 0.14 * pW2})`,
+          }}
+        >
+          Sistem
+        </span>
+      </div>
+
+      {/* Line 2: "Otomasi" (Large Hero Word + Clean Warm Iridescent Shimmer Sweep, Zero Box Artifact!) */}
+      <div
+        style={{
+          position: 'relative',
+          marginTop: 2,
+          marginBottom: 4,
+          opacity: pW3,
+          transform: `translateY(${(1 - pW3) * 20}px) scale(${0.84 + 0.16 * pW3})`,
+        }}
+      >
+        {/* Base Pure White Text */}
+        <span
+          style={{
+            fontFamily: "'Aeonik', sans-serif",
+            fontWeight: 600,
+            fontSize: 112,
+            lineHeight: 1.02,
+            letterSpacing: '-0.034em',
+            color: '#FFFFFF',
+            display: 'block',
+          }}
+        >
+          Otomasi
+        </span>
+
+        {/* Warm Peach-Gold-Rose Shimmer Overlay (Ref F176-F191, no CSS filter so bounding-box never paints!) */}
+        {shimmerBell > 0.01 ? (
+          <span
+            style={{
+              position: 'absolute',
+              inset: 0,
+              fontFamily: "'Aeonik', sans-serif",
+              fontWeight: 600,
+              fontSize: 112,
+              lineHeight: 1.02,
+              letterSpacing: '-0.034em',
+              backgroundImage: `linear-gradient(95deg, #FFFFFF ${gradPos - 35}%, #FFD2A6 ${gradPos}%, #FFB5D6 ${gradPos + 28}%, #C6E8FF ${gradPos + 55}%, #FFFFFF ${gradPos + 85}%)`,
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              color: 'transparent',
+              WebkitTextFillColor: 'transparent',
+              opacity: shimmerBell,
+            }}
+          >
+            Otomasi
+          </span>
+        ) : null}
+      </div>
+
+      {/* Line 3: "sekarang" */}
+      <div
+        style={{
+          fontFamily: "'Aeonik', sans-serif",
+          fontWeight: 500,
+          fontSize: 58,
+          lineHeight: 1.08,
+          letterSpacing: '-0.022em',
+          color: '#FFFFFF',
+          opacity: pW4,
+          transform: `translateY(${(1 - pW4) * 16}px) scale(${0.86 + 0.14 * pW4})`,
+        }}
+      >
+        sekarang
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// Act 3 Left-Side Rubber-Band Stretch Typography (8.67s - 10.72s, Ref F261-F321):
+// "lewat Web 3D / dan Agen AI"
+// ============================================================================
+const RubberWord: React.FC<{
   text: string;
-  t: number;
-  start: number;
-  fontSize?: number;
-  color?: string;
-  targetWeight?: number;
-  italicSerif?: boolean;
-  accentGradient?: string;
-  marginRight?: number;
-}> = ({
-  text,
-  t,
-  start,
-  fontSize = 78,
-  color = '#F5F7FA',
-  targetWeight = 800,
-  italicSerif = false,
-  accentGradient,
-  marginRight = 18,
-}) => {
-  const dt = t - start;
-  const prog = dampedSpring(dt, 16, 0.82);
-  const rawLin = clamp01(dt / 0.34);
-  const yPct = (1 - prog) * 112;
-  const opacity = clamp01(dt / 0.12);
-  const weight = Math.round(200 + (targetWeight - 200) * smoothstep(0, 1, rawLin));
-  const tracking = (1 - smoothstep(0, 1, rawLin)) * 0.14 - 0.03;
-  const blurPx = (1 - smoothstep(0, 1, rawLin)) * 7;
+  timeSec: number;
+  startSec: number;
+  fontSize: number;
+  fontWeight: number;
+  gradient?: string;
+}> = ({ text, timeSec, startSec, fontSize, fontWeight, gradient }) => {
+  if (timeSec < startSec) return null;
+  const p = EASE_RUBBER_SNAP(clamp01((timeSec - startSec) / 0.28));
+  const opacity = clamp01((timeSec - startSec) / 0.08);
+  // Signature Sanctum horizontal rubber-band stretch (scaleX: 1.62 -> 1.00, Ref F262->F268!)
+  const scaleX = interpolate(p, [0, 1], [1.62, 1.0]);
+  const scaleY = interpolate(p, [0, 1], [0.88, 1.0]);
 
   return (
     <span
       style={{
         display: 'inline-block',
-        overflow: 'hidden',
-        verticalAlign: 'bottom',
-        paddingBottom: '0.14em',
-        marginBottom: '-0.14em',
-        paddingRight: italicSerif ? '0.18em' : '0.04em',
-        marginRight: italicSerif ? marginRight - 8 : marginRight,
+        fontFamily: "'Aeonik', sans-serif",
+        fontSize,
+        fontWeight,
+        letterSpacing: '-0.028em',
+        lineHeight: 1.12,
+        opacity,
+        transformOrigin: 'left center',
+        transform: `scale(${scaleX.toFixed(3)}, ${scaleY.toFixed(3)})`,
+        ...(gradient
+          ? {
+              backgroundImage: gradient,
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              color: 'transparent',
+              WebkitTextFillColor: 'transparent',
+            }
+          : { color: '#FFFFFF' }),
       }}
     >
-      <span
-        style={{
-          display: 'inline-block',
-          transform: `translate3d(0, ${yPct.toFixed(2)}%, 0)`,
-          opacity,
-          filter: blurPx > 0.2 ? `blur(${blurPx.toFixed(1)}px)` : 'none',
-          fontFamily: italicSerif
-            ? "'Instrument Serif', Georgia, serif"
-            : "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif",
-          fontStyle: italicSerif ? 'italic' : 'normal',
-          fontWeight: italicSerif ? 400 : weight,
-          fontSize,
-          lineHeight: 1.06,
-          letterSpacing: italicSerif ? '-0.01em' : `${tracking.toFixed(3)}em`,
-          color: accentGradient ? 'transparent' : color,
-          backgroundImage: accentGradient || 'none',
-          WebkitBackgroundClip: accentGradient ? 'text' : undefined,
-          backgroundClip: accentGradient ? 'text' : undefined,
-        }}
-      >
-        {text}
-      </span>
+      {text}
     </span>
   );
 };
 
-/**
- * Character-by-character staggered reveal in Instrument Serif Italic or Sans
- */
-const StaggeredChars: React.FC<{
-  text: string;
-  t: number;
-  start: number;
-  charDelay?: number;
-  fontSize?: number;
-  italicSerif?: boolean;
-  color?: string;
-  gradient?: string;
-}> = ({
-  text,
-  t,
-  start,
-  charDelay = 0.018,
-  fontSize = 86,
-  italicSerif = true,
-  color = '#00F5D4',
-  gradient,
-}) => {
+const Act3RubberHeadline: React.FC<{ timeSec: number }> = ({ timeSec }) => {
+  if (timeSec < 8.65 || timeSec > 10.72) return null;
+
+  // Synchronized 3D Y-axis whip-spin into center (10.50s -> 10.71s, Ref F316-F321)
+  const pWhip = EASE_WHIP_SPIN(clamp01((timeSec - 10.50) / (10.71 - 10.50)));
+  const whipX = interpolate(pWhip, [0, 1], [0, 260]);
+  const whipRotY = interpolate(pWhip, [0, 1], [0, 84]);
+  const whipScale = interpolate(pWhip, [0, 1], [1.0, 0.78]);
+  const whipBlur = interpolate(pWhip, [0, 0.35, 1], [0, 6, 26]);
+  const opacity = interpolate(timeSec, [10.61, 10.71], [1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
   return (
-    <span
+    <div
       style={{
-        display: 'inline-flex',
-        overflow: 'hidden',
-        verticalAlign: 'bottom',
-        paddingBottom: '0.16em',
-        marginBottom: '-0.16em',
-        paddingRight: italicSerif ? '0.22em' : '0.05em',
+        position: 'absolute',
+        left: 315,
+        top: '50%',
+        transform: `translate3d(${whipX}px, -52%, 0px) perspective(1200px) rotateY(${whipRotY}deg) scale(${whipScale})`,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 4,
+        opacity,
+        filter: whipBlur > 0.2 ? `blur(${whipBlur.toFixed(1)}px)` : undefined,
+        pointerEvents: 'none',
       }}
     >
-      {text.split('').map((ch, i) => {
-        const dt = t - (start + i * charDelay);
-        const sp = dampedSpring(dt, 17, 0.8);
-        const op = clamp01(dt / 0.1);
-        const y = (1 - sp) * 105;
-        return (
-          <span
-            key={i}
-            style={{
-              display: 'inline-block',
-              whiteSpace: 'pre',
-              transform: `translate3d(0, ${y.toFixed(1)}%, 0)`,
-              opacity: op,
-              fontFamily: italicSerif
-                ? "'Instrument Serif', Georgia, serif"
-                : "'Plus Jakarta Sans', sans-serif",
-              fontStyle: italicSerif ? 'italic' : 'normal',
-              fontWeight: italicSerif ? 400 : 800,
-              fontSize,
-              lineHeight: 1.04,
-              letterSpacing: italicSerif ? '0.005em' : '-0.03em',
-              color: gradient ? 'transparent' : color,
-              backgroundImage: gradient || 'none',
-              WebkitBackgroundClip: gradient ? 'text' : undefined,
-              backgroundClip: gradient ? 'text' : undefined,
-            }}
-          >
-            {ch}
-          </span>
-        );
-      })}
-    </span>
+      {/* Line 1: "lewat Web 3D" */}
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 22 }}>
+        <RubberWord
+          text="lewat"
+          timeSec={timeSec}
+          startSec={8.67}
+          fontSize={78}
+          fontWeight={400}
+        />
+        <RubberWord
+          text="Web 3D"
+          timeSec={timeSec}
+          startSec={8.83}
+          fontSize={96}
+          fontWeight={600}
+        />
+      </div>
+
+      {/* Line 2: "dan Agen AI" */}
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 22 }}>
+        <RubberWord
+          text="dan"
+          timeSec={timeSec}
+          startSec={8.97}
+          fontSize={78}
+          fontWeight={400}
+        />
+        <RubberWord
+          text="Agen AI"
+          timeSec={timeSec}
+          startSec={9.15}
+          fontSize={98}
+          fontWeight={600}
+          gradient="linear-gradient(95deg, #FFD3A8 0%, #F9B4D4 48%, #DCE8FF 100%)"
+        />
+      </div>
+    </div>
   );
 };
 
-export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
-  domain = 'z-automation.my.id',
-  audioSrc = 'assets/audio/masterpiece-128bpm.wav',
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const t = frame / fps;
+// ============================================================================
+// Act 4 (10.66s - 14.84s, Ref F320-F445):
+// Mascot Spin-In, Squash-&-Stretch Bounce & "z-automation" Brand Lockup
+// ============================================================================
+const Act4BrandLockup: React.FC<{ timeSec: number }> = ({ timeSec }) => {
+  if (timeSec < 10.65) return null;
 
-  // =========================================================================
-  // SCENE TIMING & CAMERA WHIP / Z-AXIS ZOOM-THROUGH ENVELOPES
-  // =========================================================================
-  // Scene 1: 0.00s - 1.875s (Zoom-through at 1.48s - 1.875s)
-  const s1ZoomProg = Math.pow(clamp01((t - 1.48) / (1.875 - 1.48)), 2.8);
-  const s1Scale = 1 + s1ZoomProg * 15;
-  const s1Opacity = t < 1.875 ? 1 - smoothstep(1.68, 1.875, t) : 0;
-  const s1Blur = s1ZoomProg * 18;
+  // 1. Spin-in out of close-up blur (10.66s -> 10.98s, Ref F320-F330)
+  const pArrive = EASE_OUT_EXPO(clamp01((timeSec - 10.66) / (10.98 - 10.66)));
+  const arriveBlur = interpolate(clamp01((timeSec - 10.66) / 0.26), [0, 1], [24, 0]);
+  const arriveOpacity = clamp01((timeSec - 10.66) / 0.10);
 
-  // Scene 2: 1.875s - 3.75s (Whip-pan & Dolly Push-In into 3D Glass Stage at 3.25s - 3.85s)
-  const s2Enter = dampedSpring(t - 1.875, 14, 0.84);
-  const s2Exit = smoothstep(3.25, 3.78, t);
-  const s2Opacity =
-    t >= 1.75 && t <= 3.85
-      ? smoothstep(1.75, 1.95, t) * (1 - smoothstep(3.45, 3.8, t))
-      : 0;
+  // 2. Signature Squash-and-Stretch Anticipation Lean & Bounce (11.35s -> 11.94s, Ref F341-F358)
+  let mascotSkewX = 0;
+  let mascotRot = 0;
+  let squashX = 1.0;
+  let squashY = 1.0;
 
-  // Scene 3-5: Apple Titanium Glass Stage (Visible from 2.65s as tilted 3D card -> expands full-bleed at 3.75s -> exits at 11.25s via Shockwave Zoom-Through)
-  const show3DStage = t >= 2.55 && t <= 11.35;
-  const cardRise = dampedSpring(t - 2.6, 12, 0.82);
-  const dollyExpand = smoothstep(3.3, 3.95, t);
-  const s5ZoomOut = Math.pow(clamp01((t - 10.85) / 0.4), 2.6);
+  if (timeSec >= 11.35 && timeSec < 11.55) {
+    // Lean back-left & squash (Ref F346!)
+    const u = Math.sin(((timeSec - 11.35) / 0.20) * (Math.PI / 2));
+    mascotSkewX = -21 * u;
+    mascotRot = -10 * u;
+    squashX = 1.0 + 0.22 * u;
+    squashY = 1.0 - 0.16 * u;
+  } else if (timeSec >= 11.55 && timeSec < 11.78) {
+    // Spring upright & stretch joyfully (Ref F351-F353!)
+    const u = (timeSec - 11.55) / 0.23;
+    mascotSkewX = interpolate(u, [0, 0.55, 1], [-21, 6, 0]);
+    mascotRot = interpolate(u, [0, 0.55, 1], [-10, 7, 0]);
+    squashX = interpolate(u, [0, 0.55, 1], [1.22, 0.91, 1.0]);
+    squashY = interpolate(u, [0, 0.55, 1], [0.84, 1.12, 1.0]);
+  }
 
-  // Scene 6: Editorial Cream Flip (11.25s - 13.125s)
-  const creamEnter = smoothstep(11.05, 11.28, t);
-  const creamZoomThrough = Math.pow(clamp01((t - 12.76) / (13.125 - 12.76)), 2.6);
-  const creamOpacity =
-    t >= 11.0 && t <= 13.2
-      ? creamEnter * (1 - smoothstep(12.92, 13.15, t))
-      : 0;
+  // 3. Scale down & slide left into clean horizontal lockup (11.82s -> 12.24s, Ref F355-F367)
+  const pShrink = EASE_OUT_EXPO(clamp01((timeSec - 11.80) / 0.24));
+  const pSlide = EASE_OUT_EXPO(clamp01((timeSec - 11.94) / 0.32));
 
-  // Scene 7 & 8: Orbital Convergence (13.125s - 14.06s) -> Pure URL Lock (14.06s - 16.00s)
-  const s7Active = t >= 13.05;
-  const ringConverge = dampedSpring(t - 13.125, 13, 0.78);
-  const pillLock = dampedSpring(t - 13.82, 16, 0.78);
+  const baseScale =
+    interpolate(pArrive, [0, 1], [2.35, 1.0]) *
+    interpolate(pShrink, [0, 1], [1.0, 0.46]);
 
-  // Seamless Loop Compress at 15.76s -> 16.00s matching Frame 0 laser line
-  const loopClose = smoothstep(15.76, 15.98, t);
+  // Center the combined [Icon + "z-automation"] lockup cleanly around screen center (0, 0)
+  const iconX = interpolate(pSlide, [0, 1], [0, -345]);
+
+  // Wordmark elastic reveal (11.96s -> 12.34s, Ref F359-F370)
+  const showWordmark = timeSec >= 11.95;
+  const pWord = EASE_RUBBER_SNAP(clamp01((timeSec - 11.95) / 0.38));
+  const wordOpacity = clamp01((timeSec - 11.95) / 0.10);
+  const wordScaleX = interpolate(pWord, [0, 1], [1.22, 1.0]);
+  const wordX = interpolate(pWord, [0, 1], [-48, -242]);
 
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: '#06080E',
-        overflow: 'hidden',
-        fontFamily: "'Plus Jakarta Sans', -apple-system, sans-serif",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        opacity: arriveOpacity,
+        filter: arriveBlur > 0.2 ? `blur(${arriveBlur.toFixed(1)}px)` : undefined,
+        pointerEvents: 'none',
       }}
     >
-      {/* Google Fonts for Variable Sans + Instrument Serif Italic + JetBrains Mono */}
+      {/* Pure-White Mascot Icon (308px hero -> 142px lockup, 1:1 Ref F346 & F376!) */}
+      <div
+        style={{
+          position: 'absolute',
+          transform: `translate3d(${iconX}px, 0px, 0px) rotate(${mascotRot}deg) skewX(${mascotSkewX}deg) scale(${(
+            baseScale * squashX
+          ).toFixed(3)}, ${(baseScale * squashY).toFixed(3)})`,
+        }}
+      >
+        <ZMascotEmblem size={308} />
+      </div>
+
+      {/* Crisp Pure-White Aeonik Wordmark ("z-automation") */}
+      {showWordmark ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            transform: `translate3d(${wordX}px, -4px, 0px) scaleX(${wordScaleX.toFixed(3)})`,
+            transformOrigin: 'left center',
+            opacity: wordOpacity,
+            fontFamily: "'Aeonik', sans-serif",
+            fontWeight: 500,
+            fontSize: 112,
+            letterSpacing: '-0.036em',
+            color: '#FFFFFF',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          z-automation
+        </div>
+      ) : null}
+    </AbsoluteFill>
+  );
+};
+
+// ============================================================================
+// Master 1:1 Composition (1920 x 1080, 60 FPS, 890 Frames = 14.833s)
+// ============================================================================
+export const ZAutomationLaunch: React.FC<ZAutomationLaunchProps> = ({
+  audioSrc = 'assets/audio/z-launch-1to1.wav',
+}) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const timeSec = frame / fps;
+
+  // Authentic Z-Automation Website Font Faces (Aeonik Regular & Medium)
+  const aeonikRegularUrl = staticFile('assets/fonts/Aeonik-Regular.woff2');
+  const aeonikMediumUrl = staticFile('assets/fonts/Aeonik-Medium.woff2');
+
+  // Final Cinematic Fade-to-Black matching Ref F401-F436 (13.33s -> 14.50s)
+  const fadeToBlack = interpolate(timeSec, [13.33, 14.48], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
+  return (
+    <AbsoluteFill
+      style={{
+        backgroundColor: '#000000',
+        fontFamily: "'Aeonik', -apple-system, BlinkMacSystemFont, sans-serif",
+        overflow: 'hidden',
+      }}
+    >
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+          @font-face {
+            font-family: 'Aeonik';
+            src: url('${aeonikRegularUrl}') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+          }
+          @font-face {
+            font-family: 'Aeonik';
+            src: url('${aeonikMediumUrl}') format('woff2');
+            font-weight: 500 700;
+            font-style: normal;
+          }
         `}
       </style>
 
-      {/* Mastered 128 BPM Soundtrack + Real CC0 SFX */}
-      {audioSrc ? <Audio src={staticFile(audioSrc)} volume={1.0} /> : null}
+      {/* Acts 2, 3 & 4 Shared Cobalt Sky World (Rendered underneath Act 1 from 3.90s so the portal zoom seamlessly reveals it!) */}
+      {timeSec >= 3.90 ? (
+        <AbsoluteFill>
+          <CobaltSkyBackdrop timeSec={timeSec} />
 
-      {/* Ambient Obsidian Studio Radial Glow */}
-      <AbsoluteFill
-        style={{
-          background:
-            'radial-gradient(circle at 50% 42%, rgba(26, 47, 251, 0.14) 0%, rgba(0, 245, 212, 0.06) 34%, rgba(6, 8, 14, 1) 75%)',
-        }}
-      />
+          {/* Act 2: 3D OpenClaw Foreground Fly-By + 3D Hermes Portrait Float + Mini OpenClaw */}
+          {timeSec <= 7.26 ? (
+            <AbsoluteFill>
+              <Sanctum3DMascots timeSec={timeSec} width={1920} height={1080} />
+            </AbsoluteFill>
+          ) : null}
 
-      {/* Subtle Architectural Micro-Grid */}
-      <AbsoluteFill
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px)',
-          backgroundSize: '90px 90px',
-          opacity: 0.65,
-        }}
-      />
+          {/* Act 2: Centered 3-Line Aeonik Typography ("Bangun Sistem / Otomasi / sekarang") */}
+          <Act2HeroText timeSec={timeSec} />
 
-      {/* =====================================================================
-          SCENE 1: THE IGNITION & HOOK (0.00s - 1.875s)
-          ===================================================================== */}
-      {s1Opacity > 0.001 && (
+          {/* Act 3: Left-Side Rubber-Band Stretch Headline ("lewat Web 3D / dan Agen AI") */}
+          <Act3RubberHeadline timeSec={timeSec} />
+
+          {/* Act 3: 3D Extruded Titanium iPhone Showcase with Real z-automation.my.id Screenshot */}
+          <Phone3DShowcase timeSec={timeSec} />
+
+          {/* Act 4: Mascot Spin-In, Squash-&-Stretch Bounce & "z-automation" Lockup */}
+          <Act4BrandLockup timeSec={timeSec} />
+        </AbsoluteFill>
+      ) : null}
+
+      {/* Act 1: Liquid Glass Input Pill, Macro Pan & 3D Frosted Glass Cursor Portal (0.00s - 4.03s) */}
+      <Act1LiquidGlassIntro timeSec={timeSec} />
+
+      {/* Final Fade to Black (13.33s -> 14.48s, holding clean black to 14.83s) */}
+      {fadeToBlack > 0.001 ? (
         <AbsoluteFill
           style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            opacity: s1Opacity,
-            transform: `scale(${s1Scale.toFixed(3)})`,
-            filter: s1Blur > 0.3 ? `blur(${s1Blur.toFixed(1)}px)` : 'none',
+            backgroundColor: '#000000',
+            opacity: fadeToBlack,
+            pointerEvents: 'none',
           }}
-        >
-          {/* Opening Horizontal Optical Laser Line (Matches 16.00s loop point) */}
-          <div
-            style={{
-              width: `${Math.min(860, 140 + dampedSpring(t, 18, 0.8) * 720)}px`,
-              height: 2,
-              background:
-                'linear-gradient(90deg, transparent 0%, #00F5D4 25%, #FFFFFF 50%, #00F5D4 75%, transparent 100%)',
-              boxShadow: '0 0 24px rgba(0, 245, 212, 0.8)',
-              marginBottom: 44,
-              opacity: 1 - smoothstep(1.2, 1.55, t),
-            }}
-          />
+        />
+      ) : null}
 
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              padding: '0 64px',
-            }}
-          >
-            {/* Line 1: ERA WEB STATIS */}
-            <div style={{ marginBottom: 14 }}>
-              <ClipWord
-                text="ERA"
-                t={t}
-                start={0.04}
-                fontSize={76}
-                targetWeight={700}
-              />
-              <ClipWord
-                text="WEB"
-                t={t}
-                start={0.11}
-                fontSize={76}
-                targetWeight={700}
-              />
-              <ClipWord
-                text="STATIS"
-                t={t}
-                start={0.18}
-                fontSize={76}
-                targetWeight={800}
-                marginRight={0}
-              />
-            </div>
-
-            {/* Line 2: SUDAH Berakhir. */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'baseline',
-                justifyContent: 'center',
-                gap: 20,
-              }}
-            >
-              <ClipWord
-                text="SUDAH"
-                t={t}
-                start={BEAT * 1.0}
-                fontSize={92}
-                targetWeight={800}
-                marginRight={4}
-              />
-              <StaggeredChars
-                text="Berakhir."
-                t={t}
-                start={BEAT * 1.08}
-                charDelay={0.02}
-                fontSize={108}
-                italicSerif={true}
-                gradient="linear-gradient(135deg, #FFFFFF 0%, #00F5D4 65%, #38BDF8 100%)"
-              />
-            </div>
-          </div>
-        </AbsoluteFill>
-      )}
-
-      {/* =====================================================================
-          SCENE 2: THE ARCHITECTURAL MONOLITH (1.875s - 3.75s)
-          ===================================================================== */}
-      {s2Opacity > 0.001 && (
-        <AbsoluteFill
-          style={{
-            alignItems: 'center',
-            paddingTop: 250,
-            opacity: s2Opacity,
-            transform: `scale(${(0.88 + s2Enter * 0.12 + s2Exit * 0.35).toFixed(3)}) translateY(${(-s2Exit * 180).toFixed(1)}px)`,
-          }}
-        >
-          {/* Metallic Eyebrow Badge */}
-          <div
-            style={{
-              padding: '10px 26px',
-              borderRadius: 999,
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(0, 245, 212, 0.35)',
-              boxShadow: '0 0 30px rgba(0, 245, 212, 0.15)',
-              marginBottom: 34,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 12,
-            }}
-          >
-            <span
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                backgroundColor: '#00F5D4',
-                boxShadow: '0 0 12px #00F5D4',
-              }}
-            />
-            <span
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 20,
-                fontWeight: 700,
-                letterSpacing: '0.22em',
-                color: '#E2E8F0',
-              }}
-            >
-              Z-AUTOMATION
-            </span>
-          </div>
-
-          {/* Main Statement: Visi Nyata. / Tereksekusi Presisi. */}
-          <div style={{ textAlign: 'center', padding: '0 56px' }}>
-            <div style={{ marginBottom: 8 }}>
-              <ClipWord
-                text="Visi"
-                t={t}
-                start={4 * BEAT + 0.05}
-                fontSize={88}
-                targetWeight={800}
-              />
-              <ClipWord
-                text="Nyata."
-                t={t}
-                start={4 * BEAT + 0.14}
-                fontSize={96}
-                italicSerif={true}
-                accentGradient="linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%)"
-                marginRight={0}
-              />
-            </div>
-            <div>
-              <ClipWord
-                text="Tereksekusi"
-                t={t}
-                start={5 * BEAT}
-                fontSize={84}
-                targetWeight={800}
-              />
-              <StaggeredChars
-                text="Presisi."
-                t={t}
-                start={5 * BEAT + 0.08}
-                charDelay={0.018}
-                fontSize={102}
-                italicSerif={true}
-                gradient="linear-gradient(135deg, #00F5D4 0%, #38BDF8 60%, #FFFFFF 100%)"
-              />
-            </div>
-          </div>
-        </AbsoluteFill>
-      )}
-
-      {/* =====================================================================
-          SCENE 3, 4, 5: APPLE TITANIUM GLASS STAGE + REAL THREE.JS 3D ENGINE
-          (2.60s Preview -> 3.75s Dolly Push-In -> 11.25s Shockwave Zoom-Through)
-          ===================================================================== */}
-      {show3DStage && (
-        <AbsoluteFill
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            perspective: '1600px',
-          }}
-        >
-          {/* The 3D Apple Titanium Glass Stage Container */}
-          <div
-            style={{
-              width: `${860 + dollyExpand * 220}px`,
-              height: `${980 + dollyExpand * 940}px`,
-              borderRadius: `${(1 - dollyExpand) * 48}px`,
-              transform: `
-                translate3d(0, ${(1 - cardRise) * 520 + (1 - dollyExpand) * 320}px, 0)
-                rotateX(${((1 - dollyExpand) * 16).toFixed(2)}deg)
-                rotateY(${((1 - dollyExpand) * -10).toFixed(2)}deg)
-                scale(${(1 + s5ZoomOut * 4.5).toFixed(3)})
-              `,
-              background:
-                'linear-gradient(165deg, rgba(16, 22, 36, 0.88) 0%, rgba(6, 9, 16, 0.96) 100%)',
-              border:
-                dollyExpand < 0.98
-                  ? '1.5px solid rgba(255, 255, 255, 0.22)'
-                  : 'none',
-              boxShadow:
-                dollyExpand < 0.98
-                  ? '0 40px 110px rgba(0, 0, 0, 0.85), 0 0 60px rgba(0, 245, 212, 0.14), inset 0 1px 2px rgba(255,255,255,0.35)'
-                  : 'none',
-              overflow: 'hidden',
-              position: 'relative',
-              filter:
-                s5ZoomOut > 0.02
-                  ? `blur(${(s5ZoomOut * 16).toFixed(1)}px)`
-                  : 'none',
-            }}
-          >
-            {/* Real-Time Deterministic Three.js WebGL Stage */}
-            <HermesOpenClaw3DStage
-              timeSec={t}
-              width={1080}
-              height={1920}
-            />
-
-            {/* Specular Glass Reflection Sheen across the Titanium Capsule during Dolly Push-In */}
-            {dollyExpand < 0.99 && (
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: `linear-gradient(115deg, transparent ${20 + dollyExpand * 40}%, rgba(255,255,255,0.14) ${35 + dollyExpand * 40}%, transparent ${50 + dollyExpand * 40}%)`,
-                  pointerEvents: 'none',
-                }}
-              />
-            )}
-
-            {/* ---------------------------------------------------------------
-                SCENE 3 KINETIC TYPOGRAPHY OVERLAY: HERMES REASONING (3.75s - 6.56s)
-               --------------------------------------------------------------- */}
-            {t >= 3.72 && t < 6.5625 && (
-              <AbsoluteFill
-                style={{
-                  justifyContent: 'space-between',
-                  padding: '150px 64px 170px',
-                  pointerEvents: 'none',
-                  opacity: 1 - smoothstep(6.25, 6.55, t),
-                }}
-              >
-                {/* Top Left/Center Editorial Block */}
-                <div>
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 12,
-                      padding: '8px 20px',
-                      borderRadius: 999,
-                      background: 'rgba(6, 10, 18, 0.72)',
-                      border: '1px solid rgba(0, 245, 212, 0.4)',
-                      marginBottom: 22,
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: '50%',
-                        backgroundColor: '#00F5D4',
-                        boxShadow: '0 0 10px #00F5D4',
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: 18,
-                        fontWeight: 700,
-                        letterSpacing: '0.16em',
-                        color: '#00F5D4',
-                      }}
-                    >
-                      01 // NOUS HERMES ARCHITECT
-                    </span>
-                  </div>
-
-                  <div>
-                    <ClipWord
-                      text="HERMES"
-                      t={t}
-                      start={8.5 * BEAT}
-                      fontSize={92}
-                      targetWeight={800}
-                    />
-                    <StaggeredChars
-                      text="Berpikir."
-                      t={t}
-                      start={8.8 * BEAT}
-                      charDelay={0.02}
-                      fontSize={106}
-                      italicSerif={true}
-                      gradient="linear-gradient(135deg, #00F5D4 0%, #38BDF8 65%, #FFFFFF 100%)"
-                    />
-                  </div>
-                </div>
-
-                {/* Bottom Glass Caption Bar */}
-                <div
-                  style={{
-                    padding: '26px 34px',
-                    borderRadius: 28,
-                    background: 'rgba(8, 12, 22, 0.76)',
-                    border: '1px solid rgba(255, 255, 255, 0.14)',
-                    boxShadow: '0 24px 60px rgba(0,0,0,0.6)',
-                  }}
-                >
-                  <ClipWord
-                    text="Penalaran"
-                    t={t}
-                    start={9.3 * BEAT}
-                    fontSize={44}
-                    targetWeight={600}
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Strategis"
-                    t={t}
-                    start={9.5 * BEAT}
-                    fontSize={48}
-                    italicSerif={true}
-                    color="#00F5D4"
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="&"
-                    t={t}
-                    start={9.7 * BEAT}
-                    fontSize={44}
-                    targetWeight={400}
-                    color="#94A3B8"
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Orkestrasi"
-                    t={t}
-                    start={9.9 * BEAT}
-                    fontSize={44}
-                    targetWeight={700}
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Sistem."
-                    t={t}
-                    start={10.1 * BEAT}
-                    fontSize={44}
-                    targetWeight={700}
-                    marginRight={0}
-                  />
-                </div>
-              </AbsoluteFill>
-            )}
-
-            {/* ---------------------------------------------------------------
-                SCENE 4 KINETIC TYPOGRAPHY OVERLAY: NEURAL SYNAPSE DISPATCH (6.56s - 8.44s)
-               --------------------------------------------------------------- */}
-            {t >= 6.5625 && t < 8.4375 && (
-              <AbsoluteFill
-                style={{
-                  justifyContent: 'space-between',
-                  padding: '150px 64px 170px',
-                  pointerEvents: 'none',
-                  opacity: 1 - smoothstep(8.18, 8.43, t),
-                }}
-              >
-                <div style={{ textAlign: 'center' }}>
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 12,
-                      padding: '8px 22px',
-                      borderRadius: 999,
-                      background: 'rgba(6, 10, 18, 0.78)',
-                      border: '1px solid rgba(255, 255, 255, 0.22)',
-                      marginBottom: 20,
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: 18,
-                        fontWeight: 700,
-                        letterSpacing: '0.18em',
-                        color: '#F8FAFC',
-                      }}
-                    >
-                      NEURAL SYNAPSE DISPATCH // 32 PHOTONS
-                    </span>
-                  </div>
-
-                  <div>
-                    <ClipWord
-                      text="SINAPSIS"
-                      t={t}
-                      start={14.1 * BEAT}
-                      fontSize={92}
-                      targetWeight={800}
-                    />
-                    <StaggeredChars
-                      text="Otonom."
-                      t={t}
-                      start={14.35 * BEAT}
-                      charDelay={0.022}
-                      fontSize={106}
-                      italicSerif={true}
-                      gradient="linear-gradient(90deg, #00F5D4 0%, #FFFFFF 50%, #FF3B30 100%)"
-                    />
-                  </div>
-                </div>
-
-                {/* Live Synapse Bridge Telemetry Progress Bar */}
-                <div
-                  style={{
-                    padding: '22px 32px',
-                    borderRadius: 24,
-                    background: 'rgba(8, 12, 22, 0.78)',
-                    border: '1px solid rgba(255, 255, 255, 0.14)',
-                  }}
-                >
-                  <div
-                    style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: 18,
-                      color: '#CBD5E1',
-                      marginBottom: 12,
-                    }}
-                  >
-                    <span style={{ color: '#00F5D4' }}>HERMES &lt;think&gt;</span>
-                    <span>
-                      {Math.round(
-                        clamp01((t - 6.5625) / (8.4375 - 6.5625)) * 100
-                      )}
-                      %
-                    </span>
-                    <span style={{ color: '#FF3B30' }}>
-                      OPENCLAW &lt;exec&gt;
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      width: '100%',
-                      height: 6,
-                      borderRadius: 999,
-                      background: 'rgba(255,255,255,0.1)',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: `${clamp01((t - 6.5625) / (8.4375 - 6.5625)) * 100}%`,
-                        height: '100%',
-                        background:
-                          'linear-gradient(90deg, #00F5D4 0%, #FFFFFF 50%, #FF3B30 100%)',
-                        boxShadow: '0 0 16px #00F5D4',
-                      }}
-                    />
-                  </div>
-                </div>
-              </AbsoluteFill>
-            )}
-
-            {/* ---------------------------------------------------------------
-                SCENE 5 KINETIC TYPOGRAPHY OVERLAY: OPENCLAW EXECUTION (8.44s - 11.25s)
-               --------------------------------------------------------------- */}
-            {t >= 8.4375 && t <= 11.25 && (
-              <AbsoluteFill
-                style={{
-                  justifyContent: 'space-between',
-                  padding: '150px 64px 170px',
-                  pointerEvents: 'none',
-                  opacity: 1 - smoothstep(10.8, 11.15, t),
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 12,
-                      padding: '8px 20px',
-                      borderRadius: 999,
-                      background: 'rgba(20, 8, 12, 0.78)',
-                      border: '1px solid rgba(229, 37, 42, 0.55)',
-                      marginBottom: 22,
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: '50%',
-                        backgroundColor: '#FF3B30',
-                        boxShadow: '0 0 12px #FF3B30',
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: 18,
-                        fontWeight: 700,
-                        letterSpacing: '0.16em',
-                        color: '#FF6B6B',
-                      }}
-                    >
-                      02 // OPENCLAW EXECUTOR
-                    </span>
-                  </div>
-
-                  <div>
-                    <ClipWord
-                      text="OPENCLAW"
-                      t={t}
-                      start={18.0 * BEAT}
-                      fontSize={86}
-                      targetWeight={800}
-                    />
-                    <StaggeredChars
-                      text="Mengeksekusi."
-                      t={t}
-                      start={18.3 * BEAT}
-                      charDelay={0.016}
-                      fontSize={96}
-                      italicSerif={true}
-                      gradient="linear-gradient(135deg, #FF3B30 0%, #FF8A65 55%, #00F5D4 100%)"
-                    />
-                  </div>
-                </div>
-
-                {/* Bottom Glass Caption Bar */}
-                <div
-                  style={{
-                    padding: '26px 34px',
-                    borderRadius: 28,
-                    background: 'rgba(12, 10, 18, 0.8)',
-                    border: '1px solid rgba(229, 37, 42, 0.28)',
-                    boxShadow: '0 24px 60px rgba(0,0,0,0.65)',
-                  }}
-                >
-                  <ClipWord
-                    text="Otomasi"
-                    t={t}
-                    start={18.8 * BEAT}
-                    fontSize={44}
-                    targetWeight={700}
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Operasional"
-                    t={t}
-                    start={19.0 * BEAT}
-                    fontSize={48}
-                    italicSerif={true}
-                    color="#FF6B6B"
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="24/7"
-                    t={t}
-                    start={19.2 * BEAT}
-                    fontSize={44}
-                    targetWeight={800}
-                    color="#00F5D4"
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Tanpa"
-                    t={t}
-                    start={19.4 * BEAT}
-                    fontSize={44}
-                    targetWeight={600}
-                    marginRight={12}
-                  />
-                  <ClipWord
-                    text="Henti."
-                    t={t}
-                    start={19.6 * BEAT}
-                    fontSize={44}
-                    targetWeight={700}
-                    marginRight={0}
-                  />
-                </div>
-              </AbsoluteFill>
-            )}
-          </div>
-        </AbsoluteFill>
-      )}
-
-      {/* =====================================================================
-          SCENE 6: EDITORIAL CREAM FLIP - 3 PILAR EKOSISTEM (11.25s - 13.125s)
-          ===================================================================== */}
-      {creamOpacity > 0.001 && (
-        <AbsoluteFill
-          style={{
-            backgroundColor: '#EDEBE4',
-            color: '#06080E',
-            opacity: creamOpacity,
-            transform: `scale(${(1 + creamZoomThrough * 12).toFixed(3)})`,
-            filter:
-              creamZoomThrough > 0.02
-                ? `blur(${(creamZoomThrough * 16).toFixed(1)}px)`
-                : 'none',
-            padding: '220px 72px',
-            justifyContent: 'space-between',
-          }}
-        >
-          {/* Top Editorial Header */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              borderBottom: '2px solid rgba(6, 8, 14, 0.14)',
-              paddingBottom: 24,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 20,
-                fontWeight: 700,
-                letterSpacing: '0.18em',
-                color: '#06080E',
-              }}
-            >
-              Z-AUTOMATION // ARSITEKTUR INTI
-            </span>
-            <span
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 20,
-                fontWeight: 700,
-                color: '#1A2FFB',
-              }}
-            >
-              [ 01 — 03 ]
-            </span>
-          </div>
-
-          {/* 3 Kinetic Pillars synced to Beats 24, 25, 26 */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 70,
-              margin: 'auto 0',
-            }}
-          >
-            {/* Pillar 01: Beat 24 (11.25s) */}
-            <div
-              style={{
-                borderBottom: '1.5px solid rgba(6, 8, 14, 0.12)',
-                paddingBottom: 36,
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 20,
-                  fontWeight: 700,
-                  color: '#64748B',
-                  marginBottom: 10,
-                }}
-              >
-                01 // WEBGL & THREE.JS
-              </div>
-              <div>
-                <ClipWord
-                  text="Rekayasa"
-                  t={t}
-                  start={24 * BEAT}
-                  fontSize={92}
-                  color="#06080E"
-                  targetWeight={800}
-                />
-                <StaggeredChars
-                  text="Web 3D."
-                  t={t}
-                  start={24 * BEAT + 0.06}
-                  charDelay={0.02}
-                  fontSize={104}
-                  italicSerif={true}
-                  color="#06080E"
-                />
-              </div>
-            </div>
-
-            {/* Pillar 02: Beat 25 (11.719s) */}
-            <div
-              style={{
-                borderBottom: '1.5px solid rgba(6, 8, 14, 0.12)',
-                paddingBottom: 36,
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 20,
-                  fontWeight: 700,
-                  color: '#1A2FFB',
-                  marginBottom: 10,
-                }}
-              >
-                02 // HERMES × OPENCLAW
-              </div>
-              <div>
-                <ClipWord
-                  text="Integrasi"
-                  t={t}
-                  start={25 * BEAT}
-                  fontSize={92}
-                  color="#06080E"
-                  targetWeight={800}
-                />
-                <StaggeredChars
-                  text="Agen AI."
-                  t={t}
-                  start={25 * BEAT + 0.06}
-                  charDelay={0.02}
-                  fontSize={104}
-                  italicSerif={true}
-                  color="#1A2FFB"
-                />
-              </div>
-            </div>
-
-            {/* Pillar 03: Beat 26 (12.188s) */}
-            <div>
-              <div
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 20,
-                  fontWeight: 700,
-                  color: '#E5252A',
-                  marginBottom: 10,
-                }}
-              >
-                03 // SISTEM EKSEKUSI 24/7
-              </div>
-              <div>
-                <ClipWord
-                  text="Otomasi"
-                  t={t}
-                  start={26 * BEAT}
-                  fontSize={92}
-                  color="#06080E"
-                  targetWeight={800}
-                />
-                <StaggeredChars
-                  text="Mandiri."
-                  t={t}
-                  start={26 * BEAT + 0.06}
-                  charDelay={0.02}
-                  fontSize={104}
-                  italicSerif={true}
-                  color="#E5252A"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div />
-        </AbsoluteFill>
-      )}
-
-      {/* =====================================================================
-          SCENE 7 & 8: ORBITAL CONVERGENCE & PURE URL LOCK (13.125s - 16.00s)
-          Strictly ONLY the Apple Titanium Glass Pill + Live Typing of z-automation.my.id
-          ===================================================================== */}
-      {s7Active && (
-        <AbsoluteFill
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          {/* Converging Orbital Halo 1 (Hermes Cyan) */}
-          {t < 14.3 && (
-            <div
-              style={{
-                position: 'absolute',
-                width: `${760 * (1 - ringConverge * 0.72)}px`,
-                height: `${760 * (1 - ringConverge * 0.88)}px`,
-                borderRadius: 999,
-                border: '2px solid rgba(0, 245, 212, 0.65)',
-                boxShadow: '0 0 50px rgba(0, 245, 212, 0.35)',
-                transform: `rotate(${(1 - ringConverge) * -140}deg)`,
-                opacity: (1 - smoothstep(13.85, 14.2, t)) * smoothstep(13.1, 13.3, t),
-              }}
-            />
-          )}
-
-          {/* Converging Orbital Halo 2 (OpenClaw Crimson) */}
-          {t < 14.3 && (
-            <div
-              style={{
-                position: 'absolute',
-                width: `${880 * (1 - ringConverge * 0.76)}px`,
-                height: `${880 * (1 - ringConverge * 0.9)}px`,
-                borderRadius: 999,
-                border: '2px solid rgba(229, 37, 42, 0.65)',
-                boxShadow: '0 0 50px rgba(229, 37, 42, 0.35)',
-                transform: `rotate(${(1 - ringConverge) * 160}deg)`,
-                opacity: (1 - smoothstep(13.85, 14.2, t)) * smoothstep(13.1, 13.3, t),
-              }}
-            />
-          )}
-
-          {/* Soft Ambient Backlight behind the Apple Titanium Glass Pill */}
-          <div
-            style={{
-              position: 'absolute',
-              width: 780,
-              height: 220,
-              borderRadius: 999,
-              background:
-                'radial-gradient(ellipse at center, rgba(0, 245, 212, 0.24) 0%, rgba(26, 47, 251, 0.14) 45%, transparent 75%)',
-              filter: 'blur(32px)',
-              opacity: pillLock * (1 - loopClose),
-            }}
-          />
-
-          {/* THE APPLE TITANIUM GLASS PILL (Pure URL Lock: z-automation.my.id) */}
-          {t >= 13.78 && (
-            <div
-              style={{
-                position: 'relative',
-                width: `${Math.round(320 + pillLock * 580)}px`,
-                height: `${Math.max(2, Math.round(148 * (1 - loopClose * 0.985)))}px`,
-                borderRadius: 999,
-                background:
-                  'linear-gradient(165deg, rgba(22, 28, 44, 0.88) 0%, rgba(8, 11, 19, 0.96) 100%)',
-                border: '1.5px solid rgba(255, 255, 255, 0.24)',
-                boxShadow:
-                  '0 30px 90px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 245, 212, 0.18), inset 0 1.5px 2px rgba(255, 255, 255, 0.35)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0 48px',
-                overflow: 'hidden',
-                transform: `scale(${(0.84 + pillLock * 0.16).toFixed(3)})`,
-              }}
-            >
-              {/* Metallic Light Sweep (14.84s - 15.65s) */}
-              {t >= 14.82 && (
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: `linear-gradient(108deg, transparent ${-30 + ((t - 14.82) / 0.78) * 140}%, rgba(255, 255, 255, 0.28) ${-12 + ((t - 14.82) / 0.78) * 140}%, rgba(0, 245, 212, 0.25) ${0 + ((t - 14.82) / 0.78) * 140}%, transparent ${18 + ((t - 14.82) / 0.78) * 140}%)`,
-                    pointerEvents: 'none',
-                  }}
-                />
-              )}
-
-              {/* Content Inside Glass Pill: Glowing Status Dot + Live Typed Domain ONLY */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 22,
-                  opacity: 1 - smoothstep(15.72, 15.9, t),
-                }}
-              >
-                {/* Pulsing Quantum Cyan Dot */}
-                <span
-                  style={{
-                    width: 14,
-                    height: 14,
-                    borderRadius: '50%',
-                    backgroundColor: '#00F5D4',
-                    boxShadow: '0 0 18px #00F5D4, 0 0 36px #00F5D4',
-                    flexShrink: 0,
-                  }}
-                />
-
-                {/* Character-by-Character Live Typing of z-automation.my.id */}
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontSize: 56,
-                    fontWeight: 700,
-                    letterSpacing: '-0.02em',
-                  }}
-                >
-                  {domain.split('').map((ch, idx) => {
-                    const typeStart = 14.06 + idx * (0.74 / domain.length);
-                    const dtCh = t - typeStart;
-                    if (dtCh < 0) return null;
-                    const pop = dampedSpring(dtCh, 22, 0.75);
-                    const isDotOrTld = idx >= domain.indexOf('.');
-                    // Highlight sweep gleam on characters after 14.84s
-                    const sweepCenter =
-                      ((t - 14.84) / 0.72) * domain.length;
-                    const distSweep = Math.abs(idx - sweepCenter);
-                    const gleam =
-                      t >= 14.84 && distSweep < 3.2
-                        ? Math.cos((distSweep / 3.2) * (Math.PI / 2))
-                        : 0;
-
-                    return (
-                      <span
-                        key={idx}
-                        style={{
-                          display: 'inline-block',
-                          transform: `translateY(${((1 - pop) * 8 - gleam * 3).toFixed(1)}px) scale(${(0.9 + pop * 0.1 + gleam * 0.06).toFixed(3)})`,
-                          color:
-                            gleam > 0.35
-                              ? '#FFFFFF'
-                              : isDotOrTld
-                                ? '#00F5D4'
-                                : '#F8FAFC',
-                          textShadow:
-                            gleam > 0.2
-                              ? '0 0 24px rgba(0, 245, 212, 0.9)'
-                              : isDotOrTld
-                                ? '0 0 18px rgba(0, 245, 212, 0.35)'
-                                : 'none',
-                        }}
-                      >
-                        {ch}
-                      </span>
-                    );
-                  })}
-
-                  {/* Optical Typing Cursor */}
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      width: 4,
-                      height: 54,
-                      marginLeft: 8,
-                      borderRadius: 2,
-                      backgroundColor: '#00F5D4',
-                      boxShadow: '0 0 14px #00F5D4',
-                      opacity:
-                        t < 14.85
-                          ? 1
-                          : Math.sin(t * 16) > 0
-                            ? 0.85 * (1 - smoothstep(15.4, 15.75, t))
-                            : 0.15,
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-        </AbsoluteFill>
-      )}
+      {/* Frame-Locked Foley + 120 BPM Rhodes/Synth-Funk Audio */}
+      {audioSrc ? <Audio src={staticFile(audioSrc)} volume={1} /> : null}
     </AbsoluteFill>
   );
 };

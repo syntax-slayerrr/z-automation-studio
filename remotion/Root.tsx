@@ -6,36 +6,33 @@ import { ZAutomationSquarePromo } from './compositions/ZAutomationSquarePromo';
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* 9:16 Vertical Reel (Instagram Reels / TikTok / YouTube Shorts) — 16.0s @ 60fps (128 BPM) */}
+      {/* Flagship 1:1 Reference Design Composition — 1920x1080 (16:9), 14.83s @ 60fps */}
       <Composition
         id="ZAutomationLaunch"
         component={ZAutomationLaunch}
-        durationInFrames={960} // 16.0 seconds at 60 fps (32 beats @ 128 BPM)
+        durationInFrames={890}
         fps={60}
-        width={1080}
-        height={1920}
+        width={1920}
+        height={1080}
         defaultProps={{
-          title: 'Z-AUTOMATION',
-          tagline: 'Rekayasa Web 3D & Solusi Agen AI Otonom',
+          title: 'z-automation',
+          tagline: 'Bangun Sistem Otomasi sekarang lewat Web 3D dan Agen AI',
           domain: 'z-automation.my.id',
-          audioSrc: 'assets/audio/masterpiece-128bpm.wav',
+          audioSrc: 'assets/audio/z-launch-1to1.wav',
         }}
       />
 
-      {/* 1:1 Square Feed Video (Instagram Feed / Carousel Video) */}
+      {/* Clean 1080x1080 Square Adaptation (Zero HUD / Zero AI Slop) */}
       <Composition
         id="ZAutomationSquarePromo"
         component={ZAutomationSquarePromo}
-        durationInFrames={180} // 6 seconds at 30 fps
-        fps={30}
+        durationInFrames={890}
+        fps={60}
         width={1080}
         height={1080}
         defaultProps={{
-          headline: 'REKAYASA WEB 3D & AGEN AI OTONOM',
-          subheadline:
-            'Bukan sekadar website biasa. Kami membangun pengalaman interaktif & agen cerdas.',
           domain: 'z-automation.my.id',
-          audioSrc: 'assets/audio/voiceover.mp3',
+          audioSrc: 'assets/audio/z-launch-1to1.wav',
         }}
       />
     </>

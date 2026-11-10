@@ -23,10 +23,10 @@
 ## 3. Cartoon 3D Animation Engine (Stickman / Bean-Head 1:1 Reference Standard)
 - **Engine Path**: `remotion/videos/`
   - Reference Masterpiece: `remotion/videos/bridge/` (`BridgeShort` — "The Bridge That Fell for a Song")
-  - Production Short: `remotion/videos/garut/` (`GarutShort` — "What If UMR Garut 10 Juta")
+  - Templates & References: `.agents/skills/cartoon-3d-short/templates/`
 - **Installed Skills**:
-  - `cartoon-3d-short` (`C:\Users\nnnnn\.gemini\config\skills\cartoon-3d-short\SKILL.md`)
-  - `cartoon-short-kit` (`C:\Users\nnnnn\.gemini\config\skills\cartoon-short-kit\SKILL.md`)
+  - `cartoon-3d-short` (`.agents/skills/cartoon-3d-short/SKILL.md`)
+  - `cartoon-short-kit` (`.agents/skills/cartoon-short-kit/SKILL.md`)
 
 ### The 5 Golden Rules for 1:1 Stickman Style Reproduction:
 1. **Contact Shadow Multiply Blend**:

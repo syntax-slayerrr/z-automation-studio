@@ -4,21 +4,10 @@ import { ZAutomationLaunch } from './compositions/ZAutomationLaunch';
 import { ZAutomationSquarePromo } from './compositions/ZAutomationSquarePromo';
 import { KurzgesagtBlackHole } from './kurzgesagt/KurzgesagtBlackHole';
 import { BridgeShort, BRIDGE_FRAMES } from './videos/bridge/Bridge';
-import { GarutShort, GARUT_FRAMES } from './videos/garut/Garut';
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* Cartoon 3D Short: What If UMR Garut 10 Juta — 1080x1920 (9:16), 30fps */}
-      <Composition
-        id="GarutShort"
-        component={GarutShort}
-        durationInFrames={GARUT_FRAMES}
-        fps={30}
-        width={1080}
-        height={1920}
-      />
-
       {/* Cartoon 3D Short (Three.js + Remotion) — 1080x1920 (9:16), 30fps */}
       <Composition
         id="BridgeShort"

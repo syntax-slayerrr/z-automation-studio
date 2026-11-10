@@ -1,0 +1,14 @@
+[
+  {
+    "type": "SentenceBoundary",
+    "offset": 0.1,
+    "duration": 2.6706897,
+    "text": "Bayangkan jika UMR Garut sepuluh juta!"
+  },
+  {
+    "type": "SentenceBoundary",
+    "offset": 2.7206897,
+    "duration": 3.8525863,
+    "text": "Orang Jakarta pindah semua, dan domba Garut pun ikut bergaya sultan!"
+  }
+]

@@ -7,6 +7,7 @@
     "dev": "remotion studio remotion/index.ts",
     "studio": "remotion studio remotion/index.ts",
     "render:reel": "remotion render remotion/index.ts ZAutomationLaunch out/reels/z-automation-launch.mp4",
+    "render:kurzgesagt": "remotion render remotion/index.ts KurzgesagtBlackHole out/reels/kurzgesagt-black-hole.mp4",
     "render:square": "remotion render remotion/index.ts ZAutomationSquarePromo out/feed/z-automation-promo.mp4",
     "render:all": "npm run render:reel && npm run render:square",
     "produce:reel": "powershell -ExecutionPolicy Bypass -File scripts/produce.ps1 -Format reel",
@@ -15,11 +16,15 @@
     "still:square": "remotion still remotion/index.ts ZAutomationSquarePromo out/thumbnails/feed-cover.png --frame=45"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.2",
     "@remotion/cli": "^4.0.541",
     "@remotion/player": "^4.0.541",
+    "@remotion/three": "^4.0.541",
     "@remotion/transitions": "^4.0.541",
     "@types/three": "^0.187.0",
     "lucide-react": "^1.16.0",
+    "postprocessing": "^6.39.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "remotion": "^4.0.541",

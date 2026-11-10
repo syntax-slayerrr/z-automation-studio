@@ -1,9 +1,9 @@
 node_modules/
 out/
+stills/
 .DS_Store
 *.log
 .cache/
 .remotion/
-
 
 sound-effects-cache/

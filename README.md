@@ -1,87 +1,88 @@
-# Z-Automation Studio 🎬
+# Z-Automation Studio 🎬✨
 
-Studio pembuatan konten multimedia, motion graphics, promotional video (Instagram Reels, TikTok, YouTube Shorts), dan banner video interaktif untuk **Z-Automation** (`https://z-automation.my.id`).
+The unified multimedia production studio for **Z-Automation** (`https://z-automation.my.id`). This repository contains all code-directed video pipelines, 3D engines, character rigs, procedural audio mixing tools, and agent skills in **ONE** self-contained studio.
 
-Engine ini dibangun menggunakan **[Remotion](https://www.remotion.dev/)** dan React 19.
+---
+
+## 🏛️ Studio Capabilities & Engines
+
+### 1. 🎭 Cartoon 3D Short Engine (Stickman / Bean-Head 1:1 Standard)
+- **Engine Source**: `remotion/videos/bridge/`
+- **Master Composition**: `BridgeShort` ("The Bridge That Fell for a Song")
+- **Visual Mechanics**:
+  - 2D Canvas-drawn bean-head vector characters (`toon.ts`, soles at `y = 975`, plum ink outline `#241726`, two-bone IK cycloid walk/run cycles).
+  - Colorful 3D Three.js world with black ink outline pass (`ink.ts`), thin-lens depth of field (`lensblur.ts`), and display-referred color grading (`grade.ts`).
+  - Contact shadow multiply blending (`blob|contact|...` keying) for zero white box artifacts.
+- **Skills**: `skills/cartoon-3d-short/` & `skills/cartoon-short-kit/`.
+
+### 2. 🤖 3D Mascots & Dialogue Engine (Hermes & OpenClaw)
+- **Engine Source**: `remotion/components/Sanctum3DMascots.tsx` & `HermesOpenClaw3DStage.tsx`
+- **Compositions**:
+  - `ZAutomationLaunch`: 1080×1920 (9:16 vertical reel) with Apple-grade tactile sound pass, touch ripples, angle-reactive specular glints, and live 3D mascot stage.
+  - `ZAutomationSquarePromo`: 1080×1080 (1:1 feed promo).
+- **Characters**:
+  - **Hermes**: Primary keynote mascot (Cobalt Blue cyber chassis, glowing orbital think rings, calm and authoritative).
+  - **OpenClaw**: Secondary mascot (Red robotic chibi crab, lime accents, dynamic pincer claps, expressive antenna wiggles).
+
+### 3. 🌌 Motion Graphics & Explainers (Kurzgesagt Style)
+- **Engine Source**: `remotion/kurzgesagt/`
+- **Master Composition**: `KurzgesagtBlackHole`
+- **Visual Mechanics**: 2D vector flat cosmic art, relativistic gravitational lensing vortex, kinetic typography, and Perseus soundwave equalizer.
+
+### 4. 🎛️ Audio Studio & Sound Design Pipeline
+- **Procedural & Real Foley Mixing**: `scripts/build-sanctum-audio.py`
+  - 100% real CC0 recorded SFX bank (`skills/sound-effects/sfx/`).
+  - Dynamic ducking (music drops automatically under spoken voice).
+  - Razor-tight transient alignment (<1ms pre-roll).
+  - Broadcast mastering to **-16.0 LUFS** (True Peak < -4.0 dBFS).
+- **Voiceover Pipeline**: `scripts/generate-vo.ps1`
+  - Native integration with local **VoiceStudio** (`http://localhost:3900`).
+  - Automatic fallback to Microsoft Neural TTS (`id-ID-ArdiNeural` / `id-ID-GadisNeural`).
+
+---
+
+## 📦 Registered Remotion Compositions
+
+| ID Komposisi | Resolusi | Rasio | Durasi | Peruntukan |
+| :--- | :--- | :--- | :--- | :--- |
+| **`BridgeShort`** | 1080 × 1920 | 9:16 | 67s (2010f) | 1:1 Stickman cartoon 3D short master reference |
+| **`ZAutomationLaunch`** | 1080 × 1920 | 9:16 | 14.8s (890f) | Flagship 3D Hermes & OpenClaw promotional reel |
+| **`ZAutomationSquarePromo`** | 1080 × 1080 | 1:1 | 14.8s (890f) | Square feed & carousel video promo |
+| **`KurzgesagtBlackHole`** | 1080 × 1920 | 9:16 | 32.6s (1958f) | Cosmic science explainer motion graphics |
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Buka Remotion Studio (Preview Interaktif di Browser)
+### 1. Preview Studio Interaktif
 ```bash
+npm install
 npm run studio
-# atau
-npm run dev
 ```
-Buka preview di browser lokal (biasanya di `http://localhost:3000`). Kamu bisa scrub timeline, atur props secara real-time, dan cek tiap frame animasi.
+Buka `http://localhost:3000` di browser untuk preview live, scrub timeline, dan review animasi per-frame.
 
----
-
-## 📦 Compositions yang Tersedia
-
-| ID Komposisi | Resolusi | Rasio | Durasi | Peruntukan |
-| :--- | :--- | :--- | :--- | :--- |
-| `ZAutomationLaunch` | 1080 × 1920 | 9:16 | 7s (210f) | Instagram Reels, TikTok, YouTube Shorts |
-| `ZAutomationSquarePromo` | 1080 × 1080 | 1:1 | 6s (180f) | Instagram Feed, Carousel Video, LinkedIn Post |
-
----
-
-## 🎥 Perintah Rendering Video (Export MP4)
-
-### Render 9:16 Vertical Reel:
+### 2. Render Video
 ```bash
+# Render 9:16 Vertical Reel
 npm run render:reel
-# Hasil: out/reels/z-automation-launch.mp4
-```
 
-### Render 1:1 Square Feed:
-```bash
+# Render 1:1 Square Feed
 npm run render:square
-# Hasil: out/feed/z-automation-promo.mp4
-```
 
-### Render Semua Video Sekaligus:
-```bash
+# Render Kurzgesagt Explainer
+npm run render:kurzgesagt
+
+# Render Semua Komposisi
 npm run render:all
 ```
 
 ---
 
-## 📸 Render Thumbnail / Still Image (PNG)
+## 🛠️ Integrated Skills Folder (`skills/`)
 
-### Thumbnail Reel (Frame 60):
-```bash
-npm run still:thumbnail
-# Hasil: out/thumbnails/reel-cover.png
-```
-
-### Thumbnail Feed (Frame 45):
-```bash
-npm run still:square
-# Hasil: out/thumbnails/feed-cover.png
-```
-
----
-
-## 📁 Struktur Direktori
-
-```text
-z-automation-studio/
-├── .agents/skills/        # Remotion Agent Skills (14 modular skills)
-├── compositions/
-│   ├── ZAutomationLaunch.tsx       # Template Reel vertikal 9:16
-│   └── ZAutomationSquarePromo.tsx  # Template Square feed 1:1
-├── public/
-│   └── assets/                     # Karakter 3D Hermes, OpenClaw, Logo, Icons
-├── out/                            # Direktori output hasil render (MP4 & PNG)
-├── remotion.config.ts              # Konfigurasi Chromium headless & encoder
-├── Root.tsx                        # Pendaftaran Composition & parameter durasi
-└── index.ts                        # Entry point Remotion
-```
-
----
-
-## ⚡ Performa Render
-File `remotion.config.ts` sudah dikonfigurasi untuk langsung menggunakan Chrome lokal di sistem Windows (`C:/Program Files/Google/Chrome/Application/chrome.exe`), sehingga proses bundle dan rendering frame berlangsung cepat dalam hitungan detik.
-
+Semua AI Agent (Antigravity / Claude Code) dapat langsung membaca dan mengeksekusi instruksi dari folder `skills/`:
+- `skills/cartoon-3d-short/`: Pipeline lengkap ide ➔ script ➔ voice ➔ world ➔ 3D stickman render.
+- `skills/cartoon-short-kit/`: Engine render Chromium Playwright untuk animasi kartun.
+- `skills/sound-effects/`: Bank SFX CC0 dan mixing guidelines.
+- `skills/voicestudio/`: Integrasi local voice cloning dan TTS.
+- `skills/remotion/`: Aturan dan best practices Remotion v4.

@@ -1,0 +1,2034 @@
+{
+  "voice": "Brian (Warm Documentary Baritone) · ElevenLabs eleven_v4",
+  "model": "eleven_v4",
+  "tempo": 1.23,
+  "voDurationSec": 126.293,
+  "totalVideoSec": 129.793,
+  "fps": 30,
+  "totalFrames": 3894,
+  "cuesSec": {
+    "s1_jakarta": 0.24,
+    "s1_flag": 4.412,
+    "s1_people": 7.008,
+    "s1_students": 13.264,
+    "s2_map": 17.442,
+    "s2_jogja": 27.874,
+    "s2_sby": 30.345,
+    "s2_jkt": 32.752,
+    "s2_unite": 35.477,
+    "s3_proklamasi": 39.055,
+    "s3_hadi": 50.946,
+    "s3_suropati": 52.835,
+    "s3_merge": 56.184,
+    "s4_sby54": 59.416,
+    "s4_hall": 63.85,
+    "s4_congress": 66.856,
+    "s4_name": 68.807,
+    "s4_date": 76.206,
+    "s5_sukarno": 80.623,
+    "s5_p1": 87.309,
+    "s5_p2": 88.74,
+    "s5_p3": 90.106,
+    "s5_marhaen": 95.395,
+    "s5_together": 98.126,
+    "s6_spread": 100.478,
+    "s6_cadre": 106.475,
+    "s6_social": 116.111,
+    "s6_march": 118.223,
+    "s6_logo": 125.052
+  },
+  "cuesFrame": {
+    "s1_jakarta": 7,
+    "s1_flag": 132,
+    "s1_people": 210,
+    "s1_students": 398,
+    "s2_map": 523,
+    "s2_jogja": 836,
+    "s2_sby": 910,
+    "s2_jkt": 983,
+    "s2_unite": 1064,
+    "s3_proklamasi": 1172,
+    "s3_hadi": 1528,
+    "s3_suropati": 1585,
+    "s3_merge": 1686,
+    "s4_sby54": 1782,
+    "s4_hall": 1916,
+    "s4_congress": 2006,
+    "s4_name": 2064,
+    "s4_date": 2286,
+    "s5_sukarno": 2419,
+    "s5_p1": 2619,
+    "s5_p2": 2662,
+    "s5_p3": 2703,
+    "s5_marhaen": 2862,
+    "s5_together": 2944,
+    "s6_spread": 3014,
+    "s6_cadre": 3194,
+    "s6_social": 3483,
+    "s6_march": 3547,
+    "s6_logo": 3752
+  },
+  "scenesFrame": {
+    "s1Start": 0,
+    "s2Start": 513,
+    "s3Start": 1161,
+    "s4Start": 1772,
+    "s5Start": 2408,
+    "s6Start": 3004,
+    "totalFrames": 3894
+  },
+  "words": [
+    {
+      "w": "Tahun",
+      "cue": "s1_jakarta",
+      "scene": 1,
+      "line": 0,
+      "start": 0.24,
+      "end": 0.444
+    },
+    {
+      "w": "1950-an,",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 0.509,
+      "end": 2.07
+    },
+    {
+      "w": "Indonesia",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 2.461,
+      "end": 2.981
+    },
+    {
+      "w": "telah",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 3.176,
+      "end": 3.371
+    },
+    {
+      "w": "merdeka.",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 3.436,
+      "end": 3.892
+    },
+    {
+      "w": "Namun,",
+      "cue": "s1_flag",
+      "scene": 1,
+      "line": 0,
+      "start": 4.412,
+      "end": 4.932
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 5.062,
+      "end": 5.453
+    },
+    {
+      "w": "bangsa",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 5.518,
+      "end": 5.843
+    },
+    {
+      "w": "belum",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 5.973,
+      "end": 6.168
+    },
+    {
+      "w": "selesai.",
+      "cue": null,
+      "scene": 1,
+      "line": 0,
+      "start": 6.233,
+      "end": 6.753
+    },
+    {
+      "w": "Berbagai",
+      "cue": "s1_people",
+      "scene": 1,
+      "line": 1,
+      "start": 7.008,
+      "end": 7.333
+    },
+    {
+      "w": "persoalan",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 7.398,
+      "end": 7.723
+    },
+    {
+      "w": "sosial,",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 7.853,
+      "end": 8.569
+    },
+    {
+      "w": "ekonomi,",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 8.634,
+      "end": 9.414
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 9.479,
+      "end": 9.544
+    },
+    {
+      "w": "politik",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 9.609,
+      "end": 10.064
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 10.26,
+      "end": 10.52
+    },
+    {
+      "w": "dihadapi",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 10.585,
+      "end": 10.91
+    },
+    {
+      "w": "masyarakat.",
+      "cue": null,
+      "scene": 1,
+      "line": 1,
+      "start": 10.943,
+      "end": 11.56
+    },
+    {
+      "w": "Di",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 11.833,
+      "end": 11.898
+    },
+    {
+      "w": "tengah",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 11.963,
+      "end": 12.093
+    },
+    {
+      "w": "situasi",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 12.158,
+      "end": 12.483
+    },
+    {
+      "w": "tersebut,",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 12.581,
+      "end": 13.199
+    },
+    {
+      "w": "mahasiswa",
+      "cue": "s1_students",
+      "scene": 1,
+      "line": 2,
+      "start": 13.264,
+      "end": 13.784
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 13.849,
+      "end": 14.044
+    },
+    {
+      "w": "mengambil",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 14.087,
+      "end": 14.37
+    },
+    {
+      "w": "peran",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 14.435,
+      "end": 14.695
+    },
+    {
+      "w": "dalam",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 14.76,
+      "end": 14.955
+    },
+    {
+      "w": "menentukan",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 15.02,
+      "end": 15.475
+    },
+    {
+      "w": "arah",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 15.54,
+      "end": 15.735
+    },
+    {
+      "w": "masa",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 15.8,
+      "end": 15.963
+    },
+    {
+      "w": "depan",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 15.996,
+      "end": 16.191
+    },
+    {
+      "w": "bangsa.",
+      "cue": null,
+      "scene": 1,
+      "line": 2,
+      "start": 16.288,
+      "end": 16.971
+    },
+    {
+      "w": "Saat",
+      "cue": "s2_map",
+      "scene": 2,
+      "line": 3,
+      "start": 17.442,
+      "end": 17.637
+    },
+    {
+      "w": "itu,",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 17.702,
+      "end": 18.287
+    },
+    {
+      "w": "terdapat",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 18.385,
+      "end": 18.742
+    },
+    {
+      "w": "beberapa",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 18.808,
+      "end": 19.133
+    },
+    {
+      "w": "organisasi",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 19.263,
+      "end": 19.653
+    },
+    {
+      "w": "mahasiswa",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 19.718,
+      "end": 20.303
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 20.499,
+      "end": 20.629
+    },
+    {
+      "w": "memiliki",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 20.694,
+      "end": 21.019
+    },
+    {
+      "w": "semangat",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 21.149,
+      "end": 21.539
+    },
+    {
+      "w": "nasionalisme",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 21.604,
+      "end": 22.255
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 22.645,
+      "end": 22.71
+    },
+    {
+      "w": "berlandaskan",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 22.775,
+      "end": 23.36
+    },
+    {
+      "w": "Marhaenisme,",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 23.425,
+      "end": 24.401
+    },
+    {
+      "w": "pemikiran",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 24.466,
+      "end": 24.856
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 24.921,
+      "end": 25.377
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 25.442,
+      "end": 25.507
+    },
+    {
+      "w": "dikembangkan",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 25.55,
+      "end": 26.027
+    },
+    {
+      "w": "oleh",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 26.092,
+      "end": 26.19
+    },
+    {
+      "w": "Bung",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 26.222,
+      "end": 26.352
+    },
+    {
+      "w": "Karno.",
+      "cue": null,
+      "scene": 2,
+      "line": 3,
+      "start": 26.385,
+      "end": 26.808
+    },
+    {
+      "w": "Di",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 27.093,
+      "end": 27.158
+    },
+    {
+      "w": "antaranya",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 27.288,
+      "end": 27.744
+    },
+    {
+      "w": "Gerakan",
+      "cue": "s2_jogja",
+      "scene": 2,
+      "line": 4,
+      "start": 27.874,
+      "end": 28.199
+    },
+    {
+      "w": "Mahasiswa",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 28.264,
+      "end": 28.654
+    },
+    {
+      "w": "Marhaenis",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 28.719,
+      "end": 29.175
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 29.207,
+      "end": 29.24
+    },
+    {
+      "w": "Yogyakarta,",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 29.305,
+      "end": 30.28
+    },
+    {
+      "w": "Gerakan",
+      "cue": "s2_sby",
+      "scene": 2,
+      "line": 4,
+      "start": 30.345,
+      "end": 30.67
+    },
+    {
+      "w": "Mahasiswa",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 30.736,
+      "end": 31.126
+    },
+    {
+      "w": "Merdeka",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 31.191,
+      "end": 31.581
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 31.614,
+      "end": 31.646
+    },
+    {
+      "w": "Surabaya,",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 31.711,
+      "end": 32.492
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 32.557,
+      "end": 32.687
+    },
+    {
+      "w": "Gerakan",
+      "cue": "s2_jkt",
+      "scene": 2,
+      "line": 4,
+      "start": 32.752,
+      "end": 33.077
+    },
+    {
+      "w": "Mahasiswa",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 33.142,
+      "end": 33.597
+    },
+    {
+      "w": "Demokrat",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 33.662,
+      "end": 33.988
+    },
+    {
+      "w": "Indonesia",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 34.053,
+      "end": 34.508
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 34.573,
+      "end": 34.638
+    },
+    {
+      "w": "Jakarta.",
+      "cue": null,
+      "scene": 2,
+      "line": 4,
+      "start": 34.703,
+      "end": 35.223
+    },
+    {
+      "w": "Ketiganya",
+      "cue": "s2_unite",
+      "scene": 2,
+      "line": 5,
+      "start": 35.477,
+      "end": 36.011
+    },
+    {
+      "w": "memiliki",
+      "cue": null,
+      "scene": 2,
+      "line": 5,
+      "start": 36.076,
+      "end": 36.401
+    },
+    {
+      "w": "cita-cita",
+      "cue": null,
+      "scene": 2,
+      "line": 5,
+      "start": 36.466,
+      "end": 36.921
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 2,
+      "line": 5,
+      "start": 36.986,
+      "end": 37.442
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "line": 5,
+      "start": 37.507,
+      "end": 37.572
+    },
+    {
+      "w": "sejalan.",
+      "cue": null,
+      "scene": 2,
+      "line": 5,
+      "start": 37.637,
+      "end": 38.612
+    },
+    {
+      "w": "Pada",
+      "cue": "s3_proklamasi",
+      "scene": 3,
+      "line": 6,
+      "start": 39.055,
+      "end": 39.25
+    },
+    {
+      "w": "September",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 39.445,
+      "end": 39.64
+    },
+    {
+      "w": "1953,",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 39.705,
+      "end": 41.429
+    },
+    {
+      "w": "muncul",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 41.656,
+      "end": 41.982
+    },
+    {
+      "w": "gagasan",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 42.014,
+      "end": 42.502
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 42.567,
+      "end": 42.762
+    },
+    {
+      "w": "menyatukan",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 42.795,
+      "end": 43.282
+    },
+    {
+      "w": "ketiga",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 43.38,
+      "end": 43.673
+    },
+    {
+      "w": "organisasi",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 43.738,
+      "end": 44.193
+    },
+    {
+      "w": "tersebut.",
+      "cue": null,
+      "scene": 3,
+      "line": 6,
+      "start": 44.258,
+      "end": 45.169
+    },
+    {
+      "w": "Gagasan",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 45.352,
+      "end": 45.742
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 45.807,
+      "end": 46.003
+    },
+    {
+      "w": "menguat",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 46.035,
+      "end": 46.588
+    },
+    {
+      "w": "setelah",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 46.685,
+      "end": 46.913
+    },
+    {
+      "w": "pergantian",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 46.978,
+      "end": 47.433
+    },
+    {
+      "w": "kepengurusan",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 47.498,
+      "end": 48.019
+    },
+    {
+      "w": "Gerakan",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 48.084,
+      "end": 48.344
+    },
+    {
+      "w": "Mahasiswa",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 48.409,
+      "end": 48.864
+    },
+    {
+      "w": "Demokrat",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 48.929,
+      "end": 49.189
+    },
+    {
+      "w": "Indonesia",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 49.255,
+      "end": 50.035
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 50.1,
+      "end": 50.23
+    },
+    {
+      "w": "dipimpin",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 50.295,
+      "end": 50.75
+    },
+    {
+      "w": "S.M.",
+      "cue": "s3_hadi",
+      "scene": 3,
+      "line": 7,
+      "start": 50.946,
+      "end": 51.108
+    },
+    {
+      "w": "Hadiprabowo.",
+      "cue": null,
+      "scene": 3,
+      "line": 7,
+      "start": 51.141,
+      "end": 52.181
+    },
+    {
+      "w": "Melalui",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 52.445,
+      "end": 52.77
+    },
+    {
+      "w": "serangkaian",
+      "cue": "s3_suropati",
+      "scene": 3,
+      "line": 8,
+      "start": 52.835,
+      "end": 53.225
+    },
+    {
+      "w": "pertemuan,",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 53.29,
+      "end": 54.071
+    },
+    {
+      "w": "ketiga",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 54.136,
+      "end": 54.331
+    },
+    {
+      "w": "organisasi",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 54.396,
+      "end": 55.046
+    },
+    {
+      "w": "akhirnya",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 55.111,
+      "end": 55.436
+    },
+    {
+      "w": "sepakat",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 55.534,
+      "end": 55.957
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 56.022,
+      "end": 56.152
+    },
+    {
+      "w": "melebur",
+      "cue": "s3_merge",
+      "scene": 3,
+      "line": 8,
+      "start": 56.184,
+      "end": 56.542
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 56.607,
+      "end": 56.932
+    },
+    {
+      "w": "satu",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 56.965,
+      "end": 57.258
+    },
+    {
+      "w": "wadah",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 57.29,
+      "end": 57.518
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 57.583,
+      "end": 57.908
+    },
+    {
+      "w": "mahasiswa.",
+      "cue": null,
+      "scene": 3,
+      "line": 8,
+      "start": 57.941,
+      "end": 58.949
+    },
+    {
+      "w": "Puncaknya",
+      "cue": "s4_sby54",
+      "scene": 4,
+      "line": 9,
+      "start": 59.416,
+      "end": 59.817
+    },
+    {
+      "w": "terjadi",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 59.882,
+      "end": 60.272
+    },
+    {
+      "w": "pada",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 60.337,
+      "end": 60.533
+    },
+    {
+      "w": "23",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 60.598,
+      "end": 61.053
+    },
+    {
+      "w": "Maret",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 61.183,
+      "end": 61.443
+    },
+    {
+      "w": "1954,",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 61.508,
+      "end": 63.459
+    },
+    {
+      "w": "ketika",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 63.524,
+      "end": 63.72
+    },
+    {
+      "w": "Kongres",
+      "cue": "s4_hall",
+      "scene": 4,
+      "line": 9,
+      "start": 63.85,
+      "end": 64.11
+    },
+    {
+      "w": "Pertama",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 64.175,
+      "end": 64.565
+    },
+    {
+      "w": "diselenggarakan",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 64.63,
+      "end": 65.216
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 65.248,
+      "end": 65.281
+    },
+    {
+      "w": "Surabaya.",
+      "cue": null,
+      "scene": 4,
+      "line": 9,
+      "start": 65.346,
+      "end": 66.321
+    },
+    {
+      "w": "Dari",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 66.596,
+      "end": 66.791
+    },
+    {
+      "w": "proses",
+      "cue": "s4_congress",
+      "scene": 4,
+      "line": 10,
+      "start": 66.856,
+      "end": 67.116
+    },
+    {
+      "w": "penyatuan",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 67.181,
+      "end": 67.507
+    },
+    {
+      "w": "tersebut,",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 67.572,
+      "end": 68.222
+    },
+    {
+      "w": "lahirlah",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 68.287,
+      "end": 68.742
+    },
+    {
+      "w": "Gerakan",
+      "cue": "s4_name",
+      "scene": 4,
+      "line": 10,
+      "start": 68.807,
+      "end": 69.133
+    },
+    {
+      "w": "Mahasiswa",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 69.198,
+      "end": 69.653
+    },
+    {
+      "w": "Nasional",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 69.718,
+      "end": 70.043
+    },
+    {
+      "w": "Indonesia,",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 70.108,
+      "end": 70.889
+    },
+    {
+      "w": "atau",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 71.019,
+      "end": 71.214
+    },
+    {
+      "w": "GMNI.",
+      "cue": null,
+      "scene": 4,
+      "line": 10,
+      "start": 71.409,
+      "end": 72.32
+    },
+    {
+      "w": "S.M.",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 72.618,
+      "end": 72.846
+    },
+    {
+      "w": "Hadiprabowo",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 72.878,
+      "end": 73.529
+    },
+    {
+      "w": "ditetapkan",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 73.594,
+      "end": 74.114
+    },
+    {
+      "w": "sebagai",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 74.179,
+      "end": 74.439
+    },
+    {
+      "w": "Ketua",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 74.504,
+      "end": 74.83
+    },
+    {
+      "w": "Umum",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 74.895,
+      "end": 75.025
+    },
+    {
+      "w": "pertama.",
+      "cue": null,
+      "scene": 4,
+      "line": 11,
+      "start": 75.09,
+      "end": 75.935
+    },
+    {
+      "w": "Tanggal",
+      "cue": "s4_date",
+      "scene": 4,
+      "line": 12,
+      "start": 76.206,
+      "end": 76.249
+    },
+    {
+      "w": "23",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 76.314,
+      "end": 76.705
+    },
+    {
+      "w": "Maret",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 76.835,
+      "end": 77.03
+    },
+    {
+      "w": "kemudian",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 77.062,
+      "end": 77.55
+    },
+    {
+      "w": "ditetapkan",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 77.745,
+      "end": 78.266
+    },
+    {
+      "w": "sebagai",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 78.331,
+      "end": 78.591
+    },
+    {
+      "w": "hari",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 78.656,
+      "end": 78.851
+    },
+    {
+      "w": "lahir",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 78.916,
+      "end": 79.176
+    },
+    {
+      "w": "GMNI.",
+      "cue": null,
+      "scene": 4,
+      "line": 12,
+      "start": 79.306,
+      "end": 80.087
+    },
+    {
+      "w": "Sejak",
+      "cue": "s5_sukarno",
+      "scene": 5,
+      "line": 13,
+      "start": 80.623,
+      "end": 80.883
+    },
+    {
+      "w": "awal,",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 80.948,
+      "end": 81.533
+    },
+    {
+      "w": "GMNI",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 81.598,
+      "end": 82.249
+    },
+    {
+      "w": "menjadikan",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 82.314,
+      "end": 82.704
+    },
+    {
+      "w": "Marhaenisme",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 82.769,
+      "end": 83.42
+    },
+    {
+      "w": "sebagai",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 83.485,
+      "end": 83.875
+    },
+    {
+      "w": "asas",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 83.94,
+      "end": 84.2
+    },
+    {
+      "w": "perjuangannya.",
+      "cue": null,
+      "scene": 5,
+      "line": 13,
+      "start": 84.265,
+      "end": 85.241
+    },
+    {
+      "w": "Pemikiran",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 85.515,
+      "end": 85.813
+    },
+    {
+      "w": "Bung",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 85.878,
+      "end": 86.008
+    },
+    {
+      "w": "Karno",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 86.041,
+      "end": 86.268
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 86.333,
+      "end": 86.593
+    },
+    {
+      "w": "menekankan",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 86.658,
+      "end": 87.179
+    },
+    {
+      "w": "Sosio-Nasionalisme,",
+      "cue": "s5_p1",
+      "scene": 5,
+      "line": 14,
+      "start": 87.309,
+      "end": 88.675
+    },
+    {
+      "w": "Sosio-Demokrasi,",
+      "cue": "s5_p2",
+      "scene": 5,
+      "line": 14,
+      "start": 88.74,
+      "end": 89.911
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 89.976,
+      "end": 90.041
+    },
+    {
+      "w": "Ketuhanan",
+      "cue": "s5_p3",
+      "scene": 5,
+      "line": 14,
+      "start": 90.106,
+      "end": 90.626
+    },
+    {
+      "w": "Yang",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 90.691,
+      "end": 90.756
+    },
+    {
+      "w": "Maha",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 90.886,
+      "end": 91.081
+    },
+    {
+      "w": "Esa.",
+      "cue": null,
+      "scene": 5,
+      "line": 14,
+      "start": 91.146,
+      "end": 91.537
+    },
+    {
+      "w": "Dengan",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 91.817,
+      "end": 92.013
+    },
+    {
+      "w": "semangat",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 92.078,
+      "end": 92.273
+    },
+    {
+      "w": "tersebut,",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 92.338,
+      "end": 92.988
+    },
+    {
+      "w": "GMNI",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 93.053,
+      "end": 93.639
+    },
+    {
+      "w": "membawa",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 93.704,
+      "end": 93.964
+    },
+    {
+      "w": "cita-cita",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 94.029,
+      "end": 94.419
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 94.484,
+      "end": 95.07
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 95.135,
+      "end": 95.33
+    },
+    {
+      "w": "membela",
+      "cue": "s5_marhaen",
+      "scene": 5,
+      "line": 15,
+      "start": 95.395,
+      "end": 95.72
+    },
+    {
+      "w": "rakyat",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 95.752,
+      "end": 95.98
+    },
+    {
+      "w": "kecil,",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 96.045,
+      "end": 96.63
+    },
+    {
+      "w": "menentang",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 96.696,
+      "end": 97.086
+    },
+    {
+      "w": "penindasan,",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 97.151,
+      "end": 97.931
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 97.996,
+      "end": 98.061
+    },
+    {
+      "w": "memperjuangkan",
+      "cue": "s5_together",
+      "scene": 5,
+      "line": 15,
+      "start": 98.126,
+      "end": 98.777
+    },
+    {
+      "w": "keadilan",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 98.842,
+      "end": 99.167
+    },
+    {
+      "w": "sosial.",
+      "cue": null,
+      "scene": 5,
+      "line": 15,
+      "start": 99.2,
+      "end": 100.013
+    },
+    {
+      "w": "Sejak",
+      "cue": "s6_spread",
+      "scene": 6,
+      "line": 16,
+      "start": 100.478,
+      "end": 100.674
+    },
+    {
+      "w": "kelahirannya,",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 100.739,
+      "end": 101.649
+    },
+    {
+      "w": "GMNI",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 101.714,
+      "end": 102.365
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 102.43,
+      "end": 102.69
+    },
+    {
+      "w": "berkembang",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 102.755,
+      "end": 103.34
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 103.405,
+      "end": 103.47
+    },
+    {
+      "w": "menyebar",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 103.568,
+      "end": 103.926
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 103.991,
+      "end": 104.056
+    },
+    {
+      "w": "berbagai",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 104.121,
+      "end": 104.446
+    },
+    {
+      "w": "perguruan",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 104.511,
+      "end": 104.836
+    },
+    {
+      "w": "tinggi",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 104.901,
+      "end": 105.096
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 105.161,
+      "end": 105.226
+    },
+    {
+      "w": "Indonesia.",
+      "cue": null,
+      "scene": 6,
+      "line": 16,
+      "start": 105.291,
+      "end": 106.202
+    },
+    {
+      "w": "Organisasi",
+      "cue": "s6_cadre",
+      "scene": 6,
+      "line": 17,
+      "start": 106.475,
+      "end": 107.06
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 107.19,
+      "end": 107.32
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 107.385,
+      "end": 107.645
+    },
+    {
+      "w": "wadah",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 107.71,
+      "end": 107.971
+    },
+    {
+      "w": "pendidikan",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 108.036,
+      "end": 108.426
+    },
+    {
+      "w": "kader",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 108.599,
+      "end": 108.946
+    },
+    {
+      "w": "sekaligus",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 109.011,
+      "end": 109.532
+    },
+    {
+      "w": "perjuangan",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 109.597,
+      "end": 109.922
+    },
+    {
+      "w": "mahasiswa.",
+      "cue": null,
+      "scene": 6,
+      "line": 17,
+      "start": 109.987,
+      "end": 110.897
+    },
+    {
+      "w": "Lebih",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 111.103,
+      "end": 111.298
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 111.363,
+      "end": 111.493
+    },
+    {
+      "w": "sekadar",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 111.558,
+      "end": 111.753
+    },
+    {
+      "w": "organisasi,",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 111.883,
+      "end": 112.859
+    },
+    {
+      "w": "GMNI",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 112.924,
+      "end": 113.509
+    },
+    {
+      "w": "lahir",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 113.639,
+      "end": 113.899
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 113.964,
+      "end": 114.094
+    },
+    {
+      "w": "semangat",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 114.159,
+      "end": 114.485
+    },
+    {
+      "w": "persatuan",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 114.55,
+      "end": 115.265
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 115.363,
+      "end": 115.46
+    },
+    {
+      "w": "cita-cita",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 115.525,
+      "end": 116.046
+    },
+    {
+      "w": "memperjuangkan",
+      "cue": "s6_social",
+      "scene": 6,
+      "line": 18,
+      "start": 116.111,
+      "end": 116.696
+    },
+    {
+      "w": "kepentingan",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 116.729,
+      "end": 117.086
+    },
+    {
+      "w": "rakyat.",
+      "cue": null,
+      "scene": 6,
+      "line": 18,
+      "start": 117.119,
+      "end": 117.997
+    },
+    {
+      "w": "Sebuah",
+      "cue": "s6_march",
+      "scene": 6,
+      "line": 19,
+      "start": 118.223,
+      "end": 118.483
+    },
+    {
+      "w": "gerakan",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 118.548,
+      "end": 118.873
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 118.938,
+      "end": 119.069
+    },
+    {
+      "w": "dimulai",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 119.166,
+      "end": 119.524
+    },
+    {
+      "w": "pada",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 119.589,
+      "end": 119.784
+    },
+    {
+      "w": "23",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 119.849,
+      "end": 120.369
+    },
+    {
+      "w": "Maret",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 120.434,
+      "end": 120.76
+    },
+    {
+      "w": "1954,",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 120.825,
+      "end": 122.873
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 122.906,
+      "end": 123.101
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 123.166,
+      "end": 123.361
+    },
+    {
+      "w": "membawa",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 123.426,
+      "end": 123.751
+    },
+    {
+      "w": "semangat",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 123.849,
+      "end": 124.142
+    },
+    {
+      "w": "nasionalisme",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 124.207,
+      "end": 124.987
+    },
+    {
+      "w": "hingga",
+      "cue": "s6_logo",
+      "scene": 6,
+      "line": 19,
+      "start": 125.052,
+      "end": 125.312
+    },
+    {
+      "w": "hari",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 125.41,
+      "end": 125.508
+    },
+    {
+      "w": "ini.",
+      "cue": null,
+      "scene": 6,
+      "line": 19,
+      "start": 125.605,
+      "end": 126.093
+    }
+  ]
+}

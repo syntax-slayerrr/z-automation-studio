@@ -1,0 +1,2383 @@
+{
+  "totalSec": 84.41,
+  "totalFrames": 2533,
+  "fps": 30,
+  "narrator": {
+    "id": "nPczCjzI2devNBz1zQrb",
+    "label": "Brian (Conversational Engineering Explainer)",
+    "stability": 0.48,
+    "similarityBoost": 0.78
+  },
+  "cuesSec": {
+    "b1_hook": 0.22,
+    "b1_why": 5.11,
+    "b2_naive": 7.987,
+    "b2_train_heavy": 11.806,
+    "b3_sink": 15.676,
+    "b3_rain": 19.158,
+    "b3_derail": 22.955,
+    "b4_pour": 24.625,
+    "b4_ballast": 27.812,
+    "b4_macro": 28.665,
+    "b4_lock": 33.785,
+    "b4_drain": 38.463,
+    "b5_table": 40.617,
+    "b5_marbles": 42.515,
+    "b5_stones": 45.552,
+    "b6_heat": 51.031,
+    "b6_expand": 57.092,
+    "b6_buckle": 60.957,
+    "b7_gap": 63.873,
+    "b7_clack": 69.402,
+    "b8_harmony": 75.812,
+    "b8_loop": 79.8
+  },
+  "actBounds": {
+    "1": {
+      "startS": 0.22,
+      "endS": 7.987165
+    },
+    "2": {
+      "startS": 7.987165,
+      "endS": 15.675735999999999
+    },
+    "3": {
+      "startS": 15.675735999999999,
+      "endS": 24.625077999999995
+    },
+    "4": {
+      "startS": 24.625077999999995,
+      "endS": 40.616733999999994
+    },
+    "5": {
+      "startS": 40.616733999999994,
+      "endS": 51.03133699999999
+    },
+    "6": {
+      "startS": 51.03133699999999,
+      "endS": 63.872538999999996
+    },
+    "7": {
+      "startS": 63.872538999999996,
+      "endS": 75.81233499999999
+    },
+    "8": {
+      "startS": 75.81233499999999,
+      "endS": 84.40968199999999
+    }
+  },
+  "words": [
+    {
+      "word": "Kereta",
+      "spoken": "Kereta",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 0.22,
+      "endS": 0.559
+    },
+    {
+      "word": "seberat",
+      "spoken": "seberat",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 0.627,
+      "endS": 0.83
+    },
+    {
+      "word": "100",
+      "spoken": "seratus",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 0.898,
+      "endS": 1.169
+    },
+    {
+      "word": "ton",
+      "spoken": "ton",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 1.305,
+      "endS": 1.44
+    },
+    {
+      "word": "lewat",
+      "spoken": "lewat",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 1.474,
+      "endS": 1.644
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 1.678,
+      "endS": 1.712
+    },
+    {
+      "word": "sini,",
+      "spoken": "sini,",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 1.779,
+      "endS": 2.389
+    },
+    {
+      "word": "tapi",
+      "spoken": "tapi",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 2.423,
+      "endS": 2.593
+    },
+    {
+      "word": "relnya",
+      "spoken": "relnya",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 2.661,
+      "endS": 3
+    },
+    {
+      "word": "cuma",
+      "spoken": "cuma",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 3.034,
+      "endS": 3.203
+    },
+    {
+      "word": "ditaruh",
+      "spoken": "ditaruh",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 3.294,
+      "endS": 3.542
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 3.576,
+      "endS": 3.61
+    },
+    {
+      "word": "atas",
+      "spoken": "atas",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 3.678,
+      "endS": 3.813
+    },
+    {
+      "word": "batu",
+      "spoken": "batu",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 3.881,
+      "endS": 4.051
+    },
+    {
+      "word": "kerikil",
+      "spoken": "kerikil",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 4.084,
+      "endS": 4.288
+    },
+    {
+      "word": "longgar.",
+      "spoken": "longgar.",
+      "act": 1,
+      "beatIdx": 1,
+      "startS": 4.356,
+      "endS": 4.898
+    },
+    {
+      "word": "Kenapa",
+      "spoken": "Kenapa",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 5.11,
+      "endS": 5.449
+    },
+    {
+      "word": "nggak",
+      "spoken": "nggak",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 5.483,
+      "endS": 5.585
+    },
+    {
+      "word": "dicor",
+      "spoken": "dicor",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 5.686,
+      "endS": 5.856
+    },
+    {
+      "word": "beton",
+      "spoken": "beton",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 5.958,
+      "endS": 6.127
+    },
+    {
+      "word": "mulus",
+      "spoken": "mulus",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 6.161,
+      "endS": 6.398
+    },
+    {
+      "word": "aja",
+      "spoken": "aja",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 6.466,
+      "endS": 6.737
+    },
+    {
+      "word": "biar",
+      "spoken": "biar",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 6.771,
+      "endS": 6.873
+    },
+    {
+      "word": "rata?",
+      "spoken": "rata?",
+      "act": 1,
+      "beatIdx": 2,
+      "startS": 6.907,
+      "endS": 7.619
+    },
+    {
+      "word": "Coba",
+      "spoken": "Coba",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 7.987,
+      "endS": 8.258
+    },
+    {
+      "word": "deh",
+      "spoken": "deh",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 8.326,
+      "endS": 8.53
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 8.597,
+      "endS": 8.801
+    },
+    {
+      "word": "taruh",
+      "spoken": "taruh",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 8.869,
+      "endS": 9.004
+    },
+    {
+      "word": "bantalan",
+      "spoken": "bantalan",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 9.072,
+      "endS": 9.411
+    },
+    {
+      "word": "rel",
+      "spoken": "rel",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 9.479,
+      "endS": 9.75
+    },
+    {
+      "word": "langsung",
+      "spoken": "langsung",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 9.885,
+      "endS": 10.224
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 10.258,
+      "endS": 10.292
+    },
+    {
+      "word": "atas",
+      "spoken": "atas",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 10.36,
+      "endS": 10.496
+    },
+    {
+      "word": "tanah",
+      "spoken": "tanah",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 10.563,
+      "endS": 10.699
+    },
+    {
+      "word": "biasa.",
+      "spoken": "biasa.",
+      "act": 2,
+      "beatIdx": 3,
+      "startS": 10.767,
+      "endS": 11.58
+    },
+    {
+      "word": "Begitu",
+      "spoken": "Begitu",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 11.806,
+      "endS": 12.145
+    },
+    {
+      "word": "kereta",
+      "spoken": "kereta",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 12.179,
+      "endS": 12.416
+    },
+    {
+      "word": "pertama",
+      "spoken": "pertama",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 12.484,
+      "endS": 12.687
+    },
+    {
+      "word": "melintas,",
+      "spoken": "melintas,",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 12.755,
+      "endS": 13.501
+    },
+    {
+      "word": "tanahnya",
+      "spoken": "tanahnya",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 13.603,
+      "endS": 13.975
+    },
+    {
+      "word": "langsung",
+      "spoken": "langsung",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 14.043,
+      "endS": 14.382
+    },
+    {
+      "word": "amblas.",
+      "spoken": "amblas.",
+      "act": 2,
+      "beatIdx": 4,
+      "startS": 14.45,
+      "endS": 15.331
+    },
+    {
+      "word": "Beban",
+      "spoken": "Beban",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 15.676,
+      "endS": 16.015
+    },
+    {
+      "word": "puluhan",
+      "spoken": "puluhan",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 16.049,
+      "endS": 16.421
+    },
+    {
+      "word": "ton",
+      "spoken": "ton",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 16.489,
+      "endS": 16.693
+    },
+    {
+      "word": "menekan",
+      "spoken": "menekan",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 16.76,
+      "endS": 17.099
+    },
+    {
+      "word": "satu",
+      "spoken": "satu",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 17.133,
+      "endS": 17.371
+    },
+    {
+      "word": "titik",
+      "spoken": "titik",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 17.438,
+      "endS": 17.642
+    },
+    {
+      "word": "sempit",
+      "spoken": "sempit",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 17.71,
+      "endS": 17.981
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 18.049,
+      "endS": 18.116
+    },
+    {
+      "word": "bawah.",
+      "spoken": "bawah.",
+      "act": 3,
+      "beatIdx": 5,
+      "startS": 18.15,
+      "endS": 18.93
+    },
+    {
+      "word": "Pas",
+      "spoken": "Pas",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 19.158,
+      "endS": 19.294
+    },
+    {
+      "word": "hujan",
+      "spoken": "hujan",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 19.327,
+      "endS": 19.565
+    },
+    {
+      "word": "turun,",
+      "spoken": "turun,",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 19.633,
+      "endS": 20.175
+    },
+    {
+      "word": "tanah",
+      "spoken": "tanah",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 20.243,
+      "endS": 20.446
+    },
+    {
+      "word": "berubah",
+      "spoken": "berubah",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 20.514,
+      "endS": 20.785
+    },
+    {
+      "word": "jadi",
+      "spoken": "jadi",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 20.853,
+      "endS": 20.921
+    },
+    {
+      "word": "lumpur,",
+      "spoken": "lumpur,",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 20.988,
+      "endS": 21.734
+    },
+    {
+      "word": "relnya",
+      "spoken": "relnya",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 21.802,
+      "endS": 22.141
+    },
+    {
+      "word": "miring,",
+      "spoken": "miring,",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 22.175,
+      "endS": 22.717
+    },
+    {
+      "word": "dan",
+      "spoken": "dan",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 22.751,
+      "endS": 22.887
+    },
+    {
+      "word": "kereta",
+      "spoken": "kereta",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 22.955,
+      "endS": 23.158
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 23.192,
+      "endS": 23.361
+    },
+    {
+      "word": "anjlok.",
+      "spoken": "anjlok.",
+      "act": 3,
+      "beatIdx": 6,
+      "startS": 23.429,
+      "endS": 24.243
+    },
+    {
+      "word": "Makanya",
+      "spoken": "Makanya",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 24.625,
+      "endS": 25.167
+    },
+    {
+      "word": "insinyur",
+      "spoken": "insinyur",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 25.371,
+      "endS": 25.845
+    },
+    {
+      "word": "menimbun",
+      "spoken": "menimbun",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 25.913,
+      "endS": 26.184
+    },
+    {
+      "word": "batu",
+      "spoken": "batu",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 26.252,
+      "endS": 26.523
+    },
+    {
+      "word": "pecah",
+      "spoken": "pecah",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 26.591,
+      "endS": 26.795
+    },
+    {
+      "word": "tajam",
+      "spoken": "tajam",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 26.862,
+      "endS": 27.269
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 27.337,
+      "endS": 27.405
+    },
+    {
+      "word": "disebut",
+      "spoken": "disebut",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 27.439,
+      "endS": 27.744
+    },
+    {
+      "word": "balast.",
+      "spoken": "balast.",
+      "act": 4,
+      "beatIdx": 7,
+      "startS": 27.812,
+      "endS": 28.422
+    },
+    {
+      "word": "Perhatiin",
+      "spoken": "Perhatiin",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 28.665,
+      "endS": 29.072
+    },
+    {
+      "word": "bentuknya",
+      "spoken": "bentuknya",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 29.139,
+      "endS": 29.953
+    },
+    {
+      "word": "—",
+      "spoken": "—",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 30.021,
+      "endS": 30.044
+    },
+    {
+      "word": "bukan",
+      "spoken": "bukan",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 30.066,
+      "endS": 30.36
+    },
+    {
+      "word": "batu",
+      "spoken": "batu",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 30.427,
+      "endS": 30.563
+    },
+    {
+      "word": "sungai",
+      "spoken": "sungai",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 30.631,
+      "endS": 30.834
+    },
+    {
+      "word": "bulat",
+      "spoken": "bulat",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 30.902,
+      "endS": 31.105
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 31.173,
+      "endS": 31.241
+    },
+    {
+      "word": "licin,",
+      "spoken": "licin,",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 31.309,
+      "endS": 31.953
+    },
+    {
+      "word": "tapi",
+      "spoken": "tapi",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 31.987,
+      "endS": 32.258
+    },
+    {
+      "word": "tajam",
+      "spoken": "tajam",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 32.326,
+      "endS": 32.665
+    },
+    {
+      "word": "bersudut.",
+      "spoken": "bersudut.",
+      "act": 4,
+      "beatIdx": 8,
+      "startS": 32.766,
+      "endS": 33.546
+    },
+    {
+      "word": "Begitu",
+      "spoken": "Begitu",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 33.785,
+      "endS": 34.056
+    },
+    {
+      "word": "terinjak,",
+      "spoken": "terinjak,",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 34.124,
+      "endS": 34.87
+    },
+    {
+      "word": "sudutnya",
+      "spoken": "sudutnya",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 34.938,
+      "endS": 35.344
+    },
+    {
+      "word": "saling",
+      "spoken": "saling",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 35.378,
+      "endS": 35.616
+    },
+    {
+      "word": "mengunci,",
+      "spoken": "mengunci,",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 35.661,
+      "endS": 36.429
+    },
+    {
+      "word": "menyebarkan",
+      "spoken": "menyebarkan",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 36.497,
+      "endS": 36.972
+    },
+    {
+      "word": "beban",
+      "spoken": "beban",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 37.039,
+      "endS": 37.243
+    },
+    {
+      "word": "lebar",
+      "spoken": "lebar",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 37.311,
+      "endS": 37.582
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 37.65,
+      "endS": 37.717
+    },
+    {
+      "word": "tanah,",
+      "spoken": "tanah,",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 37.819,
+      "endS": 38.395
+    },
+    {
+      "word": "sambil",
+      "spoken": "sambil",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 38.463,
+      "endS": 38.802
+    },
+    {
+      "word": "membuang",
+      "spoken": "membuang",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 38.87,
+      "endS": 39.141
+    },
+    {
+      "word": "air",
+      "spoken": "air",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 39.209,
+      "endS": 39.344
+    },
+    {
+      "word": "hujan",
+      "spoken": "hujan",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 39.412,
+      "endS": 39.616
+    },
+    {
+      "word": "ke",
+      "spoken": "ke",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 39.683,
+      "endS": 39.751
+    },
+    {
+      "word": "bawah.",
+      "spoken": "bawah.",
+      "act": 4,
+      "beatIdx": 9,
+      "startS": 39.785,
+      "endS": 40.226
+    },
+    {
+      "word": "Bayangin",
+      "spoken": "Bayangin",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 40.617,
+      "endS": 41.024
+    },
+    {
+      "word": "bedanya",
+      "spoken": "bedanya",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 41.125,
+      "endS": 41.43
+    },
+    {
+      "word": "kamu",
+      "spoken": "kamu",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 41.498,
+      "endS": 41.634
+    },
+    {
+      "word": "menekan",
+      "spoken": "menekan",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 41.701,
+      "endS": 42.04
+    },
+    {
+      "word": "tumpukan",
+      "spoken": "tumpukan",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 42.108,
+      "endS": 42.447
+    },
+    {
+      "word": "kelereng",
+      "spoken": "kelereng",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 42.515,
+      "endS": 42.718
+    },
+    {
+      "word": "bulat",
+      "spoken": "bulat",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 42.786,
+      "endS": 43.396
+    },
+    {
+      "word": "—",
+      "spoken": "—",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 43.464,
+      "endS": 43.498
+    },
+    {
+      "word": "langsung",
+      "spoken": "langsung",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 43.532,
+      "endS": 43.939
+    },
+    {
+      "word": "menggelinding",
+      "spoken": "menggelinding",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 43.984,
+      "endS": 44.413
+    },
+    {
+      "word": "buyar.",
+      "spoken": "buyar.",
+      "act": 5,
+      "beatIdx": 10,
+      "startS": 44.515,
+      "endS": 45.295
+    },
+    {
+      "word": "Bandingin",
+      "spoken": "Bandingin",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 45.552,
+      "endS": 45.959
+    },
+    {
+      "word": "sama",
+      "spoken": "sama",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 46.026,
+      "endS": 46.162
+    },
+    {
+      "word": "batu",
+      "spoken": "batu",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 46.23,
+      "endS": 46.433
+    },
+    {
+      "word": "tajam",
+      "spoken": "tajam",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 46.467,
+      "endS": 46.84
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 46.942,
+      "endS": 47.043
+    },
+    {
+      "word": "saling",
+      "spoken": "saling",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 47.077,
+      "endS": 47.315
+    },
+    {
+      "word": "menggigit",
+      "spoken": "menggigit",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 47.36,
+      "endS": 48.128
+    },
+    {
+      "word": "—",
+      "spoken": "—",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 48.196,
+      "endS": 48.219
+    },
+    {
+      "word": "makin",
+      "spoken": "makin",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 48.241,
+      "endS": 48.467
+    },
+    {
+      "word": "ditekan,",
+      "spoken": "ditekan,",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 48.558,
+      "endS": 49.179
+    },
+    {
+      "word": "malah",
+      "spoken": "malah",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 49.213,
+      "endS": 49.416
+    },
+    {
+      "word": "makin",
+      "spoken": "makin",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 49.45,
+      "endS": 49.687
+    },
+    {
+      "word": "kokoh.",
+      "spoken": "kokoh.",
+      "act": 5,
+      "beatIdx": 11,
+      "startS": 49.823,
+      "endS": 50.637
+    },
+    {
+      "word": "Tapi",
+      "spoken": "Tapi",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 51.031,
+      "endS": 51.235
+    },
+    {
+      "word": "batu",
+      "spoken": "batu",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 51.303,
+      "endS": 51.574
+    },
+    {
+      "word": "aja",
+      "spoken": "aja",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 51.642,
+      "endS": 51.845
+    },
+    {
+      "word": "belum",
+      "spoken": "belum",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 51.947,
+      "endS": 52.048
+    },
+    {
+      "word": "cukup.",
+      "spoken": "cukup.",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 52.116,
+      "endS": 52.828
+    },
+    {
+      "word": "Di",
+      "spoken": "Di",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 52.862,
+      "endS": 52.93
+    },
+    {
+      "word": "bawah",
+      "spoken": "bawah",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 52.964,
+      "endS": 53.133
+    },
+    {
+      "word": "terik",
+      "spoken": "terik",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 53.201,
+      "endS": 53.336
+    },
+    {
+      "word": "matahari,",
+      "spoken": "matahari,",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 53.37,
+      "endS": 54.218
+    },
+    {
+      "word": "suhu",
+      "spoken": "suhu",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 54.286,
+      "endS": 54.489
+    },
+    {
+      "word": "besi",
+      "spoken": "besi",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 54.591,
+      "endS": 54.76
+    },
+    {
+      "word": "rel",
+      "spoken": "rel",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 54.828,
+      "endS": 55.031
+    },
+    {
+      "word": "bisa",
+      "spoken": "bisa",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 55.099,
+      "endS": 55.235
+    },
+    {
+      "word": "tembus",
+      "spoken": "tembus",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 55.303,
+      "endS": 55.574
+    },
+    {
+      "word": "enam",
+      "spoken": "enam",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 55.709,
+      "endS": 55.845
+    },
+    {
+      "word": "puluh",
+      "spoken": "puluh",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 55.913,
+      "endS": 56.014
+    },
+    {
+      "word": "derajat.",
+      "spoken": "derajat.",
+      "act": 6,
+      "beatIdx": 12,
+      "startS": 56.048,
+      "endS": 56.93
+    },
+    {
+      "word": "Baja",
+      "spoken": "Baja",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 57.092,
+      "endS": 57.431
+    },
+    {
+      "word": "memuai",
+      "spoken": "memuai",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 57.533,
+      "endS": 57.77
+    },
+    {
+      "word": "memanjang.",
+      "spoken": "memanjang.",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 57.838,
+      "endS": 58.787
+    },
+    {
+      "word": "Kalau",
+      "spoken": "Kalau",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 58.889,
+      "endS": 59.058
+    },
+    {
+      "word": "rel",
+      "spoken": "rel",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 59.126,
+      "endS": 59.262
+    },
+    {
+      "word": "disambung",
+      "spoken": "disambung",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 59.363,
+      "endS": 59.668
+    },
+    {
+      "word": "rapat",
+      "spoken": "rapat",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 59.736,
+      "endS": 60.007
+    },
+    {
+      "word": "tanpa",
+      "spoken": "tanpa",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 60.075,
+      "endS": 60.279
+    },
+    {
+      "word": "ruang,",
+      "spoken": "ruang,",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 60.346,
+      "endS": 60.889
+    },
+    {
+      "word": "tekanannya",
+      "spoken": "tekanannya",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 60.957,
+      "endS": 61.499
+    },
+    {
+      "word": "bikin",
+      "spoken": "bikin",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 61.533,
+      "endS": 61.77
+    },
+    {
+      "word": "rel",
+      "spoken": "rel",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 61.838,
+      "endS": 61.973
+    },
+    {
+      "word": "melengkung",
+      "spoken": "melengkung",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 62.041,
+      "endS": 62.516
+    },
+    {
+      "word": "kayak",
+      "spoken": "kayak",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 62.55,
+      "endS": 62.719
+    },
+    {
+      "word": "ular.",
+      "spoken": "ular.",
+      "act": 6,
+      "beatIdx": 13,
+      "startS": 62.787,
+      "endS": 63.465
+    },
+    {
+      "word": "Solusinya?",
+      "spoken": "Solusinya?",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 63.873,
+      "endS": 64.652
+    },
+    {
+      "word": "Insinyur",
+      "spoken": "Insinyur",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 64.822,
+      "endS": 65.296
+    },
+    {
+      "word": "menyisakan",
+      "spoken": "menyisakan",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 65.364,
+      "endS": 65.771
+    },
+    {
+      "word": "celah",
+      "spoken": "celah",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 65.839,
+      "endS": 65.974
+    },
+    {
+      "word": "kecil",
+      "spoken": "kecil",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 66.042,
+      "endS": 66.449
+    },
+    {
+      "word": "sekitar",
+      "spoken": "sekitar",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 66.584,
+      "endS": 66.923
+    },
+    {
+      "word": "10",
+      "spoken": "sepuluh",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 66.991,
+      "endS": 67.33
+    },
+    {
+      "word": "mm",
+      "spoken": "milimeter",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 67.398,
+      "endS": 67.873
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 68.008,
+      "endS": 68.076
+    },
+    {
+      "word": "sambungan",
+      "spoken": "sambungan",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 68.144,
+      "endS": 68.483
+    },
+    {
+      "word": "rel.",
+      "spoken": "rel.",
+      "act": 7,
+      "beatIdx": 14,
+      "startS": 68.618,
+      "endS": 69.161
+    },
+    {
+      "word": "Celah",
+      "spoken": "Celah",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 69.402,
+      "endS": 69.673
+    },
+    {
+      "word": "inilah",
+      "spoken": "inilah",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 69.741,
+      "endS": 70.147
+    },
+    {
+      "word": "yang",
+      "spoken": "yang",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 70.215,
+      "endS": 70.283
+    },
+    {
+      "word": "bikin",
+      "spoken": "bikin",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 70.351,
+      "endS": 70.554
+    },
+    {
+      "word": "bunyi",
+      "spoken": "bunyi",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 70.622,
+      "endS": 70.893
+    },
+    {
+      "word": "khas",
+      "spoken": "khas",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 70.927,
+      "endS": 71.164
+    },
+    {
+      "word": "jeglek-jeglek",
+      "spoken": "jeglek-jeglek",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 71.198,
+      "endS": 71.91
+    },
+    {
+      "word": "saat",
+      "spoken": "saat",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 71.978,
+      "endS": 72.114
+    },
+    {
+      "word": "roda",
+      "spoken": "roda",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 72.181,
+      "endS": 72.317
+    },
+    {
+      "word": "lewat,",
+      "spoken": "lewat,",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 72.385,
+      "endS": 73.097
+    },
+    {
+      "word": "memberi",
+      "spoken": "memberi",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 73.131,
+      "endS": 73.402
+    },
+    {
+      "word": "ruang",
+      "spoken": "ruang",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 73.469,
+      "endS": 73.673
+    },
+    {
+      "word": "baja",
+      "spoken": "baja",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 73.707,
+      "endS": 73.944
+    },
+    {
+      "word": "bernapas",
+      "spoken": "bernapas",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 74.012,
+      "endS": 74.419
+    },
+    {
+      "word": "saat",
+      "spoken": "saat",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 74.453,
+      "endS": 74.622
+    },
+    {
+      "word": "panas.",
+      "spoken": "panas.",
+      "act": 7,
+      "beatIdx": 15,
+      "startS": 74.724,
+      "endS": 75.503
+    },
+    {
+      "word": "Batu",
+      "spoken": "Batu",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 75.812,
+      "endS": 76.084
+    },
+    {
+      "word": "tajam",
+      "spoken": "tajam",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 76.151,
+      "endS": 76.423
+    },
+    {
+      "word": "menahan",
+      "spoken": "menahan",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 76.49,
+      "endS": 76.829
+    },
+    {
+      "word": "beban,",
+      "spoken": "beban,",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 76.897,
+      "endS": 77.575
+    },
+    {
+      "word": "celah",
+      "spoken": "celah",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 77.643,
+      "endS": 77.846
+    },
+    {
+      "word": "kecil",
+      "spoken": "kecil",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 77.914,
+      "endS": 78.253
+    },
+    {
+      "word": "meredam",
+      "spoken": "meredam",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 78.321,
+      "endS": 78.728
+    },
+    {
+      "word": "panas.",
+      "spoken": "panas.",
+      "act": 8,
+      "beatIdx": 16,
+      "startS": 78.829,
+      "endS": 79.609
+    },
+    {
+      "word": "Semua",
+      "spoken": "Semua",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 79.8,
+      "endS": 80.139
+    },
+    {
+      "word": "bekerja",
+      "spoken": "bekerja",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 80.206,
+      "endS": 80.613
+    },
+    {
+      "word": "diam-diam",
+      "spoken": "diam-diam",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 80.647,
+      "endS": 81.223
+    },
+    {
+      "word": "di",
+      "spoken": "di",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 81.291,
+      "endS": 81.359
+    },
+    {
+      "word": "bawah",
+      "spoken": "bawah",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 81.427,
+      "endS": 81.562
+    },
+    {
+      "word": "roda",
+      "spoken": "roda",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 81.63,
+      "endS": 81.766
+    },
+    {
+      "word": "baja,",
+      "spoken": "baja,",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 81.834,
+      "endS": 82.511
+    },
+    {
+      "word": "persis",
+      "spoken": "persis",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 82.647,
+      "endS": 82.918
+    },
+    {
+      "word": "saat...",
+      "spoken": "saat...",
+      "act": 8,
+      "beatIdx": 17,
+      "startS": 82.986,
+      "endS": 83.596
+    }
+  ],
+  "subtitles": [
+    {
+      "id": "sub_001",
+      "text": "Kereta seberat 100",
+      "act": 1,
+      "startFrame": 7,
+      "endFrame": 37,
+      "startS": 0.22,
+      "endS": 1.237
+    },
+    {
+      "id": "sub_002",
+      "text": "ton lewat di",
+      "act": 1,
+      "startFrame": 39,
+      "endFrame": 53,
+      "startS": 1.305,
+      "endS": 1.762
+    },
+    {
+      "id": "sub_003",
+      "text": "sini,",
+      "act": 1,
+      "startFrame": 53,
+      "endFrame": 73,
+      "startS": 1.779,
+      "endS": 2.439
+    },
+    {
+      "id": "sub_004",
+      "text": "tapi relnya cuma",
+      "act": 1,
+      "startFrame": 73,
+      "endFrame": 98,
+      "startS": 2.423,
+      "endS": 3.253
+    },
+    {
+      "id": "sub_005",
+      "text": "ditaruh di atas",
+      "act": 1,
+      "startFrame": 99,
+      "endFrame": 116,
+      "startS": 3.294,
+      "endS": 3.863
+    },
+    {
+      "id": "sub_006",
+      "text": "batu kerikil longgar.",
+      "act": 1,
+      "startFrame": 116,
+      "endFrame": 150,
+      "startS": 3.881,
+      "endS": 5.004
+    },
+    {
+      "id": "sub_007",
+      "text": "Kenapa nggak dicor",
+      "act": 1,
+      "startFrame": 153,
+      "endFrame": 177,
+      "startS": 5.11,
+      "endS": 5.907
+    },
+    {
+      "id": "sub_008",
+      "text": "beton mulus aja",
+      "act": 1,
+      "startFrame": 179,
+      "endFrame": 204,
+      "startS": 5.958,
+      "endS": 6.787
+    },
+    {
+      "id": "sub_009",
+      "text": "biar rata?",
+      "act": 1,
+      "startFrame": 203,
+      "endFrame": 233,
+      "startS": 6.771,
+      "endS": 7.779
+    },
+    {
+      "id": "sub_010",
+      "text": "Coba deh kamu",
+      "act": 2,
+      "startFrame": 240,
+      "endFrame": 266,
+      "startS": 7.987,
+      "endS": 8.851
+    },
+    {
+      "id": "sub_011",
+      "text": "taruh bantalan rel",
+      "act": 2,
+      "startFrame": 266,
+      "endFrame": 295,
+      "startS": 8.869,
+      "endS": 9.817
+    },
+    {
+      "id": "sub_012",
+      "text": "langsung di atas",
+      "act": 2,
+      "startFrame": 297,
+      "endFrame": 316,
+      "startS": 9.885,
+      "endS": 10.546
+    },
+    {
+      "id": "sub_013",
+      "text": "tanah biasa.",
+      "act": 2,
+      "startFrame": 317,
+      "endFrame": 351,
+      "startS": 10.563,
+      "endS": 11.693
+    },
+    {
+      "id": "sub_014",
+      "text": "Begitu kereta pertama",
+      "act": 2,
+      "startFrame": 354,
+      "endFrame": 382,
+      "startS": 11.806,
+      "endS": 12.737
+    },
+    {
+      "id": "sub_015",
+      "text": "melintas,",
+      "act": 2,
+      "startFrame": 383,
+      "endFrame": 407,
+      "startS": 12.755,
+      "endS": 13.552
+    },
+    {
+      "id": "sub_016",
+      "text": "tanahnya langsung amblas.",
+      "act": 2,
+      "startFrame": 408,
+      "endFrame": 465,
+      "startS": 13.603,
+      "endS": 15.491
+    },
+    {
+      "id": "sub_017",
+      "text": "Beban puluhan ton",
+      "act": 3,
+      "startFrame": 470,
+      "endFrame": 502,
+      "startS": 15.676,
+      "endS": 16.743
+    },
+    {
+      "id": "sub_018",
+      "text": "menekan satu titik",
+      "act": 3,
+      "startFrame": 503,
+      "endFrame": 531,
+      "startS": 16.76,
+      "endS": 17.692
+    },
+    {
+      "id": "sub_019",
+      "text": "sempit ke bawah.",
+      "act": 3,
+      "startFrame": 531,
+      "endFrame": 571,
+      "startS": 17.71,
+      "endS": 19.044
+    },
+    {
+      "id": "sub_020",
+      "text": "Pas hujan turun,",
+      "act": 3,
+      "startFrame": 575,
+      "endFrame": 607,
+      "startS": 19.158,
+      "endS": 20.225
+    },
+    {
+      "id": "sub_021",
+      "text": "tanah berubah jadi",
+      "act": 3,
+      "startFrame": 607,
+      "endFrame": 629,
+      "startS": 20.243,
+      "endS": 20.971
+    },
+    {
+      "id": "sub_022",
+      "text": "lumpur,",
+      "act": 3,
+      "startFrame": 630,
+      "endFrame": 654,
+      "startS": 20.988,
+      "endS": 21.784
+    },
+    {
+      "id": "sub_023",
+      "text": "relnya miring,",
+      "act": 3,
+      "startFrame": 654,
+      "endFrame": 683,
+      "startS": 21.802,
+      "endS": 22.767
+    },
+    {
+      "id": "sub_024",
+      "text": "dan kereta bisa",
+      "act": 3,
+      "startFrame": 683,
+      "endFrame": 702,
+      "startS": 22.751,
+      "endS": 23.411
+    },
+    {
+      "id": "sub_025",
+      "text": "anjlok.",
+      "act": 3,
+      "startFrame": 703,
+      "endFrame": 732,
+      "startS": 23.429,
+      "endS": 24.403
+    },
+    {
+      "id": "sub_026",
+      "text": "Makanya insinyur menimbun",
+      "act": 4,
+      "startFrame": 739,
+      "endFrame": 787,
+      "startS": 24.625,
+      "endS": 26.234
+    },
+    {
+      "id": "sub_027",
+      "text": "batu pecah tajam",
+      "act": 4,
+      "startFrame": 788,
+      "endFrame": 820,
+      "startS": 26.252,
+      "endS": 27.319
+    },
+    {
+      "id": "sub_028",
+      "text": "yang disebut balast.",
+      "act": 4,
+      "startFrame": 820,
+      "endFrame": 856,
+      "startS": 27.337,
+      "endS": 28.544
+    },
+    {
+      "id": "sub_029",
+      "text": "Perhatiin bentuknya —",
+      "act": 4,
+      "startFrame": 860,
+      "endFrame": 903,
+      "startS": 28.665,
+      "endS": 30.094
+    },
+    {
+      "id": "sub_030",
+      "text": "bukan batu sungai",
+      "act": 4,
+      "startFrame": 902,
+      "endFrame": 927,
+      "startS": 30.066,
+      "endS": 30.884
+    },
+    {
+      "id": "sub_031",
+      "text": "bulat yang licin,",
+      "act": 4,
+      "startFrame": 927,
+      "endFrame": 960,
+      "startS": 30.902,
+      "endS": 32.003
+    },
+    {
+      "id": "sub_032",
+      "text": "tapi tajam bersudut.",
+      "act": 4,
+      "startFrame": 960,
+      "endFrame": 1010,
+      "startS": 31.987,
+      "endS": 33.665
+    },
+    {
+      "id": "sub_033",
+      "text": "Begitu terinjak,",
+      "act": 4,
+      "startFrame": 1014,
+      "endFrame": 1048,
+      "startS": 33.785,
+      "endS": 34.92
+    },
+    {
+      "id": "sub_034",
+      "text": "sudutnya saling mengunci,",
+      "act": 4,
+      "startFrame": 1048,
+      "endFrame": 1094,
+      "startS": 34.938,
+      "endS": 36.479
+    },
+    {
+      "id": "sub_035",
+      "text": "menyebarkan beban lebar",
+      "act": 4,
+      "startFrame": 1095,
+      "endFrame": 1129,
+      "startS": 36.497,
+      "endS": 37.632
+    },
+    {
+      "id": "sub_036",
+      "text": "ke tanah,",
+      "act": 4,
+      "startFrame": 1130,
+      "endFrame": 1153,
+      "startS": 37.65,
+      "endS": 38.445
+    },
+    {
+      "id": "sub_037",
+      "text": "sambil membuang air",
+      "act": 4,
+      "startFrame": 1154,
+      "endFrame": 1182,
+      "startS": 38.463,
+      "endS": 39.394
+    },
+    {
+      "id": "sub_038",
+      "text": "hujan ke bawah.",
+      "act": 4,
+      "startFrame": 1182,
+      "endFrame": 1212,
+      "startS": 39.412,
+      "endS": 40.386
+    },
+    {
+      "id": "sub_039",
+      "text": "Bayangin bedanya kamu",
+      "act": 5,
+      "startFrame": 1219,
+      "endFrame": 1251,
+      "startS": 40.617,
+      "endS": 41.684
+    },
+    {
+      "id": "sub_040",
+      "text": "menekan tumpukan kelereng",
+      "act": 5,
+      "startFrame": 1251,
+      "endFrame": 1283,
+      "startS": 41.701,
+      "endS": 42.768
+    },
+    {
+      "id": "sub_041",
+      "text": "bulat —",
+      "act": 5,
+      "startFrame": 1284,
+      "endFrame": 1306,
+      "startS": 42.786,
+      "endS": 43.548
+    },
+    {
+      "id": "sub_042",
+      "text": "langsung menggelinding buyar.",
+      "act": 5,
+      "startFrame": 1306,
+      "endFrame": 1363,
+      "startS": 43.532,
+      "endS": 45.424
+    },
+    {
+      "id": "sub_043",
+      "text": "Bandingin sama batu",
+      "act": 5,
+      "startFrame": 1367,
+      "endFrame": 1394,
+      "startS": 45.552,
+      "endS": 46.483
+    },
+    {
+      "id": "sub_044",
+      "text": "tajam yang saling",
+      "act": 5,
+      "startFrame": 1394,
+      "endFrame": 1421,
+      "startS": 46.467,
+      "endS": 47.365
+    },
+    {
+      "id": "sub_045",
+      "text": "menggigit —",
+      "act": 5,
+      "startFrame": 1421,
+      "endFrame": 1448,
+      "startS": 47.36,
+      "endS": 48.269
+    },
+    {
+      "id": "sub_046",
+      "text": "makin ditekan,",
+      "act": 5,
+      "startFrame": 1447,
+      "endFrame": 1477,
+      "startS": 48.241,
+      "endS": 49.229
+    },
+    {
+      "id": "sub_047",
+      "text": "malah makin kokoh.",
+      "act": 5,
+      "startFrame": 1476,
+      "endFrame": 1524,
+      "startS": 49.213,
+      "endS": 50.797
+    },
+    {
+      "id": "sub_048",
+      "text": "Tapi batu aja",
+      "act": 6,
+      "startFrame": 1531,
+      "endFrame": 1557,
+      "startS": 51.031,
+      "endS": 51.896
+    },
+    {
+      "id": "sub_049",
+      "text": "belum cukup.",
+      "act": 6,
+      "startFrame": 1558,
+      "endFrame": 1586,
+      "startS": 51.947,
+      "endS": 52.878
+    },
+    {
+      "id": "sub_050",
+      "text": "Di bawah terik",
+      "act": 6,
+      "startFrame": 1586,
+      "endFrame": 1602,
+      "startS": 52.862,
+      "endS": 53.386
+    },
+    {
+      "id": "sub_051",
+      "text": "matahari,",
+      "act": 6,
+      "startFrame": 1601,
+      "endFrame": 1628,
+      "startS": 53.37,
+      "endS": 54.268
+    },
+    {
+      "id": "sub_052",
+      "text": "suhu besi rel",
+      "act": 6,
+      "startFrame": 1629,
+      "endFrame": 1652,
+      "startS": 54.286,
+      "endS": 55.081
+    },
+    {
+      "id": "sub_053",
+      "text": "bisa tembus enam",
+      "act": 6,
+      "startFrame": 1653,
+      "endFrame": 1677,
+      "startS": 55.099,
+      "endS": 55.895
+    },
+    {
+      "id": "sub_054",
+      "text": "puluh derajat.",
+      "act": 6,
+      "startFrame": 1677,
+      "endFrame": 1710,
+      "startS": 55.913,
+      "endS": 57.011
+    },
+    {
+      "id": "sub_055",
+      "text": "Baja memuai memanjang.",
+      "act": 6,
+      "startFrame": 1713,
+      "endFrame": 1765,
+      "startS": 57.092,
+      "endS": 58.838
+    },
+    {
+      "id": "sub_056",
+      "text": "Kalau rel disambung",
+      "act": 6,
+      "startFrame": 1767,
+      "endFrame": 1792,
+      "startS": 58.889,
+      "endS": 59.718
+    },
+    {
+      "id": "sub_057",
+      "text": "rapat tanpa ruang,",
+      "act": 6,
+      "startFrame": 1792,
+      "endFrame": 1828,
+      "startS": 59.736,
+      "endS": 60.939
+    },
+    {
+      "id": "sub_058",
+      "text": "tekanannya bikin rel",
+      "act": 6,
+      "startFrame": 1829,
+      "endFrame": 1861,
+      "startS": 60.957,
+      "endS": 62.023
+    },
+    {
+      "id": "sub_059",
+      "text": "melengkung kayak ular.",
+      "act": 6,
+      "startFrame": 1861,
+      "endFrame": 1909,
+      "startS": 62.041,
+      "endS": 63.625
+    },
+    {
+      "id": "sub_060",
+      "text": "Solusinya?",
+      "act": 7,
+      "startFrame": 1916,
+      "endFrame": 1942,
+      "startS": 63.873,
+      "endS": 64.737
+    },
+    {
+      "id": "sub_061",
+      "text": "Insinyur menyisakan celah",
+      "act": 7,
+      "startFrame": 1945,
+      "endFrame": 1981,
+      "startS": 64.822,
+      "endS": 66.024
+    },
+    {
+      "id": "sub_062",
+      "text": "kecil sekitar 10",
+      "act": 7,
+      "startFrame": 1981,
+      "endFrame": 2021,
+      "startS": 66.042,
+      "endS": 67.38
+    },
+    {
+      "id": "sub_063",
+      "text": "mm di sambungan",
+      "act": 7,
+      "startFrame": 2022,
+      "endFrame": 2057,
+      "startS": 67.398,
+      "endS": 68.55
+    },
+    {
+      "id": "sub_064",
+      "text": "rel.",
+      "act": 7,
+      "startFrame": 2059,
+      "endFrame": 2078,
+      "startS": 68.618,
+      "endS": 69.281
+    },
+    {
+      "id": "sub_065",
+      "text": "Celah inilah yang",
+      "act": 7,
+      "startFrame": 2082,
+      "endFrame": 2110,
+      "startS": 69.402,
+      "endS": 70.333
+    },
+    {
+      "id": "sub_066",
+      "text": "bikin bunyi khas",
+      "act": 7,
+      "startFrame": 2111,
+      "endFrame": 2136,
+      "startS": 70.351,
+      "endS": 71.214
+    },
+    {
+      "id": "sub_067",
+      "text": "jeglek-jeglek saat roda",
+      "act": 7,
+      "startFrame": 2136,
+      "endFrame": 2171,
+      "startS": 71.198,
+      "endS": 72.367
+    },
+    {
+      "id": "sub_068",
+      "text": "lewat,",
+      "act": 7,
+      "startFrame": 2172,
+      "endFrame": 2194,
+      "startS": 72.385,
+      "endS": 73.147
+    },
+    {
+      "id": "sub_069",
+      "text": "memberi ruang baja",
+      "act": 7,
+      "startFrame": 2194,
+      "endFrame": 2220,
+      "startS": 73.131,
+      "endS": 73.994
+    },
+    {
+      "id": "sub_070",
+      "text": "bernapas saat panas.",
+      "act": 7,
+      "startFrame": 2220,
+      "endFrame": 2270,
+      "startS": 74.012,
+      "endS": 75.657
+    },
+    {
+      "id": "sub_071",
+      "text": "Batu tajam menahan",
+      "act": 8,
+      "startFrame": 2274,
+      "endFrame": 2306,
+      "startS": 75.812,
+      "endS": 76.879
+    },
+    {
+      "id": "sub_072",
+      "text": "beban,",
+      "act": 8,
+      "startFrame": 2307,
+      "endFrame": 2329,
+      "startS": 76.897,
+      "endS": 77.625
+    },
+    {
+      "id": "sub_073",
+      "text": "celah kecil meredam",
+      "act": 8,
+      "startFrame": 2329,
+      "endFrame": 2363,
+      "startS": 77.643,
+      "endS": 78.778
+    },
+    {
+      "id": "sub_074",
+      "text": "panas.",
+      "act": 8,
+      "startFrame": 2365,
+      "endFrame": 2391,
+      "startS": 78.829,
+      "endS": 79.704
+    },
+    {
+      "id": "sub_075",
+      "text": "Semua bekerja diam-diam",
+      "act": 8,
+      "startFrame": 2394,
+      "endFrame": 2438,
+      "startS": 79.8,
+      "endS": 81.273
+    },
+    {
+      "id": "sub_076",
+      "text": "di bawah roda",
+      "act": 8,
+      "startFrame": 2439,
+      "endFrame": 2454,
+      "startS": 81.291,
+      "endS": 81.816
+    },
+    {
+      "id": "sub_077",
+      "text": "baja,",
+      "act": 8,
+      "startFrame": 2455,
+      "endFrame": 2477,
+      "startS": 81.834,
+      "endS": 82.579
+    },
+    {
+      "id": "sub_078",
+      "text": "persis saat...",
+      "act": 8,
+      "startFrame": 2479,
+      "endFrame": 2513,
+      "startS": 82.647,
+      "endS": 83.756
+    }
+  ]
+}

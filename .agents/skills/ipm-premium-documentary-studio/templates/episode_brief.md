@@ -1,0 +1,27 @@
+# Episode Brief
+
+- Episode number / slot (act function):
+- Working title:
+- Historical period:
+- Duration target (60–120 s):
+- Audience takeaway:
+- **Central historical question** (one sentence, specific, answerable from the ledger):
+- **Assumption the viewer holds at second 0:**
+- **The turn / reveal** (with evidence IDs):
+- **Question ladder** (3 micro-questions):
+- **Human-scale entry** (role, place, or object; evidence basis):
+- **Stakes** (what was at risk or changed, for whom):
+- One-sentence premise:
+- Why this episode matters in the series:
+- Required historical claims (evidence IDs):
+- Claims to avoid / unresolved:
+- Primary sources to locate:
+- **Structure ID / hook type ID / ending type ID** (from the variation matrix):
+- **Loops opened / loops closed:**
+- **Distinctive idea** (structure, camera, or sound; unique in the series):
+- Opening visual mode / camera signature / sound palette / narrator tempo:
+- Visual opportunities (hero shot candidates):
+- Likely reconstruction risks:
+- Proposed ending / next-episode bridge:
+- Evidence readiness (green / amber / red):
+- User approval:

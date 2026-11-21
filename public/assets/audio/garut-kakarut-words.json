@@ -1,0 +1,400 @@
+{
+  "words": [
+    {
+      "word": "Tahun",
+      "start": 0.11960215,
+      "end": 0.36
+    },
+    {
+      "word": "seribu",
+      "start": 0.36000004,
+      "end": 0.68
+    },
+    {
+      "word": "delapan",
+      "start": 0.76,
+      "end": 1
+    },
+    {
+      "word": "ratus",
+      "start": 1,
+      "end": 1.24
+    },
+    {
+      "word": "tiga",
+      "start": 1.24,
+      "end": 1.48
+    },
+    {
+      "word": "belas.",
+      "start": 1.48,
+      "end": 1.96
+    },
+    {
+      "word": "Rombongan",
+      "start": 2.3586478,
+      "end": 2.76
+    },
+    {
+      "word": "bupati",
+      "start": 2.76,
+      "end": 3.24
+    },
+    {
+      "word": "sedang",
+      "start": 3.24,
+      "end": 3.48
+    },
+    {
+      "word": "mencari",
+      "start": 3.48,
+      "end": 3.88
+    },
+    {
+      "word": "lokasi",
+      "start": 3.88,
+      "end": 4.28
+    },
+    {
+      "word": "ibu",
+      "start": 4.36,
+      "end": 4.44
+    },
+    {
+      "word": "kota",
+      "start": 4.44,
+      "end": 4.68
+    },
+    {
+      "word": "baru",
+      "start": 4.68,
+      "end": 5
+    },
+    {
+      "word": "pengganti",
+      "start": 5,
+      "end": 5.48
+    },
+    {
+      "word": "Limbangan",
+      "start": 5.48,
+      "end": 6.12
+    },
+    {
+      "word": "di",
+      "start": 6.2,
+      "end": 6.2
+    },
+    {
+      "word": "sekitar",
+      "start": 6.2,
+      "end": 6.6
+    },
+    {
+      "word": "Sungai",
+      "start": 6.6,
+      "end": 6.84
+    },
+    {
+      "word": "Cimanuk.",
+      "start": 6.84,
+      "end": 7.48
+    },
+    {
+      "word": "Saat",
+      "start": 7.883972,
+      "end": 8.2
+    },
+    {
+      "word": "sedang",
+      "start": 8.2,
+      "end": 8.44
+    },
+    {
+      "word": "membuka",
+      "start": 8.44,
+      "end": 8.76
+    },
+    {
+      "word": "jalan",
+      "start": 8.76,
+      "end": 9.16
+    },
+    {
+      "word": "di",
+      "start": 9.24,
+      "end": 9.24
+    },
+    {
+      "word": "tengah",
+      "start": 9.24,
+      "end": 9.48
+    },
+    {
+      "word": "semak",
+      "start": 9.4800005,
+      "end": 9.8
+    },
+    {
+      "word": "belukar",
+      "start": 9.8,
+      "end": 10.12
+    },
+    {
+      "word": "lebat,",
+      "start": 10.12,
+      "end": 10.6
+    },
+    {
+      "word": "salah",
+      "start": 10.898675,
+      "end": 11.24
+    },
+    {
+      "word": "satu",
+      "start": 11.24,
+      "end": 11.4
+    },
+    {
+      "word": "anggota",
+      "start": 11.4,
+      "end": 11.8
+    },
+    {
+      "word": "tim",
+      "start": 11.8,
+      "end": 12.04
+    },
+    {
+      "word": "tiba-tiba",
+      "start": 12.12,
+      "end": 12.52
+    },
+    {
+      "word": "berteriak:",
+      "start": 12.52,
+      "end": 13.16
+    },
+    {
+      "word": "Aduh,",
+      "start": 13.8904085,
+      "end": 14.28
+    },
+    {
+      "word": "kakarut!",
+      "start": 14.416782,
+      "end": 15
+    },
+    {
+      "word": "Jempol",
+      "start": 15.193448,
+      "end": 15.56
+    },
+    {
+      "word": "saya",
+      "start": 15.56,
+      "end": 15.72
+    },
+    {
+      "word": "tergores",
+      "start": 15.72,
+      "end": 16.12
+    },
+    {
+      "word": "duri!",
+      "start": 16.12,
+      "end": 16.68
+    },
+    {
+      "word": "Orang",
+      "start": 16.910313,
+      "end": 17.16
+    },
+    {
+      "word": "Belanda",
+      "start": 17.24,
+      "end": 17.48
+    },
+    {
+      "word": "yang",
+      "start": 17.48,
+      "end": 17.56
+    },
+    {
+      "word": "mendampingi",
+      "start": 17.56,
+      "end": 18.12
+    },
+    {
+      "word": "justru",
+      "start": 18.12,
+      "end": 18.52
+    },
+    {
+      "word": "salah",
+      "start": 18.52,
+      "end": 18.76
+    },
+    {
+      "word": "dengar.",
+      "start": 18.76,
+      "end": 19.16
+    },
+    {
+      "word": "Dengan",
+      "start": 19.503803,
+      "end": 19.8
+    },
+    {
+      "word": "logat",
+      "start": 19.8,
+      "end": 20.04
+    },
+    {
+      "word": "kakunya",
+      "start": 20.04,
+      "end": 20.68
+    },
+    {
+      "word": "dia",
+      "start": 20.680002,
+      "end": 20.84
+    },
+    {
+      "word": "mencatat:",
+      "start": 20.84,
+      "end": 21.4
+    },
+    {
+      "word": "Aha!",
+      "start": 21.844158,
+      "end": 22.36
+    },
+    {
+      "word": "Garoet?",
+      "start": 22.430916,
+      "end": 22.92
+    },
+    {
+      "word": "Tempat",
+      "start": 23.126566,
+      "end": 23.4
+    },
+    {
+      "word": "ini",
+      "start": 23.48,
+      "end": 23.56
+    },
+    {
+      "word": "kita",
+      "start": 23.56,
+      "end": 23.8
+    },
+    {
+      "word": "namakan",
+      "start": 23.88,
+      "end": 24.2
+    },
+    {
+      "word": "Garoet!",
+      "start": 24.2,
+      "end": 24.84
+    },
+    {
+      "word": "Dan",
+      "start": 24.998222,
+      "end": 25.24
+    },
+    {
+      "word": "begitulah",
+      "start": 25.24,
+      "end": 25.64
+    },
+    {
+      "word": "asal-usulnya.",
+      "start": 25.72,
+      "end": 26.44
+    },
+    {
+      "word": "Dari",
+      "start": 26.77172,
+      "end": 27.08
+    },
+    {
+      "word": "jempol",
+      "start": 27.08,
+      "end": 27.4
+    },
+    {
+      "word": "yang",
+      "start": 27.48,
+      "end": 27.56
+    },
+    {
+      "word": "kakarut",
+      "start": 27.56,
+      "end": 28.12
+    },
+    {
+      "word": "atau",
+      "start": 28.12,
+      "end": 28.28
+    },
+    {
+      "word": "kecakar",
+      "start": 28.36,
+      "end": 28.68
+    },
+    {
+      "word": "duri,",
+      "start": 28.68,
+      "end": 29.24
+    },
+    {
+      "word": "lahirlah",
+      "start": 29.479553,
+      "end": 29.96
+    },
+    {
+      "word": "nama",
+      "start": 29.96,
+      "end": 30.2
+    },
+    {
+      "word": "Garut",
+      "start": 30.2,
+      "end": 30.6
+    },
+    {
+      "word": "yang",
+      "start": 30.6,
+      "end": 30.76
+    },
+    {
+      "word": "kita",
+      "start": 30.76,
+      "end": 30.92
+    },
+    {
+      "word": "kenal",
+      "start": 30.92,
+      "end": 31.24
+    },
+    {
+      "word": "hingga",
+      "start": 31.32,
+      "end": 31.48
+    },
+    {
+      "word": "hari",
+      "start": 31.48,
+      "end": 31.72
+    },
+    {
+      "word": "ini.",
+      "start": 31.72,
+      "end": 32.12
+    }
+  ],
+  "duration": 32.24
+}

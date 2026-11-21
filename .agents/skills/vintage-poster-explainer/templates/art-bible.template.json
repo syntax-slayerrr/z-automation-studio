@@ -1,0 +1,65 @@
+{
+  "projectSlug": "<topic-slug>",
+  "title": "<HERO TITLE UPPERCASE>",
+  "subtitleLocation": "<LOCATION OR REGION UPPERCASE>",
+  "closingTagline": "<SHORT PUNCHLINE UPPERCASE>",
+  "styleDNA": "vintage-poster-explainer",
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "targetDurationSec": 42
+  },
+  "materiality": {
+    "paperTextureMode": "static_multiply_non_boiling",
+    "paperOpacity": 0.18,
+    "inkOutlineColor": "#241C1B",
+    "inkOutlineWidthPx": 1.8,
+    "shadingMode": "2-to-3-tone-gouache-with-woodcut-strata-grain"
+  },
+  "typography": {
+    "heroFont": "Alfa Slab One",
+    "heroFill": "#FAF1DC",
+    "heroStroke": "#2B1B17",
+    "hero3DShadow": "#6E2C1B",
+    "ribbonFont": "Plus Jakarta Sans",
+    "ribbonBg": "#1E2631",
+    "ribbonText": "#F5EFE2",
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleBackplate": "hand_brushed_feathered_ink",
+    "subtitleBg": "#1B212C",
+    "subtitlePastColor": "#F5F2EA",
+    "subtitleActiveColor": "#F8D348",
+    "subtitleUpcomingColor": "#98A0AC"
+  },
+  "palette": {
+    "daySky": ["#2A627D", "#5B96A8", "#C6D8C8", "#EAE2C6"],
+    "duskSky": ["#212642", "#6E6270", "#BA876A", "#E8B87D"],
+    "climaxSky": ["#3D1C26", "#8F2D24", "#D96B2B", "#F4A642"],
+    "water": ["#315768", "#3E6776", "#7DAAB4"],
+    "foliage": ["#52713B", "#3D5B34", "#2B4028"],
+    "strataBands": ["#945534", "#C27A44", "#E0C398", "#6E4229", "#36211B"],
+    "atlas": { "ocean": "#244F68", "coastalGlow": "#4D859C", "land": "#B49862" },
+    "postcardMat": "#C9BEA7",
+    "postcardHairline": "#3B342C",
+    "ghostBlueprint": "#FAF0CE"
+  },
+  "audio": {
+    "narratorWpm": 162,
+    "musicStyle": "curious acoustic plucked guitar / marimba / warm piano (100-110 BPM)",
+    "targetLufs": -14.8,
+    "targetTruePeakDbfs": -1.5,
+    "foleyPerTransition": true
+  },
+  "beats": [
+    { "id": 1, "name": "Scenic Poster Hook", "transition": "static_establish_to_rewind" },
+    { "id": 2, "name": "Time-Rewind / Origin Morph", "transition": "rolling_counter_morph" },
+    { "id": 3, "name": "Peak Event Climax", "transition": "flash_blur_blowout_and_shake" },
+    { "id": 4, "name": "Cutaway Cross-Section", "transition": "vertical_crane_down_peel" },
+    { "id": 5, "name": "Top-Down Scale & Vintage Atlas", "transition": "cloud_curtain_wipe_and_aerial_zoom_out" },
+    { "id": 6, "name": "Atmospheric Transformation", "transition": "cloud_wipe_to_weather_clear_rainbow" },
+    { "id": 7, "name": "Secondary Cutaway Reveal", "transition": "vertical_crane_down_uplift_arrows" },
+    { "id": 8, "name": "Loop Return & Postcard Finale", "transition": "dashed_ghost_blueprint_and_postcard_pullout" }
+  ]
+}

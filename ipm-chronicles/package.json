@@ -1,0 +1,19 @@
+{
+  "name": "ipm-chronicles",
+  "version": "1.0.0",
+  "description": "The IPM Chronicles — Vertical 9:16 Historical Documentary Series (Episodes 01-15)",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "tsc": "tsc --noEmit",
+    "still:ep01": "remotion still src/index.ts IpmEp01 out/ep01/qa/smoke_f0.jpg --frame=0",
+    "qa:ep01": "node pipeline/render_qa_stills.cjs",
+    "render:ep01": "node pipeline/render_ep01.cjs",
+    "still:ep02": "remotion still src/index.ts IpmEp02 out/ep02/qa/smoke_f0.jpg --frame=0",
+    "qa:ep02": "node pipeline/render_qa_stills_ep02.cjs",
+    "render:ep02": "node pipeline/render_ep02.cjs",
+    "still:ep03": "remotion still src/index.ts IpmEp03 out/ep03/qa/smoke_f0.jpg --frame=0",
+    "qa:ep03": "node pipeline/render_qa_stills_ep03.cjs",
+    "render:ep03": "node pipeline/render_ep03.cjs"
+  }
+}

@@ -1,0 +1,7 @@
+loop_id,type,question,opened_ep,closed_ep,evidence_ids,status
+L01,series,"Bagaimana sebuah keputusan dalam konferensi di Garut tahun 1958 tumbuh menjadi organisasi pelajar yang hari ini hidup sampai ke tingkat cabang seperti Panawuan?",1,15,"E00-C001,E00-C002,E00-C003,E00-C005,E00-C007",open
+L02,arc,"Dari gagasan awal di Garut 1958, mengapa pendirian resmi baru terwujud di Surakarta pada 1961 dan bagaimana bentuk organisasinya?",2,8,"E00-C001,E00-C003,E00-C005",planned
+L03,bridge,"Bagaimana para pelajar di tingkat cabang lokal seperti PC IPM Panawuan di Garut merawat nyala kaderisasi agar bertahan dari satu generasi ke generasi berikutnya?",3,4,"CLM-03-03,CLM-03-04",open
+L04,bridge,"(documented question carried from ep 7 into ep 8)",7,8,,planned
+L05,bridge,"(documented question carried from ep 10 into ep 11)",10,11,,planned
+L06,bridge,"(documented question carried from ep 13 into ep 14)",13,14,,planned

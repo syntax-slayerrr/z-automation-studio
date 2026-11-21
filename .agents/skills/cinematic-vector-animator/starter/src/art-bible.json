@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "name": "starter-golden-hour",
+    "version": 1,
+    "locked": false,
+    "mood": "hangat sinematik — golden, dramatis, menahan napas",
+    "notes": "Isi semua field. Setelah disetujui user, set locked=true."
+  },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "safeZones": {
+      "top": 160,
+      "bottom": 420,
+      "left": 60,
+      "right": 140
+    }
+  },
+  "palette": {
+    "shadow": {
+      "deep": "#0f0806",
+      "mid": "#2a140c",
+      "soft": "#5a2d17"
+    },
+    "base": {
+      "dark": "#7a3b17",
+      "mid": "#b8641f",
+      "light": "#e39a3b"
+    },
+    "highlight": {
+      "warm": "#ffc873",
+      "cream": "#fff0cf"
+    },
+    "accent": {
+      "coolShadow": "#1d3a4a",
+      "rim": "#7fd1d6"
+    },
+    "usage": "60% shadow+base gelap, 30% tengah, 10% highlight; accent dingin maksimal 5%. Dilarang #000 dan #fff."
+  },
+  "light": {
+    "keyDirection": "kiri-atas",
+    "keyColor": "#ffc873",
+    "fillColor": "#1d3a4a",
+    "rimColor": "#7fd1d6",
+    "contrast": "tinggi",
+    "origin": {
+      "x": 0.22,
+      "y": -0.05
+    }
+  },
+  "shape": {
+    "language": "bentuk bulat lembut dengan beberapa sudut tegas pada siluet",
+    "outline": "none",
+    "cornerRadius": "sedang",
+    "detail": "sedikit detail yang dipilih; siluet harus terbaca"
+  },
+  "depth": {
+    "layers": [
+      {
+        "name": "sky",
+        "parallax": 0.1,
+        "blur": 0,
+        "haze": 0.8
+      },
+      {
+        "name": "far",
+        "parallax": 0.25,
+        "blur": 1,
+        "haze": 0.55
+      },
+      {
+        "name": "mid",
+        "parallax": 0.5,
+        "blur": 0,
+        "haze": 0.2
+      },
+      {
+        "name": "subject",
+        "parallax": 0.9,
+        "blur": 0,
+        "haze": 0
+      },
+      {
+        "name": "foreground",
+        "parallax": 1.4,
+        "blur": 7,
+        "haze": 0
+      }
+    ]
+  },
+  "fx": {
+    "grain": {
+      "opacity": 0.12,
+      "scale": 2
+    },
+    "vignette": {
+      "strength": 0.55
+    },
+    "dust": {
+      "count": 48
+    },
+    "rays": {
+      "count": 5,
+      "opacity": 0.18
+    },
+    "grade": {
+      "opacity": 0.32
+    }
+  },
+  "motion": {
+    "defaultEase": "out",
+    "camera": {
+      "pushIn": [
+        1.0,
+        1.08
+      ],
+      "drift": 6
+    },
+    "holdFrames": [
+      8,
+      20
+    ],
+    "springs": {
+      "character": {
+        "damping": 14,
+        "stiffness": 120,
+        "mass": 0.8
+      },
+      "object": {
+        "damping": 18,
+        "stiffness": 100,
+        "mass": 1
+      }
+    }
+  },
+  "typography": {
+    "title": "ISI_FONT_JUDUL",
+    "body": "ISI_FONT_TEKS",
+    "rules": "di dalam safe zone; masuk dengan ease.out, keluar lebih cepat"
+  },
+  "forbidden": [
+    "hitam murni",
+    "putih murni",
+    "gerak linear",
+    "kamera statis",
+    "lebih dari satu gaya outline",
+    "sumber cahaya yang saling bertentangan"
+  ]
+}

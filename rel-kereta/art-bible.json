@@ -1,0 +1,62 @@
+{
+  "slug": "rel-kereta",
+  "title": "Kenapa Rel Kereta Pakai Batu Kerikil (Balast) & Celah?",
+  "compositionId": "RelKeretaShort",
+  "format": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "targetDurationSec": 76,
+    "endingMode": "seamless_visual_loop",
+    "watermark": "none"
+  },
+  "environment": {
+    "setting": "Indonesian rural railway embankment diorama beside tropical hills, paddy/grass verge, village houses, and layered geological soil cutaway",
+    "lightingMoods": ["day", "rain", "heat", "golden_hour"],
+    "skyShader": "custom_glsl_rayleigh_mie_fbm_clouds",
+    "ibl": "synthetic_pmrem_equirectangular",
+    "postprocessing": {
+      "bloomThreshold": 0.9,
+      "bloomIntensity": 0.36,
+      "macroBokehScale": 4.2,
+      "vignetteDarkness": 0.24
+    }
+  },
+  "character": {
+    "role": "Stylized 3D Indonesian railway engineer / craftsman",
+    "skinHex": "#DDA070",
+    "outfit": {
+      "headgear": "yellow_safety_hardhat_with_brim",
+      "topHex": "#F38B31",
+      "bottomHex": "#263B59",
+      "footwear": "brown_work_boots"
+    },
+    "blinkIntervalFrames": 105
+  },
+  "pbrMaterials": [
+    "soil_strata_cutaway_pbr",
+    "crushed_granite_ballast_pbr",
+    "weathered_concrete_sleeper_pbr",
+    "brushed_steel_rail_pbr",
+    "wet_mud_earth_pbr",
+    "terracotta_roof_pbr",
+    "warm_wood_table_pbr"
+  ],
+  "narrativeArc": [
+    { "beat": 1, "name": "Physical Hook (Loop Anchor = Frame 0): Train gliding across crushed stone ballast bed" },
+    { "beat": 2, "name": "Naive Attempt: Engineer places sleeper directly onto bare dirt ground" },
+    { "beat": 3, "name": "Catastrophic Failure: Heavy load + rain turns bare dirt to mud, sleeper tilts & sinks + RED pressure arrows" },
+    { "beat": 4, "name": "Cutaway Solution #1: Crushed angular granite ballast pours in, macro DOF interlock + BLUE load-spread pyramid + drainage" },
+    { "beat": 5, "name": "Everyday Table Analogy: Engineer behind wooden table pressing round glass marbles (scatter!) vs angular gravel blocks (locked solid!)" },
+    { "beat": 6, "name": "Hidden Twist: Blazing 60°C sun heat shimmer, steel rail expands & buckles into snake-wave Sun Kink + ORANGE stress arrows" },
+    { "beat": 7, "name": "Engineering Solution #2: Macro DOF cutaway of 10mm expansion gap + steel fishplate & bolts + rhythmic wheel clack pass" },
+    { "beat": 8, "name": "Seamless Visual Loop: Golden-to-day glide back to EXACT Frame 0 composition & incoming train" }
+  ],
+  "audio": {
+    "voProvider": "elevenlabs_eleven_v4",
+    "targetLufs": -14.8,
+    "maxTruePeakDbfs": -1.5,
+    "sfxProvider": "eleven_text_to_sound_v3_plus_cc0",
+    "musicLicense": "mixkit_free_stock_music"
+  }
+}

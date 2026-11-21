@@ -1,0 +1,16 @@
+ep,hook_type,structure,opening_visual_mode,narrator_tempo,sound_palette,camera_signature,ending_type,era_palette,voiced_ratio
+1,silence_image,quiet_chronicle,place_wide,intimate_slow,archive_hush,locked_observational,motif_callback,TBD,0.60
+2,moment_in_medias_res,question_first,human_action,measured,room_tone_sparse,slow_lateral_track,reframe,OrdeBaru_2010,0.82
+3,object_doorway,object_doorway,object_insert,brisk,inquiry_pulse,dolly_toward_detail,bridge_loop,SekolahMuhammadiyah_Panawuan,0.85
+4,consequence_first,reverse_reveal,place_wide,building,consequence_swell,reveal_pullback,reframe,TBD,0.80
+5,misconception_flip,misconception_correction,text_document,measured,street_life_warm,match_cut_driven,answer_resolve,TBD,0.85
+6,scale_or_number,numbers_ledger,map_graphic,brisk,inquiry_pulse,elevated_glide,consequence_echo,TBD,0.88
+7,decision_countdown,decision_point,human_action,building,room_tone_sparse,locked_observational,bridge_loop,TBD,0.80
+8,verified_paradox,contrast_pair,abstract_symbolic,measured,open_air_wide,reveal_pullback,reframe,TBD,0.78
+9,moment_in_medias_res,one_day_one_room,human_action,intimate_slow,archive_hush,subtle_handheld,quiet_hold,TBD,0.70
+10,absence_gap,quiet_chronicle,object_insert,intimate_slow,room_tone_sparse,locked_observational,bridge_loop,TBD,0.62
+11,contrast_then_now,map_movement,map_graphic,brisk,street_life_warm,slow_lateral_track,consequence_echo,TBD,0.85
+12,specific_question,question_first,place_wide,measured,inquiry_pulse,dolly_toward_detail,answer_resolve,TBD,0.82
+13,document_voice,document_voice,text_document,measured,archive_hush,match_cut_driven,bridge_loop,TBD,0.75
+14,consequence_first,reverse_reveal,human_action,building,consequence_swell,elevated_glide,consequence_echo,TBD,0.82
+15,object_doorway,object_doorway,object_insert,intimate_slow,open_air_wide,reveal_pullback,motif_callback,TBD,0.72

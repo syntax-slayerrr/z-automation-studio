@@ -1,0 +1,7 @@
+loop_id,type,question,opened_ep,closed_ep,evidence_ids,status
+L01,series,"(series question — fill after S2)",1,15,,planned
+L02,arc,"(first arc question — fill after S1)",2,8,,planned
+L03,bridge,"(documented question carried from ep 3 into ep 4)",3,4,,planned
+L04,bridge,"(documented question carried from ep 7 into ep 8)",7,8,,planned
+L05,bridge,"(documented question carried from ep 10 into ep 11)",10,11,,planned
+L06,bridge,"(documented question carried from ep 13 into ep 14)",13,14,,planned

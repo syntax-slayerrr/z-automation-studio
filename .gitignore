@@ -1,9 +1,46 @@
+# Dependencies & Build Caches
 node_modules/
-out/
-stills/
-.DS_Store
-*.log
+ipm-chronicles/node_modules/
 .cache/
 .remotion/
+build/
+re-ref3/
+_archive/
+stills/
+*.log
+.DS_Store
 
+# Environment & Secrets (Keep .env.example tracked!)
+.env
+.env.*
+!.env.example
+
+# Heavy Rendered Video & Raw/Cached Audio Assets (Keep repo lightweight & GitHub-push friendly!)
+out/
+ipm-chronicles/out/
+**/*.mp4
+**/*.wav
+**/*.m4a
+**/*.mp3
+earth-24h/analysis/
+*/analysis/
+*/ref_frames/
+*/frames/
+*/out/chunks/
+*/out/bundle/
+*/out/qa_stills/
+*/out/remotion_stills/
+*/out/*_stills/
+*/out/stills*/
+*/out/frames*/
+*/out/compare*/
+*/.tmp/
+*/.audio-cache/
+*/.bundle/
+*/.chunks/
+*/audio/vo_cache/
+*/audio/sfx/
 sound-effects-cache/
+
+# Keep bundled CC0 sound library (.ogg) inside .agents/skills/sound-effects/sfx/ tracked!
+!.agents/skills/sound-effects/sfx/**

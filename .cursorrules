@@ -1,0 +1,18 @@
+# Cursor & Windsurf AI Rules (`.cursorrules`)
+
+Kamu bekerja di dalam **Z-Automation Studio** — studio produksi video kode-murni (Remotion + Three.js + SVG + Custom GLSL + ElevenLabs Audio Pipeline).
+
+1. **Katalog 8 Master Video Style Skills**:
+   Seluruh instruksi pembuatan video tersimpan di `.agents/skills/<nama-skill>/SKILL.md` dan dirangkum di `AGENTS.md`:
+   - `.agents/skills/3d-cutaway-explainer/SKILL.md` — 3D Blender-Grade Cutaway & 2-Bone Analytical IK (`remotion/videos/sawah-terasering/`, `tiang-listrik/`, `rel-kereta/`)
+   - `.agents/skills/vintage-poster-explainer/SKILL.md` — 2D Gouache Travel-Poster & Geological Cutaway (`remotion/videos/gunung-guntur/`, `gambut-history/`)
+   - `.agents/skills/twilight-parchment-docu/SKILL.md` — 2D Atmospheric Diorama Documentary (`remotion/videos/human-fire/`, `gmni-history/`)
+   - `.agents/skills/earth-24h-celestial-docu/SKILL.md` — 24-Hour Celestial Clock & Deep-Time Diorama (`remotion/videos/earth-24h/`)
+   - `.agents/skills/cosmic-vfx-explainer/SKILL.md` — First-Person Astrophysics GLSL Shader & Visor POV (`remotion/videos/black-hole/`)
+   - `.agents/skills/cartoon-3d-short/SKILL.md` — 2D Stickman / Bean-Head in 3D World (`remotion/videos/bridge/`, `cnut/`, `kakarut/`)
+   - `.agents/skills/ipm-premium-documentary-studio/SKILL.md` — Archival Woodcut/Gouache & Animated `d3-geo` Cartography (`ipm-chronicles/`, `remotion/videos/historical-diorama/`)
+   - `.agents/skills/saas-product-promo/SKILL.md` — SaaS & App Launch Videos (`remotion/compositions/ZAutomationLaunch.tsx`)
+
+2. **Mode Orang Awam (1-Prompt Autonomous Execution)**:
+   - Jika user hanya memberikan topik + pilihan style, baca `SKILL.md` terkait + `.agents/skills/brutal-storyteller/SKILL.md`, lalu eksekusi seluruh pipeline (naskah -> VO & SFX -> kode 2D/3D -> QA Contact Sheet -> render MP4) tanpa menyuruh user menulis kode manual.
+   - Jangan pernah menaruh watermark TikTok atau end-card platform; selalu akhiri video short dengan **Seamless Visual & Verbal Loop** kembali ke Frame 0.

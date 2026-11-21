@@ -1,0 +1,13 @@
+# Episode 01 — 3-Track Script (*Dari Garut*)
+
+| Time | Seg | Voice (Narration) | Picture (Visual & Label) | Sound (Ambience / Foley / Cue) |
+|---|---|---|---|---|
+| 00:00–00:06 | `—` | *(Hening — tanpa narasi; hook `silence_image`)* | **Wide Priangan / Garut** (kabut pagi di lembah, sunyi, tanpa teks klise). Teks tipis: `Garut, 1958` + label `REKONSTRUKSI`. | Angin dataran tinggi pelan, kicau burung jauh, room tone terbuka. |
+| 00:06–00:16 | `seg01` | Tahun seribu sembilan ratus lima puluh delapan. Di Garut, sebuah konferensi Pemuda Muhammadiyah membicarakan satu kebutuhan mendesak: wadah tersendiri bagi para pelajar. | **Insert Meja & Catatan** (REKONSTRUKSI): cahaya jendela miring jatuh di atas kertas tulis & pena, tangan menulis dari sudut belakang-samping. | Goresan pena di atas kertas, suara jam/ruang kayu tua sangat lirih (`archive_hush`). |
+| 00:16–00:21 | `—` | *(Jeda 5 detik — napas visual)* | **Medium Punggung / Siluet**: ruang sidang sederhana dengan cahaya jendela, tanpa wajah tokoh. | Hening ruang kayu, detak ambient lembut. |
+| 00:21–00:34 | `seg02` | Catatan tentang gedung pasti tempat konferensi itu berlangsung memang belum ditemukan. Namun dari kota ini, gagasan tersebut mulai bergerak melampaui satu ruang pertemuan. | **Peta / Lanskap Transisi**: peta sederhana Jawa Barat ke Jawa Tengah (garis bersih, tanpa label lokasi gedung 1958). | `archive_hush` pad rendah hangat masuk perlahan (-24 LUFS). |
+| 00:34–00:46 | `seg03` | Tiga tahun berselang, pembicaraan itu berujung pada berdirinya Ikatan Pelajar Muhammadiyah. Dan perjalanan panjangnya tidak berhenti di tingkat pusat. | **Insert Buku & Bangku Sekolah**: transisi visual ke ruang belajar sederhana dengan meja kayu dan buku catatan. | Foley halaman buku dibalik pelan, room tone kelas. |
+| 00:46–00:52 | `—` | *(Jeda 6 detik — transisi ke masa kini)* | **Cabang Masa Kini (Panawuan)**: ruang belajar pelajar masa kini, cahaya pagi jernih. Teks: `Cabang masa kini — Panawuan`. | Suara langkah & bisik aktivitas pelajar jauh, `room_tone_sparse`. |
+| 00:52–01:08 | `seg04` | Pertanyaannya: bagaimana sebuah keputusan dalam konferensi di Garut tahun seribu sembilan ratus lima puluh delapan tumbuh menjadi organisasi pelajar yang hari ini hidup sampai ke tingkat cabang, seperti Panawuan? | **Motif Callback**: kembali ke selembar kertas & pena di meja kayu, lalu tarik perlahan ke cahaya jendela pagi (`motif_callback`). | Pad `archive_hush` mereda bersih, menyisakan room tone 2 detik di akhir. |
+| 01:08–01:12 | `—` | *(Hening penutup)* | Kartu penutup minimal: `Episode 1 — Dari Garut` / `Bersambung ke Episode 2: 1961`. | Fade out room tone ke 0. |
+

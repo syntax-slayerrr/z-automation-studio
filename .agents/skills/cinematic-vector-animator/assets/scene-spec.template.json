@@ -1,0 +1,36 @@
+{
+  "id": "scene-01",
+  "durationFrames": 210,
+  "narration": "Teks narasi yang diucapkan di scene ini.",
+  "direction": {
+    "emotion": "satu kata + alasannya, contoh: 'sunyi yang menahan napas — karena keputusan besar baru saja diambil'",
+    "focalPoint": "satu titik fokus, contoh: 'wajah karakter yang diterangi lentera, kuadran tengah-atas'",
+    "camera": { "move": "push-in", "from": 1.0, "to": 1.07, "easing": "camera", "drift": 6, "why": "menambah intensitas menjelang kalimat kunci" },
+    "light": { "source": "lentera di tangan karakter", "color": "#ffc873", "why": "satu-satunya kehangatan di dunia yang dingin" },
+    "signatureDetail": "satu hal kecil yang tidak generik, contoh: 'api lentera bergoyang berlawanan arah angin sesaat sebelum padam'",
+    "compositionOptions": [
+      "Opsi A: satu kalimat",
+      "Opsi B: satu kalimat",
+      "Opsi C: satu kalimat"
+    ],
+    "chosenOption": "A, karena ... (satu kalimat)"
+  },
+  "layers": [
+    { "name": "sky",        "parallax": 0.1,  "blur": 0, "haze": 0.8,  "contents": "gradient langit senja, matahari rendah" },
+    { "name": "far",        "parallax": 0.25, "blur": 1, "haze": 0.55, "contents": "siluet bukit" },
+    { "name": "mid",        "parallax": 0.5,  "blur": 0, "haze": 0.2,  "contents": "reruntuhan, pilar" },
+    { "name": "subject",    "parallax": 0.9,  "blur": 0, "haze": 0,    "contents": "karakter + lentera" },
+    { "name": "foreground", "parallax": 1.4,  "blur": 7, "haze": 0,    "contents": "rumput/daun siluet gelap" }
+  ],
+  "characters": [
+    { "id": "hero", "position": { "x": 540, "y": 1300 }, "scale": 1, "expression": "curious", "talk": [60, 170], "seed": "hero" }
+  ],
+  "fx": ["glow:lantern", "rays", "dust:far", "dust:near", "vignette", "grade", "grain"],
+  "beats": [
+    { "frame": 8,   "event": "karakter masuk (spring character), fade 14 frame" },
+    { "frame": 60,  "event": "karakter mulai bicara; ekspresi curious" },
+    { "frame": 120, "event": "kata kunci narasi; kamera mulai mempercepat push-in; lentera berkedip" },
+    { "frame": 175, "event": "hold: semua tenang 18 frame" }
+  ],
+  "transitionOut": { "type": "light-wipe", "frames": 14, "why": "cahaya lentera membesar menjadi pembuka scene berikutnya" }
+}

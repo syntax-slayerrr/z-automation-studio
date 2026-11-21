@@ -1,0 +1,55 @@
+{
+  "projectSlug": "gunung-guntur",
+  "title": "GUNUNG GUNTUR",
+  "subtitleLocation": "RAKSASA API GARUT",
+  "closingTagline": "RAKSASA API GARUT",
+  "styleDNA": "vintage-poster-explainer",
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "targetDurationSec": 80
+  },
+  "materiality": {
+    "paperTextureMode": "static_multiply_non_boiling",
+    "paperOpacity": 0.18,
+    "inkOutlineColor": "#241C1B",
+    "inkOutlineWidthPx": 1.8,
+    "shadingMode": "2-to-3-tone-gouache-with-woodcut-strata-grain"
+  },
+  "typography": {
+    "heroFont": "Alfa Slab One",
+    "heroFill": "#FAF1DC",
+    "heroStroke": "#2B1B17",
+    "hero3DShadow": "#6E2C1B",
+    "ribbonFont": "Plus Jakarta Sans",
+    "ribbonBg": "#1E2631",
+    "ribbonText": "#F5EFE2",
+    "subtitleFont": "Plus Jakarta Sans",
+    "subtitleBackplate": "hand_brushed_feathered_ink",
+    "subtitleBg": "#1B212C",
+    "subtitlePastColor": "#F5F2EA",
+    "subtitleActiveColor": "#F8D348",
+    "subtitleUpcomingColor": "#98A0AC"
+  },
+  "palette": {
+    "topoCharcoal": ["#1C191C", "#2A2424", "#403532"],
+    "daySky": ["#2A627D", "#5B96A8", "#C6D8C8", "#EAE2C6"],
+    "duskSky": ["#212642", "#6E6270", "#BA876A", "#E8B87D"],
+    "eruptionSky": ["#3D1C26", "#8F2D24", "#D96B2B", "#F4A642"],
+    "foliage": ["#52713B", "#3D5B34", "#2B4028"],
+    "strataBands": ["#945534", "#C27A44", "#E0C398", "#6E4229", "#36211B"],
+    "atlas": { "ocean": "#244F68", "coastalGlow": "#4D859C", "land": "#B49862" },
+    "postcardMat": "#C9BEA7",
+    "postcardHairline": "#3B342C",
+    "ghostBlueprint": "#FAF0CE"
+  },
+  "audio": {
+    "narratorWpm": 152,
+    "musicStyle": "curious documentary acoustic / warm plucked underscore",
+    "targetLufs": -14.6,
+    "targetTruePeakDbfs": -1.8,
+    "foleyPerTransition": true
+  }
+}

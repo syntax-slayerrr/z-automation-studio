@@ -1,0 +1,80 @@
+{
+  "id": "earth-24h",
+  "title": "Kalau Umur Bumi Cuma 24 Jam, Manusia Muncul Jam Berapa?",
+  "style": "24-Hour Celestial Clock & Paper-Cutout Storybook Diorama",
+  "resolution": [720, 1280],
+  "fps": 30,
+  "total_frames": 1194,
+  "duration_sec": 39.8,
+  "era_arcs": [
+    {"id": "hadean", "label": "Bumi Terbentuk (Hadean)", "start_hour": 0.0, "end_hour": 4.0, "color": "#da5c38"},
+    {"id": "microbes", "label": "Makhluk Mikroskopis (Archean-Proterozoic)", "start_hour": 4.0, "end_hour": 21.0, "color": "#309c92"},
+    {"id": "complex_dinos", "label": "Kehidupan Kompleks & Dinosaurus", "start_hour": 21.0, "end_hour": 23.65, "color": "#7a56ac"},
+    {"id": "cenozoic_human", "label": "Mamalia & Manusia (6 Detik Terakhir)", "start_hour": 23.65, "end_hour": 24.0, "color": "#e0b654"}
+  ],
+  "scenes": [
+    {
+      "id": "scene_01_hook",
+      "start_frame": 0,
+      "end_frame": 238,
+      "header_primary": "4,5 miliar tahun",
+      "header_secondary": "= 24 jam",
+      "viewport": "day_night_sky_cycle",
+      "camera": {"start_scale": 1.45, "mid_scale": 0.91, "end_scale": 0.995, "cx": 358, "cy": 617}
+    },
+    {
+      "id": "scene_02_molten_earth",
+      "start_frame": 239,
+      "end_frame": 430,
+      "header_primary": "00.00",
+      "header_secondary": "BUMI TERBENTUK",
+      "viewport": "molten_proto_earth",
+      "camera": {"zoom_in_frames": [232, 246], "hold_scale": 3.2, "zoom_out_frames": [387, 405]}
+    },
+    {
+      "id": "scene_03_primordial_ocean",
+      "start_frame": 431,
+      "end_frame": 568,
+      "header_primary": "±04.00",
+      "header_secondary": "KEHIDUPAN PERTAMA",
+      "viewport": "primordial_teal_ocean",
+      "camera": {"zoom_in_frames": [428, 447], "hold_scale": 3.2, "zoom_out_frames": [557, 574]}
+    },
+    {
+      "id": "scene_04_microbe_fast_forward",
+      "start_frame": 569,
+      "end_frame": 695,
+      "header_primary": "04.07 -> 22.46",
+      "header_secondary": "MAKHLUK MIKROSKOPIS",
+      "viewport": "primordial_teal_ocean_clock",
+      "camera": {"start_scale": 0.915, "end_scale": 1.015, "cx": 358, "cy": 618}
+    },
+    {
+      "id": "scene_05_dinos_and_asteroid",
+      "start_frame": 696,
+      "end_frame": 924,
+      "header_primary": "22.47 -> 23.39",
+      "header_secondary": "DINOSAURUS DATANG -> ASTEROID • PUNAH",
+      "viewport": "prehistoric_purple_night",
+      "camera": {"zoom_in_frames": [692, 710], "hold_scale": 3.2}
+    },
+    {
+      "id": "scene_06_extinction_and_human_6s",
+      "start_frame": 925,
+      "end_frame": 1129,
+      "header_primary": "23.47.21 -> 23.59.54",
+      "header_secondary": "MANUSIA MUNCUL",
+      "viewport": "post_impact_twilight_and_6s_rim",
+      "camera": {"zoom_out_frames": [992, 1006], "rim_zoom_frames": [1052, 1076], "rim_cx": 515, "rim_cy": 1016, "rim_scale": 1.92}
+    },
+    {
+      "id": "scene_07_midnight_reveal",
+      "start_frame": 1130,
+      "end_frame": 1193,
+      "header_primary": "24.00",
+      "header_secondary": "TENGAH MALAM",
+      "viewport": "post_impact_twilight_full_clock",
+      "camera": {"zoom_out_frames": [1145, 1173], "end_cx": 364, "end_cy": 622, "end_scale": 0.96}
+    }
+  ]
+}

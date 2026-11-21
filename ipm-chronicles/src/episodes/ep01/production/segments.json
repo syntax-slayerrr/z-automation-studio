@@ -1,0 +1,31 @@
+{
+  "voice_id": "04b567df-2923-4b0c-896b-4b7df0a07e1a",
+  "model_id": "sonic-3.6",
+  "language": "id",
+  "segments": [
+    {
+      "id": "seg01",
+      "text": "Tahun seribu sembilan ratus lima puluh delapan. <break time=\"0.5s\"/> Di Garut, sebuah konferensi Pemuda Muhammadiyah membicarakan satu kebutuhan mendesak: <break time=\"0.35s\"/> wadah tersendiri bagi para pelajar.",
+      "speed": 0.92,
+      "gap_after": 5.0
+    },
+    {
+      "id": "seg02",
+      "text": "Catatan tentang gedung pasti tempat konferensi itu berlangsung memang belum ditemukan. <break time=\"0.45s\"/> Namun dari kota ini, gagasan tersebut mulai bergerak melampaui satu ruang pertemuan.",
+      "speed": 0.92,
+      "gap_after": 2.0
+    },
+    {
+      "id": "seg03",
+      "text": "Tiga tahun berselang, pembicaraan itu berujung pada berdirinya Ikatan Pelajar Muhammadiyah. <break time=\"0.4s\"/> Dan perjalanan panjangnya tidak berhenti di tingkat pusat.",
+      "speed": 0.94,
+      "gap_after": 6.0
+    },
+    {
+      "id": "seg04",
+      "text": "Pertanyaannya: <break time=\"0.45s\"/> bagaimana sebuah keputusan dalam konferensi di Garut tahun seribu sembilan ratus lima puluh delapan <break time=\"0.25s\"/> tumbuh menjadi organisasi pelajar yang hari ini hidup sampai ke tingkat cabang, seperti Panawuan?",
+      "speed": 0.90,
+      "gap_after": 3.5
+    }
+  ]
+}

@@ -5,6 +5,23 @@ description: Make a ~55-70 s vertical cartoon story short in the "2D characters 
 
 # Cartoon 3D story short (three.js + Remotion)
 
+## Quickstart untuk Pemula / Orang Awam (1-Prompt Mode)
+Pengguna awam cukup mengetik 1 kalimat di AI agent:
+> *"Buatkan video gaya **Cartoon 3D Short (Stickman di Dunia 3D)** tentang **[Kisah Raja Cnut Melawan Ombak / Asal-Usul Nama Kota Garut / Kenapa 74 Tentara Meruntuhkan Jembatan Karena Langkah Serempak]**"*
+
+**Instruksi Otomatis untuk AI Agent:**
+1. Tangani seluruh tahapan secara otonom mulai dari riset fakta unik, naskah komedi/sejarah cepat, sintesis VO + word-level timestamps, dunia 3D Three.js + karakter kartun 2D `toon.ts`, pengecekan **5 Golden Rules** (di bawah), audit contact sheet, hingga render MP4 final!
+2. Gunakan 3 golden reference yang sudah ada di repo ini:
+   - **`remotion/videos/bridge/`** (`BridgeShort` — "The Bridge That Fell for a Song")
+   - **`remotion/videos/cnut/`** (`CnutShort` — "King Cnut vs The Tide")
+   - **`remotion/videos/kakarut/`** (`KakarutShort` — "Asal-Usul Garut / Kakarut", Bahasa Indonesia)
+3. **Wajib Patuhi 5 Golden Rules Stickman 3D**:
+   - Kunci pool contact shadow **WAJIB** memuat `"|blob|"` (mis. `blob|contact|#1e293b`) agar `Fx.bind()` menerapkan multiply blend (bukan kotak putih/biru solid).
+   - Koordinat mata/kepala deterministik: `H = headBlob(seed, 118, facing); hc = 975 - 6 * H.b;` (~`312.2`). Kacamata di `hc - 16`, tanduk/topi di `cx ± 88, hc - 32`, kalung di `~535`.
+   - Lebar plang/monumen di format vertikal 9:16 maksimal `1.0m - 2.2m` (jangan 6m!), dan jika kamera di `-Z` menghadap `+Z`, beri `rotation.y = Math.PI` agar teks tidak terbalik.
+   - Adegan kerumunan berlari menggunakan 3-tier depth (`scale 1.05, 0.98, 0.92`) dengan outfit berbeda & ekspresi hidup (`grin`, `laugh`, `whistle`).
+   - Wajib render & inspeksi still frames (25%, 50%, 80%) via `read_file` sebelum render MP4 penuh!
+
 Proven example: **The Bridge That Fell for a Song**. It is an original 67 s short about the 1831 Broughton bridge and 74 soldiers marching in step.
 - Code: `src/videos/bridge/` of your Remotion project (composition `BridgeShort`, 1080x1920, 30 fps).
 - Script, voice and sound: `~/bridge-short/`.

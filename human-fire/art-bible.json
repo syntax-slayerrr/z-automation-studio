@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "name": "Ketika Manusia Mengenal Api (HumanFireShort)",
+    "version": 1,
+    "locked": true,
+    "mood": "hangat sinematik dokumenter — senja plum-indigo menuju keemasan api unggun dan peradaban",
+    "styleReference": "Adapted aesthetic DNA from Earth 24 Hours (layered 2D diorama silhouettes, dynamic rim-lighting, glowing serif headers, hand-torn parchment subtitle cards, subtle paper grain) — zero clock dial, 100% pure code."
+  },
+  "format": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "safeZones": { "top": 150, "bottom": 290, "left": 48, "right": 48 }
+  },
+  "palette": {
+    "shadow":    { "deep": "#160a1e", "mid": "#26152c", "soft": "#382246" },
+    "atmosphere":{ "dusk": "#5c3d68", "mist": "#44586c", "storm": "#24374a" },
+    "fire":      { "terracotta": "#c84c28", "amber": "#ec8238", "gold": "#f8b65c", "cream": "#ffecc4" },
+    "daylight":  { "skyTop": "#4b6980", "skyHorizon": "#d9a074", "foliage": "#2d3b3c" },
+    "parchment": { "top": "#f7efde", "bottom": "#ebe0c8", "ink": "#241f1c", "active": "#ba382a", "muted": "#7e766c" },
+    "usage": "60% deep plum/indigo shadows & atmospheric midtones, 30% warm earth/silhouettes, 10% glowing firelight & rim highlights. Zero #000 or #fff."
+  },
+  "light": {
+    "dominantSources": [
+      "S1: Setting sun transitioning to cool pale moonlight (#9ab4d4)",
+      "S2: Sharp storm lightning flash (#dceeff) -> wild burning tree (#f8a64a)",
+      "S3-S5: Warm flickering campfire hearth (#f8b65c) casting rim-light & trembling cave shadows",
+      "S6: Terracotta kiln glow (#e8682c) -> white-gold molten bronze (#fff2c6)",
+      "S7: Intimate ember -> forge fire -> golden modern city skyline (#f8c46c)"
+    ],
+    "rimLighting": "Every hero character & foreground prop computes fire-facing warm rim edges dynamically from (fireX, fireY).",
+    "castShadows": "Dynamic soft ground & cave-wall shadows cast strictly away from active light origin, trembling with fire flicker."
+  },
+  "shape": {
+    "language": "Organic painterly smooth Bezier silhouettes with expressive articulated limbs, layered hills/foliage, and tactile hand-torn parchment cards",
+    "outline": "Dynamic rim-lit edge stroke only on light-facing contours (no uniform thick cartoon outlines)"
+  },
+  "depth": {
+    "layers": [
+      { "name": "sky",        "parallax": 0.12, "blur": 0,   "haze": 0.80 },
+      { "name": "far",        "parallax": 0.28, "blur": 1.2, "haze": 0.55 },
+      { "name": "mid",        "parallax": 0.55, "blur": 0,   "haze": 0.20 },
+      { "name": "subject",    "parallax": 1.00, "blur": 0,   "haze": 0.00 },
+      { "name": "foreground", "parallax": 1.38, "blur": 5.5, "haze": 0.00 }
+    ]
+  },
+  "fx": {
+    "grain":    { "opacity": 0.04, "type": "feTurbulence fractalNoise" },
+    "vignette": { "strength": 0.34, "color": "#140a1c" },
+    "embers":   { "count": 46, "deterministic": true },
+    "rays":     { "breathing": true, "opacity": 0.18 }
+  },
+  "motion": {
+    "defaultEase": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "camera": { "continuousDrift": true, "motivatedPushPull": true },
+    "holdFrames": [10, 24]
+  },
+  "typography": {
+    "chapterTitle": "Georgia, Times New Roman, serif",
+    "chapterSub": "Segoe UI, Arial, sans-serif",
+    "subtitleCard": "Segoe UI, Arial, sans-serif (deckle-edge parchment card, centered safe zone)"
+  },
+  "forbidden": [
+    "AI-generated photos",
+    "stock cutouts",
+    "24-hour clock dial",
+    "pure #000 or #fff",
+    "linear camera motion",
+    "rushed artificial voiceover speed"
+  ]
+}

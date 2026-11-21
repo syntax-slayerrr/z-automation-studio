@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "name": "Sejarah Berdirinya GMNI (GmniHistoryShort)",
+    "version": 1,
+    "locked": true,
+    "mood": "khidmat, historis, hangat sinematik dokumenter 1950-an — senja plum-indigo berpadu cahaya emas tungsten & aksen Merah Putih",
+    "styleReference": "Twilight Parchment Documentary style (twilight-parchment-docu) adapted from Earth 24 Hours & HumanFireShort — zero clock dial, 100% pure code + user-provided official GMNI emblem."
+  },
+  "format": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "safeZones": { "top": 150, "bottom": 290, "left": 48, "right": 48 }
+  },
+  "palette": {
+    "shadow":     { "deep": "#160a1e", "mid": "#26152c", "soft": "#362044" },
+    "atmosphere": { "dusk": "#5c3d68", "slate": "#445368", "sepia": "#7a5a64" },
+    "keyLight":   { "terracotta": "#c84c28", "amber": "#e88a3a", "gold": "#f4b258", "cream": "#ffecc4" },
+    "merahPutih": { "crimson": "#c62b2b", "ivory": "#f4ede0" },
+    "parchment":  { "top": "#f7efde", "bottom": "#ebe0c8", "ink": "#241f1c", "active": "#ba382a", "muted": "#7e766c" },
+    "usage": "60% deep plum/indigo shadows & atmospheric midtones, 25% archival silhouettes, 15% warm tungsten gold & Merah Putih crimson highlights. Zero #000 or #fff."
+  },
+  "light": {
+    "dominantSources": [
+      "S1: Warm 1950s golden twilight sun over Jakarta colonial skyline",
+      "S2: Glowing archival map table light & converging crimson-gold fusion beams",
+      "S3: Warm tungsten pendant lamps inside Gedung Proklamasi & Taman Suropati",
+      "S4: Golden morning sunrise over 1954 Surabaya & glowing Congress hall stage",
+      "S5: Heroic warm podium backlight behind Bung Karno & glowing Merah Putih dawn",
+      "S6: Expanding archipelago pin lights -> radiant golden emblem halo behind GMNI shield"
+    ],
+    "rimLighting": "Every 1950s human silhouette, colonial building, and landmark renders warm tungsten/crimson rim highlights facing the active light origin.",
+    "castShadows": "Dynamic soft ground shadows pointing strictly away from key light."
+  },
+  "depth": {
+    "layers": [
+      { "name": "sky",        "parallax": 0.12, "blur": 0,   "haze": 0.80 },
+      { "name": "far",        "parallax": 0.28, "blur": 1.2, "haze": 0.55 },
+      { "name": "mid",        "parallax": 0.55, "blur": 0,   "haze": 0.20 },
+      { "name": "subject",    "parallax": 1.00, "blur": 0,   "haze": 0.00 },
+      { "name": "foreground", "parallax": 1.38, "blur": 4.5, "haze": 0.00 }
+    ]
+  },
+  "typography": {
+    "chapterTitle": "Georgia, Times New Roman, serif",
+    "chapterSub": "Segoe UI, Arial, sans-serif",
+    "subtitleCard": "Segoe UI, Arial, sans-serif (deckle-edge parchment card, centered safe zone)"
+  }
+}

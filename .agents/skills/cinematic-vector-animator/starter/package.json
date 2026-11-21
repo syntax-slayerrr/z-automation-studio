@@ -1,0 +1,21 @@
+{
+  "name": "cinematic-vector-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "still": "remotion still src/index.ts TestScene out/frame.png --frame=60",
+    "render": "remotion render src/index.ts TestScene out/test-scene.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.4"
+  }
+}

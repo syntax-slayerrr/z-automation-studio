@@ -1,0 +1,59 @@
+{
+  "package": "IPM Premium Animated Historical Documentary Studio",
+  "version": "3.0.0",
+  "updated": "2026-11-13",
+  "files": [
+    "README.md",
+    "SKILL.md",
+    "references/ai_pipeline_and_prompting.md",
+    "references/animation_direction.md",
+    "references/art_direction_look_dev.md",
+    "references/cinematography_shot_design.md",
+    "references/historical_evidence_protocol.md",
+    "references/quality_gate.md",
+    "references/script_and_curiosity_engine.md",
+    "references/series_bible_and_arc.md",
+    "references/sound_and_voice_design.md",
+    "scripts/script_lint.py",
+    "scripts/series_audit.py",
+    "templates/character_environment_bible.md",
+    "templates/episode_brief.md",
+    "templates/evidence_ledger.csv",
+    "templates/open_loops.csv",
+    "templates/project_state.md",
+    "templates/qa_report.md",
+    "templates/script_and_shot_breakdown.md",
+    "templates/series_bible.md",
+    "templates/shot_card.md",
+    "templates/sound_spotting_sheet.md",
+    "templates/tool_evaluation.md",
+    "templates/variation_matrix.csv",
+    "workflows/START_HERE.md",
+    "workflows/agent_handoff.md",
+    "workflows/production_pipeline.md"
+  ],
+  "locked_decisions": {
+    "visual_style": "premium realistic-stylized 3D",
+    "characters": "human",
+    "genre": "historical documentary",
+    "production": "flexible AI toolchain, per-shot",
+    "series_length_episodes": 15,
+    "episode_duration_seconds": "60-120",
+    "delivery": "vertical 9:16 default",
+    "narration": "Indonesian, ElevenLabs-ready, single narrator across the series"
+  },
+  "quality_foundation": [
+    "script and curiosity",
+    "animation and performance",
+    "sound and voice"
+  ],
+  "principles": [
+    "historical accuracy is a hard constraint",
+    "curiosity comes from real gaps, never manufactured suspense",
+    "premium storytelling is the primary differentiator",
+    "generated reconstruction must not be presented as genuine archival footage",
+    "series-level variation and continuity are designed, then audited",
+    "stage-gated workflow with bundled human approvals",
+    "no automatic publication"
+  ]
+}

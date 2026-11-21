@@ -1,0 +1,60 @@
+{
+  "slug": "topic-slug",
+  "title": "Kenapa [Objek/Infrastruktur] Dibuat Begini?",
+  "compositionId": "TopicSlugShort",
+  "format": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "targetDurationSec": 75,
+    "endingMode": "seamless_visual_loop",
+    "watermark": "none"
+  },
+  "environment": {
+    "setting": "Indonesian rural/suburban diorama matching topic",
+    "lightingMoods": ["day", "heat", "rain", "golden_hour"],
+    "skyShader": "rayleigh_mie_fbm_volumetric_clouds",
+    "ibl": "synthetic_pmrem_equirectangular",
+    "postprocessing": {
+      "bloomThreshold": 0.92,
+      "bloomIntensity": 0.35,
+      "macroBokehScale": 4.2,
+      "vignetteDarkness": 0.26
+    }
+  },
+  "character": {
+    "role": "Indonesian stylized 3D craftsman / engineer",
+    "skinHex": "#DDA070",
+    "outfit": {
+      "headgear": "caping_or_hardhat",
+      "topHex": "#F38B31",
+      "bottomHex": "#2A4060",
+      "footwear": "boots_or_sandals"
+    },
+    "blinkIntervalFrames": 105
+  },
+  "pbrMaterials": [
+    "soil_strata_cutaway",
+    "hero_structural_material_1",
+    "hero_structural_material_2",
+    "ground_surface",
+    "wood_grain"
+  ],
+  "narrativeArc": [
+    { "beat": 1, "name": "Physical Hook (Loop Anchor = Frame 0)" },
+    { "beat": 2, "name": "Naive Attempt" },
+    { "beat": 3, "name": "Catastrophic Failure Physics + Red Arrows" },
+    { "beat": 4, "name": "Cutaway Solution #1 + Macro DOF" },
+    { "beat": 5, "name": "Everyday Table Analogy" },
+    { "beat": 6, "name": "Secondary Hazard (Heat/Cold/Weather Twist)" },
+    { "beat": 7, "name": "Engineering Solution #2 + Full System Harmony" },
+    { "beat": 8, "name": "Seamless Camera & Lighting Loop Return to Frame 0" }
+  ],
+  "audio": {
+    "voProvider": "elevenlabs_eleven_v4",
+    "targetLufs": -14.8,
+    "maxTruePeakDbfs": -1.5,
+    "sfxProvider": "eleven_text_to_sound_v3_plus_cc0",
+    "musicLicense": "mixkit_free_stock_music"
+  }
+}

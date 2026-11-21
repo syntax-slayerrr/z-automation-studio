@@ -1,88 +1,94 @@
-# Z-Automation Studio 🎬✨
+# Z-Automation Studio — Pure-Code AI Video Production Suite & Universal Agent Skills
 
-The unified multimedia production studio for **Z-Automation** (`https://z-automation.my.id`). This repository contains all code-directed video pipelines, 3D engines, character rigs, procedural audio mixing tools, and agent skills in **ONE** self-contained studio.
+**Z-Automation Studio** adalah studio produksi video animasi **100% Pure-Code** (berbasis **Remotion + Three.js / React Three Fiber + Custom GLSL Shaders + D3-Geo + SVG + ElevenLabs Audio Mastering Pipeline**) yang telah dikemas menjadi **8 Master Video Style Skills** lintas AI Agent.
 
----
+Dirancang agar **bahkan orang awam (tanpa perlu menulis kode)** cukup membuka project ini di **Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, atau **OpenAI Codex**, lalu mengetik **1 kalimat topik** untuk menghasilkan video `.mp4` siap upload (`1080×1920` / `720×1280`, `30/60 fps`, audio broadcast `-14.8 LUFS`, seamless loop).
 
-## 🏛️ Studio Capabilities & Engines
-
-### 1. 🎭 Cartoon 3D Short Engine (Stickman / Bean-Head 1:1 Standard)
-- **Engine Source**: `remotion/videos/bridge/`
-- **Master Composition**: `BridgeShort` ("The Bridge That Fell for a Song")
-- **Visual Mechanics**:
-  - 2D Canvas-drawn bean-head vector characters (`toon.ts`, soles at `y = 975`, plum ink outline `#241726`, two-bone IK cycloid walk/run cycles).
-  - Colorful 3D Three.js world with black ink outline pass (`ink.ts`), thin-lens depth of field (`lensblur.ts`), and display-referred color grading (`grade.ts`).
-  - Contact shadow multiply blending (`blob|contact|...` keying) for zero white box artifacts.
-- **Skills**: `skills/cartoon-3d-short/` & `skills/cartoon-short-kit/`.
-
-### 2. 🤖 3D Mascots & Dialogue Engine (Hermes & OpenClaw)
-- **Engine Source**: `remotion/components/Sanctum3DMascots.tsx` & `HermesOpenClaw3DStage.tsx`
-- **Compositions**:
-  - `ZAutomationLaunch`: 1080×1920 (9:16 vertical reel) with Apple-grade tactile sound pass, touch ripples, angle-reactive specular glints, and live 3D mascot stage.
-  - `ZAutomationSquarePromo`: 1080×1080 (1:1 feed promo).
-- **Characters**:
-  - **Hermes**: Primary keynote mascot (Cobalt Blue cyber chassis, glowing orbital think rings, calm and authoritative).
-  - **OpenClaw**: Secondary mascot (Red robotic chibi crab, lime accents, dynamic pincer claps, expressive antenna wiggles).
-
-### 3. 🌌 Motion Graphics & Explainers (Kurzgesagt Style)
-- **Engine Source**: `remotion/kurzgesagt/`
-- **Master Composition**: `KurzgesagtBlackHole`
-- **Visual Mechanics**: 2D vector flat cosmic art, relativistic gravitational lensing vortex, kinetic typography, and Perseus soundwave equalizer.
-
-### 4. 🎛️ Audio Studio & Sound Design Pipeline
-- **Procedural & Real Foley Mixing**: `scripts/build-sanctum-audio.py`
-  - 100% real CC0 recorded SFX bank (`skills/sound-effects/sfx/`).
-  - Dynamic ducking (music drops automatically under spoken voice).
-  - Razor-tight transient alignment (<1ms pre-roll).
-  - Broadcast mastering to **-16.0 LUFS** (True Peak < -4.0 dBFS).
-- **Voiceover Pipeline**: `scripts/generate-vo.ps1`
-  - Native integration with local **VoiceStudio** (`http://localhost:3900`).
-  - Automatic fallback to Microsoft Neural TTS (`id-ID-ArdiNeural` / `id-ID-GadisNeural`).
+> **Baru pertama kali memakai studio ini?** Baca **[PANDUAN-AWAM.md](./PANDUAN-AWAM.md)** untuk daftar **Prompt 1-Kalimat Siap Copy-Paste**!
 
 ---
 
-## 📦 Registered Remotion Compositions
+## Katalog 8 Master Video Style Skills (`.agents/skills/`)
 
-| ID Komposisi | Resolusi | Rasio | Durasi | Peruntukan |
-| :--- | :--- | :--- | :--- | :--- |
-| **`BridgeShort`** | 1080 × 1920 | 9:16 | 67s (2010f) | 1:1 Stickman cartoon 3D short master reference |
-| **`ZAutomationLaunch`** | 1080 × 1920 | 9:16 | 14.8s (890f) | Flagship 3D Hermes & OpenClaw promotional reel |
-| **`ZAutomationSquarePromo`** | 1080 × 1080 | 1:1 | 14.8s (890f) | Square feed & carousel video promo |
-| **`KurzgesagtBlackHole`** | 1080 × 1920 | 9:16 | 32.6s (1958f) | Cosmic science explainer motion graphics |
+| # | Nama Skill | Gaya Visual & Karakteristik Utama | Contoh Project di Repo | Perintah Render Cepat |
+|---|---|---|---|---|
+| **1** | **[`3d-cutaway-explainer`](./.agents/skills/3d-cutaway-explainer/SKILL.md)** | **Blender-Grade 3D Cutaway & 2-Bone Analytical IK Rig** (`1080×1920` Full HD, `Prop-Drives-Hand` zero clipping, `Terrain-Locked Foot IK`, Custom GLSL Water & Cumulus Sky, 7 Continuous Camera Sequences, Seamless Loop, ZERO watermark). | [`remotion/videos/sawah-terasering/`](./remotion/videos/sawah-terasering/)<br>[`remotion/videos/tiang-listrik/`](./remotion/videos/tiang-listrik/)<br>[`remotion/videos/rel-kereta/`](./remotion/videos/rel-kereta/) | `npm run render:sawah`<br>`npm run render:tiang`<br>`npm run render:rel` |
+| **2** | **[`vintage-poster-explainer`](./.agents/skills/vintage-poster-explainer/SKILL.md)** | **2D Gouache Travel-Poster & Cross-Section Explainer** (tekstur kertas cat air statis, outline tinta sepia, judul `Alfa Slab One` 3D block shadow, cutaway geologi, peta `d3-geo`, kartu pos vintage loop). | [`remotion/videos/gunung-guntur/`](./remotion/videos/gunung-guntur/)<br>[`remotion/videos/gambut-history/`](./remotion/videos/gambut-history/) | `npm run render:guntur`<br>`npm run render:gambut` |
+| **3** | **[`twilight-parchment-docu`](./.agents/skills/twilight-parchment-docu/SKILL.md)** | **2D Atmospheric Twilight Parchment Documentary** (pencahayaan indigo-ke-emas, 5-layer depth parallax, rig karakter SVG dengan rim-light & bayangan api, kartu subtitle perkamen sobek). | [`remotion/videos/human-fire/`](./remotion/videos/human-fire/)<br>[`remotion/videos/gmni-history/`](./remotion/videos/gmni-history/) | `npm run render:humanfire`<br>`npm run render:gmni` |
+| **4** | **[`earth-24h-celestial-docu`](./.agents/skills/earth-24h-celestial-docu/SKILL.md)** | **24-Hour Celestial Clock & Deep-Time Diorama** (jam astrolabe kosmik 24 jam berputar, zoom-in ke lanskap era geologi, live rolling counter, kemunculan manusia di `23:59:57`). | [`remotion/videos/earth-24h/`](./remotion/videos/earth-24h/) | `npm run render:earth24h` |
+| **5** | **[`cosmic-vfx-explainer`](./.agents/skills/cosmic-vfx-explainer/SKILL.md)** | **First-Person Astrophysics GLSL Shader & Visor POV** (raymarched gravitational lensing, Doppler accretion disk, pantulan kaca helm astronot, 2 jam tangan dilatasi waktu). | [`remotion/videos/black-hole/`](./remotion/videos/black-hole/)<br>[`remotion/kurzgesagt/`](./remotion/kurzgesagt/) | `npm run render:blackhole`<br>`npm run render:kurzgesagt` |
+| **6** | **[`cartoon-3d-short`](./.agents/skills/cartoon-3d-short/SKILL.md)** | **2D Stickman / Bean-Head Cartoon in 3D World** (karakter kartun 2D ekspresif ber-outline tinta di dalam dunia/kota 3D penuh warna, kamera meluncur, musik march/komedi). | [`remotion/videos/bridge/`](./remotion/videos/bridge/)<br>[`remotion/videos/cnut/`](./remotion/videos/cnut/)<br>[`remotion/videos/kakarut/`](./remotion/videos/kakarut/) | `npm run render:kakarut` |
+| **7** | **[`ipm-premium-documentary-studio`](./.agents/skills/ipm-premium-documentary-studio/SKILL.md)** | **Editorial Archival Woodcut/Gouache & Animated Cartography Series** (`1080×1920`, peta `d3-geo` sejarah Indonesia, `evidence_ledger.csv` anti-hoaks sejarah). | [`ipm-chronicles/`](./ipm-chronicles/)<br>[`remotion/videos/historical-diorama/`](./remotion/videos/historical-diorama/) | `npm run ipm:render:ep01`<br>`npm run render:diorama` |
+| **8** | **[`saas-product-promo`](./.agents/skills/saas-product-promo/SKILL.md)** | **Commercial SaaS, App & 3D Tech Launch Videos** (3 sub-varian: `explainer-default` UI walkthrough, `explainer-engaging` one-take hero workflow, `explainer-high-energy` beat-locked hype reel). | [`remotion/compositions/ZAutomationLaunch.tsx`](./remotion/compositions/ZAutomationLaunch.tsx) | `npm run render:reel`<br>`npm run render:square` |
 
 ---
 
-## 🚀 Quick Start
+## Kompatibilitas Lintas AI Coding Agent
 
-### 1. Preview Studio Interaktif
+Repository ini sudah dilengkapi file instruksi jembatan sehingga seluruh skill di `.agents/skills/` otomatis dikenali oleh berbagai AI Agent tanpa setup tambahan:
+
+- **Google Antigravity / OpenAI Codex / Gemini CLI / OpenCode**: Membaca [`AGENTS.md`](./AGENTS.md) & [`.agents/skills/`](./.agents/skills/) secara native.
+- **Claude Code**: Membaca [`CLAUDE.md`](./CLAUDE.md) → otomatis diarahkan ke `.agents/skills/`.
+- **Cursor IDE**: Membaca [`.cursorrules`](./.cursorrules) → otomatis diarahkan ke `.agents/skills/`.
+- **Windsurf IDE**: Membaca [`.windsurfrules`](./.windsurfrules) → otomatis diarahkan ke `.agents/skills/`.
+
+---
+
+## Instalasi & Cara Mulai Cepat (3 Langkah)
+
+### 1. Clone & Install Dependencies
 ```bash
+git clone https://github.com/syntax-slayerrr/z-automation-studio.git
+cd z-automation-studio
 npm install
-npm run studio
 ```
-Buka `http://localhost:3000` di browser untuk preview live, scrub timeline, dan review animasi per-frame.
 
-### 2. Render Video
+### 2. Konfigurasi API Key (`.env`)
+Salin `.env.example` menjadi `.env`, lalu isi `ELEVENLABS_API_KEY` kamu:
 ```bash
-# Render 9:16 Vertical Reel
-npm run render:reel
-
-# Render 1:1 Square Feed
-npm run render:square
-
-# Render Kurzgesagt Explainer
-npm run render:kurzgesagt
-
-# Render Semua Komposisi
-npm run render:all
+cp .env.example .env
 ```
+
+### 3. Buka di AI Agent & Ketik 1 Kalimat Prompt (atau Buka Live Studio)
+- **Untuk Membuat Video Baru dengan AI Agent**: Buka **[PANDUAN-AWAM.md](./PANDUAN-AWAM.md)**, salin contoh prompt style yang kamu suka, dan kirimkan ke AI Agent!
+- **Untuk Membuka Remotion Live Preview Studio (`http://localhost:3000`)**:
+  ```bash
+  npm run studio
+  ```
+- **Untuk Memeriksa Validitas TypeScript (`0 Error`)**:
+  ```bash
+  npm run typecheck
+  ```
 
 ---
 
-## 🛠️ Integrated Skills Folder (`skills/`)
+## Struktur Direktori Utama
 
-Semua AI Agent (Antigravity / Claude Code) dapat langsung membaca dan mengeksekusi instruksi dari folder `skills/`:
-- `skills/cartoon-3d-short/`: Pipeline lengkap ide ➔ script ➔ voice ➔ world ➔ 3D stickman render.
-- `skills/cartoon-short-kit/`: Engine render Chromium Playwright untuk animasi kartun.
-- `skills/sound-effects/`: Bank SFX CC0 dan mixing guidelines.
-- `skills/voicestudio/`: Integrasi local voice cloning dan TTS.
-- `skills/remotion/`: Aturan dan best practices Remotion v4.
+```text
+z-automation-studio/
+├── .agents/skills/               # 8 Master Video Style Skills + Skill Pendukung (brutal-storyteller, real-sound, dll.)
+├── remotion/
+│   ├── Root.tsx                  # Registrasi seluruh komposisi video studio
+│   ├── entry-sawah.ts            # Isolated entry anti-OOM untuk render 3D Full HD (Sawah Terasering)
+│   ├── entry-tiang.ts            # Isolated entry anti-OOM untuk render 3D (Tiang Listrik)
+│   └── videos/                   # Kode sumber 2D/3D/GLSL untuk setiap style video
+│       ├── sawah-terasering/     # V6 Flagship 3D Cutaway + 2-Bone Analytical IK (1080x1920)
+│       ├── tiang-listrik/        # V5 3D Cutaway Village Infrastructure
+│       ├── rel-kereta/           # V4 3D Cutaway Railway Ballast & Thermal Gap
+│       ├── gunung-guntur/        # 2D Vintage Poster Explainer (Volcano & Atlas)
+│       ├── gambut-history/       # 2D Vintage Poster Explainer (Peatland Carbon)
+│       ├── human-fire/           # 2D Twilight Parchment Documentary (Ancient Fire)
+│       ├── gmni-history/         # 2D Twilight Parchment Documentary (National History)
+│       ├── earth-24h/            # 24-Hour Celestial Clock Documentary
+│       ├── black-hole/           # Cosmic GLSL Raymarching & Astronaut Visor POV
+│       ├── bridge/               # Cartoon 3D Short (Broughton Suspension Bridge)
+│       ├── cnut/                 # Cartoon 3D Short (King Cnut vs The Tide)
+│       └── kakarut/              # Cartoon 3D Short (Asal-Usul Garut)
+├── sawah-terasering/             # Script VO/SFX, mix audio -14.8 LUFS, chunk renderer & QA storyboards
+├── ipm-chronicles/               # Workspace terisolasi untuk 15-Episode IPM Historical Documentary Series
+├── AGENTS.md                     # Direktif utama AI Agent (Antigravity / Codex / Gemini CLI)
+├── CLAUDE.md                     # Direktif jembatan untuk Claude Code
+├── .cursorrules                  # Direktif jembatan untuk Cursor IDE
+├── .windsurfrules                # Direktif jembatan untuk Windsurf IDE
+└── PANDUAN-AWAM.md               # Panduan lengkap bahasa Indonesia + Template Prompt 1-Kalimat
+```

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "remotion studio remotion/index.ts",
     "studio": "remotion studio remotion/index.ts",
+    "create:video": "node scripts/create-video.mjs",
     "typecheck": "tsc --noEmit",
     "render:sawah": "powershell -NoProfile -ExecutionPolicy Bypass -File sawah-terasering/scripts/render_sawah_chunks.ps1",
     "still:sawah": "remotion still remotion/entry-sawah.ts SawahTeraseringShort sawah-terasering/out/cover.png --frame=755 --gl=angle",

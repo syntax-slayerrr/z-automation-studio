@@ -1,6 +1,8 @@
 # Dependencies & Build Caches
 node_modules/
 ipm-chronicles/node_modules/
+__pycache__/
+*.pyc
 .cache/
 .remotion/
 build/

@@ -1,11 +1,11 @@
-# Chunked render for RelKeretaShort V2 (2533 frames, 10 chunks)
+﻿# Chunked render for RelKeretaShort V2 (2533 frames, 10 chunks)
 # Uses direct npx invocation instead of Start-Process
 
 $ErrorActionPreference = "Continue"
 $root = "d:\PROJECTS\z-automation-studio"
 $bundleDir = "$root\rel-kereta\out\bundle"
 $chunksDir = "$root\rel-kereta\out\chunks"
-$outFile = "$root\rel-kereta\out\kenapa_rel_kereta_pakai_batu_kerikil.mp4"
+$outFile = "d:\PROJECTS\z-automation-studio\videos\kenapa_rel_kereta_pakai_batu_kerikil.mp4"
 $total = 2533
 $chunkSize = 254
 $numChunks = [math]::Ceiling($total / $chunkSize)
@@ -62,3 +62,4 @@ if (Test-Path $outFile) {
     Write-Host "ERROR: Output file not found!"
     exit 1
 }
+

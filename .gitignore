@@ -17,6 +17,7 @@ stills/
 
 # Heavy Rendered Video & Raw/Cached Audio Assets (Keep repo lightweight & GitHub-push friendly!)
 out/
+videos/
 ipm-chronicles/out/
 **/*.mp4
 **/*.wav

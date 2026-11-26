@@ -1,0 +1,102 @@
+{
+  "series": "series-evolusi",
+  "episodeNumber": 2,
+  "slug": "ep02-sherpa-himalaya",
+  "compositionId": "Ep02SherpaHimalayaShort",
+  "title": "Rahasia Tubuh Suku Sherpa di Puncak Everest",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 53
+  },
+  "biomePalette": "himalaya_hypoxia",
+  "scientificBasis": {
+    "population": "Suku Sherpa & Penduduk Dataran Tinggi Himalaya",
+    "region": "Pegunungan Himalaya (Nepal – Tibet)",
+    "mapCenterLonLat": [86.5, 28.0],
+    "mapScale": 3400,
+    "studyYear": "2017",
+    "studyReference": "Horscroft et al. (PNAS, 2017) & Simonson/Yi et al. (Science, 2010) — EPAS1 mitochondrial & capillary oxygen efficiency",
+    "heroOrgan": "lungs",
+    "heroGene": "EPAS1",
+    "keyMetric": "30% lebih hemat oksigen + darah tetap encer di udara tipis",
+    "counterProp": "Tabung oksigen pendaki hologram dicoret silang (✕)"
+  },
+  "audioSpec": {
+    "narratorVoiceId": "nPczCjzI2devNBz1zQrb",
+    "narratorName": "Brian (Warm Authoritative Documentary Baritone)",
+    "tempo": 1.12,
+    "musicKey": "A minor",
+    "musicBpmHalfTime": 86.15,
+    "musicOstinatoMaxHz": 480,
+    "sonarPingHz": 2637.8,
+    "targetLufs": -14.3
+  },
+  "beats": [
+    {
+      "beat": 1,
+      "id": "hook_anomaly",
+      "scene": 1,
+      "narrationDisplay": "Orang ini mendaki tebing es di ketinggian 8.000 meter. Tanpa tabung oksigen, cuma kacamata salju, dan satu tarikan napas tenang.",
+      "visualNotes": "Siluet pendaki Sherpa di tebing es Himalaya biru gelap (himalaya_hypoxia) + RightScaleRuler elevasi naik + Hologram tabung oksigen dicoret silang ✕ + Kacamata salju kayu/kulit dengan ScientificCalloutLine ○ -> Through-Lens Dive ke pendaki melangkah tenang -> gumpalan uap napas/kabut salju mengembang.",
+      "captionZones": ["top-left", "mid-left", "top-left", "bottom-left"]
+    },
+    {
+      "beat": 2,
+      "id": "habitat_and_map",
+      "scene": 2,
+      "narrationDisplay": "Mereka suku Sherpa, penjaga atap dunia dari Himalaya.",
+      "visualNotes": "AlpineMistWipe membelah layar menyingkap desa batu-kayu Sherpa bertingkat dengan bendera doa berkibar + puncak Everest bersalju + judul dunia besar 'suku Sherpa' -> crane-up masuk CloudCurtainPortal -> BioluminescentMap2D (Nepal, Tibet, Bhutan, pegunungan Himalaya berpendar cyan) + 'dari Himalaya'.",
+      "captionZones": ["top-left", "custom"]
+    },
+    {
+      "beat": 3,
+      "id": "study_xray_scan",
+      "scene": 3,
+      "narrationDisplay": "Tahun 2017, peneliti memindai tubuh mereka pakai USG Doppler, dan menemukan sesuatu yang aneh.",
+      "visualNotes": "CloudCurtainPortal menyibak ke dek kayu Base Camp sore hari + judul '2017' di atas mesin USG portabel kayu -> kamera truck lateral kanan menyusuri kabel hitam ke siluet peneliti ('peneliti' + ○) menempelkan probe ke dada -> bola Spherical Boolean X-Ray 3D mengembang menyingkap tulang belakang, tulang rusuk gading, jantung koral, dan paru-paru emas -> kerucut berkas USG menyala -> zoom masuk ke layar diagnostik!",
+      "captionZones": ["top-left", "bottom-left"]
+    },
+    {
+      "beat": 4,
+      "id": "diagnostic_comparison_and_metaphor",
+      "scene": 4,
+      "narrationDisplay": "Sel otot orang Sherpa memakai oksigen 30% lebih hemat dari pendaki dataran rendah. Tubuh mereka seperti baterai irit di udara tipis.",
+      "visualNotes": "DiagnosticUltrasoundScreen berlatar espresso grid + RightScaleRuler -> sektor tunggal berkilau Rayleigh speckle + callout ○ -> pecah 2 layar bertumpuk (atas 'pendaki dataran rendah', bawah 'orang Sherpa' ber-kaliper klinis + · · · +) -> kembali layar tunggal bermorfosis partikel speckle menjadi ikon BATERAI HEMAT ENERGI ('battery') lalu kembali ke organ!",
+      "captionZones": ["top-left", "bottom-left"]
+    },
+    {
+      "beat": 5,
+      "id": "physiological_mechanism",
+      "scene": 5,
+      "narrationDisplay": "Saat oksigen menipis, darah mereka tetap encer dan memompa energi lancar ke seluruh tubuh.",
+      "visualNotes": "Radial zoom keluar kembali ke lereng bersalju Himalaya; tubuh X-Ray transparan Sherpa bergerak mantap, paru-paru emas berkontraksi ritmis sementara 48 sel darah merah bikonkaf 3D mengalir lancar di pembuluh arteri tanpa menggumpal.",
+      "captionZones": ["top-left", "bottom-right", "top-left", "bottom-left"]
+    },
+    {
+      "beat": 6,
+      "id": "genetic_proof_non_practitioner",
+      "scene": 6,
+      "narrationDisplay": "Yang bikin kaget, orang Sherpa yang tinggal di dataran rendah pun punya tubuh yang sama. Artinya, ini bukan hasil latihan.",
+      "visualNotes": "6-Frame DirectionalWhipBlur horizontal menyapu ke teras kayu dataran rendah: warga Sherpa duduk santai menyeduh teh hangat di meja (kacamata salju diletakkan di pagar belakang - kontinuitas dunia!) -> Spherical Boolean X-Ray ke-2 mengembang dari dada membuktikan paru-paru & respons kapilernya tetap identik -> push-in makro menembus jaringan emas!",
+      "captionZones": ["top-left", "bottom-left", "top-left", "bottom-left"]
+    },
+    {
+      "beat": 7,
+      "id": "written_in_dna",
+      "scene": 7,
+      "narrationDisplay": "Ini tertulis di DNA.",
+      "visualNotes": "Kabut seluler emas menyibak ke DnaDoubleHelix3D (Toska #26C6DA & Amber #FFA726, celah ikatan hidrogen tengah) + MolecularDnaBackdropAndLetters (split bokeh kiri emas <-> kanan biru Himalaya + huruf A, T, C, G depth-of-field).",
+      "captionZones": ["mid-left"]
+    },
+    {
+      "beat": 8,
+      "id": "deep_time_finale_and_loop",
+      "scene": 8,
+      "narrationDisplay": "Setelah ribuan tahun hidup di puncak dingin, tubuh manusia ikut berubah.",
+      "visualNotes": "DirectionalWhipBlur diagonal -> tali pendakian & puncak es Himalaya di bawah butiran salju melayang -> kamera turun ke siluet utuh pendaki Sherpa berdiri gagah di punggungan gunung dengan 1 titik pendar bioluminesensi emas di dada/paru-paru (finaleGlowIntensity=1) -> teks blur-out bersih, 15 frame akhir nyambung mulus ke Frame 0!",
+      "captionZones": ["mid-left", "bottom-left"]
+    }
+  ]
+}

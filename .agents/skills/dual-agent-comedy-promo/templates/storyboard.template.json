@@ -1,0 +1,145 @@
+{
+  "projectSlug": "TOPIC_SLUG",
+  "compositionId": "TopicCompositionId",
+  "title": "Judul Episode Komedi 3D",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 75
+  },
+  "directorTreatment": {
+    "premise": "Premis komedi & ironi utama yang spesifik (bukan ringkasan umum).",
+    "characterDynamic": "Peran Hermes & OpenClaw di episode ini (mis. debat 50-50 / eksperimen bareng / tukar peran / podcast).",
+    "comedyArc": "Ringkasan perubahan situasi dari Hook -> Eskalasi -> Twist -> Punchline orisinal.",
+    "visualMotif": "Motif visual berulang yang mengikat episode (objek/warna/kontras skala).",
+    "sceneCount": 6,
+    "antiTemplateNote": "Jelaskan secara singkat apa yang membedakan struktur, kamera, gag, dan ending episode ini dari episode sebelumnya."
+  },
+  "worldAndLightingPlan": {
+    "timeSchedule": {
+      "mainTime": "sunset",
+      "openingTransition": {
+        "from": "midday",
+        "durationFrames": 90
+      },
+      "endingTransition": {
+        "to": "night",
+        "startCue": "s6_end",
+        "durationFrames": 120
+      }
+    },
+    "lightingMotivation": "Alasan pemilihan waktu, suasana jendela Kampung Garut, dan kontras cahaya interior."
+  },
+  "setDressingPlan": {
+    "baligho": {
+      "visible": true,
+      "theme": "Artwork/teks custom baligho bambu luar jendela yang relevan dengan topik episode ini (atau set visible=false jika tidak dipakai!)."
+    },
+    "roomPalette": {
+      "wallColor": "#1A2236",
+      "wallEmissive": "#0E1424",
+      "revealColor": "#27324D",
+      "curtainA": "#232E47",
+      "curtainB": "#172033",
+      "deskWood": "#33241D",
+      "deskLedColor": "#F59E0B",
+      "fairyLightColor": "#FFD18C",
+      "showFairyLights": true
+    },
+    "corkboard": {
+      "visible": true,
+      "content": "Isi custom papan dinding kiri 512x384 (catatan/poster/grafik khusus topik ini — BUKAN kartu lama!)."
+    },
+    "sideMonitor": {
+      "visible": true,
+      "content": "Isi custom layar monitor vertikal kanan 384x600 (kode/ticker/chat/dashboard khusus topik ini)."
+    },
+    "defaultPropsToggle": {
+      "showServerRack": false,
+      "showDeskLamp": true,
+      "showPlant": true,
+      "showCactus": false,
+      "showBooks": true,
+      "showLidMug": true,
+      "showLidDuck": false
+    },
+    "zeroLeftoverCheck": "Konfirmasi bahwa tidak ada satu pun teks/brand/prop sisa episode lain di ruangan maupun luar jendela."
+  },
+  "customPropsPlan": [
+    {
+      "propId": "prop_example_1",
+      "description": "Deskripsi objek 3D baru di CustomProps3D.ts (bentuk, material, animasi).",
+      "usedInShots": ["SH02", "SH05"]
+    },
+    {
+      "propId": "prop_example_2",
+      "description": "Prop 3D/gag orisinal kedua khusus topik ini.",
+      "usedInShots": ["SH08", "SH10"]
+    }
+  ],
+  "musicAndAudioPlan": {
+    "musicMood": "Upbeat playful / investigative groovy / dramatic mock-epic",
+    "silenceDropCues": ["s5_twist"],
+    "bespokeSfx": [
+      {
+        "file": "sfx_custom_1.mp3",
+        "triggerCue": "s1_hook",
+        "visualAction": "Aksi fisik pemicu bunyi di layar",
+        "prompt": "Deskripsi prompt eleven_text_to_sound_v3"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "SH01",
+      "sceneId": "S1",
+      "label": "Nama singkat shot yang deskriptif",
+      "cueStart": "s1_start",
+      "cueEnd": "s1_next",
+      "dialogueSummary": "Ringkasan baris dialog & siapa yang bicara.",
+      "comedyPurpose": "hook | setup | escalation | reaction | visual_gag | twist | payoff | button",
+      "camera": {
+        "shotType": "C08_LowAngleHero",
+        "fromPos": [-1.15, 4.95, 6.1],
+        "toPos": [-0.95, 5.05, 5.6],
+        "fromLook": [-1.25, 6.35, -0.25],
+        "toLook": [-1.25, 6.35, -0.25],
+        "fromFov": 37,
+        "toFov": 35,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Sudut rendah mendongak membuat klaim OpenClaw terasa sok heroik sebelum langsung dipatahkan."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.32,
+          "pose": "stand_talk",
+          "emotion": "enthusiastic",
+          "eyeline": "ke kamera lalu melirik Hermes",
+          "actingBeat": "start confident -> chest puff -> gesture ke prop"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.35,
+          "pose": "lounge",
+          "emotion": "eyebrow_raise",
+          "eyeline": "menatap datar ke OpenClaw",
+          "actingBeat": "diam menyimak, satu alis terangkat di akhir kalimat"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s1_custom_screen",
+        "activeProps": ["prop_example_1"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "normal | noir_spot | warm_lamp | screen_glow_dominant",
+        "notes": "Cahaya utama dan motivasi perubahan jika ada."
+      },
+      "transitionOut": "hard_cut | pre_lap_reaction | match_cut | whip_cut",
+      "sfxCue": "sfx_custom_1.mp3"
+    }
+  ]
+}

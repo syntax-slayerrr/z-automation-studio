@@ -1,0 +1,111 @@
+{
+  "slug": "zaldy-room-showcase",
+  "title": "Kamar Baru & Wujud 3D Bos Zaldy: Kolaborasi Perdana 3 Karakter!",
+  "durationTargetSec": 68,
+  "fps": 30,
+  "resolution": "1080x1920",
+  "antiTemplatePremise": {
+    "coreIrony": "Biasanya Zaldy hanya muncul sebagai bubble chat horor jam 2 pagi di layar laptop. Kini kamera berputar 180 derajat ke dalam kamar 360 derajat utuh — Zaldy (180 cm) benar-benar hadir fisik di kasur dan kursi kerjanya mengawasi langsung Hermes & OpenClaw (~13 cm) di atas meja!",
+    "characterDynamics": "Trio Toy-Story Creator Studio: Zaldy (Kreator 180 cm yang santai tapi jeli), Hermes (Arsitek 3D tenang), dan OpenClaw (Agen ekspresif yang panik karena bosnya sekarang duduk 30 cm di depannya).",
+    "sceneCount": 5,
+    "shotCount": 12
+  },
+  "setDressingPlan": {
+    "roomStyle": "Creator Studio Hangat Modern 360° (Warm Slate North Wall + Cream-Sand Side/Back Walls, Honey-Oak Parquet Floor + Woven Rug)",
+    "baligho": "Custom 512x680 'STUDIO ZALDY 360° • TRIO KREATOR'",
+    "westWall": "4-Tier Walnut Bookshelf + Gold/Silver Trophies + 2 Framed Org/Creator Certificates + Emerald-Gold Sajadah, Black Peci & Mushaf",
+    "southWestZone": "Walnut Platform Bed + Teal-Navy Duvet + Nightstand with Warm Lamp",
+    "eastWall": "Two-Tone Walnut/Cream Wardrobe + Recessed Wooden Bedroom Door with Hallway Light Slit"
+  },
+  "voices": {
+    "zaldy": "Daniel / Callum / Charlie (Young Natural Indonesian Creator Voice via eleven_v4 id)",
+    "hermes": "Brian (nPczCjzI2devNBz1zQrb, seed 4242)",
+    "openclaw": "Liam (TX3LPaxmHKxFdv7VOQHJ)"
+  },
+  "shots": [
+    {
+      "shotId": "SH01",
+      "scene": 1,
+      "archetype": "C01_ReverseDeskToBed",
+      "cueStart": "s1_open",
+      "description": "02:14 WIB Malam: Kamera di belakang Hermes & OpenClaw di bibir laptop menghadap +Z ke dalam kamar gelap hangat; di belakang tampak Zaldy (mode santai kamar) rebahan di kasur memegang HP menyala."
+    },
+    {
+      "shotId": "SH02",
+      "scene": 1,
+      "archetype": "C06_BedMCU_Zaldy",
+      "cueStart": "s1_zaldy_greet",
+      "description": "Medium Close-Up Zaldy bersandar di bantal kasur (kemeja lengan gulung, lampu tidur hangat), menoleh dari HP sambil senyum tipis menyapa kedua agennya."
+    },
+    {
+      "shotId": "SH03",
+      "scene": 1,
+      "archetype": "C03_MascotTurnReaction",
+      "cueStart": "s1_hm_calm",
+      "description": "Two-shot Hermes & OpenClaw di atas layar laptop dengan latar belakang kasur kamar; keduanya menatap takjub ke ruangan 360 derajat baru."
+    },
+    {
+      "shotId": "SH04",
+      "scene": 2,
+      "archetype": "C12_SunriseRoomSweep",
+      "cueStart": "s2_sunrise_tour",
+      "description": "Solar Timelapse 02:20 -> 06:30 Pagi Emas! Kamera menyapu ke Dinding Barat memperlihatkan Zaldy (180 cm, Jas Almamater Teal-Navy berlogo 'Z' + kaos kaki) berdiri santai di samping Rak Buku, Piala Emas/Perak, Sertifikat Organisasi, dan Sajadah + Peci rapi."
+    },
+    {
+      "shotId": "SH05",
+      "scene": 2,
+      "archetype": "C11_WestIdentityInsert",
+      "cueStart": "s2_oc_praise",
+      "description": "Medium-Wide detail Rak Buku, Piala Organisasi, Piagam ZALDY, serta Sajadah hijau-emas & Peci hitam rapi sementara Zaldy tersenyum bangga (hands-in-pocket)."
+    },
+    {
+      "shotId": "SH06",
+      "scene": 2,
+      "archetype": "C02_EastWardrobeWide",
+      "cueStart": "s2_zaldy_vibe",
+      "description": "Sudut lebar memperlihatkan Lemari Pakaian kayu modern, Pintu Kamar, Lantai Parket & Karpet Tenun saat Zaldy melangkah menuju kursi kerjanya."
+    },
+    {
+      "shotId": "SH07",
+      "scene": 3,
+      "archetype": "C04_OTS_HumanToMascot",
+      "cueStart": "s3_desk_inspect",
+      "description": "11:30 WIB Siang: Over-The-Shoulder dari balik bahu jas almamater Zaldy yang duduk di kursi kerja menatap ke bawah ke arah Hermes & OpenClaw mungil (~13 cm) di atas bibir laptop!"
+    },
+    {
+      "shotId": "SH08",
+      "scene": 3,
+      "archetype": "C08_LowAngleMascotPOV",
+      "cueStart": "s3_oc_sweat",
+      "description": "Low-Angle POV dari level meja mendongak ke arah Zaldy yang menopang dagu di tangan (Pose Chin-Rest ikonik!) sambil senyum smirk mengawasi OpenClaw yang keluar uap panik."
+    },
+    {
+      "shotId": "SH09",
+      "scene": 3,
+      "archetype": "C07_ZaldySmirkMCU",
+      "cueStart": "s3_zaldy_catch",
+      "description": "Close-up sinematik wajah Zaldy menopang dagu dengan rambut curtain bangs & emblem 'Z' terlihat tajam saat menggoda OpenClaw."
+    },
+    {
+      "shotId": "SH10",
+      "scene": 4,
+      "archetype": "C12_CraneTrioMontage",
+      "cueStart": "s4_trio_work",
+      "description": "13:00 -> 17:30 WIB Solar Timelapse Siang ke Senja Merah! Zaldy mengetik langsung di keyboard laptop, Hermes memutar hologram kamera 3D, OpenClaw bersorak memantau Live QA Preview 100% di layar!"
+    },
+    {
+      "shotId": "SH11",
+      "scene": 4,
+      "archetype": "C11_ScreenQAInsert",
+      "cueStart": "s4_qa_pass",
+      "description": "Insert tajam layar laptop VS Code + Live QA Preview menampilkan hasil render studio 100% PASS tanpa clipping sementara tangan 3D Zaldy mengetik."
+    },
+    {
+      "shotId": "SH12",
+      "scene": 5,
+      "archetype": "C01_HeroSunsetFinale",
+      "cueStart": "s5_hero_point",
+      "description": "17:50 WIB Senja Emas Garut: Wide Hero Shot — Zaldy (180 cm) berdiri gagah di karpet tengah menunjuk mantap ke depan (Pose Point-Forward!) ditemani Hermes & OpenClaw yang fist-pump di meja!"
+    }
+  ]
+}

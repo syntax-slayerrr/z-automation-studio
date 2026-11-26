@@ -1,0 +1,1704 @@
+{
+  "voices": {
+    "openclaw": {
+      "id": "TX3LPaxmHKxFdv7VOQHJ",
+      "label": "OpenClaw (Liam · V1 Expressive Energetic)",
+      "stability": 0.38,
+      "similarityBoost": 0.78,
+      "seed": null,
+      "useContextLock": false,
+      "cacheVer": "v3_oc_v1style",
+      "tempo": 1.15
+    },
+    "hermes": {
+      "id": "nPczCjzI2devNBz1zQrb",
+      "label": "Hermes (Brian · Locked Consistent Studio Voice)",
+      "stability": 0.72,
+      "similarityBoost": 0.9,
+      "seed": 4242,
+      "useContextLock": true,
+      "cacheVer": "v2_locked",
+      "tempo": 1.1
+    },
+    "closing": {
+      "id": "nPczCjzI2devNBz1zQrb",
+      "label": "Closing (Brian · Unified Hermes Voice)",
+      "stability": 0.72,
+      "similarityBoost": 0.9,
+      "seed": 4242,
+      "useContextLock": true,
+      "cacheVer": "v2_locked",
+      "tempo": 1.07
+    }
+  },
+  "model": "eleven_v4",
+  "voDurationSec": 82.465,
+  "totalVideoSec": 85.265,
+  "fps": 30,
+  "totalFrames": 2558,
+  "cuesSec": {
+    "s1_yell": 0.592,
+    "s1_help": 1.357,
+    "s1_calm": 2.684,
+    "s1_fire": 3.702,
+    "s2_screen": 5.489,
+    "s2_morph": 9.912,
+    "s2_lowbat": 11.512,
+    "s3_ask": 14.321,
+    "s3_note": 17.448,
+    "s3_psychic": 20.768,
+    "s3_innocent": 24.425,
+    "s4_snap": 26.142,
+    "s4_workflow": 29.997,
+    "s4_ask": 32.723,
+    "s4_card": 34.638,
+    "s5_eduka": 38.618,
+    "s5_learn": 41.343,
+    "s5_discover": 46.031,
+    "s6_back": 52.541,
+    "s6_flashback": 55.256,
+    "s6_offended": 60.068,
+    "s6_smug": 61.456,
+    "s7_run": 64.159,
+    "s7_proud": 66.528,
+    "s7_shout": 70.107,
+    "s7_facepalm": 73.235,
+    "s8_cta": 76.443
+  },
+  "cuesFrame": {
+    "s1_yell": 18,
+    "s1_help": 41,
+    "s1_calm": 81,
+    "s1_fire": 111,
+    "s2_screen": 165,
+    "s2_morph": 297,
+    "s2_lowbat": 345,
+    "s3_ask": 430,
+    "s3_note": 523,
+    "s3_psychic": 623,
+    "s3_innocent": 733,
+    "s4_snap": 784,
+    "s4_workflow": 900,
+    "s4_ask": 982,
+    "s4_card": 1039,
+    "s5_eduka": 1159,
+    "s5_learn": 1240,
+    "s5_discover": 1381,
+    "s6_back": 1576,
+    "s6_flashback": 1658,
+    "s6_offended": 1802,
+    "s6_smug": 1844,
+    "s7_run": 1925,
+    "s7_proud": 1996,
+    "s7_shout": 2103,
+    "s7_facepalm": 2197,
+    "s8_cta": 2293
+  },
+  "scenesFrame": {
+    "s1Start": 0,
+    "s2Start": 160,
+    "s3Start": 422,
+    "s4Start": 779,
+    "s5Start": 1153,
+    "s6Start": 1570,
+    "s7Start": 1918,
+    "s8Start": 2283,
+    "totalFrames": 2558
+  },
+  "lineSpans": [
+    {
+      "idx": 0,
+      "scene": 1,
+      "who": "openclaw",
+      "startFrame": 14,
+      "endFrame": 76
+    },
+    {
+      "idx": 1,
+      "scene": 1,
+      "who": "hermes",
+      "startFrame": 81,
+      "endFrame": 148
+    },
+    {
+      "idx": 2,
+      "scene": 2,
+      "who": "openclaw",
+      "startFrame": 163,
+      "endFrame": 292
+    },
+    {
+      "idx": 3,
+      "scene": 2,
+      "who": "openclaw",
+      "startFrame": 295,
+      "endFrame": 408
+    },
+    {
+      "idx": 4,
+      "scene": 3,
+      "who": "hermes",
+      "startFrame": 430,
+      "endFrame": 515
+    },
+    {
+      "idx": 5,
+      "scene": 3,
+      "who": "openclaw",
+      "startFrame": 520,
+      "endFrame": 609
+    },
+    {
+      "idx": 6,
+      "scene": 3,
+      "who": "hermes",
+      "startFrame": 623,
+      "endFrame": 717
+    },
+    {
+      "idx": 7,
+      "scene": 3,
+      "who": "openclaw",
+      "startFrame": 729,
+      "endFrame": 773
+    },
+    {
+      "idx": 8,
+      "scene": 4,
+      "who": "hermes",
+      "startFrame": 784,
+      "endFrame": 974
+    },
+    {
+      "idx": 9,
+      "scene": 4,
+      "who": "openclaw",
+      "startFrame": 978,
+      "endFrame": 1036
+    },
+    {
+      "idx": 10,
+      "scene": 4,
+      "who": "hermes",
+      "startFrame": 1039,
+      "endFrame": 1142
+    },
+    {
+      "idx": 11,
+      "scene": 5,
+      "who": "openclaw",
+      "startFrame": 1156,
+      "endFrame": 1236
+    },
+    {
+      "idx": 12,
+      "scene": 5,
+      "who": "hermes",
+      "startFrame": 1240,
+      "endFrame": 1358
+    },
+    {
+      "idx": 13,
+      "scene": 5,
+      "who": "hermes",
+      "startFrame": 1381,
+      "endFrame": 1514
+    },
+    {
+      "idx": 14,
+      "scene": 6,
+      "who": "openclaw",
+      "startFrame": 1574,
+      "endFrame": 1654
+    },
+    {
+      "idx": 15,
+      "scene": 6,
+      "who": "hermes",
+      "startFrame": 1658,
+      "endFrame": 1789
+    },
+    {
+      "idx": 16,
+      "scene": 6,
+      "who": "openclaw",
+      "startFrame": 1798,
+      "endFrame": 1839
+    },
+    {
+      "idx": 17,
+      "scene": 6,
+      "who": "hermes",
+      "startFrame": 1844,
+      "endFrame": 1910
+    },
+    {
+      "idx": 18,
+      "scene": 7,
+      "who": "openclaw",
+      "startFrame": 1921,
+      "endFrame": 1992
+    },
+    {
+      "idx": 19,
+      "scene": 7,
+      "who": "hermes",
+      "startFrame": 1996,
+      "endFrame": 2095
+    },
+    {
+      "idx": 20,
+      "scene": 7,
+      "who": "openclaw",
+      "startFrame": 2101,
+      "endFrame": 2169
+    },
+    {
+      "idx": 21,
+      "scene": 7,
+      "who": "hermes",
+      "startFrame": 2197,
+      "endFrame": 2265
+    },
+    {
+      "idx": 22,
+      "scene": 8,
+      "who": "closing",
+      "startFrame": 2293,
+      "endFrame": 2469
+    }
+  ],
+  "words": [
+    {
+      "w": "HERMEES!",
+      "cue": "s1_yell",
+      "scene": 1,
+      "who": "openclaw",
+      "line": 0,
+      "start": 0.592,
+      "end": 1.183
+    },
+    {
+      "w": "Tolongin",
+      "cue": "s1_help",
+      "scene": 1,
+      "who": "openclaw",
+      "line": 0,
+      "start": 1.357,
+      "end": 1.67
+    },
+    {
+      "w": "gue",
+      "cue": null,
+      "scene": 1,
+      "who": "openclaw",
+      "line": 0,
+      "start": 1.705,
+      "end": 1.844
+    },
+    {
+      "w": "dong!",
+      "cue": null,
+      "scene": 1,
+      "who": "openclaw",
+      "line": 0,
+      "start": 1.913,
+      "end": 2.54
+    },
+    {
+      "w": "Apaan",
+      "cue": "s1_calm",
+      "scene": 1,
+      "who": "hermes",
+      "line": 1,
+      "start": 2.684,
+      "end": 3.047
+    },
+    {
+      "w": "sih?",
+      "cue": null,
+      "scene": 1,
+      "who": "hermes",
+      "line": 1,
+      "start": 3.12,
+      "end": 3.484
+    },
+    {
+      "w": "Server",
+      "cue": "s1_fire",
+      "scene": 1,
+      "who": "hermes",
+      "line": 1,
+      "start": 3.702,
+      "end": 3.92
+    },
+    {
+      "w": "kebakaran",
+      "cue": null,
+      "scene": 1,
+      "who": "hermes",
+      "line": 1,
+      "start": 3.993,
+      "end": 4.357
+    },
+    {
+      "w": "lagi?",
+      "cue": null,
+      "scene": 1,
+      "who": "hermes",
+      "line": 1,
+      "start": 4.429,
+      "end": 4.938
+    },
+    {
+      "w": "Lebih",
+      "cue": "s2_screen",
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 5.489,
+      "end": 5.697
+    },
+    {
+      "w": "parah!",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 5.767,
+      "end": 6.428
+    },
+    {
+      "w": "Gue",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 6.602,
+      "end": 6.741
+    },
+    {
+      "w": "nyuruh",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 6.776,
+      "end": 7.019
+    },
+    {
+      "w": "Claude",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 7.089,
+      "end": 7.228
+    },
+    {
+      "w": "bikin",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 7.263,
+      "end": 7.436
+    },
+    {
+      "w": "animasi,",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 7.541,
+      "end": 8.202
+    },
+    {
+      "w": "tapi",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 8.271,
+      "end": 8.41
+    },
+    {
+      "w": "hasilnya",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 8.55,
+      "end": 8.758
+    },
+    {
+      "w": "kacau",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 8.793,
+      "end": 9.106
+    },
+    {
+      "w": "banget.",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 2,
+      "start": 9.176,
+      "end": 9.802
+    },
+    {
+      "w": "Karakternya",
+      "cue": "s2_morph",
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 9.912,
+      "end": 10.33
+    },
+    {
+      "w": "gonta-ganti,",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 10.399,
+      "end": 11.338
+    },
+    {
+      "w": "gerakannya",
+      "cue": "s2_lowbat",
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 11.512,
+      "end": 11.93
+    },
+    {
+      "w": "kayak",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 11.964,
+      "end": 12.138
+    },
+    {
+      "w": "robot",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 12.277,
+      "end": 12.416
+    },
+    {
+      "w": "kehabisan",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 12.451,
+      "end": 12.764
+    },
+    {
+      "w": "baterai!",
+      "cue": null,
+      "scene": 2,
+      "who": "openclaw",
+      "line": 3,
+      "start": 12.834,
+      "end": 13.599
+    },
+    {
+      "w": "Bentar...",
+      "cue": "s3_ask",
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 14.321,
+      "end": 15.267
+    },
+    {
+      "w": "emang",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 15.339,
+      "end": 15.485
+    },
+    {
+      "w": "lo",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 15.558,
+      "end": 15.63
+    },
+    {
+      "w": "nulis",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 15.667,
+      "end": 15.921
+    },
+    {
+      "w": "prompt-nya",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 16.03,
+      "end": 16.212
+    },
+    {
+      "w": "gimana?",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 4,
+      "start": 16.285,
+      "end": 17.158
+    },
+    {
+      "w": "Ya...",
+      "cue": "s3_note",
+      "scene": 3,
+      "who": "openclaw",
+      "line": 5,
+      "start": 17.448,
+      "end": 18.004
+    },
+    {
+      "w": "Bikinin",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 5,
+      "start": 18.352,
+      "end": 18.77
+    },
+    {
+      "w": "animasi",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 5,
+      "start": 18.909,
+      "end": 19.256
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 5,
+      "start": 19.326,
+      "end": 19.396
+    },
+    {
+      "w": "keren.",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 5,
+      "start": 19.465,
+      "end": 20.3
+    },
+    {
+      "w": "Lo",
+      "cue": "s3_psychic",
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 20.768,
+      "end": 20.914
+    },
+    {
+      "w": "kira",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 20.986,
+      "end": 21.204
+    },
+    {
+      "w": "Claude",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 21.277,
+      "end": 21.495
+    },
+    {
+      "w": "cenayang,",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 21.532,
+      "end": 22.368
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 22.441,
+      "end": 22.586
+    },
+    {
+      "w": "baca",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 22.659,
+      "end": 22.804
+    },
+    {
+      "w": "pikiran",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 22.877,
+      "end": 23.241
+    },
+    {
+      "w": "lo?",
+      "cue": null,
+      "scene": 3,
+      "who": "hermes",
+      "line": 6,
+      "start": 23.35,
+      "end": 23.895
+    },
+    {
+      "w": "Lah,",
+      "cue": "s3_innocent",
+      "scene": 3,
+      "who": "openclaw",
+      "line": 7,
+      "start": 24.425,
+      "end": 24.773
+    },
+    {
+      "w": "emang",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 7,
+      "start": 24.912,
+      "end": 25.121
+    },
+    {
+      "w": "bukan?",
+      "cue": null,
+      "scene": 3,
+      "who": "openclaw",
+      "line": 7,
+      "start": 25.155,
+      "end": 25.747
+    },
+    {
+      "w": "Bukan",
+      "cue": "s4_snap",
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 26.142,
+      "end": 26.579
+    },
+    {
+      "w": "lah!",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 26.724,
+      "end": 27.16
+    },
+    {
+      "w": "Bikin",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 27.233,
+      "end": 27.451
+    },
+    {
+      "w": "animasi",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 27.56,
+      "end": 27.888
+    },
+    {
+      "w": "itu",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 27.997,
+      "end": 28.106
+    },
+    {
+      "w": "nggak",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 28.142,
+      "end": 28.324
+    },
+    {
+      "w": "cukup",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 28.397,
+      "end": 28.688
+    },
+    {
+      "w": "modal",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 28.76,
+      "end": 28.979
+    },
+    {
+      "w": "prompt",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 29.051,
+      "end": 29.197
+    },
+    {
+      "w": "pendek.",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 29.306,
+      "end": 29.924
+    },
+    {
+      "w": "Lo",
+      "cue": "s4_workflow",
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 29.997,
+      "end": 30.07
+    },
+    {
+      "w": "butuh",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 30.179,
+      "end": 30.36
+    },
+    {
+      "w": "skill",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 30.433,
+      "end": 30.724
+    },
+    {
+      "w": "sama",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 30.797,
+      "end": 31.015
+    },
+    {
+      "w": "workflow",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 31.088,
+      "end": 31.451
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 31.524,
+      "end": 31.597
+    },
+    {
+      "w": "jelas.",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 8,
+      "start": 31.67,
+      "end": 32.542
+    },
+    {
+      "w": "Emang",
+      "cue": "s4_ask",
+      "scene": 4,
+      "who": "openclaw",
+      "line": 9,
+      "start": 32.723,
+      "end": 32.897
+    },
+    {
+      "w": "ada",
+      "cue": null,
+      "scene": 4,
+      "who": "openclaw",
+      "line": 9,
+      "start": 33.036,
+      "end": 33.175
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "who": "openclaw",
+      "line": 9,
+      "start": 33.245,
+      "end": 33.315
+    },
+    {
+      "w": "nyediain",
+      "cue": null,
+      "scene": 4,
+      "who": "openclaw",
+      "line": 9,
+      "start": 33.349,
+      "end": 33.662
+    },
+    {
+      "w": "begituan?",
+      "cue": null,
+      "scene": 4,
+      "who": "openclaw",
+      "line": 9,
+      "start": 33.732,
+      "end": 34.358
+    },
+    {
+      "w": "Ada",
+      "cue": "s4_card",
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 34.638,
+      "end": 34.929
+    },
+    {
+      "w": "dong.",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 35.111,
+      "end": 35.474
+    },
+    {
+      "w": "Nih,",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 35.656,
+      "end": 36.165
+    },
+    {
+      "w": "coba",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 36.202,
+      "end": 36.456
+    },
+    {
+      "w": "buka",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 36.493,
+      "end": 36.747
+    },
+    {
+      "w": "Z-Automation.",
+      "cue": null,
+      "scene": 4,
+      "who": "hermes",
+      "line": 10,
+      "start": 36.82,
+      "end": 38.056
+    },
+    {
+      "w": "Wah!",
+      "cue": "s5_eduka",
+      "scene": 5,
+      "who": "openclaw",
+      "line": 11,
+      "start": 38.618,
+      "end": 39.209
+    },
+    {
+      "w": "Ada",
+      "cue": null,
+      "scene": 5,
+      "who": "openclaw",
+      "line": 11,
+      "start": 39.383,
+      "end": 39.592
+    },
+    {
+      "w": "Eduka",
+      "cue": null,
+      "scene": 5,
+      "who": "openclaw",
+      "line": 11,
+      "start": 39.661,
+      "end": 39.939
+    },
+    {
+      "w": "sama",
+      "cue": null,
+      "scene": 5,
+      "who": "openclaw",
+      "line": 11,
+      "start": 39.974,
+      "end": 40.148
+    },
+    {
+      "w": "Explorasi!",
+      "cue": null,
+      "scene": 5,
+      "who": "openclaw",
+      "line": 11,
+      "start": 40.252,
+      "end": 41.192
+    },
+    {
+      "w": "Iya,",
+      "cue": "s5_learn",
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 41.343,
+      "end": 41.925
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 41.998,
+      "end": 42.071
+    },
+    {
+      "w": "Eduka",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 42.143,
+      "end": 42.652
+    },
+    {
+      "w": "lo",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 42.798,
+      "end": 42.871
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 42.907,
+      "end": 43.089
+    },
+    {
+      "w": "pahami",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 43.125,
+      "end": 43.525
+    },
+    {
+      "w": "arsitekturnya",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 43.598,
+      "end": 44.252
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 44.325,
+      "end": 44.471
+    },
+    {
+      "w": "nol.",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 12,
+      "start": 44.543,
+      "end": 45.271
+    },
+    {
+      "w": "Nah,",
+      "cue": "s5_discover",
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 46.031,
+      "end": 46.685
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 46.758,
+      "end": 46.831
+    },
+    {
+      "w": "Explorasi",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 46.94,
+      "end": 47.558
+    },
+    {
+      "w": "lo",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 47.776,
+      "end": 47.922
+    },
+    {
+      "w": "tinggal",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 47.994,
+      "end": 48.213
+    },
+    {
+      "w": "pilih",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 48.285,
+      "end": 48.576
+    },
+    {
+      "w": "inspirasi",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 48.649,
+      "end": 49.158
+    },
+    {
+      "w": "gaya",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 49.231,
+      "end": 49.449
+    },
+    {
+      "w": "visualnya.",
+      "cue": null,
+      "scene": 5,
+      "who": "hermes",
+      "line": 13,
+      "start": 49.667,
+      "end": 50.467
+    },
+    {
+      "w": "Jadi",
+      "cue": "s6_back",
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 52.541,
+      "end": 52.819
+    },
+    {
+      "w": "gue",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 52.958,
+      "end": 53.098
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 53.167,
+      "end": 53.306
+    },
+    {
+      "w": "belajar",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 53.341,
+      "end": 53.585
+    },
+    {
+      "w": "dulu",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 53.654,
+      "end": 53.932
+    },
+    {
+      "w": "sebelum",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 54.002,
+      "end": 54.211
+    },
+    {
+      "w": "bikin",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 54.257,
+      "end": 54.385
+    },
+    {
+      "w": "animasi?",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 14,
+      "start": 54.419,
+      "end": 55.115
+    },
+    {
+      "w": "Betul.",
+      "cue": "s6_flashback",
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 55.256,
+      "end": 56.129
+    },
+    {
+      "w": "Biar",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 56.202,
+      "end": 56.347
+    },
+    {
+      "w": "nggak",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 56.383,
+      "end": 56.492
+    },
+    {
+      "w": "asal",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 56.565,
+      "end": 56.783
+    },
+    {
+      "w": "nyuruh",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 56.82,
+      "end": 57.074
+    },
+    {
+      "w": "AI,",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 57.147,
+      "end": 57.729
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 57.802,
+      "end": 57.947
+    },
+    {
+      "w": "malah",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 58.02,
+      "end": 58.165
+    },
+    {
+      "w": "nyalahin",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 58.238,
+      "end": 58.602
+    },
+    {
+      "w": "hasilnya.",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 15,
+      "start": 58.783,
+      "end": 59.62
+    },
+    {
+      "w": "Eh,",
+      "cue": "s6_offended",
+      "scene": 6,
+      "who": "openclaw",
+      "line": 16,
+      "start": 60.068,
+      "end": 60.311
+    },
+    {
+      "w": "nyindir",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 16,
+      "start": 60.416,
+      "end": 60.903
+    },
+    {
+      "w": "gue?",
+      "cue": null,
+      "scene": 6,
+      "who": "openclaw",
+      "line": 16,
+      "start": 61.042,
+      "end": 61.32
+    },
+    {
+      "w": "Ya,",
+      "cue": "s6_smug",
+      "scene": 6,
+      "who": "hermes",
+      "line": 17,
+      "start": 61.456,
+      "end": 61.965
+    },
+    {
+      "w": "kalau",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 17,
+      "start": 62.038,
+      "end": 62.256
+    },
+    {
+      "w": "merasa",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 17,
+      "start": 62.365,
+      "end": 62.765
+    },
+    {
+      "w": "sih...",
+      "cue": null,
+      "scene": 6,
+      "who": "hermes",
+      "line": 17,
+      "start": 62.838,
+      "end": 63.638
+    },
+    {
+      "w": "Ya",
+      "cue": "s7_run",
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 64.159,
+      "end": 64.179
+    },
+    {
+      "w": "udah!",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 64.239,
+      "end": 64.795
+    },
+    {
+      "w": "Gue",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 64.934,
+      "end": 65.073
+    },
+    {
+      "w": "mau",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 65.108,
+      "end": 65.212
+    },
+    {
+      "w": "bikin",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 65.259,
+      "end": 65.386
+    },
+    {
+      "w": "animasi",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 65.421,
+      "end": 65.839
+    },
+    {
+      "w": "sekarang!",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 18,
+      "start": 65.873,
+      "end": 66.465
+    },
+    {
+      "w": "Nah,",
+      "cue": "s7_proud",
+      "scene": 7,
+      "who": "hermes",
+      "line": 19,
+      "start": 66.528,
+      "end": 67.037
+    },
+    {
+      "w": "gitu",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 19,
+      "start": 67.11,
+      "end": 67.401
+    },
+    {
+      "w": "dong.",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 19,
+      "start": 67.473,
+      "end": 68.201
+    },
+    {
+      "w": "Akhirnya",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 19,
+      "start": 68.31,
+      "end": 68.782
+    },
+    {
+      "w": "paham.",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 19,
+      "start": 68.855,
+      "end": 69.801
+    },
+    {
+      "w": "Claude!",
+      "cue": "s7_shout",
+      "scene": 7,
+      "who": "openclaw",
+      "line": 20,
+      "start": 70.107,
+      "end": 70.663
+    },
+    {
+      "w": "BIKININ",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 20,
+      "start": 70.802,
+      "end": 71.15
+    },
+    {
+      "w": "GUE",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 20,
+      "start": 71.22,
+      "end": 71.289
+    },
+    {
+      "w": "ANIMASI!",
+      "cue": null,
+      "scene": 7,
+      "who": "openclaw",
+      "line": 20,
+      "start": 71.428,
+      "end": 72.263
+    },
+    {
+      "w": "Hah...",
+      "cue": "s7_facepalm",
+      "scene": 7,
+      "who": "hermes",
+      "line": 21,
+      "start": 73.235,
+      "end": 74.035
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 21,
+      "start": 74.107,
+      "end": 74.253
+    },
+    {
+      "w": "lagi",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 21,
+      "start": 74.398,
+      "end": 74.726
+    },
+    {
+      "w": "deh.",
+      "cue": null,
+      "scene": 7,
+      "who": "hermes",
+      "line": 21,
+      "start": 74.762,
+      "end": 75.489
+    },
+    {
+      "w": "Biar",
+      "cue": "s8_cta",
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 76.443,
+      "end": 76.667
+    },
+    {
+      "w": "nggak",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 76.705,
+      "end": 76.817
+    },
+    {
+      "w": "kayak",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 76.854,
+      "end": 77.041
+    },
+    {
+      "w": "OpenClaw,",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 77.191,
+      "end": 78.088
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 78.163,
+      "end": 78.387
+    },
+    {
+      "w": "belajar",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 78.462,
+      "end": 78.836
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 78.91,
+      "end": 78.985
+    },
+    {
+      "w": "eksplorasi",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 79.06,
+      "end": 79.733
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 79.808,
+      "end": 80.032
+    },
+    {
+      "w": "z-automation",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 80.107,
+      "end": 80.929
+    },
+    {
+      "w": "dot",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 81.004,
+      "end": 81.079
+    },
+    {
+      "w": "my",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 81.228,
+      "end": 81.452
+    },
+    {
+      "w": "dot",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 81.527,
+      "end": 81.602
+    },
+    {
+      "w": "id.",
+      "cue": null,
+      "scene": 8,
+      "who": "closing",
+      "line": 22,
+      "start": 81.751,
+      "end": 82.35
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "skill": "galeri-motion-characterflow",
+  "slug": "contoh-refleksi-malam",
+  "outputMp4": "videos/contoh_refleksi_malam_charflow.mp4",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 60
+  },
+  "audio": {
+    "voiceProvider": "elevenlabs",
+    "model": "eleven_v4",
+    "voiceName": "Chris",
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "tone": "Intimate, warm, empathetic late-night friend",
+    "tempo": 1.06,
+    "targetLufs": -14.5,
+    "musicMood": "Minimalist nocturnal ambient pad -> subtle emotional tension -> warm resolving piano"
+  },
+  "intro": {
+    "optionalGroupCredits": [],
+    "roomSetting": "Cozy pastel bedroom with 4-panel teal headboard, bedside tungsten lamp, digital clock 02:00, red spiral notebook, star-patterned blue blanket"
+  },
+  "protagonist": {
+    "skinColor": "#C78A63",
+    "hairStyle": "glossy_wavy_dark",
+    "shirtColor": "#EAB308",
+    "hands": "articulated_5_finger_capsule",
+    "eyelids": "physical_3d_animated"
+  },
+  "shots": [
+    {
+      "shotId": "SH01",
+      "cue": "s1_lamp_off",
+      "camera": "High-Angle 3/4 Establishing -> slow push-in",
+      "lighting": "warm_lamp -> snap_off_moonlight_blue",
+      "eyelids": "closed",
+      "action": "Lying on bed, right hand lifts to tap bedside lamp off",
+      "bubbleDensity": 0,
+      "subtitleZone": "lower",
+      "highlightWords": ["Jam 2 pagi"],
+      "sfx": "sfx_lamp_switch_click.mp3"
+    },
+    {
+      "shotId": "SH02",
+      "cue": "s1_eyes_snap",
+      "camera": "Sudden Top-Down ECU Face",
+      "lighting": "cool_moonlight_blue",
+      "eyelids": "wide_open_anxious_glance",
+      "action": "Eyes snap wide open staring diagonally upward",
+      "bubbleDensity": 0,
+      "subtitleZone": "lower",
+      "highlightWords": ["rapat darurat"],
+      "sfx": "sfx_soft_low_thump.mp3"
+    },
+    {
+      "shotId": "SH03",
+      "cue": "s2_bubbles_multiply",
+      "camera": "Medium Low-Angle Front -> Smooth Pull-Out Wide",
+      "lighting": "cool_moonlight_blue",
+      "eyelids": "open_looking_up",
+      "action": "Sitting up scratching head as translucent 3D thought-bubbles multiply 1 -> 10 -> 100",
+      "bubbleDensity": 100,
+      "subtitleZone": "top",
+      "highlightWords": ["belum tentu"],
+      "sfx": "sfx_bubble_pops_cascade.mp3"
+    },
+    {
+      "shotId": "SH04",
+      "cue": "s3_crimson_alarm",
+      "camera": "Tilted High-Angle Close-In",
+      "lighting": "crimson_anxiety_rim",
+      "eyelids": "wide_stressed",
+      "action": "Hunching forward covering both ears with 5-finger hands; bubble rims & icons turn red",
+      "bubbleDensity": 80,
+      "subtitleZone": "top",
+      "highlightWords": ["terlalu sensitif"],
+      "sfx": "sfx_muted_alarm_pulse.mp3"
+    },
+    {
+      "shotId": "SH05",
+      "cue": "s4_calm_breathe",
+      "camera": "Symmetrical Medium Close-Up",
+      "lighting": "crimson_to_calm_blue_reset",
+      "eyelids": "closed_peaceful",
+      "action": "Lowering hands, closing 3D eyelids, deep slow exhale as red glow fades to calm blue",
+      "bubbleDensity": 15,
+      "subtitleZone": "lower",
+      "highlightWords": ["berhenti sebentar"],
+      "sfx": "sfx_calm_exhale_resolve.mp3"
+    },
+    {
+      "shotId": "SH06",
+      "cue": "s5_pov_write",
+      "camera": "First-Person Top-Down Macro POV Notebook",
+      "lighting": "warm_lamp_on",
+      "eyelids": "n/a",
+      "action": "Left 5-finger hand holds red spiral notebook; right hand writes live in blue ink",
+      "notebookText": "Tulis satu langkah kecil untuk besok",
+      "bubbleDensity": 0,
+      "subtitleZone": "lower",
+      "highlightWords": ["kendalikan"],
+      "sfx": "sfx_pen_scribble_paper.mp3"
+    },
+    {
+      "shotId": "SH07",
+      "cue": "s6_mirror_loop",
+      "camera": "Full-Circle Mirror Pull-Back Wide (matches SH01)",
+      "lighting": "warm_lamp -> snap_off_peaceful_moonlight",
+      "eyelids": "closed_smiling",
+      "action": "Lying back down, tapping lamp off peacefully as digital clock shifts 02:00 -> 03:00",
+      "bubbleDensity": 0,
+      "subtitleZone": "lower",
+      "highlightWords": ["malam ini"],
+      "sfx": "sfx_lamp_switch_click.mp3"
+    }
+  ]
+}

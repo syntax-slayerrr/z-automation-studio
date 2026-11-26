@@ -1,0 +1,2054 @@
+{
+  "voice": "Brian (Warm Documentary Storyteller) · ElevenLabs eleven_v4",
+  "model": "eleven_v4",
+  "tempo": 1.18,
+  "voDurationSec": 103.329,
+  "totalVideoSec": 105.979,
+  "fps": 30,
+  "totalFrames": 3180,
+  "cuesSec": {
+    "sh1_ecu": 0.768,
+    "sh2_wide": 8.376,
+    "sh2_title": 15.807,
+    "sh3_atlas": 21.765,
+    "sh3_twist": 26.732,
+    "sh4_rain": 32.057,
+    "sh4_seep": 36.34,
+    "sh5_fault": 42.3,
+    "sh6_heat": 49.443,
+    "sh6_convect": 55.205,
+    "sh7_split": 62.312,
+    "sh7_filter": 67.251,
+    "sh8_spout": 74.826,
+    "sh9_cycle": 82.746,
+    "sh10_loop": 91.001,
+    "sh10_ghost": 94.867,
+    "sh10_postcard": 99.571
+  },
+  "cuesFrame": {
+    "sh1_ecu": 23,
+    "sh2_wide": 251,
+    "sh2_title": 474,
+    "sh3_atlas": 653,
+    "sh3_twist": 802,
+    "sh4_rain": 962,
+    "sh4_seep": 1090,
+    "sh5_fault": 1269,
+    "sh6_heat": 1483,
+    "sh6_convect": 1656,
+    "sh7_split": 1869,
+    "sh7_filter": 2018,
+    "sh8_spout": 2245,
+    "sh9_cycle": 2482,
+    "sh10_loop": 2730,
+    "sh10_ghost": 2846,
+    "sh10_postcard": 2987
+  },
+  "shotsFrame": {
+    "sh1Start": 0,
+    "sh2Start": 243,
+    "sh3Start": 645,
+    "sh4Start": 953,
+    "sh5Start": 1261,
+    "sh6Start": 1475,
+    "sh7Start": 1861,
+    "sh8Start": 2236,
+    "sh9Start": 2474,
+    "sh10Start": 2722,
+    "totalFrames": 3180
+  },
+  "words": [
+    {
+      "w": "Di",
+      "cue": "sh1_ecu",
+      "shot": 1,
+      "line": 0,
+      "start": 0.768,
+      "end": 0.836
+    },
+    {
+      "w": "tengah",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 0.869,
+      "end": 1.039
+    },
+    {
+      "w": "udara",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 1.107,
+      "end": 1.378
+    },
+    {
+      "w": "dingin",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 1.446,
+      "end": 1.717
+    },
+    {
+      "w": "pegunungan",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 1.785,
+      "end": 2.192
+    },
+    {
+      "w": "Garut,",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 2.293,
+      "end": 2.869
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 2.937,
+      "end": 3.141
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 3.175,
+      "end": 3.208
+    },
+    {
+      "w": "kolam",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 3.276,
+      "end": 3.412
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 3.48,
+      "end": 3.615
+    },
+    {
+      "w": "selalu",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 3.683,
+      "end": 3.886
+    },
+    {
+      "w": "hangat",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 3.954,
+      "end": 4.293
+    },
+    {
+      "w": "—",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 4.7,
+      "end": 4.745
+    },
+    {
+      "w": "lebih",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 4.791,
+      "end": 4.971
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 5.039,
+      "end": 5.175
+    },
+    {
+      "w": "40",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 5.276,
+      "end": 5.615
+    },
+    {
+      "w": "derajat,",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 5.649,
+      "end": 6.395
+    },
+    {
+      "w": "tanpa",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 6.463,
+      "end": 6.802
+    },
+    {
+      "w": "satu",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 6.869,
+      "end": 7.073
+    },
+    {
+      "w": "watt",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 7.141,
+      "end": 7.276
+    },
+    {
+      "w": "listrik",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 7.344,
+      "end": 7.547
+    },
+    {
+      "w": "pun.",
+      "cue": null,
+      "shot": 1,
+      "line": 0,
+      "start": 7.615,
+      "end": 8.022
+    },
+    {
+      "w": "Bahkan",
+      "cue": "sh2_wide",
+      "shot": 2,
+      "line": 1,
+      "start": 8.376,
+      "end": 8.715
+    },
+    {
+      "w": "sejak",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 8.783,
+      "end": 8.986
+    },
+    {
+      "w": "tahun",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 9.122,
+      "end": 9.257
+    },
+    {
+      "w": "1818,",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 9.325,
+      "end": 11.054
+    },
+    {
+      "w": "penjelajah",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 11.291,
+      "end": 11.766
+    },
+    {
+      "w": "Eropa",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 11.8,
+      "end": 12.173
+    },
+    {
+      "w": "sudah",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 12.206,
+      "end": 12.376
+    },
+    {
+      "w": "mencatat",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 12.467,
+      "end": 12.918
+    },
+    {
+      "w": "mata",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 12.986,
+      "end": 13.122
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 13.19,
+      "end": 13.325
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 13.393,
+      "end": 13.529
+    },
+    {
+      "w": "mengalir",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 13.596,
+      "end": 14.003
+    },
+    {
+      "w": "panas",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 14.071,
+      "end": 14.41
+    },
+    {
+      "w": "tanpa",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 14.478,
+      "end": 14.613
+    },
+    {
+      "w": "henti.",
+      "cue": null,
+      "shot": 2,
+      "line": 1,
+      "start": 14.681,
+      "end": 15.495
+    },
+    {
+      "w": "Inilah",
+      "cue": "sh2_title",
+      "shot": 2,
+      "line": 2,
+      "start": 15.807,
+      "end": 16.146
+    },
+    {
+      "w": "Cipanas",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 16.214,
+      "end": 16.688
+    },
+    {
+      "w": "Garut",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 16.79,
+      "end": 17.095
+    },
+    {
+      "w": "—",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 17.434,
+      "end": 17.468
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 17.502,
+      "end": 17.637
+    },
+    {
+      "w": "rahasia",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 17.705,
+      "end": 18.18
+    },
+    {
+      "w": "mesin",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 18.248,
+      "end": 18.451
+    },
+    {
+      "w": "pemanasnya",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 18.485,
+      "end": 19.129
+    },
+    {
+      "w": "tersembunyi",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 19.231,
+      "end": 19.875
+    },
+    {
+      "w": "tepat",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 19.943,
+      "end": 20.282
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 20.315,
+      "end": 20.349
+    },
+    {
+      "w": "belakangnya.",
+      "cue": null,
+      "shot": 2,
+      "line": 2,
+      "start": 20.417,
+      "end": 21.231
+    },
+    {
+      "w": "Terletak",
+      "cue": "sh3_atlas",
+      "shot": 3,
+      "line": 3,
+      "start": 21.765,
+      "end": 22.063
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 22.131,
+      "end": 22.198
+    },
+    {
+      "w": "Tarogong",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 22.266,
+      "end": 22.537
+    },
+    {
+      "w": "Kaler,",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 22.605,
+      "end": 23.283
+    },
+    {
+      "w": "Cipanas",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 23.351,
+      "end": 23.826
+    },
+    {
+      "w": "berdiri",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 23.893,
+      "end": 24.165
+    },
+    {
+      "w": "tepat",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 24.232,
+      "end": 24.571
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 24.639,
+      "end": 24.707
+    },
+    {
+      "w": "kaki",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 24.741,
+      "end": 24.91
+    },
+    {
+      "w": "tenggara",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 24.978,
+      "end": 25.317
+    },
+    {
+      "w": "Gunung",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 25.385,
+      "end": 25.52
+    },
+    {
+      "w": "Guntur.",
+      "cue": null,
+      "shot": 3,
+      "line": 3,
+      "start": 25.588,
+      "end": 26.402
+    },
+    {
+      "w": "Tapi",
+      "cue": "sh3_twist",
+      "shot": 3,
+      "line": 4,
+      "start": 26.732,
+      "end": 26.881
+    },
+    {
+      "w": "kalau",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 26.949,
+      "end": 27.152
+    },
+    {
+      "w": "kamu",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 27.186,
+      "end": 27.356
+    },
+    {
+      "w": "mengira",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 27.389,
+      "end": 27.762
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 27.83,
+      "end": 27.966
+    },
+    {
+      "w": "panasnya",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 28.034,
+      "end": 28.373
+    },
+    {
+      "w": "keluar",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 28.44,
+      "end": 28.711
+    },
+    {
+      "w": "langsung",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 28.847,
+      "end": 29.05
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 29.118,
+      "end": 29.254
+    },
+    {
+      "w": "lava,",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 29.322,
+      "end": 30
+    },
+    {
+      "w": "jawabannya",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 30.067,
+      "end": 30.61
+    },
+    {
+      "w": "justru",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 30.644,
+      "end": 30.881
+    },
+    {
+      "w": "terbalik.",
+      "cue": null,
+      "shot": 3,
+      "line": 4,
+      "start": 30.983,
+      "end": 31.559
+    },
+    {
+      "w": "Semua",
+      "cue": "sh4_rain",
+      "shot": 4,
+      "line": 5,
+      "start": 32.057,
+      "end": 32.328
+    },
+    {
+      "w": "keajaiban",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 32.396,
+      "end": 32.803
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 32.871,
+      "end": 33.21
+    },
+    {
+      "w": "justru",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 33.278,
+      "end": 33.617
+    },
+    {
+      "w": "dimulai",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 33.684,
+      "end": 34.091
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 34.159,
+      "end": 34.295
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 34.362,
+      "end": 34.498
+    },
+    {
+      "w": "hujan",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 34.566,
+      "end": 34.837
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 34.905,
+      "end": 34.973
+    },
+    {
+      "w": "dingin.",
+      "cue": null,
+      "shot": 4,
+      "line": 5,
+      "start": 35.04,
+      "end": 35.989
+    },
+    {
+      "w": "Saat",
+      "cue": "sh4_seep",
+      "shot": 4,
+      "line": 6,
+      "start": 36.34,
+      "end": 36.577
+    },
+    {
+      "w": "hujan",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 36.645,
+      "end": 36.916
+    },
+    {
+      "w": "mengguyur",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 36.95,
+      "end": 37.323
+    },
+    {
+      "w": "lereng",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 37.39,
+      "end": 37.662
+    },
+    {
+      "w": "Gunung",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 37.729,
+      "end": 37.865
+    },
+    {
+      "w": "Guntur,",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 37.933,
+      "end": 38.679
+    },
+    {
+      "w": "jutaan",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 38.746,
+      "end": 39.221
+    },
+    {
+      "w": "liter",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 39.357,
+      "end": 39.492
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 39.56,
+      "end": 39.763
+    },
+    {
+      "w": "meresap",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 39.831,
+      "end": 40.238
+    },
+    {
+      "w": "menembus",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 40.306,
+      "end": 40.645
+    },
+    {
+      "w": "pori",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 40.713,
+      "end": 40.916
+    },
+    {
+      "w": "tanah",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 40.984,
+      "end": 41.153
+    },
+    {
+      "w": "vulkanik.",
+      "cue": null,
+      "shot": 4,
+      "line": 6,
+      "start": 41.187,
+      "end": 41.797
+    },
+    {
+      "w": "Air",
+      "cue": "sh5_fault",
+      "shot": 5,
+      "line": 7,
+      "start": 42.3,
+      "end": 42.503
+    },
+    {
+      "w": "itu",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 42.571,
+      "end": 42.775
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 42.91,
+      "end": 43.181
+    },
+    {
+      "w": "menyusup",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 43.249,
+      "end": 43.656
+    },
+    {
+      "w": "jauh",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 43.724,
+      "end": 44.063
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 44.097,
+      "end": 44.13
+    },
+    {
+      "w": "kedalaman",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 44.198,
+      "end": 44.673
+    },
+    {
+      "w": "lewat",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 44.808,
+      "end": 45.012
+    },
+    {
+      "w": "celah",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 45.114,
+      "end": 45.283
+    },
+    {
+      "w": "patahan",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 45.351,
+      "end": 45.69
+    },
+    {
+      "w": "bumi",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 45.758,
+      "end": 45.961
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 46.029,
+      "end": 46.097
+    },
+    {
+      "w": "disebut",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 46.164,
+      "end": 46.368
+    },
+    {
+      "w": "sesar",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 46.436,
+      "end": 46.842
+    },
+    {
+      "w": "—",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 47.317,
+      "end": 47.408
+    },
+    {
+      "w": "bagai",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 47.497,
+      "end": 47.588
+    },
+    {
+      "w": "pipa",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 47.724,
+      "end": 47.995
+    },
+    {
+      "w": "raksasa",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 48.063,
+      "end": 48.402
+    },
+    {
+      "w": "alami.",
+      "cue": null,
+      "shot": 5,
+      "line": 7,
+      "start": 48.469,
+      "end": 48.944
+    },
+    {
+      "w": "Di",
+      "cue": "sh6_heat",
+      "shot": 6,
+      "line": 8,
+      "start": 49.443,
+      "end": 49.511
+    },
+    {
+      "w": "bawah",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 49.545,
+      "end": 49.782
+    },
+    {
+      "w": "tanah,",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 49.85,
+      "end": 50.358
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 50.528,
+      "end": 50.663
+    },
+    {
+      "w": "dingin",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 50.731,
+      "end": 50.934
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 51.002,
+      "end": 51.138
+    },
+    {
+      "w": "menyentuh",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 51.206,
+      "end": 51.612
+    },
+    {
+      "w": "batuan",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 51.714,
+      "end": 52.019
+    },
+    {
+      "w": "panas",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 52.087,
+      "end": 52.358
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 52.426,
+      "end": 52.494
+    },
+    {
+      "w": "dipanggang",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 52.528,
+      "end": 53.036
+    },
+    {
+      "w": "dapur",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 53.104,
+      "end": 53.375
+    },
+    {
+      "w": "magma",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 53.443,
+      "end": 53.714
+    },
+    {
+      "w": "Gunung",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 53.782,
+      "end": 53.917
+    },
+    {
+      "w": "Guntur.",
+      "cue": null,
+      "shot": 6,
+      "line": 8,
+      "start": 53.985,
+      "end": 54.867
+    },
+    {
+      "w": "Suhunya",
+      "cue": "sh6_convect",
+      "shot": 6,
+      "line": 9,
+      "start": 55.205,
+      "end": 55.612
+    },
+    {
+      "w": "melonjak",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 55.781,
+      "end": 56.086
+    },
+    {
+      "w": "hingga",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 56.12,
+      "end": 56.357
+    },
+    {
+      "w": "70",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 56.425,
+      "end": 56.832
+    },
+    {
+      "w": "derajat,",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 56.9,
+      "end": 57.713
+    },
+    {
+      "w": "bobotnya",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 57.747,
+      "end": 58.12
+    },
+    {
+      "w": "jadi",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 58.188,
+      "end": 58.324
+    },
+    {
+      "w": "lebih",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 58.357,
+      "end": 58.527
+    },
+    {
+      "w": "ringan,",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 58.629,
+      "end": 59.273
+    },
+    {
+      "w": "lalu",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 59.34,
+      "end": 59.544
+    },
+    {
+      "w": "terdorong",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 59.646,
+      "end": 60.086
+    },
+    {
+      "w": "kuat",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 60.154,
+      "end": 60.425
+    },
+    {
+      "w": "naik",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 60.493,
+      "end": 60.696
+    },
+    {
+      "w": "kembali",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 60.809,
+      "end": 61.035
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 61.069,
+      "end": 61.103
+    },
+    {
+      "w": "permukaan.",
+      "cue": null,
+      "shot": 6,
+      "line": 9,
+      "start": 61.171,
+      "end": 61.781
+    },
+    {
+      "w": "Lalu",
+      "cue": "sh7_split",
+      "shot": 7,
+      "line": 10,
+      "start": 62.312,
+      "end": 62.515
+    },
+    {
+      "w": "kenapa",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 62.583,
+      "end": 62.922
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 62.99,
+      "end": 63.193
+    },
+    {
+      "w": "Cipanas",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 63.227,
+      "end": 63.6
+    },
+    {
+      "w": "tetap",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 63.667,
+      "end": 63.871
+    },
+    {
+      "w": "jernih",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 63.939,
+      "end": 64.413
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 64.481,
+      "end": 64.617
+    },
+    {
+      "w": "tak",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 64.64,
+      "end": 64.684
+    },
+    {
+      "w": "berbau",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 64.752,
+      "end": 65.091
+    },
+    {
+      "w": "belerang",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 65.159,
+      "end": 65.362
+    },
+    {
+      "w": "menyengat",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 65.43,
+      "end": 65.769
+    },
+    {
+      "w": "seperti",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 65.837,
+      "end": 66.04
+    },
+    {
+      "w": "kawah?",
+      "cue": null,
+      "shot": 7,
+      "line": 10,
+      "start": 66.108,
+      "end": 66.99
+    },
+    {
+      "w": "Karena",
+      "cue": "sh7_filter",
+      "shot": 7,
+      "line": 11,
+      "start": 67.251,
+      "end": 67.522
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 67.59,
+      "end": 67.658
+    },
+    {
+      "w": "muncul",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 67.726,
+      "end": 68.065
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 68.133,
+      "end": 68.2
+    },
+    {
+      "w": "zona",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 68.234,
+      "end": 68.404
+    },
+    {
+      "w": "limpahan",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 68.471,
+      "end": 68.81
+    },
+    {
+      "w": "luar",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 68.912,
+      "end": 69.556
+    },
+    {
+      "w": "—",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 69.579,
+      "end": 69.601
+    },
+    {
+      "w": "tersaring",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 69.624,
+      "end": 70.099
+    },
+    {
+      "w": "ratusan",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 70.166,
+      "end": 70.641
+    },
+    {
+      "w": "meter",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 70.777,
+      "end": 70.912
+    },
+    {
+      "w": "batuan",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 71.014,
+      "end": 71.251
+    },
+    {
+      "w": "vulkanik",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 71.285,
+      "end": 71.929
+    },
+    {
+      "w": "tanpa",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 71.997,
+      "end": 72.268
+    },
+    {
+      "w": "bercampur",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 72.336,
+      "end": 72.675
+    },
+    {
+      "w": "langsung",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 72.743,
+      "end": 73.082
+    },
+    {
+      "w": "dengan",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 73.149,
+      "end": 73.353
+    },
+    {
+      "w": "gas",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 73.421,
+      "end": 73.488
+    },
+    {
+      "w": "magma.",
+      "cue": null,
+      "shot": 7,
+      "line": 11,
+      "start": 73.556,
+      "end": 74.37
+    },
+    {
+      "w": "Hasilnya,",
+      "cue": "sh8_spout",
+      "shot": 8,
+      "line": 12,
+      "start": 74.826,
+      "end": 75.707
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 75.775,
+      "end": 75.91
+    },
+    {
+      "w": "mineral",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 75.978,
+      "end": 76.249
+    },
+    {
+      "w": "hangat",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 76.317,
+      "end": 76.588
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 76.656,
+      "end": 76.792
+    },
+    {
+      "w": "ramah",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 76.86,
+      "end": 77.199
+    },
+    {
+      "w": "bagi",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 77.266,
+      "end": 77.402
+    },
+    {
+      "w": "kulit",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 77.47,
+      "end": 77.605
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 77.673,
+      "end": 77.944
+    },
+    {
+      "w": "mengucur",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 77.978,
+      "end": 78.419
+    },
+    {
+      "w": "—",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 78.893,
+      "end": 78.916
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 78.938,
+      "end": 79.097
+    },
+    {
+      "w": "pemandian",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 79.131,
+      "end": 79.571
+    },
+    {
+      "w": "bambu",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 79.639,
+      "end": 79.876
+    },
+    {
+      "w": "zaman",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 79.91,
+      "end": 80.182
+    },
+    {
+      "w": "dulu",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 80.215,
+      "end": 80.521
+    },
+    {
+      "w": "hingga",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 80.792,
+      "end": 80.995
+    },
+    {
+      "w": "resor",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 81.097,
+      "end": 81.266
+    },
+    {
+      "w": "modern",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 81.334,
+      "end": 81.673
+    },
+    {
+      "w": "hari",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 81.741,
+      "end": 81.876
+    },
+    {
+      "w": "ini.",
+      "cue": null,
+      "shot": 8,
+      "line": 12,
+      "start": 81.944,
+      "end": 82.215
+    },
+    {
+      "w": "Selama",
+      "cue": "sh9_cycle",
+      "shot": 9,
+      "line": 13,
+      "start": 82.746,
+      "end": 83.017
+    },
+    {
+      "w": "hujan",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 83.051,
+      "end": 83.356
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 83.424,
+      "end": 83.627
+    },
+    {
+      "w": "turun",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 83.695,
+      "end": 83.966
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 84,
+      "end": 84.034
+    },
+    {
+      "w": "langit",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 84.102,
+      "end": 84.305
+    },
+    {
+      "w": "Garut,",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 84.373,
+      "end": 85.051
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 85.152,
+      "end": 85.254
+    },
+    {
+      "w": "perut",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 85.322,
+      "end": 85.593
+    },
+    {
+      "w": "Gunung",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 85.661,
+      "end": 85.797
+    },
+    {
+      "w": "Guntur",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 85.932,
+      "end": 86.339
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 86.474,
+      "end": 86.678
+    },
+    {
+      "w": "menyimpan",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 86.746,
+      "end": 87.085
+    },
+    {
+      "w": "panas,",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 87.152,
+      "end": 87.966
+    },
+    {
+      "w": "mesin",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 88.034,
+      "end": 88.237
+    },
+    {
+      "w": "alami",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 88.305,
+      "end": 88.576
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 88.644,
+      "end": 88.847
+    },
+    {
+      "w": "tak",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 89.051,
+      "end": 89.254
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 89.356,
+      "end": 89.593
+    },
+    {
+      "w": "padam.",
+      "cue": null,
+      "shot": 9,
+      "line": 13,
+      "start": 89.661,
+      "end": 90.474
+    },
+    {
+      "w": "Jadi",
+      "cue": "sh10_loop",
+      "shot": 10,
+      "line": 14,
+      "start": 91.001,
+      "end": 91.273
+    },
+    {
+      "w": "saat",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 91.34,
+      "end": 91.544
+    },
+    {
+      "w": "kamu",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 91.578,
+      "end": 91.747
+    },
+    {
+      "w": "berendam",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 91.815,
+      "end": 92.154
+    },
+    {
+      "w": "santai",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 92.188,
+      "end": 92.493
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 92.561,
+      "end": 92.628
+    },
+    {
+      "w": "Cipanas,",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 92.662,
+      "end": 93.408
+    },
+    {
+      "w": "ingat",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 93.442,
+      "end": 93.645
+    },
+    {
+      "w": "satu",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 93.679,
+      "end": 93.917
+    },
+    {
+      "w": "hal.",
+      "cue": null,
+      "shot": 10,
+      "line": 14,
+      "start": 94.222,
+      "end": 94.595
+    },
+    {
+      "w": "Di",
+      "cue": "sh10_ghost",
+      "shot": 10,
+      "line": 15,
+      "start": 94.867,
+      "end": 94.935
+    },
+    {
+      "w": "bawah",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 94.969,
+      "end": 95.139
+    },
+    {
+      "w": "kakimu,",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 95.206,
+      "end": 95.749
+    },
+    {
+      "w": "dapur",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 96.088,
+      "end": 96.359
+    },
+    {
+      "w": "panas",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 96.427,
+      "end": 96.63
+    },
+    {
+      "w": "bumi",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 96.698,
+      "end": 96.867
+    },
+    {
+      "w": "raksasa",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 96.901,
+      "end": 97.512
+    },
+    {
+      "w": "sedang",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 97.579,
+      "end": 97.783
+    },
+    {
+      "w": "bekerja",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 97.817,
+      "end": 98.257
+    },
+    {
+      "w": "tanpa",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 98.393,
+      "end": 98.664
+    },
+    {
+      "w": "suara.",
+      "cue": null,
+      "shot": 10,
+      "line": 15,
+      "start": 98.732,
+      "end": 99.206
+    },
+    {
+      "w": "Cipanas",
+      "cue": "sh10_postcard",
+      "shot": 10,
+      "line": 16,
+      "start": 99.571,
+      "end": 99.888
+    },
+    {
+      "w": "Garut,",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 99.955,
+      "end": 100.769
+    },
+    {
+      "w": "kehangatan",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 100.837,
+      "end": 101.311
+    },
+    {
+      "w": "abadi",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 101.379,
+      "end": 101.854
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 101.888,
+      "end": 102.125
+    },
+    {
+      "w": "perut",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 102.193,
+      "end": 102.396
+    },
+    {
+      "w": "bumi.",
+      "cue": null,
+      "shot": 10,
+      "line": 16,
+      "start": 102.498,
+      "end": 103.142
+    }
+  ]
+}

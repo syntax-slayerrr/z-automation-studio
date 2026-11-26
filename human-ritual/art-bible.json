@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "name": "Mengapa Manusia Memiliki Ritual? (HumanRitualShort — v2.0 Illustrated Edition)",
+    "version": 2,
+    "visualMode": "illustrated-science",
+    "domain": "hybrid (anthropology + neuroscience + evolution)",
+    "locked": true,
+    "genre": "Dokumenter animasi 2D — Neuroantropologi",
+    "mood": "ilustrasi dokumenter ilmiah bertekstur gouache hangat (DNA tekstur earth-24h + kejelasan ilustrasi Kurzgesagt & Kok Bisa?)",
+    "musicDirection": "Ambient orchestral score inspired by the sonic architecture of Oppenheimer's 'Can You Hear the Music': delicate hypnotic arpeggiated solo violin, warm cello ostinato, gradual rhythmic crescendos, and luminous ambient string resolution",
+    "styleReference": "Hybrid Python painterly_fx gouache & shadow-box plates (public/human-ritual/layers/*.png) + Remotion IllustratedCharacterRig (colored expressive faces, eyes, emotions, era outfits) + BrainCrossSection2D multi-lobe cutaway + StrataTimelineStrip2D."
+  },
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "targetDurationSec": 117.03,
+    "safeZones": { "top": 150, "bottom": 290, "left": 48, "right": 48 }
+  },
+  "characters": [
+    {
+      "id": "athlete_hero",
+      "eraVariant": "athlete_modern",
+      "skinTone": "warm_tan",
+      "outfitPrimary": "#d45238",
+      "outfitSecondary": "#283654",
+      "signatureProps": ["lucky_striped_sock", "braided_amber_bracelet"]
+    },
+    {
+      "id": "wedding_couple_and_elder",
+      "eraVariant": "nusantara_bride / nusantara_groom / elder_mentor",
+      "skinTone": "golden_ochre / cinnamon",
+      "signatureProps": ["golden_offering_vessel", "ceremonial_lanterns"]
+    },
+    {
+      "id": "experiment_participant",
+      "eraVariant": "modern_casual",
+      "skinTone": "warm_tan",
+      "context": "Hobson et al. (2017) ERN error-monitoring task"
+    },
+    {
+      "id": "intergenerational_family",
+      "eraVariant": "elder_mentor -> traditional_villager -> modern_casual -> curious_child",
+      "signatureProps": ["ancestral_lantern"]
+    }
+  ],
+  "environments": [
+    { "id": "s1_tunnel",      "backdropLayer": "public/human-ritual/layers/bg_s1_tunnel.png" },
+    { "id": "s2_ceremony",    "backdropLayer": "public/human-ritual/layers/bg_s2_ceremony.png" },
+    { "id": "s3_storm_order", "backdropLayer": "public/human-ritual/layers/bg_s3_storm_order.png" },
+    { "id": "s4_neuro_teal",  "backdropLayer": "public/human-ritual/layers/bg_s4_neuro_teal.png" },
+    { "id": "s5_collective",  "backdropLayer": "public/human-ritual/layers/bg_s5_collective.png" },
+    { "id": "s6_generations", "backdropLayer": "public/human-ritual/layers/bg_s6_generations.png" },
+    { "id": "s7_cosmos",      "backdropLayer": "public/human-ritual/layers/bg_s7_cosmos.png" }
+  ],
+  "scientificNotes": {
+    "scene4Reference": "Hobson, N. M., Bonk, D., & Inzlicht, M. (2017). Rituals decrease the neural response to performance failure (Anterior Cingulate Cortex / ERN attenuation)."
+  }
+}

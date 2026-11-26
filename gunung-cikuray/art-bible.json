@@ -1,0 +1,81 @@
+{
+  "project": {
+    "slug": "gunung-cikuray",
+    "compositionId": "GunungCikurayShort",
+    "title": "GUNUNG CIKURAY",
+    "subtitle": "2.821 MDPL · ATAP LANGIT GARUT",
+    "angle": "Geologi & Sains (Stratovolcano Kuarter, Tanpa Kawah Aktif, Batuan Porus Minim Air, Inversi Suhu Lautan Awan)",
+    "aspectRatio": "9:16",
+    "resolution": { "width": 1080, "height": 1920, "designStage": "720x1280 @ 1.5x crisp vector" },
+    "fps": 30,
+    "targetDurationSec": "62-72"
+  },
+  "verifiedFacts": [
+    "Elevation: 2.821 mdpl (highest peak in Kabupaten Garut; 4th highest in West Java after Ciremai, Pangrango, Gede).",
+    "Topographic prominence: ~2.105 m (ultra-prominent solitary stratovolcano cone south of Cekungan Garut).",
+    "Neighboring Priangan volcanoes: Papandayan (2.665 mdpl), Guntur (2.249 mdpl), Galunggung (2.168 mdpl).",
+    "Coordinates: -7.3225 lat, 107.8600 lng (bordering Cilawu, Bayongbong, Cikajang, Dayeuhmanggung).",
+    "Geology: Quaternary stratovolcano on the Sunda Arc (Indo-Australian Plate subducting beneath Eurasian/Sunda Plate), composed of basaltic-andesite lava flows, pyroclastic deposits, and lahar.",
+    "Activity: Dormant stratovolcano with no active fumarolic crater and no confirmed historical eruptions.",
+    "Hydrology: Steep porous volcanic strata drain rainfall down toward lower-slope springs, leaving upper hiking trails with minimal natural water sources.",
+    "Meteorology: High summit elevation above the bowl-like Cekungan Garut enables morning temperature inversion, trapping cool moist air and dense sea of clouds below the clear summit."
+  ],
+  "paletteLock": {
+    "paperWarm": "#EFE6D3",
+    "inkSepia": "#241C1B",
+    "creamTitle": "#FAF1DC",
+    "rust3DShadow": "#7C3220",
+    "ribbonSlate": "#1E2631",
+    "subtitleBar": "#1B212C",
+    "subtitlePast": "#F5F2EA",
+    "subtitleActive": "#F8D348",
+    "subtitleUpcoming": "rgba(156, 164, 176, 0.62)",
+    "postcardMat": "#C9BEA7",
+    "postcardHairline": "#3B342C",
+    "ghostBlueprint": "#FAF0CE"
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "name": "ScenicPosterHook",
+      "mood": "day",
+      "visuals": "Iconic sunlit Garut tea-plantation foreground (left pine/fern, right Sundanese saung) framing razor-pointed solitary Gunung Cikuray + 2.821 MDPL scan + Alfa Slab One title",
+      "transitionOut": "Foreground dollies outward + continuous aerial ascent into West Java Vintage Atlas"
+    },
+    {
+      "id": 2,
+      "name": "PrianganAtlasAndScale",
+      "mood": "atlas_to_dusk",
+      "visuals": "d3-geo West Java Vintage Atlas pinning Guntur, Galunggung, Papandayan, Cikuray + red-cream scale bar -> vertical tilt to 4-peak elevation comparison plate (2.821 m tallest in Garut, #4 West Java) -> time-rewind dusk morph + rolling Era Kuarter counter",
+      "transitionOut": "Vertical crane-down peel into tectonic subduction cutaway"
+    },
+    {
+      "id": 3,
+      "name": "QuaternaryBirthCutaway",
+      "mood": "inferno",
+      "visuals": "Organic wavy sedimentary strata cutaway showing Indo-Australian Plate subduction arrows + rising magma chamber -> flash-blur counter blowout + layered basaltic-andesite lava & pyroclastic cone-building",
+      "transitionOut": "Same-axis cutaway evolution as magma cools over millennia"
+    },
+    {
+      "id": 4,
+      "name": "CoolingAndHydrology",
+      "mood": "dusk_to_storm",
+      "visuals": "Magma freezes into dark crystalline pluton rock -> summit erodes & mossy highland forest covers cone (no active crater) -> vintage rainstorm pours over cone; blue arrows percolate through porous rock down to lower foothill springs leaving upper trails dry",
+      "transitionOut": "Lineless painted daylight CloudCurtainWipe"
+    },
+    {
+      "id": 5,
+      "name": "InversionSeaOfClouds",
+      "mood": "dawn_inversion",
+      "visuals": "Dawn atmospheric cross-section of Cekungan Garut bowl: warm upper air lid traps cool air & billowing gouache clouds below while Cikuray's narrow summit pierces cleanly into golden sunrise above the sea of clouds",
+      "transitionOut": "Cloud-lift & aerial pull-back returning identically to Scene 1 scenic composition"
+    },
+    {
+      "id": 6,
+      "name": "LoopGhostPostcard",
+      "mood": "day_postcard",
+      "visuals": "Exact Scene 1 scenic return (Garut tea terraces, saung, solitary sharp Cikuray) -> luminous cream-gold dashed ghost blueprint traces buried magma conduit & prehistoric volcanic cone in sky -> Vintage Travel Postcard mat pull-out locking on GUNUNG CIKURAY / 2.821 MDPL · ATAP LANGIT GARUT",
+      "transitionOut": "Seamless visual loop back to Frame 0"
+    }
+  ]
+}

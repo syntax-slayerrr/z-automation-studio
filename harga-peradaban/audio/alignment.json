@@ -1,0 +1,5170 @@
+{
+  "voice": "George (Dramatic Cinema Narrator) · ElevenLabs eleven_v4",
+  "model": "eleven_v4",
+  "tempo": 1.28,
+  "voDurationSec": 239.932,
+  "totalVideoSec": 245.132,
+  "fps": 30,
+  "totalFrames": 7354,
+  "cuesSec": {
+    "s01_01_savanna": 1.27,
+    "s01_02_tracks": 7.818,
+    "s01_03_forage": 18.663,
+    "s01_04_fire": 28.927,
+    "s01_04_leave": 32.683,
+    "s02_01_valley": 37.325,
+    "s02_02_wheat": 47.988,
+    "s02_03_return": 53.625,
+    "s02_03_sprout": 57.812,
+    "s02_04_idea": 66.22,
+    "s03_01_plant": 72.104,
+    "s03_02_debate": 76.354,
+    "s03_03_build": 83.548,
+    "s03_04_harvest": 89.209,
+    "s03_05_sunset": 96.428,
+    "s04_01_good": 106.052,
+    "s04_01_missing": 114.896,
+    "s04_02_fences": 122.769,
+    "s04_03_water": 131.077,
+    "s04_04_rules": 143.145,
+    "s05_01_bracelet": 150.299,
+    "s05_02_uruk": 156.703,
+    "s05_03_clay": 172.767,
+    "s05_04_city": 183.21,
+    "s06_01_harvester": 191.711,
+    "s06_02_global": 202.297,
+    "s06_03_city": 215.052,
+    "s06_04_wheat": 233.697,
+    "s06_04_leave": 237.01
+  },
+  "cuesFrame": {
+    "s01_01_savanna": 38,
+    "s01_02_tracks": 235,
+    "s01_03_forage": 560,
+    "s01_04_fire": 868,
+    "s01_04_leave": 980,
+    "s02_01_valley": 1120,
+    "s02_02_wheat": 1440,
+    "s02_03_return": 1609,
+    "s02_03_sprout": 1734,
+    "s02_04_idea": 1987,
+    "s03_01_plant": 2163,
+    "s03_02_debate": 2291,
+    "s03_03_build": 2506,
+    "s03_04_harvest": 2676,
+    "s03_05_sunset": 2893,
+    "s04_01_good": 3182,
+    "s04_01_missing": 3447,
+    "s04_02_fences": 3683,
+    "s04_03_water": 3932,
+    "s04_04_rules": 4294,
+    "s05_01_bracelet": 4509,
+    "s05_02_uruk": 4701,
+    "s05_03_clay": 5183,
+    "s05_04_city": 5496,
+    "s06_01_harvester": 5751,
+    "s06_02_global": 6069,
+    "s06_03_city": 6452,
+    "s06_04_wheat": 7011,
+    "s06_04_leave": 7110
+  },
+  "shotsFrame": {
+    "s01_01": {
+      "start": 0,
+      "end": 228
+    },
+    "s01_02": {
+      "start": 228,
+      "end": 553
+    },
+    "s01_03": {
+      "start": 553,
+      "end": 861
+    },
+    "s01_04": {
+      "start": 861,
+      "end": 1113
+    },
+    "s02_01": {
+      "start": 1113,
+      "end": 1432
+    },
+    "s02_02": {
+      "start": 1432,
+      "end": 1602
+    },
+    "s02_03": {
+      "start": 1602,
+      "end": 1979
+    },
+    "s02_04": {
+      "start": 1979,
+      "end": 2156
+    },
+    "s03_01": {
+      "start": 2156,
+      "end": 2284
+    },
+    "s03_02": {
+      "start": 2284,
+      "end": 2499
+    },
+    "s03_03": {
+      "start": 2499,
+      "end": 2669
+    },
+    "s03_04": {
+      "start": 2669,
+      "end": 2886
+    },
+    "s03_05": {
+      "start": 2886,
+      "end": 3174
+    },
+    "s04_01": {
+      "start": 3174,
+      "end": 3676
+    },
+    "s04_02": {
+      "start": 3676,
+      "end": 3925
+    },
+    "s04_03": {
+      "start": 3925,
+      "end": 4287
+    },
+    "s04_04": {
+      "start": 4287,
+      "end": 4502
+    },
+    "s05_01": {
+      "start": 4502,
+      "end": 4694
+    },
+    "s05_02": {
+      "start": 4694,
+      "end": 5176
+    },
+    "s05_03": {
+      "start": 5176,
+      "end": 5489
+    },
+    "s05_04": {
+      "start": 5489,
+      "end": 5744
+    },
+    "s06_01": {
+      "start": 5744,
+      "end": 6062
+    },
+    "s06_02": {
+      "start": 6062,
+      "end": 6444
+    },
+    "s06_03": {
+      "start": 6444,
+      "end": 7004
+    },
+    "s06_04": {
+      "start": 7004,
+      "end": 7354
+    }
+  },
+  "words": [
+    {
+      "w": "Bayangkan",
+      "cue": "s01_01_savanna",
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 1.27,
+      "end": 1.77
+    },
+    {
+      "w": "hidup",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 1.832,
+      "end": 2.145
+    },
+    {
+      "w": "tanpa",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 2.207,
+      "end": 2.395
+    },
+    {
+      "w": "rumah.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 2.457,
+      "end": 3.113
+    },
+    {
+      "w": "Setiap",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 3.457,
+      "end": 3.707
+    },
+    {
+      "w": "pagi,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 3.77,
+      "end": 4.27
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 4.332,
+      "end": 4.582
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 4.645,
+      "end": 4.707
+    },
+    {
+      "w": "kelompoknya",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 4.77,
+      "end": 5.27
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 5.332,
+      "end": 5.52
+    },
+    {
+      "w": "mencari",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 5.582,
+      "end": 5.832
+    },
+    {
+      "w": "tahu",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 5.895,
+      "end": 6.082
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 6.145,
+      "end": 6.207
+    },
+    {
+      "w": "mana",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 6.27,
+      "end": 6.457
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 6.52,
+      "end": 6.707
+    },
+    {
+      "w": "akan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 6.77,
+      "end": 6.895
+    },
+    {
+      "w": "pergi.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_01",
+      "line": 0,
+      "start": 6.957,
+      "end": 7.395
+    },
+    {
+      "w": "Ketika",
+      "cue": "s01_02_tracks",
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 7.818,
+      "end": 8.068
+    },
+    {
+      "w": "kawanan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 8.13,
+      "end": 8.443
+    },
+    {
+      "w": "rusa",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 8.505,
+      "end": 8.693
+    },
+    {
+      "w": "berpindah,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 8.787,
+      "end": 9.443
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 9.505,
+      "end": 9.818
+    },
+    {
+      "w": "mengikutinya.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 9.849,
+      "end": 10.505
+    },
+    {
+      "w": "Ketika",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 10.943,
+      "end": 11.255
+    },
+    {
+      "w": "buah",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 11.318,
+      "end": 11.505
+    },
+    {
+      "w": "habis,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 11.599,
+      "end": 12.068
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 12.13,
+      "end": 12.443
+    },
+    {
+      "w": "mencari",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 12.474,
+      "end": 12.818
+    },
+    {
+      "w": "hutan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 12.849,
+      "end": 13.068
+    },
+    {
+      "w": "lain.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 13.224,
+      "end": 13.599
+    },
+    {
+      "w": "Ketika",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 13.818,
+      "end": 14.13
+    },
+    {
+      "w": "musim",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 14.193,
+      "end": 14.38
+    },
+    {
+      "w": "berubah,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 14.443,
+      "end": 15.068
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 15.13,
+      "end": 15.443
+    },
+    {
+      "w": "meninggalkan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 15.505,
+      "end": 15.943
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 16.005,
+      "end": 16.318
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 16.38,
+      "end": 16.443
+    },
+    {
+      "w": "sudah",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 16.505,
+      "end": 16.693
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 16.755,
+      "end": 16.943
+    },
+    {
+      "w": "lagi",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 17.037,
+      "end": 17.193
+    },
+    {
+      "w": "menyediakan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 17.255,
+      "end": 17.63
+    },
+    {
+      "w": "makanan.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_02",
+      "line": 1,
+      "start": 17.693,
+      "end": 18.255
+    },
+    {
+      "w": "Bagi",
+      "cue": "s01_03_forage",
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 18.663,
+      "end": 18.851
+    },
+    {
+      "w": "mereka,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 18.913,
+      "end": 19.476
+    },
+    {
+      "w": "tanah",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 19.57,
+      "end": 19.788
+    },
+    {
+      "w": "bukan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 19.851,
+      "end": 20.038
+    },
+    {
+      "w": "sesuatu",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 20.132,
+      "end": 20.476
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 20.538,
+      "end": 20.601
+    },
+    {
+      "w": "dimiliki.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 20.663,
+      "end": 21.476
+    },
+    {
+      "w": "Hutan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 21.507,
+      "end": 21.851
+    },
+    {
+      "w": "bukan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 21.913,
+      "end": 22.101
+    },
+    {
+      "w": "sesuatu",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 22.195,
+      "end": 22.538
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 22.601,
+      "end": 22.726
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 22.788,
+      "end": 22.976
+    },
+    {
+      "w": "dipagari.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 23.038,
+      "end": 23.976
+    },
+    {
+      "w": "Alam",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 24.038,
+      "end": 24.288
+    },
+    {
+      "w": "menyediakan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 24.351,
+      "end": 24.788
+    },
+    {
+      "w": "makanan,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 24.82,
+      "end": 25.476
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 25.538,
+      "end": 25.601
+    },
+    {
+      "w": "manusia",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 25.663,
+      "end": 26.038
+    },
+    {
+      "w": "mengikuti",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 26.101,
+      "end": 26.601
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 26.663,
+      "end": 26.726
+    },
+    {
+      "w": "mana",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 26.851,
+      "end": 26.976
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 27.007,
+      "end": 27.351
+    },
+    {
+      "w": "membawa",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 27.413,
+      "end": 27.663
+    },
+    {
+      "w": "mereka.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_03",
+      "line": 2,
+      "start": 27.726,
+      "end": 28.476
+    },
+    {
+      "w": "Kehidupan",
+      "cue": "s01_04_fire",
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 28.927,
+      "end": 29.308
+    },
+    {
+      "w": "itu",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 29.402,
+      "end": 29.496
+    },
+    {
+      "w": "keras.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 29.558,
+      "end": 30.152
+    },
+    {
+      "w": "Tidak",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 30.371,
+      "end": 30.558
+    },
+    {
+      "w": "ada",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 30.621,
+      "end": 30.683
+    },
+    {
+      "w": "jaminan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 30.746,
+      "end": 31.058
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 31.089,
+      "end": 31.433
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 31.496,
+      "end": 31.621
+    },
+    {
+      "w": "esok",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 31.683,
+      "end": 31.871
+    },
+    {
+      "w": "hari.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 31.933,
+      "end": 32.433
+    },
+    {
+      "w": "Namun,",
+      "cue": "s01_04_leave",
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 32.683,
+      "end": 33.058
+    },
+    {
+      "w": "selama",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 33.308,
+      "end": 33.558
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 33.621,
+      "end": 33.871
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 33.933,
+      "end": 34.058
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 34.121,
+      "end": 34.246
+    },
+    {
+      "w": "bergerak,",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 34.308,
+      "end": 34.933
+    },
+    {
+      "w": "selalu",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 35.027,
+      "end": 35.308
+    },
+    {
+      "w": "ada",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 35.371,
+      "end": 35.433
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 35.496,
+      "end": 35.683
+    },
+    {
+      "w": "lain",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 35.746,
+      "end": 35.933
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 35.996,
+      "end": 36.121
+    },
+    {
+      "w": "dicari.",
+      "cue": null,
+      "scene": 1,
+      "shotKey": "s01_04",
+      "line": 3,
+      "start": 36.214,
+      "end": 36.621
+    },
+    {
+      "w": "Suatu",
+      "cue": "s02_01_valley",
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 37.325,
+      "end": 37.638
+    },
+    {
+      "w": "hari,",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 37.7,
+      "end": 38.263
+    },
+    {
+      "w": "perjalanan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 38.325,
+      "end": 38.7
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 38.794,
+      "end": 39.013
+    },
+    {
+      "w": "membawa",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 39.075,
+      "end": 39.388
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 39.419,
+      "end": 39.7
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 39.763,
+      "end": 39.825
+    },
+    {
+      "w": "sebuah",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 39.888,
+      "end": 40.075
+    },
+    {
+      "w": "lembah",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 40.138,
+      "end": 40.45
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 40.513,
+      "end": 40.575
+    },
+    {
+      "w": "berbeda.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 40.638,
+      "end": 41.232
+    },
+    {
+      "w": "Tanahnya",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 41.45,
+      "end": 41.888
+    },
+    {
+      "w": "subur.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 41.95,
+      "end": 42.575
+    },
+    {
+      "w": "Air",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 42.763,
+      "end": 43.013
+    },
+    {
+      "w": "mengalir",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 43.075,
+      "end": 43.45
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 43.482,
+      "end": 43.513
+    },
+    {
+      "w": "dekatnya.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 43.575,
+      "end": 44.2
+    },
+    {
+      "w": "Dan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 44.388,
+      "end": 44.513
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 44.544,
+      "end": 44.575
+    },
+    {
+      "w": "sepanjang",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 44.638,
+      "end": 45.013
+    },
+    {
+      "w": "lembah,",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 45.075,
+      "end": 45.575
+    },
+    {
+      "w": "tanaman",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 45.638,
+      "end": 45.888
+    },
+    {
+      "w": "liar",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 45.95,
+      "end": 46.2
+    },
+    {
+      "w": "tumbuh",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 46.263,
+      "end": 46.513
+    },
+    {
+      "w": "begitu",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 46.575,
+      "end": 46.95
+    },
+    {
+      "w": "melimpah.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_01",
+      "line": 4,
+      "start": 47.013,
+      "end": 47.575
+    },
+    {
+      "w": "Nara",
+      "cue": "s02_02_wheat",
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 47.988,
+      "end": 48.238
+    },
+    {
+      "w": "menemukan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 48.301,
+      "end": 48.676
+    },
+    {
+      "w": "bulir-bulir",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 48.738,
+      "end": 49.051
+    },
+    {
+      "w": "gandum",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 49.113,
+      "end": 49.363
+    },
+    {
+      "w": "liar.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 49.426,
+      "end": 50.176
+    },
+    {
+      "w": "Ia",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 50.238,
+      "end": 50.363
+    },
+    {
+      "w": "mengumpulkannya.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 50.404,
+      "end": 51.488
+    },
+    {
+      "w": "Membawanya",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 51.529,
+      "end": 51.926
+    },
+    {
+      "w": "kembali",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 52.029,
+      "end": 52.238
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 52.301,
+      "end": 52.363
+    },
+    {
+      "w": "kelompok.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_02",
+      "line": 5,
+      "start": 52.426,
+      "end": 53.238
+    },
+    {
+      "w": "Hari",
+      "cue": "s02_03_return",
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 53.625,
+      "end": 53.75
+    },
+    {
+      "w": "berikutnya,",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 53.812,
+      "end": 54.468
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 54.625,
+      "end": 54.812
+    },
+    {
+      "w": "kembali",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 54.916,
+      "end": 55.125
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 55.187,
+      "end": 55.25
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 55.312,
+      "end": 55.437
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 55.531,
+      "end": 55.625
+    },
+    {
+      "w": "sama.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 55.708,
+      "end": 56.312
+    },
+    {
+      "w": "Makanan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 56.343,
+      "end": 56.625
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 56.687,
+      "end": 56.875
+    },
+    {
+      "w": "tersedia.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 56.968,
+      "end": 57.75
+    },
+    {
+      "w": "Namun,",
+      "cue": "s02_03_sprout",
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 57.812,
+      "end": 58.343
+    },
+    {
+      "w": "kali",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 58.375,
+      "end": 58.562
+    },
+    {
+      "w": "ini",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 58.625,
+      "end": 58.875
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 58.937,
+      "end": 59.062
+    },
+    {
+      "w": "memperhatikan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 59.125,
+      "end": 59.625
+    },
+    {
+      "w": "sesuatu",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 59.687,
+      "end": 60
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 60.062,
+      "end": 60.187
+    },
+    {
+      "w": "sebelumnya",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 60.218,
+      "end": 60.625
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 60.687,
+      "end": 60.875
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 60.968,
+      "end": 61.187
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 61.25,
+      "end": 61.375
+    },
+    {
+      "w": "pikirkan.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 61.416,
+      "end": 62.25
+    },
+    {
+      "w": "Beberapa",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 62.312,
+      "end": 62.625
+    },
+    {
+      "w": "biji",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 62.687,
+      "end": 62.875
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 62.968,
+      "end": 63.062
+    },
+    {
+      "w": "jatuh",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 63.093,
+      "end": 63.312
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 63.375,
+      "end": 63.437
+    },
+    {
+      "w": "tanah",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 63.531,
+      "end": 63.812
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 63.875,
+      "end": 64.062
+    },
+    {
+      "w": "tumbuh",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 64.093,
+      "end": 64.375
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 64.437,
+      "end": 64.75
+    },
+    {
+      "w": "tanaman",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 64.781,
+      "end": 65
+    },
+    {
+      "w": "baru.",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_03",
+      "line": 6,
+      "start": 65.062,
+      "end": 65.75
+    },
+    {
+      "w": "Bagaimana",
+      "cue": "s02_04_idea",
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 66.22,
+      "end": 66.657
+    },
+    {
+      "w": "jika",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 66.72,
+      "end": 66.845
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 66.907,
+      "end": 67.22
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 67.282,
+      "end": 67.407
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 67.47,
+      "end": 67.657
+    },
+    {
+      "w": "selalu",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 67.72,
+      "end": 67.907
+    },
+    {
+      "w": "dicari?",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 68.032,
+      "end": 68.782
+    },
+    {
+      "w": "Bagaimana",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 68.845,
+      "end": 69.22
+    },
+    {
+      "w": "jika",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 69.282,
+      "end": 69.407
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 69.47,
+      "end": 69.72
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 69.782,
+      "end": 69.907
+    },
+    {
+      "w": "menumbuhkannya",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 69.97,
+      "end": 70.532
+    },
+    {
+      "w": "sendiri?",
+      "cue": null,
+      "scene": 2,
+      "shotKey": "s02_04",
+      "line": 7,
+      "start": 70.626,
+      "end": 71.407
+    },
+    {
+      "w": "Nara",
+      "cue": "s03_01_plant",
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 72.104,
+      "end": 72.354
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 72.417,
+      "end": 72.604
+    },
+    {
+      "w": "mencoba",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 72.688,
+      "end": 72.979
+    },
+    {
+      "w": "menanam",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 73.042,
+      "end": 73.292
+    },
+    {
+      "w": "biji-bijian",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 73.354,
+      "end": 73.792
+    },
+    {
+      "w": "itu.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 73.854,
+      "end": 74.479
+    },
+    {
+      "w": "Awalnya",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 74.542,
+      "end": 75.042
+    },
+    {
+      "w": "hanya",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 75.104,
+      "end": 75.229
+    },
+    {
+      "w": "sedikit.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_01",
+      "line": 8,
+      "start": 75.292,
+      "end": 75.979
+    },
+    {
+      "w": "Tetapi",
+      "cue": "s03_02_debate",
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 76.354,
+      "end": 76.729
+    },
+    {
+      "w": "hasilnya",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 76.885,
+      "end": 77.166
+    },
+    {
+      "w": "cukup",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 77.229,
+      "end": 77.541
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 77.604,
+      "end": 77.729
+    },
+    {
+      "w": "membuat",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 77.791,
+      "end": 78.041
+    },
+    {
+      "w": "kelompoknya",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 78.104,
+      "end": 78.541
+    },
+    {
+      "w": "mempertimbangkan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 78.573,
+      "end": 79.229
+    },
+    {
+      "w": "sesuatu",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 79.323,
+      "end": 79.729
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 79.791,
+      "end": 79.854
+    },
+    {
+      "w": "sebelumnya",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 79.916,
+      "end": 80.354
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 80.448,
+      "end": 80.666
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 80.729,
+      "end": 80.854
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 80.916,
+      "end": 81.104
+    },
+    {
+      "w": "pikirkan:",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 81.135,
+      "end": 82.041
+    },
+    {
+      "w": "tinggal",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 82.104,
+      "end": 82.416
+    },
+    {
+      "w": "lebih",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 82.479,
+      "end": 82.604
+    },
+    {
+      "w": "lama.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_02",
+      "line": 9,
+      "start": 82.666,
+      "end": 83.104
+    },
+    {
+      "w": "Mereka",
+      "cue": "s03_03_build",
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 83.548,
+      "end": 83.86
+    },
+    {
+      "w": "membangun",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 83.923,
+      "end": 84.36
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 84.423,
+      "end": 84.61
+    },
+    {
+      "w": "berlindung.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 84.673,
+      "end": 85.548
+    },
+    {
+      "w": "Membuka",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 85.589,
+      "end": 85.86
+    },
+    {
+      "w": "lahan.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 85.954,
+      "end": 86.61
+    },
+    {
+      "w": "Menyimpan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 86.673,
+      "end": 86.985
+    },
+    {
+      "w": "benih",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 87.048,
+      "end": 87.36
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 87.423,
+      "end": 87.61
+    },
+    {
+      "w": "musim",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 87.673,
+      "end": 87.86
+    },
+    {
+      "w": "berikutnya.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_03",
+      "line": 10,
+      "start": 87.923,
+      "end": 88.798
+    },
+    {
+      "w": "Untuk",
+      "cue": "s03_04_harvest",
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 89.209,
+      "end": 89.348
+    },
+    {
+      "w": "pertama",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 89.442,
+      "end": 89.723
+    },
+    {
+      "w": "kalinya,",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 89.786,
+      "end": 90.473
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 90.598,
+      "end": 90.848
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 90.911,
+      "end": 91.161
+    },
+    {
+      "w": "lagi",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 91.255,
+      "end": 91.411
+    },
+    {
+      "w": "mempersiapkan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 91.442,
+      "end": 92.098
+    },
+    {
+      "w": "perjalanan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 92.161,
+      "end": 92.598
+    },
+    {
+      "w": "berikutnya.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 92.661,
+      "end": 93.536
+    },
+    {
+      "w": "Ia",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 93.598,
+      "end": 93.786
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 93.848,
+      "end": 94.036
+    },
+    {
+      "w": "mempersiapkan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 94.098,
+      "end": 94.723
+    },
+    {
+      "w": "panen",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 94.817,
+      "end": 95.036
+    },
+    {
+      "w": "berikutnya.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_04",
+      "line": 11,
+      "start": 95.098,
+      "end": 95.973
+    },
+    {
+      "w": "Hari",
+      "cue": "s03_05_sunset",
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 96.428,
+      "end": 96.623
+    },
+    {
+      "w": "berganti",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 96.685,
+      "end": 97.123
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 97.185,
+      "end": 97.498
+    },
+    {
+      "w": "bulan.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 97.685,
+      "end": 98.31
+    },
+    {
+      "w": "Bulan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 98.373,
+      "end": 98.685
+    },
+    {
+      "w": "berganti",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 98.748,
+      "end": 99.123
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 99.185,
+      "end": 99.435
+    },
+    {
+      "w": "musim.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 99.56,
+      "end": 100.248
+    },
+    {
+      "w": "Ladang",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 100.31,
+      "end": 100.56
+    },
+    {
+      "w": "kecil",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 100.623,
+      "end": 100.81
+    },
+    {
+      "w": "itu",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 100.873,
+      "end": 101.06
+    },
+    {
+      "w": "tumbuh.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 101.091,
+      "end": 101.841
+    },
+    {
+      "w": "Dan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 101.873,
+      "end": 101.998
+    },
+    {
+      "w": "bersama",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 102.091,
+      "end": 102.373
+    },
+    {
+      "w": "ladang",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 102.435,
+      "end": 102.56
+    },
+    {
+      "w": "tersebut,",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 102.623,
+      "end": 103.216
+    },
+    {
+      "w": "sebuah",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 103.248,
+      "end": 103.498
+    },
+    {
+      "w": "kehidupan",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 103.529,
+      "end": 103.935
+    },
+    {
+      "w": "baru",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 104.091,
+      "end": 104.248
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 104.31,
+      "end": 104.435
+    },
+    {
+      "w": "terbentuk.",
+      "cue": null,
+      "scene": 3,
+      "shotKey": "s03_05",
+      "line": 12,
+      "start": 104.498,
+      "end": 105.373
+    },
+    {
+      "w": "Awalnya,",
+      "cue": "s04_01_good",
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 106.052,
+      "end": 106.708
+    },
+    {
+      "w": "semua",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 106.865,
+      "end": 107.115
+    },
+    {
+      "w": "berjalan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 107.208,
+      "end": 107.552
+    },
+    {
+      "w": "seperti",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 107.615,
+      "end": 107.802
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 107.865,
+      "end": 107.927
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 107.99,
+      "end": 108.177
+    },
+    {
+      "w": "bayangkan.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 108.24,
+      "end": 108.958
+    },
+    {
+      "w": "Mereka",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 109.24,
+      "end": 109.552
+    },
+    {
+      "w": "memiliki",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 109.615,
+      "end": 109.927
+    },
+    {
+      "w": "makanan.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 110.031,
+      "end": 110.74
+    },
+    {
+      "w": "Mereka",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 110.802,
+      "end": 111.052
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 111.115,
+      "end": 111.24
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 111.302,
+      "end": 111.427
+    },
+    {
+      "w": "terus",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 111.49,
+      "end": 111.677
+    },
+    {
+      "w": "berpindah.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 111.74,
+      "end": 112.552
+    },
+    {
+      "w": "Anak-anak",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 112.615,
+      "end": 112.99
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 113.052,
+      "end": 113.177
+    },
+    {
+      "w": "tumbuh",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 113.24,
+      "end": 113.49
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 113.552,
+      "end": 113.615
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 113.677,
+      "end": 113.802
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 113.896,
+      "end": 113.99
+    },
+    {
+      "w": "sama.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 114.094,
+      "end": 114.802
+    },
+    {
+      "w": "Namun,",
+      "cue": "s04_01_missing",
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 114.896,
+      "end": 115.333
+    },
+    {
+      "w": "semakin",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 115.365,
+      "end": 115.74
+    },
+    {
+      "w": "banyak",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 115.823,
+      "end": 115.99
+    },
+    {
+      "w": "persediaan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 116.083,
+      "end": 116.49
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 116.552,
+      "end": 116.615
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 116.708,
+      "end": 116.865
+    },
+    {
+      "w": "miliki,",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 116.896,
+      "end": 117.583
+    },
+    {
+      "w": "semakin",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 117.615,
+      "end": 117.927
+    },
+    {
+      "w": "banyak",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 118.011,
+      "end": 118.177
+    },
+    {
+      "w": "pula",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 118.261,
+      "end": 118.427
+    },
+    {
+      "w": "persoalan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 118.521,
+      "end": 118.865
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 118.927,
+      "end": 119.052
+    },
+    {
+      "w": "muncul.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 119.115,
+      "end": 119.927
+    },
+    {
+      "w": "Suatu",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 119.99,
+      "end": 120.24
+    },
+    {
+      "w": "hari,",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 120.458,
+      "end": 120.74
+    },
+    {
+      "w": "persediaan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 120.802,
+      "end": 121.177
+    },
+    {
+      "w": "gandum",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 121.281,
+      "end": 121.49
+    },
+    {
+      "w": "berkurang.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_01",
+      "line": 13,
+      "start": 121.552,
+      "end": 122.365
+    },
+    {
+      "w": "Ladang",
+      "cue": "s04_02_fences",
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 122.769,
+      "end": 123.081
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 123.144,
+      "end": 123.331
+    },
+    {
+      "w": "memiliki",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 123.394,
+      "end": 123.706
+    },
+    {
+      "w": "batas.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 123.769,
+      "end": 124.581
+    },
+    {
+      "w": "Lumbung",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 124.644,
+      "end": 125.019
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 125.206,
+      "end": 125.394
+    },
+    {
+      "w": "memiliki",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 125.456,
+      "end": 125.769
+    },
+    {
+      "w": "pemilik.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 125.8,
+      "end": 126.644
+    },
+    {
+      "w": "Orang-orang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 126.706,
+      "end": 127.144
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 127.206,
+      "end": 127.331
+    },
+    {
+      "w": "mempertanyakan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 127.373,
+      "end": 128.144
+    },
+    {
+      "w": "siapa",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 128.269,
+      "end": 128.581
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 128.644,
+      "end": 128.706
+    },
+    {
+      "w": "berhak",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 128.769,
+      "end": 129.019
+    },
+    {
+      "w": "mengambil",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 129.081,
+      "end": 129.456
+    },
+    {
+      "w": "hasil",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 129.581,
+      "end": 129.706
+    },
+    {
+      "w": "panen.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_02",
+      "line": 14,
+      "start": 129.8,
+      "end": 130.706
+    },
+    {
+      "w": "Nara",
+      "cue": "s04_03_water",
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 131.077,
+      "end": 131.265
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 131.327,
+      "end": 131.39
+    },
+    {
+      "w": "dahulu",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 131.452,
+      "end": 131.702
+    },
+    {
+      "w": "berbagi",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 131.765,
+      "end": 131.984
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 132.015,
+      "end": 132.39
+    },
+    {
+      "w": "dengan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 132.452,
+      "end": 132.577
+    },
+    {
+      "w": "mudah,",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 132.609,
+      "end": 133.202
+    },
+    {
+      "w": "kini",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 133.265,
+      "end": 133.452
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 133.515,
+      "end": 133.64
+    },
+    {
+      "w": "menghadapi",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 133.671,
+      "end": 134.015
+    },
+    {
+      "w": "pertengkaran",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 134.077,
+      "end": 134.702
+    },
+    {
+      "w": "karena",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 134.765,
+      "end": 134.89
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 134.952,
+      "end": 135.265
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 135.327,
+      "end": 135.39
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 135.452,
+      "end": 135.64
+    },
+    {
+      "w": "kumpulkan.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 135.671,
+      "end": 136.655
+    },
+    {
+      "w": "Bahkan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 136.734,
+      "end": 136.89
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 136.952,
+      "end": 137.14
+    },
+    {
+      "w": "pun",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 137.202,
+      "end": 137.265
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 137.327,
+      "end": 137.577
+    },
+    {
+      "w": "persoalan.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 137.64,
+      "end": 138.421
+    },
+    {
+      "w": "Ketika",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 138.452,
+      "end": 138.702
+    },
+    {
+      "w": "persediaan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 138.765,
+      "end": 139.14
+    },
+    {
+      "w": "air",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 139.202,
+      "end": 139.327
+    },
+    {
+      "w": "berkurang,",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 139.39,
+      "end": 139.984
+    },
+    {
+      "w": "setiap",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 140.015,
+      "end": 140.265
+    },
+    {
+      "w": "keluarga",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 140.327,
+      "end": 140.64
+    },
+    {
+      "w": "ingin",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 140.702,
+      "end": 140.827
+    },
+    {
+      "w": "ladangnya",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 140.89,
+      "end": 141.265
+    },
+    {
+      "w": "tetap",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 141.359,
+      "end": 141.515
+    },
+    {
+      "w": "mendapatkan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 141.556,
+      "end": 141.952
+    },
+    {
+      "w": "bagian.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_03",
+      "line": 15,
+      "start": 142.046,
+      "end": 142.765
+    },
+    {
+      "w": "Kehidupan",
+      "cue": "s04_04_rules",
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 143.145,
+      "end": 143.583
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 143.645,
+      "end": 143.708
+    },
+    {
+      "w": "dahulu",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 143.77,
+      "end": 144.02
+    },
+    {
+      "w": "sederhana",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 144.083,
+      "end": 144.833
+    },
+    {
+      "w": "kini",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 144.895,
+      "end": 145.083
+    },
+    {
+      "w": "membutuhkan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 145.145,
+      "end": 145.645
+    },
+    {
+      "w": "aturan.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 145.708,
+      "end": 146.583
+    },
+    {
+      "w": "Dan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 146.677,
+      "end": 146.77
+    },
+    {
+      "w": "orang-orang",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 146.833,
+      "end": 147.395
+    },
+    {
+      "w": "mulai",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 147.458,
+      "end": 147.583
+    },
+    {
+      "w": "berebut",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 147.645,
+      "end": 147.958
+    },
+    {
+      "w": "menentukan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 148.02,
+      "end": 148.52
+    },
+    {
+      "w": "aturan",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 148.614,
+      "end": 148.833
+    },
+    {
+      "w": "itu.",
+      "cue": null,
+      "scene": 4,
+      "shotKey": "s04_04",
+      "line": 16,
+      "start": 149.208,
+      "end": 149.645
+    },
+    {
+      "w": "Nara",
+      "cue": "s05_01_bracelet",
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 150.299,
+      "end": 150.549
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 150.612,
+      "end": 150.799
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 150.862,
+      "end": 151.112
+    },
+    {
+      "w": "tahu",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 151.143,
+      "end": 151.487
+    },
+    {
+      "w": "bahwa",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 151.674,
+      "end": 151.924
+    },
+    {
+      "w": "perubahan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 151.956,
+      "end": 152.299
+    },
+    {
+      "w": "kecil",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 152.393,
+      "end": 152.612
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 152.674,
+      "end": 152.737
+    },
+    {
+      "w": "dimulainya",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 152.799,
+      "end": 153.549
+    },
+    {
+      "w": "akan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 153.612,
+      "end": 153.799
+    },
+    {
+      "w": "berkembang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 153.862,
+      "end": 154.237
+    },
+    {
+      "w": "jauh",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 154.299,
+      "end": 154.612
+    },
+    {
+      "w": "melampaui",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 154.674,
+      "end": 155.049
+    },
+    {
+      "w": "kehidupannya.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_01",
+      "line": 17,
+      "start": 155.112,
+      "end": 156.237
+    },
+    {
+      "w": "Ribuan",
+      "cue": "s05_02_uruk",
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 156.703,
+      "end": 157.078
+    },
+    {
+      "w": "tahun",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 157.141,
+      "end": 157.391
+    },
+    {
+      "w": "kemudian,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 157.453,
+      "end": 158.016
+    },
+    {
+      "w": "di",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 158.141,
+      "end": 158.203
+    },
+    {
+      "w": "Mesopotamia,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 158.266,
+      "end": 159.141
+    },
+    {
+      "w": "permukiman",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 159.235,
+      "end": 159.641
+    },
+    {
+      "w": "pertanian",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 159.735,
+      "end": 160.141
+    },
+    {
+      "w": "berkembang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 160.266,
+      "end": 160.703
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 160.766,
+      "end": 161.078
+    },
+    {
+      "w": "kota-kota",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 161.141,
+      "end": 161.453
+    },
+    {
+      "w": "besar",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 161.516,
+      "end": 161.828
+    },
+    {
+      "w": "seperti",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 161.953,
+      "end": 162.266
+    },
+    {
+      "w": "Uruk.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 162.328,
+      "end": 162.953
+    },
+    {
+      "w": "Kehidupan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 162.985,
+      "end": 163.328
+    },
+    {
+      "w": "masyarakat",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 163.391,
+      "end": 163.891
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 163.953,
+      "end": 164.203
+    },
+    {
+      "w": "semakin",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 164.266,
+      "end": 164.578
+    },
+    {
+      "w": "kompleks.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 164.641,
+      "end": 165.453
+    },
+    {
+      "w": "Ada",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 165.516,
+      "end": 165.641
+    },
+    {
+      "w": "petani",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 165.703,
+      "end": 166.016
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 166.078,
+      "end": 166.141
+    },
+    {
+      "w": "menghasilkan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 166.203,
+      "end": 166.641
+    },
+    {
+      "w": "makanan,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 166.703,
+      "end": 167.328
+    },
+    {
+      "w": "pengrajin",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 167.422,
+      "end": 167.828
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 167.891,
+      "end": 167.953
+    },
+    {
+      "w": "membuat",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 168.016,
+      "end": 168.266
+    },
+    {
+      "w": "perkakas,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 168.328,
+      "end": 169.016
+    },
+    {
+      "w": "pedagang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 169.11,
+      "end": 169.453
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 169.485,
+      "end": 169.516
+    },
+    {
+      "w": "bertukar",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 169.578,
+      "end": 169.891
+    },
+    {
+      "w": "barang,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 169.953,
+      "end": 170.453
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 170.516,
+      "end": 170.578
+    },
+    {
+      "w": "pemimpin",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 170.641,
+      "end": 171.078
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 171.141,
+      "end": 171.203
+    },
+    {
+      "w": "mengatur",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 171.266,
+      "end": 171.578
+    },
+    {
+      "w": "masyarakat.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_02",
+      "line": 18,
+      "start": 171.641,
+      "end": 172.328
+    },
+    {
+      "w": "Persediaan",
+      "cue": "s05_03_clay",
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 172.767,
+      "end": 173.33
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 173.392,
+      "end": 173.58
+    },
+    {
+      "w": "dicatat.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 173.642,
+      "end": 174.392
+    },
+    {
+      "w": "Perdagangan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 174.455,
+      "end": 175.017
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 175.08,
+      "end": 175.33
+    },
+    {
+      "w": "dihitung.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 175.371,
+      "end": 176.205
+    },
+    {
+      "w": "Hasil",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 176.298,
+      "end": 176.517
+    },
+    {
+      "w": "produksi",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 176.642,
+      "end": 176.955
+    },
+    {
+      "w": "harus",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 177.08,
+      "end": 177.33
+    },
+    {
+      "w": "dikelola.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 177.413,
+      "end": 178.288
+    },
+    {
+      "w": "Tulisan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 178.309,
+      "end": 178.642
+    },
+    {
+      "w": "kuneiform",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 178.673,
+      "end": 179.267
+    },
+    {
+      "w": "berkembang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 179.33,
+      "end": 179.767
+    },
+    {
+      "w": "sebagai",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 179.83,
+      "end": 180.08
+    },
+    {
+      "w": "salah",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 180.142,
+      "end": 180.33
+    },
+    {
+      "w": "satu",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 180.361,
+      "end": 180.58
+    },
+    {
+      "w": "alat",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 180.642,
+      "end": 180.892
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 180.955,
+      "end": 181.142
+    },
+    {
+      "w": "mengatur",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 181.205,
+      "end": 181.517
+    },
+    {
+      "w": "kebutuhan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 181.58,
+      "end": 181.955
+    },
+    {
+      "w": "tersebut.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_03",
+      "line": 19,
+      "start": 182.017,
+      "end": 182.83
+    },
+    {
+      "w": "Ladang",
+      "cue": "s05_04_city",
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 183.21,
+      "end": 183.46
+    },
+    {
+      "w": "kecil",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 183.523,
+      "end": 183.835
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 183.898,
+      "end": 184.023
+    },
+    {
+      "w": "dahulu",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 184.064,
+      "end": 184.335
+    },
+    {
+      "w": "dirawat",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 184.398,
+      "end": 184.71
+    },
+    {
+      "w": "manusia",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 184.804,
+      "end": 185.21
+    },
+    {
+      "w": "seperti",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 185.273,
+      "end": 185.523
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 185.585,
+      "end": 186.148
+    },
+    {
+      "w": "kini",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 186.179,
+      "end": 186.398
+    },
+    {
+      "w": "telah",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 186.46,
+      "end": 186.585
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 186.648,
+      "end": 186.96
+    },
+    {
+      "w": "bagian",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 187.054,
+      "end": 187.398
+    },
+    {
+      "w": "dari",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 187.46,
+      "end": 187.585
+    },
+    {
+      "w": "sistem",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 187.616,
+      "end": 187.96
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 188.023,
+      "end": 188.085
+    },
+    {
+      "w": "menopang",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 188.148,
+      "end": 188.46
+    },
+    {
+      "w": "kota,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 188.491,
+      "end": 189.069
+    },
+    {
+      "w": "pemerintahan,",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 189.116,
+      "end": 189.866
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 189.898,
+      "end": 190.023
+    },
+    {
+      "w": "peradaban.",
+      "cue": null,
+      "scene": 5,
+      "shotKey": "s05_04",
+      "line": 20,
+      "start": 190.085,
+      "end": 191.023
+    },
+    {
+      "w": "Bayangkan",
+      "cue": "s06_01_harvester",
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 191.711,
+      "end": 192.211
+    },
+    {
+      "w": "jika",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 192.399,
+      "end": 192.524
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 192.649,
+      "end": 192.899
+    },
+    {
+      "w": "bisa",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 192.961,
+      "end": 193.086
+    },
+    {
+      "w": "melihat",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 193.149,
+      "end": 193.461
+    },
+    {
+      "w": "dunia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 193.493,
+      "end": 193.774
+    },
+    {
+      "w": "hari",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 193.836,
+      "end": 193.961
+    },
+    {
+      "w": "ini.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 194.024,
+      "end": 194.711
+    },
+    {
+      "w": "Ladang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 194.774,
+      "end": 195.086
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 195.149,
+      "end": 195.211
+    },
+    {
+      "w": "dahulu",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 195.243,
+      "end": 195.586
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 195.649,
+      "end": 195.774
+    },
+    {
+      "w": "tanami",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 195.868,
+      "end": 196.336
+    },
+    {
+      "w": "kini",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 196.399,
+      "end": 196.524
+    },
+    {
+      "w": "telah",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 196.586,
+      "end": 196.711
+    },
+    {
+      "w": "menjadi",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 196.774,
+      "end": 197.024
+    },
+    {
+      "w": "pertanian",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 197.086,
+      "end": 197.399
+    },
+    {
+      "w": "industri.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 197.493,
+      "end": 198.368
+    },
+    {
+      "w": "Kota-kota",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 198.399,
+      "end": 198.836
+    },
+    {
+      "w": "tumbuh",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 198.899,
+      "end": 199.211
+    },
+    {
+      "w": "jauh",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 199.274,
+      "end": 199.524
+    },
+    {
+      "w": "melampaui",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 199.586,
+      "end": 199.961
+    },
+    {
+      "w": "lembah",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 199.993,
+      "end": 200.336
+    },
+    {
+      "w": "tempat",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 200.399,
+      "end": 200.586
+    },
+    {
+      "w": "ia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 200.68,
+      "end": 200.774
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 200.805,
+      "end": 200.961
+    },
+    {
+      "w": "tinggal.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_01",
+      "line": 21,
+      "start": 201.024,
+      "end": 201.899
+    },
+    {
+      "w": "Kita",
+      "cue": "s06_02_global",
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 202.297,
+      "end": 202.428
+    },
+    {
+      "w": "punya",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 202.491,
+      "end": 202.616
+    },
+    {
+      "w": "mesin,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 202.678,
+      "end": 203.178
+    },
+    {
+      "w": "teknologi,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 203.241,
+      "end": 203.866
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 203.928,
+      "end": 204.053
+    },
+    {
+      "w": "perdagangan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 204.116,
+      "end": 204.491
+    },
+    {
+      "w": "global.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 204.553,
+      "end": 205.178
+    },
+    {
+      "w": "Tetapi",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 205.22,
+      "end": 205.491
+    },
+    {
+      "w": "kita",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 205.522,
+      "end": 205.678
+    },
+    {
+      "w": "masih",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 205.741,
+      "end": 205.897
+    },
+    {
+      "w": "bergantung",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 205.928,
+      "end": 206.366
+    },
+    {
+      "w": "pada",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 206.397,
+      "end": 206.553
+    },
+    {
+      "w": "sesuatu",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 206.647,
+      "end": 206.928
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 207.022,
+      "end": 207.116
+    },
+    {
+      "w": "sama:",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 207.199,
+      "end": 207.678
+    },
+    {
+      "w": "makanan.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 207.741,
+      "end": 208.616
+    },
+    {
+      "w": "Setiap",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 208.678,
+      "end": 208.928
+    },
+    {
+      "w": "hari,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 209.053,
+      "end": 209.366
+    },
+    {
+      "w": "jutaan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 209.428,
+      "end": 209.741
+    },
+    {
+      "w": "manusia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 209.803,
+      "end": 210.178
+    },
+    {
+      "w": "bekerja",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 210.21,
+      "end": 210.678
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 210.741,
+      "end": 210.866
+    },
+    {
+      "w": "memastikan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 210.928,
+      "end": 211.366
+    },
+    {
+      "w": "makanan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 211.449,
+      "end": 211.678
+    },
+    {
+      "w": "diproduksi,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 211.71,
+      "end": 212.428
+    },
+    {
+      "w": "disimpan,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 212.522,
+      "end": 213.116
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 213.178,
+      "end": 213.241
+    },
+    {
+      "w": "sampai",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 213.303,
+      "end": 213.553
+    },
+    {
+      "w": "ke",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 213.616,
+      "end": 213.678
+    },
+    {
+      "w": "meja",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 213.741,
+      "end": 213.866
+    },
+    {
+      "w": "kita.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_02",
+      "line": 22,
+      "start": 213.928,
+      "end": 214.616
+    },
+    {
+      "w": "Nara",
+      "cue": "s06_03_city",
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 215.052,
+      "end": 215.239
+    },
+    {
+      "w": "memilih",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 215.302,
+      "end": 215.614
+    },
+    {
+      "w": "menetap",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 215.677,
+      "end": 216.177
+    },
+    {
+      "w": "karena",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 216.208,
+      "end": 216.427
+    },
+    {
+      "w": "ingin",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 216.489,
+      "end": 216.677
+    },
+    {
+      "w": "hidup",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 216.77,
+      "end": 216.989
+    },
+    {
+      "w": "lebih",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 217.02,
+      "end": 217.239
+    },
+    {
+      "w": "pasti.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 217.395,
+      "end": 218.114
+    },
+    {
+      "w": "Namun,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 218.177,
+      "end": 218.78
+    },
+    {
+      "w": "keputusan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 218.823,
+      "end": 219.177
+    },
+    {
+      "w": "itu",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 219.239,
+      "end": 219.427
+    },
+    {
+      "w": "ikut",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 219.489,
+      "end": 219.677
+    },
+    {
+      "w": "membuka",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 219.718,
+      "end": 219.989
+    },
+    {
+      "w": "jalan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 220.052,
+      "end": 220.364
+    },
+    {
+      "w": "bagi",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 220.427,
+      "end": 220.552
+    },
+    {
+      "w": "dunia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 220.583,
+      "end": 220.802
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 220.864,
+      "end": 221.052
+    },
+    {
+      "w": "jauh",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 221.114,
+      "end": 221.364
+    },
+    {
+      "w": "lebih",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 221.427,
+      "end": 221.614
+    },
+    {
+      "w": "kompleks.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 221.708,
+      "end": 222.583
+    },
+    {
+      "w": "Dunia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 222.614,
+      "end": 222.927
+    },
+    {
+      "w": "dengan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 222.989,
+      "end": 223.177
+    },
+    {
+      "w": "kota,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 223.239,
+      "end": 223.77
+    },
+    {
+      "w": "kekayaan,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 223.802,
+      "end": 224.583
+    },
+    {
+      "w": "perdagangan,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 224.614,
+      "end": 225.333
+    },
+    {
+      "w": "dan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 225.364,
+      "end": 225.489
+    },
+    {
+      "w": "kekuasaan.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 225.552,
+      "end": 226.708
+    },
+    {
+      "w": "Dunia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 226.739,
+      "end": 227.052
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 227.114,
+      "end": 227.177
+    },
+    {
+      "w": "memungkinkan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 227.239,
+      "end": 227.677
+    },
+    {
+      "w": "manusia",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 227.739,
+      "end": 228.052
+    },
+    {
+      "w": "berkembang,",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 228.114,
+      "end": 228.833
+    },
+    {
+      "w": "tetapi",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 228.864,
+      "end": 229.114
+    },
+    {
+      "w": "juga",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 229.177,
+      "end": 229.364
+    },
+    {
+      "w": "membuat",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 229.427,
+      "end": 229.677
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 229.739,
+      "end": 230.052
+    },
+    {
+      "w": "semakin",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 230.145,
+      "end": 230.427
+    },
+    {
+      "w": "bergantung",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 230.552,
+      "end": 230.927
+    },
+    {
+      "w": "pada",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 230.958,
+      "end": 231.114
+    },
+    {
+      "w": "sistem",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 231.177,
+      "end": 231.489
+    },
+    {
+      "w": "yang",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 231.552,
+      "end": 231.614
+    },
+    {
+      "w": "mereka",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 231.708,
+      "end": 231.864
+    },
+    {
+      "w": "ciptakan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 231.927,
+      "end": 232.302
+    },
+    {
+      "w": "sendiri.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_03",
+      "line": 23,
+      "start": 232.395,
+      "end": 233.177
+    },
+    {
+      "w": "Mungkin",
+      "cue": "s06_04_wheat",
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 233.697,
+      "end": 234.072
+    },
+    {
+      "w": "Nara",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 234.104,
+      "end": 234.322
+    },
+    {
+      "w": "tidak",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 234.385,
+      "end": 234.572
+    },
+    {
+      "w": "pernah",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 234.666,
+      "end": 234.885
+    },
+    {
+      "w": "benar-benar",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 234.947,
+      "end": 235.385
+    },
+    {
+      "w": "menaklukkan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 235.447,
+      "end": 235.885
+    },
+    {
+      "w": "alam.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 235.947,
+      "end": 236.635
+    },
+    {
+      "w": "Ia",
+      "cue": "s06_04_leave",
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 237.01,
+      "end": 237.135
+    },
+    {
+      "w": "hanya",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 237.197,
+      "end": 237.322
+    },
+    {
+      "w": "menemukan",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 237.385,
+      "end": 237.76
+    },
+    {
+      "w": "cara",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 237.791,
+      "end": 238.01
+    },
+    {
+      "w": "baru",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 238.166,
+      "end": 238.322
+    },
+    {
+      "w": "untuk",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 238.385,
+      "end": 238.51
+    },
+    {
+      "w": "bergantung",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 238.635,
+      "end": 239.01
+    },
+    {
+      "w": "kepadanya.",
+      "cue": null,
+      "scene": 6,
+      "shotKey": "s06_04",
+      "line": 24,
+      "start": 239.041,
+      "end": 239.697
+    }
+  ]
+}

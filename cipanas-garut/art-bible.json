@@ -1,0 +1,32 @@
+{
+  "project": {
+    "slug": "cipanas-garut",
+    "compositionId": "CipanasGarutShort",
+    "title": "CIPANAS GARUT",
+    "subtitle": "KEHANGATAN DARI PERUT BUMI",
+    "style": "vintage-poster-explainer (Upgraded 10-Shot Multi-Angle Storyboard Edition)",
+    "aspectRatio": "9:16",
+    "resolution": { "width": 1080, "height": 1920, "designStage": "720x1280 @ 1.5x crisp native vector" },
+    "fps": 30
+  },
+  "verifiedFacts": [
+    "Location: Cipanas, Kecamatan Tarogong Kaler, Kabupaten Garut, at the southeastern foot of active stratovolcano Gunung Guntur.",
+    "History: Documented by Belgian painter-naturalist Auguste Payen in 1818 ('Tjipanasse') and 1891 colonial travel guides describing natural 38-42°C bamboo bathhouses.",
+    "Temperature: Natural geothermal springs emerge at ~40°C to 70°C at source vents and are moderated to ~38-42°C in soaking pools.",
+    "Hydrothermal System: Cold rainwater (meteoric water) falls on Gunung Guntur slopes, infiltrates porous volcanic ground and deep tectonic fault fractures (sesar/patahan).",
+    "Heating & Buoyancy: At depth, water contacts hot rocks heated conductively by Gunung Guntur's magma chamber; heated lower-density water rises back up through fault conduits.",
+    "Clear & Mild-Sulfur Water: Because Cipanas lies in the outflow zone rather than a direct summit crater, fluids undergo hundreds of meters of volcanic rock filtration without direct magmatic acid gas mixing, yielding clear mineral-rich skin-friendly water."
+  ],
+  "storyboardShots": [
+    { "shot": 1, "angle": "Extreme Close-Up (ECU)", "subject": "Steaming turquoise stone bath surface, concentric water ripples, frangipani petal & brass thermometer climbing to 42°C" },
+    { "shot": 2, "angle": "Low-Angle Wide Establishing Poster", "subject": "Steaming foreground pool + bamboo spout + traditional Sundanese bathhouse pavilion + Gunung Guntur rising behind in sunlit mist" },
+    { "shot": 3, "angle": "Bird's-Eye d3-geo Vintage Atlas", "subject": "West Java / Garut map zooming into the ±5 km corridor from Puncak Guntur to Cipanas Tarogong Kaler with topographic contour rings" },
+    { "shot": 4, "angle": "Asymmetrical Rule-of-Thirds Dramatic Wide", "subject": "Gunung Guntur pushed right, brooding slate storm clouds pouring diagonal rain onto porous left slopes & pooling into volcanic soil" },
+    { "shot": 5, "angle": "Subsurface Macro Tracking Dive", "subject": "Close-up inside fractured basalt-andesite crust as giant glowing turquoise water droplets rush down a diagonal fault line (SESAR)" },
+    { "shot": 6, "angle": "Deep Subterranean Cutaway Boiler", "subject": "Incandescent Guntur magma heat source radiating golden conduction waves into reservoir rock; cold blue water turns warm amber & surges upward (KONVEKSI)" },
+    { "shot": 7, "angle": "Encyclopedia 2-Panel Split-Screen", "subject": "Left: Active Acid Crater (murky, harsh sulfur >80°C) vs Right: Cipanas Outflow Zone (rock-filtered clear mineral water 40-70°C)" },
+    { "shot": 8, "angle": "Intimate Heritage Mid-Shot", "subject": "Mossy stone wall with traditional bamboo spouts (pancuran) arcing warm mineral water into a steaming pool, sunlit beams, 'TJIPANASSE · 1818 – KINI'" },
+    { "shot": 9, "angle": "Wide Panoramic Peak-to-Pool Cutaway", "subject": "Full 4-stage living hydrothermal cycle in one unified frame: Rain on Guntur -> Deep Fault Dive -> Magma Heating -> Hot Spring Emerging into Cipanas Pools" },
+    { "shot": 10, "angle": "Loop Return + Subterranean Ghost Blueprint + Postcard", "subject": "Exact Shot 2 sunny poster return -> cream-gold dashed ghost blueprint tracing hidden subterranean heat engine beneath the pool -> cream-matted Vintage Travel Postcard" }
+  ]
+}

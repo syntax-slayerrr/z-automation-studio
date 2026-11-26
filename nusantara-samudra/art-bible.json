@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Nusantara: Peradaban yang Mengarungi Samudra",
+    "compositionId": "NusantaraSamudraFilm",
+    "style": "anthropology-explanation",
+    "visualIdentity": "Human Odyssey Filmic 2D (Pure Code — Procedural Python Material Forge + Multiplane Remotion SVG/Canvas/d3-geo)",
+    "domain": "anthropology | evolution | biology | human_history"
+  },
+  "format": {
+    "aspectRatio": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "safeZones": {
+      "top": 150,
+      "bottom": 320,
+      "left": 56,
+      "right": 108
+    }
+  },
+  "colorScript": [
+    {
+      "sequence": "SQ01",
+      "preset": "sunlit_odyssey",
+      "keyLight": "upper_right",
+      "mood": "wonder & discovery"
+    },
+    {
+      "sequence": "SQ02",
+      "preset": "cartographic_atlas",
+      "keyLight": "upper_left",
+      "mood": "geographic clarity"
+    },
+    {
+      "sequence": "SQ03",
+      "preset": "bio_anatomy",
+      "keyLight": "upper_left",
+      "mood": "scientific precision"
+    },
+    {
+      "sequence": "SQ04",
+      "preset": "campfire_night",
+      "keyLight": "low_fire",
+      "mood": "warmth & belonging"
+    }
+  ],
+  "textureSeed": 1024,
+  "characters": [
+    {
+      "id": "CHAR_EXPLORER_01",
+      "role": "Paleolithic scout / narrator visual anchor",
+      "variant": "human_hunter",
+      "skinTone": "warm_bronze",
+      "garmentPalette": {
+        "tunic": "#8c5c38",
+        "belt": "#4a2c1c",
+        "wrap": "#b88252"
+      },
+      "signatureProp": "wooden_spear"
+    }
+  ],
+  "environments": [
+    {
+      "id": "ENV_RIFT_VALLEY",
+      "biome": "savanna_valley",
+      "sky": "sky_savanna_golden",
+      "geology": "sandstone",
+      "landmarks": [
+        "winding_river",
+        "distant_volcanic_peak",
+        "overhanging_acacia"
+      ]
+    }
+  ]
+}

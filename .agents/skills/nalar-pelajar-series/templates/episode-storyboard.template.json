@@ -1,0 +1,106 @@
+{
+  "series": "Nalar Pelajar — PC IPM Panawuan",
+  "episodeNumber": 2,
+  "slug": "ipm-nalar-pelajar-ep02",
+  "title": "Judul Episode",
+  "themeLesson": "1 keterampilan berpikir / karakter pelajar konkret yang bisa langsung dipraktikkan",
+  "targetDurationSec": 150,
+  "resolution": { "width": 1080, "height": 1920, "fps": 30 },
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Narator Seri",
+      "voiceId": "cjVigY5qzO86Huf0OWal",
+      "voiceLabel": "Eric (Locked Series Narrator)",
+      "onScreen": false
+    },
+    {
+      "id": "wisnu",
+      "name": "Wisnu",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+      "voiceLabel": "Liam (Locked Wisnu)",
+      "role": "protagonist_or_supporting",
+      "outfit": "Yellow knit sweater (#FFC41E) + Official 3D IPM Pin + Charcoal cargo + Yellow-white sneakers",
+      "onScreen": true
+    },
+    {
+      "id": "guest_cadre",
+      "name": "Nama Kader / Tokoh Baru",
+      "voiceId": "EXAVITQu4vr4xnSDxMaL",
+      "voiceLabel": "Sarah (Warm Indonesian Student)",
+      "role": "co_star_or_spotlight",
+      "outfit": "Describe Living-Clay palette + hijab/hair + Official 3D IPM Pin",
+      "onScreen": true
+    }
+  ],
+  "musicPlan": {
+    "mode": "licensed_instrumental_auto",
+    "acts": [
+      { "act": "Act1_HookConflict", "track": "mixkit-148-forest-mist-whispers.mp3", "underVoDb": -17.5, "silenceCutBeforeCue": "s5_turning_point" },
+      { "act": "Act2_ReflectionMethod", "track": "mixkit-148-forest-mist-whispers.mp3", "underVoDb": -17.0 },
+      { "act": "Act3A_DiegeticRealWorld", "track": "none_diegetic_only", "notes": "100% real-world village/school/hall foley" },
+      { "act": "Act3B_InnerBattle", "track": "music_oppenheimer_ambient.mp3", "underVoDb": -18.5, "hardCutAtCue": "s11_breakthrough" },
+      { "act": "Act3C_VictoryFinale", "track": "mixkit-587-discover.mp3", "underVoDb": -16.0, "closingBloomDb": -9.5 }
+    ]
+  },
+  "shots": [
+    {
+      "id": "SH01",
+      "act": 1,
+      "location": "study_bedroom_night",
+      "camera": { "framing": "High-Angle 3/4 Establishing", "fov": 40, "breathAmp": 0.0045, "motion": "slow_push_in" },
+      "lightingState": "warm_lamp_to_moonlight",
+      "digitalUI": "reconstructed_phone_ui",
+      "bubbles9x16Safe": false,
+      "subtitleZone": "lower",
+      "foleyCues": ["night_crickets_village", "lamp_switch_click"]
+    },
+    {
+      "id": "SH08",
+      "act": 2,
+      "location": "macro_pov_desk",
+      "camera": { "framing": "Macro Tabletop POV", "fov": 42, "breathAmp": 0.0, "motion": "steady_micro_push" },
+      "lightingState": "warm_desk_lamp_cast_shadow",
+      "handRig": "2bone_ik_connected_torso_prop_drives_hand_tripod",
+      "subtitleZone": "lower",
+      "foleyCues": ["pen_scribble_paper", "notebook_close"]
+    },
+    {
+      "id": "SH09A",
+      "act": 3,
+      "location": "panawuan_village_morning_walk",
+      "camera": { "framing": "Low-Angle Sneaker Track -> Crane Reveal", "fov": "46->41", "breathAmp": 0.006 },
+      "lightingState": "golden_morning_sun_dappled_gobo",
+      "subtitleZone": "lower",
+      "foleyCues": ["rooster_morning_crow", "footsteps_paving_walk", "village_morning_peers"]
+    },
+    {
+      "id": "SH10",
+      "act": 3,
+      "location": "seminar_or_classroom_hall",
+      "camera": { "framing": "Hitchcock Vertigo Dolly-Zoom", "fov": "31->49", "roll": -0.08, "breathAmp": 0.011 },
+      "lightingState": "crimson_anxiety_rim",
+      "bubbles9x16Safe": true,
+      "subtitleZone": "top",
+      "foleyCues": ["underwater_muffled_hall", "chair_creak_cloth", "heartbeat_anxiety"]
+    },
+    {
+      "id": "SH11A",
+      "act": 3,
+      "location": "seminar_or_classroom_hall",
+      "camera": { "framing": "Telephoto Locked-Off Stillness", "fov": 29, "breathAmp": 0.0 },
+      "lightingState": "crimson_to_calm_golden_beam",
+      "subtitleZone": "lower",
+      "foleyCues": ["hard_silence_0.9s", "calm_exhale_resolve"]
+    },
+    {
+      "id": "SH12",
+      "act": 3,
+      "location": "seminar_or_classroom_hall",
+      "camera": { "framing": "3-Cut Shot-Reverse-Shot -> Crane Pull-Out -> Closing Card", "fov": "34 / 46 OTS / 28 CU / 45 Wide" },
+      "lightingState": "warm_golden_victory",
+      "closingCard": "Official IPM Emblem + Nalar Pelajar (3.2s hold)",
+      "foleyCues": ["chair_creak_cloth", "pa_mic_switch_click", "warm_hall_applause"]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "project": "membangun-rumah",
+  "title": "Dari Masalah Menjadi Rumah",
+  "style": "3d-cutaway-explainer-v6",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 115
+  },
+  "lightingPresets": {
+    "rain": {
+      "zenith": "#344C66",
+      "horizon": "#879EB5",
+      "ground": "#636E6A",
+      "sunColor": "#DAE7F4",
+      "sunIntensity": 1.38
+    },
+    "heat": {
+      "zenith": "#2E7EC8",
+      "horizon": "#FFE1AE",
+      "ground": "#C79662",
+      "sunColor": "#FFF3C2",
+      "sunIntensity": 2.95
+    },
+    "day": {
+      "zenith": "#1E78D4",
+      "horizon": "#C2E6FD",
+      "ground": "#A4BE96",
+      "sunColor": "#FFF8E8",
+      "sunIntensity": 2.62
+    },
+    "sunset": {
+      "zenith": "#3E5288",
+      "horizon": "#F6AC7E",
+      "ground": "#9E6D4E",
+      "sunColor": "#FFA458",
+      "sunIntensity": 2.25
+    }
+  },
+  "architecture": {
+    "footprintWidthM": 4.2,
+    "footprintDepthM": 3.2,
+    "center": [0, 0, -0.55],
+    "foundationDepthM": 1.15,
+    "sloofHeightM": 0.26,
+    "wallHeightM": 2.1,
+    "columnHeightM": 2.24,
+    "roofPeakY": 3.52,
+    "rooms": ["Kamar Tidur", "Ruang Keluarga", "Dapur", "Kamar Mandi"]
+  },
+  "characters": {
+    "protagonist": {
+      "shirt": "#F48D36",
+      "shorts": "#243B5C",
+      "headgear": "none -> yellow safety hard-hat (Scenes 3-6) -> none (Scene 8)"
+    },
+    "family": [
+      { "role": "father", "shirt": "#F48D36", "scale": 1.0 },
+      { "role": "mother", "shirt": "#3F9B8F", "scale": 0.94 },
+      { "role": "child", "shirt": "#F2C14E", "scale": 0.68 }
+    ]
+  },
+  "audio": {
+    "narrator": "Brian (nPczCjzI2devNBz1zQrb) ElevenLabs eleven_v4",
+    "targetLufs": -14.8,
+    "maxTruePeakDbfs": -1.5,
+    "sfxCount": 10
+  }
+}

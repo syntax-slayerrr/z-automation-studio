@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Continue"
+﻿$ErrorActionPreference = "Continue"
 
 $root = "d:\PROJECTS\z-automation-studio"
 $tmpDir = "$root\gunung-guntur\.tmp"
 $chunkDir = "$root\gunung-guntur\.chunks"
 $bundleDir = "$root\gunung-guntur\.bundle"
-$outMp4 = "$root\gunung-guntur\out\gunung_guntur_raksasa_api_garut.mp4"
+$outMp4 = "d:\PROJECTS\z-automation-studio\videos\gunung_guntur_raksasa_api_garut.mp4"
 $audioM4a = "$root\public\gunung-guntur\audio_master.m4a"
 
 New-Item -ItemType Directory -Force -Path $tmpDir, $chunkDir, "$root\gunung-guntur\out" | Out-Null
@@ -93,3 +93,4 @@ if ($LASTEXITCODE -ne 0) {
 
 $finalFrames = Get-FrameCount $outMp4
 Write-Host "=== RENDER COMPLETE: $outMp4 ($finalFrames frames) ==="
+

@@ -1,0 +1,118 @@
+{
+  "series": "series-evolusi",
+  "episodeNumber": 2,
+  "slug": "ep02-sherpa-himalaya",
+  "compositionId": "Ep02SherpaHimalayaShort",
+  "title": "Kenapa Orang Sherpa Nggak Kehabisan Napas di Puncak Everest?",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 52
+  },
+  "biomePalette": "himalaya_hypoxia",
+  "scientificBasis": {
+    "population": "Suku Sherpa & Penduduk Dataran Tinggi Tibet",
+    "region": "Pegunungan Himalaya, Nepal - Tibet",
+    "mapCenterLonLat": [86.92, 27.98],
+    "mapScale": 3600,
+    "studyYear": "2010",
+    "studyReference": "Simonson et al. (Science, 2010) & Yi et al. (Science, 2010) — EPAS1 gene adaptation",
+    "heroOrgan": "lungs",
+    "heroGene": "EPAS1",
+    "keyMetric": "30-40% lebih efisien memakai oksigen tanpa pengentalan darah",
+    "counterProp": "Tabung oksigen pendaki dicoret silang (✕)"
+  },
+  "audioSpec": {
+    "narratorVoiceId": "nPczCjzI2devNBz1zQrb",
+    "narratorName": "Brian (Warm Documentary Baritone)",
+    "tempo": 1.12,
+    "musicKey": "A minor",
+    "musicBpmHalfTime": 86.15,
+    "musicOstinatoMaxHz": 480,
+    "sonarPingHz": 2637.8,
+    "targetLufs": -14.3
+  },
+  "beats": [
+    {
+      "beat": 1,
+      "id": "hook_anomaly",
+      "role": "Anomaly Hook + Right Scale Ruler + Counter-Prop X-Out",
+      "approxSec": [0.0, 6.8],
+      "visualEngine": "3D Silhouette Climber / Diver + RightScaleRuler + HolographicCounterProp + Props Through-Lens Portal",
+      "captionZone": "top-left",
+      "narration": "Orang ini mendaki tebing es di ketinggian delapan ribu meter. Tanpa tabung oksigen, cuma jaket tipis dan satu tarikan napas tenang.",
+      "sfx": ["ambient_biome_bed", "hologram_x_out", "through_lens_whoosh"]
+    },
+    {
+      "beat": 2,
+      "id": "habitat_and_map",
+      "role": "Cultural Habitat Reveal + Cloud Portal + Bioluminescent Map",
+      "approxSec": [6.8, 13.0],
+      "visualEngine": "3D Village Diorama -> CloudCurtainPortal -> BioluminescentMap2D",
+      "captionZone": "top-left",
+      "narration": "Mereka suku Sherpa, penjaga atap bumi dari Himalaya.",
+      "sfx": ["portal_breach", "cloud_whoosh_1", "map_hum", "cloud_whoosh_2"]
+    },
+    {
+      "beat": 3,
+      "id": "study_xray_scan",
+      "role": "Study Year + Diagnostic Instrument + Expanding Spherical Boolean X-Ray",
+      "approxSec": [13.0, 17.5],
+      "visualEngine": "3D Diagnostic Console ('2010') -> Lateral Cable Track -> AnatomicalXRayTorso3D (xrayRadius 0 -> 2.4) -> Beam Dive",
+      "captionZone": "bottom-left",
+      "narration": "Tahun 2010, peneliti memindai tubuh mereka dan menemukan sesuatu yang aneh.",
+      "sfx": ["sonar_ping_E7_1", "heartbeat_sub_drop"]
+    },
+    {
+      "beat": 4,
+      "id": "diagnostic_comparison_and_metaphor",
+      "role": "Diagnostic Screen + Control vs Population Split + Speckle Metaphor Morph",
+      "approxSec": [17.5, 28.6],
+      "visualEngine": "DiagnosticUltrasoundScreen (single -> dual_comparison -> metaphorMorph 0..1..0) + ScientificCalloutLine + RightScaleRuler",
+      "captionZone": "bottom-left",
+      "narration": "Pembuluh kapiler dan mitokondria orang Sherpa bekerja jauh lebih hemat dibanding pendaki dataran rendah. Tubuh mereka seperti mesin hibrida super irit.",
+      "sfx": ["sonar_ping_E7_2", "monitor_pulse_A5", "screen_split_whoosh", "speckle_morph_pulse"]
+    },
+    {
+      "beat": 5,
+      "id": "physiological_mechanism",
+      "role": "In-Habitat X-Ray Physiological Action & Red Blood Cell Flow",
+      "approxSec": [28.6, 34.0],
+      "visualEngine": "AnatomicalXRayTorso3D (organSqueeze + rbcFlowProgress 0..1)",
+      "captionZone": "top-left",
+      "narration": "Saat udara menipis, darah mereka tetap encer dan memompa oksigen lancar ke seluruh tubuh.",
+      "sfx": ["plunge_zoom_pop", "organ_pump_lubdub", "arterial_blood_rush"]
+    },
+    {
+      "beat": 6,
+      "id": "genetic_proof_non_practitioner",
+      "role": "Whip-Pan + Non-Practitioner X-Ray Proof ('Bukan Hasil Latihan!')",
+      "approxSec": [34.0, 40.8],
+      "visualEngine": "DirectionalWhipBlur -> Seated Villager Daily Craft -> Expanding Spherical X-Ray -> Macro Organ Dive",
+      "captionZone": "bottom-left",
+      "narration": "Yang bikin kaget, orang Sherpa yang tinggal di kota rendah pun punya respons yang sama. Artinya, ini bukan hasil latihan.",
+      "sfx": ["whip_pan_snap", "heartbeat_deep_proof"]
+    },
+    {
+      "beat": 7,
+      "id": "written_in_dna",
+      "role": "Cellular Bokeh Zoom -> 3D Ball-and-Stick DNA + Floating A, T, C, G",
+      "approxSec": [40.8, 43.3],
+      "visualEngine": "DnaDoubleHelix3D + MolecularDnaBackdropAndLetters",
+      "captionZone": "mid-left",
+      "narration": "Ini tertulis di DNA.",
+      "sfx": ["cellular_dive_whoosh", "dna_crystalline_chime_C8"]
+    },
+    {
+      "beat": 8,
+      "id": "deep_time_finale_and_loop",
+      "role": "Whip-Cut Back to Habitat + Silhouette with Bioluminescent Evolved Organ Glow + Seamless Loop",
+      "approxSec": [43.3, 52.0],
+      "visualEngine": "DirectionalWhipBlur -> Habitat Wide -> Silhouette Figure with finaleGlowIntensity=1.0 -> Clean Loop Hold",
+      "captionZone": "bottom-left",
+      "narration": "Setelah ribuan tahun hidup di atap dunia, tubuh manusia ikut berubah.",
+      "sfx": ["whip_cut_pop", "finale_organ_glow_Am_chord"]
+    }
+  ]
+}

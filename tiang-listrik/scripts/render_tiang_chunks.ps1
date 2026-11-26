@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $root = "d:\PROJECTS\z-automation-studio"
 $outDir = "$root\tiang-listrik\out"
 $chunksDir = "$outDir\chunks"
 $bundleDir = "$outDir\bundle"
-$finalMp4 = "$outDir\kenapa_tiang_listrik_desa.mp4"
+$FinalMp4 = "$Root\videos\kenapa_tiang_listrik_desa.mp4"
 $audioMaster = "$root\public\tiang-listrik\audio_master.m4a"
 
 Set-Location $root
@@ -92,3 +92,4 @@ Remove-Item $tempVideo -Force -ErrorAction SilentlyContinue
 Write-Host "`n=== Render Complete! ===" -ForegroundColor Green
 Write-Host "Final MP4: $finalMp4" -ForegroundColor Green
 Get-Item $finalMp4 | Select-Object FullName, Length, LastWriteTime
+

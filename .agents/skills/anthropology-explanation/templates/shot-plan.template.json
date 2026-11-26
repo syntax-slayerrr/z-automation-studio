@@ -1,0 +1,44 @@
+{
+  "project": "TOPIC_SLUG",
+  "style": "anthropology-explanation",
+  "shots": [
+    {
+      "shotId": "SQ01-SH01",
+      "sceneId": "SCENE_01",
+      "cueStart": "s1_open",
+      "durationSec": 8.0,
+      "narration": "Exact narration sentence or phrase covered by this shot.",
+      "semanticUnit": {
+        "entities": ["Early Homo sapiens", "East African Rift Valley"],
+        "action": "survey and traverse river valley",
+        "scale": "human_to_regional",
+        "uncertainty": "contextual_reconstruction"
+      },
+      "visualIntent": "establish_location",
+      "representation": "multiplane_biome_reconstruction",
+      "shotSize": "wide",
+      "cameraAngle": "eye_level_over_shoulder",
+      "camera": {
+        "movement": "dolly_pull_with_multiplane_parallax",
+        "motivation": "Reveal vast valley scale beyond the solitary figure on the cliff."
+      },
+      "composition": {
+        "focalPoint": "hunter_left_third_looking_right",
+        "depthPlanes": ["sky_savanna_golden", "far_mountains", "mid_river_valley", "near_sandstone_cliff", "fg_foliage_frame"],
+        "negativeSpace": "upper_right_sky"
+      },
+      "lighting": {
+        "keyDirection": "upper_right",
+        "source": "golden_sun_with_god_rays",
+        "shadowType": "directional_cast_and_contact"
+      },
+      "beats": [
+        { "offsetSec": 0.0, "action": "Establish hunter standing on faceted cliff, wind moving tunic & leaves" },
+        { "offsetSec": 2.4, "action": "Birds glide across sunlit valley as camera gently cranes wider" },
+        { "offsetSec": 5.8, "action": "Hold for geographic scale comprehension" }
+      ],
+      "transitionOut": "graphic_match_to_river_route",
+      "soundCue": "savanna_wind_and_distant_hawks"
+    }
+  ]
+}

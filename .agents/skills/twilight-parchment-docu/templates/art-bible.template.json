@@ -1,68 +1,42 @@
 {
   "meta": {
     "name": "TOPIC_TITLE (CompIdShort)",
-    "version": 1,
+    "version": 2,
+    "visualMode": "illustrated-science",
+    "domain": "anthropology | evolution | biology | hybrid",
     "locked": false,
-    "mood": "hangat sinematik dokumenter — senja plum-indigo menuju cahaya hangat tematik",
-    "styleReference": "Twilight Parchment Documentary style adapted from Earth 24 Hours & HumanFireShort — zero clock dial, 100% pure code."
+    "mood": "ilustrasi dokumenter ilmiah bertekstur gouache hangat (DNA tekstur earth-24h + kejelasan ilustrasi Kurzgesagt & Kok Bisa?)",
+    "styleReference": "Hybrid Python painterly_fx gouache layers + Remotion IllustratedCharacterRig & Scientific Illustration Kits — zero clock dial unless requested, zero VectorAstro cartoon neon."
   },
   "format": {
+    "aspectRatio": "9:16",
     "width": 720,
     "height": 1280,
     "fps": 30,
     "safeZones": { "top": 150, "bottom": 290, "left": 48, "right": 48 }
   },
-  "palette": {
-    "shadow":     { "deep": "#160a1e", "mid": "#26152c", "soft": "#382246" },
-    "atmosphere": { "dusk": "#5c3d68", "mist": "#44586c", "storm": "#24374a" },
-    "keyLight":   { "deep": "#c84c28", "mid": "#ec8238", "gold": "#f8b65c", "cream": "#ffecc4" },
-    "coolAccent": { "moon": "#9ab4d4", "flash": "#dceeff" },
-    "parchment":  { "top": "#f7efde", "bottom": "#ebe0c8", "ink": "#241f1c", "active": "#ba382a", "muted": "#7e766c" },
-    "usage": "60% deep plum/indigo shadows & atmospheric midtones, 30% warm earth/silhouettes, 10% key light & rim highlights. Zero #000 or #fff."
-  },
-  "light": {
-    "dominantSources": [
-      "S1: FILL_MOTIVATED_LIGHT_SOURCE_1",
-      "S2: FILL_MOTIVATED_LIGHT_SOURCE_2"
-    ],
-    "rimLighting": "Every hero character & foreground prop computes key-light-facing warm/cool rim edges dynamically from active light origin.",
-    "castShadows": "Dynamic soft ground & wall shadows cast strictly away from active light origin."
-  },
-  "shape": {
-    "language": "Organic painterly smooth Bezier silhouettes with articulated character rigs, layered hills/foliage/architecture, and hand-torn parchment subtitle cards",
-    "outline": "Dynamic rim-lit edge stroke only on light-facing contours (no uniform thick cartoon outlines)"
-  },
-  "depth": {
-    "layers": [
-      { "name": "sky",        "parallax": 0.12, "blur": 0,   "haze": 0.80 },
-      { "name": "far",        "parallax": 0.28, "blur": 1.2, "haze": 0.55 },
-      { "name": "mid",        "parallax": 0.55, "blur": 0,   "haze": 0.20 },
-      { "name": "subject",    "parallax": 1.00, "blur": 0,   "haze": 0.00 },
-      { "name": "foreground", "parallax": 1.38, "blur": 5.0, "haze": 0.00 }
-    ]
-  },
-  "fx": {
-    "grain":    { "opacity": 0.04, "type": "feTurbulence fractalNoise" },
-    "vignette": { "strength": 0.34, "color": "#140a1c" },
-    "particles":{ "count": 34, "deterministic": true },
-    "rays":     { "breathing": true, "opacity": 0.15 }
-  },
-  "motion": {
-    "defaultEase": "cubic-bezier(0.16, 1, 0.3, 1)",
-    "camera": { "continuousDrift": true, "motivatedPushPull": true },
-    "holdFrames": [10, 24]
-  },
-  "typography": {
-    "chapterTitle": "Georgia, Times New Roman, serif",
-    "chapterSub": "Segoe UI, Arial, sans-serif",
-    "subtitleCard": "Segoe UI, Arial, sans-serif (deckle-edge parchment card, centered safe zone)"
-  },
-  "forbidden": [
-    "AI-generated photos",
-    "stock cutouts",
-    "forced 24-hour clock dial",
-    "pure #000 or #fff",
-    "linear camera motion",
-    "rushed artificial voiceover speed"
+  "paletteDeck": "anthropology | biology | evolution | environment",
+  "characters": [
+    {
+      "id": "hero_protagonist",
+      "description": "Karakter utama yang konsisten lintas scene",
+      "eraVariant": "athlete_modern | villager_traditional | prehistoric_hunter | scientist_lab | elder | child",
+      "skinTone": "#c8845e",
+      "outfitPrimary": "#c84c32",
+      "outfitSecondary": "#2e5484",
+      "defaultView": "three-quarter"
+    }
+  ],
+  "environments": [
+    {
+      "id": "env_scene_1",
+      "domain": "anthropology",
+      "backdropLayer": "public/<slug>/layers/bg_scene1.png",
+      "keyLightSource": "Warm directional spotlight / sunlight / bioluminescent glow",
+      "keyLightColor": "#f8c264"
+    }
+  ],
+  "scientificNotes": [
+    "Catat sumber eksperimen/fakta utama di sini agar visualisasi & label callout tetap akurat tanpa klaim berlebihan."
   ]
 }

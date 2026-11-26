@@ -1,0 +1,43 @@
+{
+  "project": "BEDAH TEKNOLOGI: GEOTERMAL KAMOJANG VS NUKLIR",
+  "slug": "kamojang-vs-nuklir",
+  "compositionId": "KamojangVsNuklirShort",
+  "subtitle": "Dua cara menghasilkan panas. Satu mesin untuk menghasilkan listrik.",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "targetDurationSec": 160
+  },
+  "visualDirection": {
+    "referenceStandard": "Zack D. Films Cinema4D/Octane Industrial & Scientific 3D Cutaway",
+    "lighting": "Synchronous 512x256 sRGB Studio PMREM IBL (environmentIntensity 0.38) + 2048x2048 Hero-Tracking Soft PCF Directional Key Light (updated synchronously in useFrame priority 0) + Dedicated Cutaway Rim/Core Lights",
+    "palette": {
+      "kamojangMist": "#8DB5C4",
+      "highlandPine": "#2C4F3E",
+      "geothermalSteam": "#E2F4FF",
+      "reservoirHeat": "#F97316",
+      "machinedSteel": "#CBD5E1",
+      "industrialTeal": "#0F766E",
+      "nuclearCherenkov": "#38BDF8",
+      "primaryCoolantHot": "#EA580C",
+      "secondaryCircuit": "#0EA5E9",
+      "copperWindings": "#D97736",
+      "hazardH2S": "#A3E635",
+      "hazardThermal": "#EF4444"
+    }
+  },
+  "continuityAnchors": {
+    "kamojangLandscape": "Consistent volcanic ridge + insulated silver pipeline + teal-white power hall + cooling tower plumes",
+    "geothermalSubsurface": "Volcanic topsoil -> impermeable clay caprock -> fractured hot rock reservoir (vapor-dominated, never magma pumped!) -> steel-cased production well",
+    "pwrArchitecture": "Thick concrete dome containment -> forged steel RPV -> 5x5 zirconium fuel assemblies -> boron-carbide control rods -> orange Primary Coolant Loop -> 36 inverted U-tube Steam Generator -> blue Secondary Steam Circuit",
+    "commonTurbineGenerator": "Split-casing 5-stage axial steam turbine coupled on one unbroken shaft to N/S dipole synchronous generator inside 12 copper stator coils -> step-up transformer -> transmission pylons -> glowing village homes"
+  },
+  "audio": {
+    "voEngine": "ElevenLabs eleven_v4 (Brian warm investigative storyteller, 140ms consonant pre-roll)",
+    "bespokeSfxEngine": "ElevenLabs eleven_text_to_sound_v3 (4 custom mechanical/cinematic engineering cues + studio archive)",
+    "score": "Oppenheimer-inspired investigative cinematic ambient pulse (sidechain ducked -8dB under VO)",
+    "loudnessTarget": "-14.8 LUFS Stereo, True Peak <= -1.8 dBFS"
+  }
+}

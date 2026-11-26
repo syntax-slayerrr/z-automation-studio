@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $root = "d:\PROJECTS\z-automation-studio"
 $outDir = "$root\sawah-terasering\out"
 $chunksDir = "$outDir\chunks"
 $bundleDir = "$outDir\bundle"
-$finalMp4 = "$outDir\kenapa_sawah_terasering.mp4"
+$FinalMp4 = "$Root\videos\kenapa_sawah_terasering.mp4"
 $audioMaster = "$root\public\sawah-terasering\audio_master.m4a"
 
 Set-Location $root
@@ -84,3 +84,4 @@ $boardImg = "$outDir\final_mp4_storyboard_4x4.jpg"
 & ffmpeg -y -loglevel error -i $finalMp4 -vf "fps=16/$([Math]::Max(1, [Math]::Round($totalFrames/30.0, 2))),scale=360:640,tile=4x4" -frames:v 1 -q:v 3 $boardImg
 Write-Host "Decoded Storyboard -> $boardImg" -ForegroundColor Green
 Write-Host "FINAL 1080x1920 MP4 -> $finalMp4" -ForegroundColor Green
+

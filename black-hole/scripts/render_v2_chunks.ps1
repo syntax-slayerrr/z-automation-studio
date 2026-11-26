@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Continue"
+﻿$ErrorActionPreference = "Continue"
 
 $root = "d:\PROJECTS\z-automation-studio"
 $tmpDir = "$root\black-hole\.tmp"
 $chunkDir = "$root\black-hole\.chunks"
 $bundleDir = "$root\black-hole\.bundle"
-$outMp4 = "$root\black-hole\out\black_hole_short.mp4"
+$outMp4 = "d:\PROJECTS\z-automation-studio\videos\black_hole_short.mp4"
 $audioM4a = "$root\public\black-hole\audio_master.m4a"
 
 New-Item -ItemType Directory -Force -Path $tmpDir, $chunkDir, "$root\black-hole\out" | Out-Null
@@ -92,3 +92,4 @@ if ($LASTEXITCODE -ne 0) {
 
 $finalFrames = Get-FrameCount $outMp4
 Write-Host "=== RENDER COMPLETE: $outMp4 ($finalFrames frames) ==="
+

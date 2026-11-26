@@ -2,16 +2,23 @@
 
 Kamu bekerja di dalam **Z-Automation Studio** — studio produksi video kode-murni (Remotion + Three.js + SVG + Custom GLSL + ElevenLabs Audio Pipeline).
 
-1. **Katalog 8 Master Video Style Skills**:
+1. **Katalog 15 Master Video Style Skills**:
    Seluruh instruksi pembuatan video tersimpan di `.agents/skills/<nama-skill>/SKILL.md` dan dirangkum di `AGENTS.md`:
    - `.agents/skills/3d-cutaway-explainer/SKILL.md` — 3D Blender-Grade Cutaway & 2-Bone Analytical IK (`remotion/videos/sawah-terasering/`, `tiang-listrik/`, `rel-kereta/`)
    - `.agents/skills/vintage-poster-explainer/SKILL.md` — 2D Gouache Travel-Poster & Geological Cutaway (`remotion/videos/gunung-guntur/`, `gambut-history/`)
-   - `.agents/skills/twilight-parchment-docu/SKILL.md` — 2D Atmospheric Diorama Documentary (`remotion/videos/human-fire/`, `gmni-history/`)
+   - `.agents/skills/twilight-parchment-docu/SKILL.md` — 2D Illustrated Documentary Engine (`remotion/lib/illustrated-docu/`, `remotion/videos/human-ritual/`, `human-fire/`, `gmni-history/`)
    - `.agents/skills/earth-24h-celestial-docu/SKILL.md` — 24-Hour Celestial Clock & Deep-Time Diorama (`remotion/videos/earth-24h/`)
    - `.agents/skills/cosmic-vfx-explainer/SKILL.md` — First-Person Astrophysics GLSL Shader & Visor POV (`remotion/videos/black-hole/`)
    - `.agents/skills/cartoon-3d-short/SKILL.md` — 2D Stickman / Bean-Head in 3D World (`remotion/videos/bridge/`, `cnut/`, `kakarut/`)
    - `.agents/skills/ipm-premium-documentary-studio/SKILL.md` — Archival Woodcut/Gouache & Animated `d3-geo` Cartography (`ipm-chronicles/`, `remotion/videos/historical-diorama/`)
    - `.agents/skills/saas-product-promo/SKILL.md` — SaaS & App Launch Videos (`remotion/compositions/ZAutomationLaunch.tsx`)
+   - `.agents/skills/dual-agent-comedy-promo/SKILL.md` — Bespoke Storyboard-First 3D Dual-Agent Comedy & Product Showcase (`remotion/lib/cinematic-3d-kit/`, `remotion/videos/claude-animasi-promo/`)
+   - `.agents/skills/anthropology-explanation/SKILL.md` — Human Odyssey Filmic 2D Pure-Code Documentary (`scripts/anthropology_engine/`, `remotion/lib/anthropology-explanation/`)
+   - `.agents/skills/galeri-motion-toon/SKILL.md` — 3D Cel-Toon Ink-Outline Cartoon (`remotion/lib/cel-toon-3d/`, `remotion/videos/doomscrolling-ep02/`)
+   - `.agents/skills/galeri-motion-characterflow/SKILL.md` — 3D Soft-Vinyl / Toy-Clay Character Storytelling
+   - `.agents/skills/galeri-motion-worldforge/SKILL.md` — 3D Architectural Living-City Documentary (`remotion/lib/worldforge-3d/`, `remotion/videos/korupsi-kumuh-ep03/`)
+   - `.agents/skills/nalar-pelajar-series/SKILL.md` — Nalar Pelajar 3D Living-Clay Drama Series (`remotion/videos/ipm-nalar-pelajar/`)
+   - `.agents/skills/series-evolusi/SKILL.md` — 100% Pure-Code 3D Anatomical X-Ray, B-Mode Ultrasound, `d3-geo` Bioluminescent Maps & 3D Double-Helix DNA Human Evolution Series (`remotion/lib/series-evolusi/`, `scripts/evolusi_engine/`, `remotion/videos/ep02-sherpa-himalaya/`, `remotion/videos/ep03-manusia-berbulu/`)
 
 2. **Mode Orang Awam (1-Prompt Autonomous Execution)**:
    - Jika user hanya memberikan topik + pilihan style, baca `SKILL.md` terkait + `.agents/skills/brutal-storyteller/SKILL.md`, lalu eksekusi seluruh pipeline (naskah -> VO & SFX -> kode 2D/3D -> QA Contact Sheet -> render MP4) tanpa menyuruh user menulis kode manual.

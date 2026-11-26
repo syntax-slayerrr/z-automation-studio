@@ -3,7 +3,7 @@
 Selamat datang di **Z-Automation Studio**!
 Kamu **tidak perlu bisa koding** (tidak perlu mengerti React, Three.js, maupun FFmpeg) untuk membuat video animasi edukasi, sejarah, sains, atau promosi produk sekelas studio profesional.
 
-Seluruh "resep rahasia" pembuatan video sudah dibungkus ke dalam **8 Skill AI Otomatis** di folder `.agents/skills/`. Kamu cukup membuka repository ini di **AI Agent favoritmu** (**Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, atau **Codex**), lalu **Copy-Paste 1 Kalimat Prompt** di bawah!
+Seluruh "resep rahasia" pembuatan video sudah dibungkus ke dalam **9 Skill AI Otomatis** di folder `.agents/skills/`. Kamu cukup membuka repository ini di **AI Agent favoritmu** (**Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, atau **Codex**), lalu **Copy-Paste 1 Kalimat Prompt** di bawah!
 
 ---
 
@@ -100,6 +100,16 @@ Salin salah satu prompt di bawah ini, ganti bagian **`[TOPIK KAMU]`**, lalu kiri
 ### 8. Gaya Promo Produk / Aplikasi / SaaS (`saas-product-promo`)
 > **Prompt Siap Pakai:**
 > `"Gunakan skill saas-product-promo untuk membuat video peluncuran aplikasi [Nama Aplikasi Kamu] dengan sub-gaya [Clean UI Demo / Continuous Workflow / High-Energy 3D Hype Reel]. Kerjakan otomatis sampai MP4 selesai."`
+
+---
+
+### 9. Gaya Komedi Dialog 2 Agent 3D (`dual-agent-comedy-promo` v2.0 — Storyboard-First Anti-Template!)
+> **Prompt Siap Pakai:**
+> `"Gunakan skill dual-agent-comedy-promo untuk membuat video komedi 3D Full HD 1080x1920 menampilkan Hermes & OpenClaw membahas [Topik / Website / Produk Kamu]. Buat dulu storyboard uniknya (struktur scene, variasi sudut kamera OTS/Low/High/Insert, dan prop 3D khusus topik ini), lalu kerjakan otomatis sampai audio ElevenLabs -14.5 LUFS, QA semua shot, dan MP4 final."`
+
+- **Contoh yang sudah jadi di studio ini**:
+  - `claude-animasi-promo/` (*"Masih Susah Bikin Animasi Pakai Claude? — Promo Eduka & Explorasi z-automation.my.id"*)
+  - `perkembangan-ai-brutal/` (*"Komedi Perkembangan AI yang Brutal"*)
 
 ---
 

@@ -1,4 +1,4 @@
 # Windsurf AI Rules (`.windsurfrules`)
 
-Baca `AGENTS.md` di root repository ini. Seluruh 8 Master Video Style Skills berada di `.agents/skills/<nama-skill>/SKILL.md`.
+Baca `AGENTS.md` di root repository ini. Seluruh 15 Master Video Style Skills berada di `.agents/skills/<nama-skill>/SKILL.md`.
 Ketika pengguna meminta pembuatan video dengan topik apa pun, baca `SKILL.md` yang cocok dan jalankan seluruh tahapan (penulisan naskah `brutal-storyteller`, pembuatan voice-over & SFX, penulisan komponen Remotion 2D/3D, verifikasi visual QA Contact Sheet, hingga render MP4 final) secara otonom tanpa menyuruh pengguna menulis kode sendiri.

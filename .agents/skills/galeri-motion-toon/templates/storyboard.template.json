@@ -1,0 +1,76 @@
+{
+  "skill": "galeri-motion-toon",
+  "slug": "contoh-topik-baru",
+  "outputMp4": "videos/contoh_topik_baru_toon3d.mp4",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 90
+  },
+  "audio": {
+    "voiceProvider": "elevenlabs",
+    "model": "eleven_v4",
+    "voiceName": "Liam",
+    "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+    "tempo": 1.22,
+    "targetLufs": -14.6,
+    "musicActs": [
+      "Act 1: Upbeat playful / nocturnal pulse",
+      "Act 2: Driving rhythmic tension",
+      "Act 3: Bright warm acoustic resolution"
+    ]
+  },
+  "intro": {
+    "durationSec": 3.0,
+    "bannerTitle": "JUDUL SINGKAT ATAS",
+    "bannerIcon": "🔥",
+    "subtitle": "Subjudul singkat maksimal 10 kata",
+    "credits": ["Anggota 1", "Anggota 2", "Anggota 3"]
+  },
+  "cast": [
+    {
+      "id": "protagonist",
+      "name": "Tokoh Utama",
+      "hairStyle": "messy_short",
+      "garmentStyle": "hoodie",
+      "shirtColor": "#2563EB",
+      "glasses": "none"
+    },
+    {
+      "id": "expert_figure",
+      "name": "Tokoh Berpengaruh (Opsional)",
+      "hairStyle": "skinner_1957",
+      "garmentStyle": "skinner_tweed",
+      "shirtColor": "#33394D",
+      "glasses": "round_1957"
+    }
+  ],
+  "segments": [
+    {
+      "number": 1,
+      "bannerBg": "#146B3A",
+      "pillPrefix": "Tipe pertama yang bikin ",
+      "pillHighlight": "geleng-geleng",
+      "pillSuffix": " kepala",
+      "world": "sunny_street_or_room",
+      "shots": [
+        {
+          "shotId": "SH01",
+          "cue": "s1_hook",
+          "camera": "Medium CU (z=2.3m, lookAt.y=1.55)",
+          "expression": "shocked",
+          "comicBubble": {
+            "variant": "speech",
+            "text": "KOK BISA?!"
+          },
+          "sfx": "sfx_comic_pop.mp3"
+        }
+      ]
+    }
+  ],
+  "finale": {
+    "headline": "KALIMAT PENUTUP TEGAS.",
+    "ctaPill": "Pesan Utama · Aksi Nyata"
+  }
+}

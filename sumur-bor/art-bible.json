@@ -1,0 +1,27 @@
+{
+  "project": {
+    "slug": "sumur-bor",
+    "compositionId": "SumurBorShort",
+    "title": "BEDAH: SUMUR BOR",
+    "subtitle": "Bagaimana manusia menemukan air di bawah tanah?",
+    "style": "3d-cutaway-explainer V7 Upgraded PBR Lighting & Shadows (2048px PCF + 512x256 PMREM HDRI + Dual-Viewport Split-Screen)",
+    "resolution": { "width": 1080, "height": 1920 },
+    "fps": 30,
+    "targetDurationSec": "120-130"
+  },
+  "lightingUpgrades": {
+    "shadowMapSize": [2048, 2048],
+    "shadowFrustum": "Dynamic tight ±6.2m following active focal point",
+    "pmremHdri": "512x256 synthetic equirectangular sky+sun+ground bounce",
+    "undergroundCutawayLights": "Dedicated cool-teal aquifer caustic fill + warm metallic bit/pipe rim light",
+    "contactShadows": "Soft radial AO decals beneath every character foot, bucket, house, rig outrigger, lab bottle, and water tank"
+  },
+  "scientificAccuracyRules": [
+    "Aquifer is depicted STRICTLY as porous saturated sand/gravel and fractured rock interstices — NEVER an empty underground river cave.",
+    "Geophysical survey visualizes interpreted resistivity lines & subsurface layers — NEVER a magical direct X-ray water camera.",
+    "Drilling depth meter shows progressive relative depth indicator — NO universal fixed depth number.",
+    "Well construction keeps ONE consistent vertical borehole cross-section for Casing, Screen, Gravel Pack, and Sanitary Seal.",
+    "Water clearing during development is explicitly NOT portrayed as proof of drinking safety — laboratory parameter testing (pH, TDS, Kekeruhan, Mikrobiologi) follows.",
+    "Closing emphasizes sustainable extraction vs rainfall recharge balance."
+  ]
+}

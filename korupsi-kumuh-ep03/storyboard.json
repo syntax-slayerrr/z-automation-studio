@@ -1,0 +1,66 @@
+{
+  "project": "korupsi-kumuh-ep03",
+  "skill": "galeri-motion-characterflow",
+  "title": "Jejak Uang yang Hilang: Dampak Korupsi terhadap Kawasan Kumuh & Upaya Mengatasinya",
+  "group": {
+    "name": "Kelompok 3",
+    "members": ["Ica", "Mirza", "Thalita", "Zayyanah", "Aul", "Furqan", "Raihan"]
+  },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 240,
+    "outputMp4": "videos/kelompok3_korupsi_kumuh_charflow.mp4"
+  },
+  "voice": {
+    "provider": "elevenlabs",
+    "model": "eleven_v4",
+    "speaker": "Sarah",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "languageCode": "id",
+    "tempo": 1.05
+  },
+  "styleDna": {
+    "rendering": "Soft-Vinyl / Toy-Clay PBR (ACESFilmicToneMapping, ZERO black outlines, ZERO gouache bump, ZERO EffectComposer)",
+    "lightingArc": [
+      "Warm Tungsten Dawn (Intro/SH00)",
+      "Cool Overcast & Moonlight Indigo (SC01-SC04)",
+      "Crimson Storm & Health Overload (SC05-SC06)",
+      "Calm Blue Breathing Reset (SC07)",
+      "Warm Golden Lamp & Macro POV Journaling (SC08)",
+      "Golden Sunrise Full-Circle Mirror Ending 05:00 -> 06:00 (SC09)"
+    ],
+    "subtitles": "Minimalist Adaptive Frosted-Glass Pill (top/lower smart zone + warm gold #FACC15 keywords)"
+  },
+  "influentialFigures": [
+    {
+      "name": "Amartya Sen",
+      "scene": 4,
+      "cue": "s4_amartya",
+      "role": "Ekonom Peraih Nobel — Hak Dasar Air Bersih, Sanitasi & Lingkungan Layak"
+    },
+    {
+      "name": "Mohammad Hatta (Bung Hatta)",
+      "scene": 7,
+      "cue": "s7_hatta",
+      "role": "Proklamator & Teladan Integritas Antikorupsi"
+    }
+  ],
+  "coverageChecklist": {
+    "dampak": [
+      "1. Pembangunan terhambat (Scene 02)",
+      "2. Sanitasi buruk (Scene 03)",
+      "3. Kurangnya air bersih (Scene 03)",
+      "4. Kesenjangan sosial (Scene 04)",
+      "5. Risiko banjir (Scene 05)",
+      "6. Kesehatan terganggu (Scene 06)"
+    ],
+    "upaya": [
+      "1. Mengawasi anggaran pembangunan (Scene 08 - POV Menulis)",
+      "2. Memberikan hukuman kepada pelaku korupsi (Scene 08 - Palu Hakim 3D)",
+      "3. Melibatkan masyarakat dalam pengawasan (Scene 08 - Lingkaran Warga 3D)",
+      "4. Memastikan bantuan tepat sasaran (Scene 08 - Kotak Bantuan + POV Centang)"
+    ]
+  }
+}

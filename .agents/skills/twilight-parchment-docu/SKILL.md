@@ -1,85 +1,79 @@
 ---
 name: twilight-parchment-docu
 description: >-
-  Produce a 100% pure-code 2D cinematic documentary short (9:16 vertical, 60-120s,
-  30 fps, Remotion + SVG rigging + procedural lighting/shadows) in the signature
-  Twilight Parchment Documentary style adapted from Earth 24 Hours and proven on
-  "Ketika Manusia Mengenal Api" (human-fire/). Features deep plum-indigo to warm
-  amber-gold lighting (zero #000/#fff), 5-layer depth parallax, articulated 2D
-  SVG character rigs with dynamic key-light rim highlights and trembling cast
-  shadows, glowing serif chapter headers, hand-torn deckle-edge parchment karaoke
-  subtitle cards, natural-tempo ElevenLabs eleven_v4 Indonesian narration with
-  pronunciation verification, bespoke ElevenLabs Sound-V3 + CC0 foley + licensed
-  documentary score mastered to -14.5 LUFS. Use whenever the user asks for a
-  documentary/educational 2D video in the "dipadatkan 24 jam" style, "seperti
-  Ketika Manusia Mengenal Api", "style twilight parchment / diorama 2D", or
-  provides a multi-scene script/storyboard wanting this visual and audio craft
-  for a new topic (never copying the 24-hour clock dial unless requested).
+  Illustrated Documentary Animation Engine (v2.0) for Anthropology & Human History,
+  Evolution & Natural History, and Biology & Human Science (9:16 vertical 1080x1920 /
+  720x1280 or 16:9 landscape 1920x1080, 30 fps, Remotion + Hybrid Python Painterly
+  Gouache Engine + Expressive Scientific Vector Illustration Kits). Combines the
+  tactile FBM gouache paper mottling, volumetric light shafts, and paper-cut shadow-box
+  depth of "Sejarah Bumi Dipadatkan Jadi 24 Jam" (earth-24h/src/painterly_fx.py) with
+  expressive colored illustrated characters (faces, eyes, emotions, era outfits),
+  scientific cross-sections & diagrams (Kurzgesagt × Kok Bisa? clarity), shot-level
+  visual storytelling (micro-to-macro zoom, cross-section reveal, morphing, before-after
+  split, match-cut), ElevenLabs eleven_v4 Indonesian narration with pronunciation
+  verification, and -14.5 LUFS broadcast sound design. Also supports legacy
+  "twilight-silhouette" mode for backward compatibility.
 ---
 
-# Twilight Parchment Documentary (2D Pure-Code Pipeline)
+# Illustrated Documentary Animation Engine (`twilight-parchment-docu` v2.0)
+*(Specialized for: **Sejarah Antropologi, Evolusi, dan Biologi**)*
 
-## Quickstart untuk Pemula / Orang Awam (1-Prompt Mode)
-Pengguna awam cukup mengetik 1 kalimat di AI agent:
-> *"Buatkan video gaya **Twilight Parchment Documentary (Ketika Manusia Mengenal Api / Sejarah GMNI)** tentang **[Bagaimana Manusia Purba Menemukan Roda / Sejarah Kongres Sumpah Pemuda 1928]**"*
+## Quickstart (1-Prompt atau Storyboard Lengkap)
+Ketika pengguna meminta pembuatan video dokumenter edukasi tentang **Antropologi / Sejarah Manusia**, **Evolusi / Sejarah Alam**, atau **Biologi / Neurosains / Sains Manusia** (mis. *"Buatkan animasi dokumenter tentang..."* atau memberikan naskah/storyboard multi-scene):
 
-**Instruksi Otomatis untuk AI Agent:**
-1. Tangani seluruh produksi secara otonom (naskah `brutal-storyteller` → VO ElevenLabs `eleven_v4` dengan pelindung akronim Bahasa Indonesia + 9 SFX `eleven_text_to_sound_v3` + musik `-14.5 LUFS` → 5-layer depth parallax & rig karakter 2D SVG → audit 16-frame contact sheet → render MP4 final).
-2. Gunakan kedua golden reference yang ada di repo ini sesuai nuansa topik:
-   - **Topik Sains/Sejarah Peradaban Purba**: `remotion/videos/human-fire/` & `human-fire/scripts/` (`npm run render:humanfire`)
-   - **Topik Sejarah Modern/Organisasi/Pergerakan Nasional**: `remotion/videos/gmni-history/` & `gmni-history/scripts/` (`npm run render:gmni`)
+1. **Gunakan Mode Default Baru `visualMode: "illustrated-science"`**:
+   - **Tekstur & Kedalaman (`earth-24h` DNA)**: Gunakan engine `scripts/painterly_engine/painterly_fx.py` (`PIL + NumPy + SciPy`) untuk membuat layer latar, awan/kanopi, tanah/strata, dan atmosfer bertekstur **cat gouache (`apply_gouache_mottle`)** dengan **bayangan fisik *paper-cut shadow-box*** dan *volumetric light shafts* — ditambah filter tekstur gouache di Remotion agar permukaan vektor tidak pernah terlihat rata/plastik.
+   - **Karakter Manusia & Hominid Berwarna Ekspresif**: Gunakan `IllustratedCharacterRig` dari `remotion/lib/illustrated-docu/` (memiliki wajah, mata berkedip, arah lirikan pupil, alis ekspresif, mulut, warna kulit hangat, dan pakaian detail sesuai periode sejarah/budaya/modern — **bukan** siluet hitam/ungu tanpa wajah, kecuali pada shot metafora/bayangan spesifik).
+   - **4 Sistem Ilustrasi Ilmiah (`remotion/lib/illustrated-docu/`)**:
+     - **A. Human & Cultural (`AnthropologyIllustrationKit`)**: Rekonstruksi lingkungan sejarah, pakaian/artefak sesuai era, peta migrasi `d3-geo` bertekstur, aktivitas sosial & ritual.
+     - **B. Biological & Anatomical (`BioIllustrationKit`)**: Irisan organ & otak multi-lobus (*cross-section*), jaringan neuron & sinapsis, sel eukariotik berorganel, heliks DNA, mikroorganisme & proses fisiologis.
+     - **C. Evolutionary (`EvolutionIllustrationKit`)**: Perbandingan morfologi/tengkorak antarspesies, perubahan bertahap (*morph*), pohon percabangan evolusi (*cladogram*), timeline geologi & seleksi alam.
+     - **D. Environmental (`EnvironmentIllustrationKit`)**: Rekonstruksi ekosistem, lapisan tanah & fosil stratigrafi, perubahan iklim purba, siklus alam.
+2. **DILARANG Keras Menjadikan `remotion/kurzgesagt/VectorAstro.tsx` Sebagai Acuan**:
+   - File `remotion/kurzgesagt/` adalah kode lama bergaya kartun neon kasar yang **tidak** merepresentasikan Kurzgesagt maupun Kok Bisa?. Selalu mengacu pada tekstur `earth-24h` (`f_60.png`, `f_270.png`, `f_480.png`, `f_780.png`) dan komponen `remotion/lib/illustrated-docu/`.
 
-Proven golden reference in this workspace:
-- **Video & Remotion Engine**: `remotion/videos/human-fire/` (`HumanFireShort`, `fx.tsx`, `PrehistoricHumanRig.tsx`, `PrehistoricLandscape.tsx`, `Scene1..Scene7`, `story.ts`)
-- **Scripts & Locked Art Bible**: `human-fire/art-bible.json`, `human-fire/scripts/build_vo_and_sfx.mjs`, `human-fire/scripts/build_sound_mix.py`, `human-fire/scripts/render_humanfire_chunks.ps1`
-- **Style Inspiration**: Aesthetic DNA from `remotion/videos/earth-24h/` (**style only** — NEVER copy the 24-hour clock/astrolabe dial or literal storyboard unless the topic itself is about a clock).
-
-## Related Skills (Use Together, Do Not Duplicate)
-- `cinematic-vector-animator` — phased gates, easing curves, lighting/depth hierarchy, anti-cheap checklist.
-- `real-sound` / `sound-effects` — licensed audio sourcing, anti-masking mix, loudness QA, credits.
-- `short-form-video` / `caption-animation` — 9:16 safe zones, instant Frame-0 hook presence, word-level karaoke timing.
+---
 
 ## Hard Non-Negotiable Rules
-1. **100% Pure Code Visuals**: Zero AI-generated photos, zero stock cutouts. Everything is code-driven SVG/Canvas/Remotion (or Three.js/GLSL when a scene needs 3D).
-2. **Style Only — No Hardcoded Clock**: Inherit palette, depth parallax, dynamic rim-lighting, serif headers, parchment subtitle cards, and archival grain — build fresh custom scenes tailored 100% to the new topic's storyboard.
-3. **Zero `#000` / `#fff` & Zero Linear Camera**: Colored plum/indigo shadows (`#160a1e`), warm cream highlights (`#ffecc4`), organic easing (`easeInOutCubic` / `easeOutQuint`), continuous subtle camera drift + motivated push/pull + breathing *holds*.
-4. **Natural Documentary Narration Tempo**: Match the script's scene durations (`atempo=1.00..1.15`); NEVER artificially rush voiceover unless the user asks for fast Shorts pacing.
-5. **Pronunciation & Visual Verification Mandatory**: Always inspect rendered stills (`read_file` on contact sheets) AND listen to risky TTS words (`read_file` on MP3 clips) before declaring done.
+1. **Tactile Gouache Texture + Paper-Cut Depth**: Setiap scene wajib memadukan layer tekstur *gouache mottle* + *shadow-box cast shadow* (via `scripts/painterly_engine/painterly_fx.py` dan/atau `GouacheTextureFilter` di `remotion/lib/illustrated-docu/`) dengan elemen animasi SVG/Canvas programatik.
+2. **Zero `#000` / `#fff` & Domain-Specific Palettes**: Jangan mengunci semua topik di satu warna ungu gelap. Pilih palet domain dari `remotion/lib/illustrated-docu/palettes.ts` (*Anthropology Warm Terracotta-Indigo*, *Biology Cellular Teal-Coral-Amber*, *Evolution Savanna Ochre-Emerald*, atau *Neuro/Cosmos Deep Sapphire-Gold*).
+3. **Shot-Level Visual Storytelling (Anti-Monoton)**:
+   - Jangan menjadikan 1 scene = 1 gambar statis dengan *fade* berulang.
+   - Pecah setiap scene menjadi **2–4 shot dinamis** sesuai perubahan informasi menggunakan teknik bervariasi: *cross-section reveal*, *micro-to-macro scale zoom*, *before-and-after split comparison*, *exploded view*, *morphing*, *tracking parallax*, dan *animated diagram callouts* (`references/storytelling-and-shots.md`).
+4. **Kontinuitas Karakter & Akurasi Ilmiah Natural**:
+   - Kunci karakter (`characterId`, proporsi, fitur wajah, pakaian, palet) dan lingkungan (`environmentId`) di `<slug>/art-bible.json` sehingga karakter yang muncul kembali di scene berikutnya tidak berubah desain.
+   - Bedakan secara jujur lewat narasi dan label visual antara **fakta ilmiah mapan**, **temuan eksperimen spesifik** (mis. badge `Studi: Hobson et al., 2017`), dan **rekonstruksi artistik/metafora visual** — tanpa perlu birokrasi file CSV yang kaku.
+5. **Audio-First Narration, Pronunciation Shield & `-14.5 LUFS` Master**:
+   - Ikuti [`references/audio-and-pronunciation.md`](./references/audio-and-pronunciation.md): ElevenLabs `eleven_v4` (`Brian`), tempo dokumenter natural (`1.10..1.18`), pelindung akronim Bahasa Indonesia (`applyTextNormalization: "off"` + wajib dengar langsung via `read_file` pada MP3), SFX `eleven_text_to_sound_v3` + skor musik (Oppenheimer-style chamber strings / Kurzgesagt synth pulse / Kok Bisa? acoustic wonder) ter-master di **`-14.5 LUFS`** Stereo & Mono.
+
+---
 
 ## End-to-End Production Workflow
 
-### Phase 0 — Art Bible & Project Scaffold
-1. Copy [`templates/art-bible.template.json`](./templates/art-bible.template.json) to `<topic-slug>/art-bible.json`, adapt dominant light sources & scene palette ramps for the new topic, and lock it with the user (confirm aspect ratio `9:16` `720×1280` vs `16:9`, parchment card vs floating caption, and narrator voice).
-2. Read [`references/style-bible.md`](./references/style-bible.md) before designing any scene or character rig.
+### Phase 0 — Art Bible, Domain Palette & Shot Plan
+1. Baca [`references/style-bible.md`](./references/style-bible.md) dan [`references/storytelling-and-shots.md`](./references/storytelling-and-shots.md).
+2. Salin [`templates/art-bible.template.json`](./templates/art-bible.template.json) ke `<slug>/art-bible.json`. Tetapkan:
+   - `visualMode`: `"illustrated-science"`
+   - `domain`: `"anthropology" | "evolution" | "biology" | "hybrid"`
+   - Daftar `characters` (ID, pakaian era, palet, ekspresi) & `environments` (ID, palet langit/tanah, sumber cahaya)
+   - Rencana **Shot Breakdown per Scene** (memastikan variasi teknik visual & kamera).
 
-### Phase 1 — Audio-First Voiceover, Bespoke SFX & Broadcast Mix
-Follow [`references/audio-and-pronunciation.md`](./references/audio-and-pronunciation.md):
-1. Copy `human-fire/scripts/build_vo_and_sfx.mjs` → `<topic-slug>/scripts/build_vo_and_sfx.mjs`.
-   - Keep the user's script verbatim with inline ElevenLabs `eleven_v4` acting tags (`[calm]`, `[thoughtful]`, `[warm]`, `[serious tone]`, `[resonant]`, `[quietly]`) and `[[cue_name]]` anchors mapped to every storyboard beat.
-   - Protect Indonesian words that collide with English acronyms (`Api`, `Ai`, `Id`, `It`, `Os`, `Ui`, `Ir`, etc.) by sending lowercase + `applyTextNormalization: "off"` in `ttsText` while preserving proper capitalization in `displayTokens`.
-   - Run `node --env-file=.env <topic-slug>/scripts/build_vo_and_sfx.mjs` to generate cached VO, 8–10 bespoke `eleven_text_to_sound_v3` SFX, `alignment.json`, and typed `remotion/videos/<topic-slug>/story.ts`.
-   - **Audio Spot-Check Gate**: Listen directly to any sensitive beats via `read_file` on `<topic-slug>/audio/vo_cache/beat_*.mp3` (and verify word durations in `alignment.json`) so zero mispronunciations slip through!
-2. Copy `human-fire/scripts/build_sound_mix.py` → `<topic-slug>/scripts/build_sound_mix.py`.
-   - Pick a commercial-safe Mixkit Free Stock Music track matching the topic's mood, verify its license, wire frame-locked bespoke SFX + CC0 foley accents + multi-act volume contour + vocal pocket EQ + sidechain ducking + two-pass linear `loudnorm` (`-14.5 LUFS`, True Peak `≤ -1.9 dBFS`).
-   - Run `python <topic-slug>/scripts/build_sound_mix.py` → outputs `public/<topic-slug>/audio_master.m4a`, `<topic-slug>/out/audio_qa_sheet.png`, `CREDITS.txt`, and `SOUND.md`. Verify stereo AND mono `ebur128` match cleanly.
+### Phase 1 — Audio-First Voiceover, Score & Broadcast Mix
+1. Sintesis VO ElevenLabs `eleven_v4` + `alignment.json` + `remotion/videos/<slug>/story.ts` + 9 SFX `eleven_text_to_sound_v3`.
+2. **Audio Spot-Check Gate**: Dengarkan langsung (`read_file`) setiap beat yang memuat istilah ilmiah/biologi/antropologi.
+3. Bangun master audio (`public/<slug>/audio_master.m4a`, `-14.5 LUFS` Stereo & Mono) + `audio_qa_sheet.png`.
 
-### Phase 2 — Vertical Slice & Character Rig Gate (Scenes 1–2 First!)
-1. Reuse/adapt the core visual engine from `remotion/videos/human-fire/fx.tsx` (`VolumetricFire2D` / custom procedural light FX, `AmbientEmbersOverlay`, `ChapterHeader`, `ParchmentSubtitleCard`, `CinematicGradeOverlay`) into `remotion/videos/<topic-slug>/fx.tsx`.
-2. Build consistent articulated 2D character rig(s) modeled on `PrehistoricHumanRig.tsx` (grounded at `(0, 0)`, tapered Bezier limbs, seamless joint pivots, breathing + 5-frame head-lag, pose blending, dynamic light-facing rim highlights, trembling cast shadows).
-3. Build **only Scenes 1 & 2** first, register the composition in `remotion/Root.tsx`, pre-bundle once, render **4–5 vertical-slice stills**, and visually inspect via `read_file`.
-   - Check squint test, organic non-geometric shapes (no flat flame bottoms, no pill clouds, no stiff triangle trees), anatomical limb/prop angles, safe zones, and rim-light contrast. Fix foundation issues here before building remaining scenes!
+### Phase 2 — Hybrid Gouache Layer Build & Vertical Slice Gate (Scenes 1–2)
+1. Jalankan skrip Python `painterly_engine` (`<slug>/scripts/build_painterly_layers.py`) untuk menghasilkan layer latar *gouache mottle* & *shadow-box* (`public/<slug>/layers/*.png`).
+2. Bangun komponen scene memakai `remotion/lib/illustrated-docu/` (`IllustratedCharacterRig`, `BioIllustrationKit`, `EvolutionIllustrationKit`, `AnthropologyIllustrationKit`, `TransitionsAndMotion`).
+3. Render **4–6 vertical-slice stills** (Scenes 1–2) dan audit via `read_file`: pastikan tekstur gouache terasa kaya (setara `earth-24h`), wajah & ekspresi karakter terbaca jelas, dan anatomi/proporsi akurat.
 
-### Phase 3 — Full Scene Production & 16–20 Frame Pre-Flight Audit
-1. Build remaining scenes (Scenes 3–N) with **motivated transitions** (flame/light-wipe, pull-back reveal, match-cut morph, rising particle bridge — never flat abrupt cuts) and a serene closing editorial title card.
-2. Check TypeScript (`npx tsc --noEmit 2>&1 | Select-String "<topic-slug>"` → 0 errors).
-3. Render a **16–20 frame pre-flight contact sheet** covering every major storyboard beat across all scenes and inspect via `read_file`. Fix every physical contact / framing / overlap / timing micro-flaw (e.g., hands touching props, objects clearing flames/subtitles) and verify the fixed stills before final render.
+### Phase 3 — Full Multi-Shot Production & Quality Gate (`≥ 85/100`)
+1. Selesaikan seluruh scene dengan transisi bermotivasi dan visualisasi ilmiah konkret.
+2. Cek TypeScript (`npx tsc --noEmit 2>&1 | Select-String "<slug>"` → `0` error).
+3. Render **16–18 frame Pre-Flight Contact Sheet** mencakup setiap shot utama dan evaluasi dengan **7 Parameter Quality Gate** di [`references/storytelling-and-shots.md`](./references/storytelling-and-shots.md) (Target **`≥ 85/100`**). Perbaiki setiap kekurangan visual sebelum render video penuh.
 
-### Phase 4 — Bulletproof Resumable Chunk Render & Final Broadcast QA
-Follow [`references/render-and-qa.md`](./references/render-and-qa.md):
-1. Copy `human-fire/scripts/render_humanfire_chunks.ps1` → `<topic-slug>/scripts/render_<slug>_chunks.ps1` (pre-bundle ONCE, render ~350–405 frame chunks with 2 auto-retry attempts and `ffprobe` packet count verification, concat + single continuous `H.264 yuv420p bt709` encode + bit-exact `-c:a copy` mux).
-2. Verify **directly on the final exported MP4**:
-   - `ffprobe` metadata (`h264`, `yuv420p`, `bt709`, exact width/height/fps/frame count, `aac 48000 Hz stereo`).
-   - Stereo AND Mono `ffmpeg ebur128=peak=true` (`-14.5 LUFS`, True Peak `≤ -1.9 dBFS`).
-   - Extract 12–15 exact decoded frames via FFmpeg `select=eq(n\,...)` into `<topic-slug>/out/qa_contact_sheet.jpg` and visually inspect via `read_file`.
-   - Spot-listen to any critical pronunciation moments extracted directly from the final MP4 via `read_file`.
-3. Clean temporary `.chunks/`, `.bundle/`, `.tmp/` directories, keeping `<topic-slug>/out/` spotless with the final MP4, `qa_contact_sheet.jpg`, `audio_qa_sheet.png`, `SOUND.md`, and `CREDITS.txt`.
+### Phase 4 — Resumable Chunk Render & Final Broadcast QA
+Ikuti [`references/render-and-qa.md`](./references/render-and-qa.md):
+1. Render dalam chunk ~350–400 frame dengan 2 auto-retry + mux H.264 `bt709` + `-c:a copy`.
+2. Verifikasi langsung pada MP4 final: `ffprobe`, Stereo & Mono `ebur128` (`-14.5 LUFS`), *decoded contact sheet* 15 frame via `read_file`, dan *spot-listen* audio dari MP4 akhir, lalu bersihkan `.chunks/.bundle/.tmp`.

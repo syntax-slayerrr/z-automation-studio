@@ -1,0 +1,178 @@
+{
+  "skill": "galeri-motion-characterflow",
+  "slug": "ipm-nalar-pelajar",
+  "title": "Nalar Pelajar: Wisnu — Berani Bertanya & 5W 1H",
+  "outputMp4": "videos/ipm_nalar_pelajar_wisnu_charflow.mp4",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 118
+  },
+  "audio": {
+    "voiceProvider": "elevenlabs",
+    "model": "eleven_v4",
+    "cast": {
+      "narrator": {
+        "voiceName": "Eric",
+        "voiceId": "cjVigY5qzO86Huf0OWal",
+        "role": "Calm, warm, thoughtful Indonesian storyteller"
+      },
+      "wisnu": {
+        "voiceName": "Liam",
+        "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
+        "role": "Popular charismatic young student protagonist (inner thoughts, 5W+1H check, brave question)"
+      },
+      "moderator": {
+        "voiceName": "Brian",
+        "voiceId": "nPczCjzI2devNBz1zQrb",
+        "role": "Warm authoritative seminar moderator at PC IPM Panawuan (hall PA mic)"
+      }
+    },
+    "targetLufs": -14.5
+  },
+  "protagonist": {
+    "name": "Wisnu",
+    "skinColor": "#C88A62",
+    "hairStyle": "wavy_dark",
+    "shirtColor": "#EAB308",
+    "pantsColor": "#1E293B",
+    "badgeAccent": "Subtle small IPM green-gold pin on chest pocket",
+    "hands": "articulated_5_finger_capsule",
+    "eyelids": "physical_3d_animated"
+  },
+  "fakeNewsProp": {
+    "headline": "VIRAL! JAM SEKOLAH DIPERPANJANG SAMPAI MAGHRIB?",
+    "dateTag": "Diunggah: 14 Okt 2019 (Berita Lama)",
+    "sourceTag": "Sumber: Akun Anonim · Belum Terverifikasi"
+  },
+  "seminarHallProp": {
+    "bannerTitle": "SEMINAR BERPIKIR KRITIS",
+    "bannerOrg": "PC IPM PANAWUAN",
+    "slideTitle": "SESI TANYA JAWAB",
+    "slideMetric": "78% Pelajar Membagikan Berita Tanpa Cek Sumber?"
+  },
+  "closingText": "Nalar Pelajar",
+  "shots": [
+    {
+      "shotId": "SH01",
+      "scene": 1,
+      "set": "bedroom",
+      "cue": "s1_lamp_off",
+      "camera": "High-Angle 3/4 Bedroom -> slow push-in",
+      "lighting": "warm_lamp -> snap_off_moonlight_screen_blue",
+      "action": "Wisnu lying on bed at 23:10, taps bedside tungsten lamp off; smartphone glows blue showing viral headline",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH02",
+      "scene": 2,
+      "set": "bedroom",
+      "cue": "s2_ecu_eyes",
+      "camera": "Sudden Top-Down ECU Face + Thumb-Over-Share Insert",
+      "lighting": "cool_screen_blue",
+      "action": "3D eyelids snap wide reflecting blue news screen; thumb hovers right above BAGIKAN button then freezes",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH03",
+      "scene": 3,
+      "set": "bedroom",
+      "cue": "s3_fear_bubbles",
+      "camera": "Medium Low-Angle Front Sitting on Bed",
+      "lighting": "cool_moonlight_blue",
+      "action": "Wisnu sits up rubbing neck; 3 cyan translucent bubbles appear showing social fear (Takut salah?, Dibilang aneh, Ikut aja)",
+      "subtitleZone": "top"
+    },
+    {
+      "shotId": "SH04",
+      "scene": 4,
+      "set": "bedroom",
+      "cue": "s4_bubbles_100",
+      "camera": "Smooth Pull-Out Wide",
+      "lighting": "dense_frosted_cyan_orbs",
+      "action": "Thought-bubbles explode 1 -> 10 -> 100 rising out of his phone and crowding the bedroom ceiling",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH05",
+      "scene": 5,
+      "set": "bedroom",
+      "cue": "s5_berani",
+      "camera": "Tilted High-Angle Close-In",
+      "lighting": "crimson_anxiety_rim -> steady_focus",
+      "action": "Wisnu covers ears under red panic bubbles, then lowers hands and looks forward firmly at word 'berani'",
+      "subtitleZone": "top"
+    },
+    {
+      "shotId": "SH06",
+      "scene": 6,
+      "set": "bedroom",
+      "cue": "s6_reset_lamp_on",
+      "camera": "Symmetrical Close-Up -> Side OTS Desk Lamp",
+      "lighting": "crimson_to_calm_blue -> warm_lamp_on",
+      "action": "Wisnu closes 3D eyelids to exhale calmly, clicks desk lamp back ON warm, picks up smartphone with calm clarity",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH07",
+      "scene": 7,
+      "set": "bedroom",
+      "cue": "s7_what",
+      "camera": "Medium Front & Over-Shoulder Phone Scroll",
+      "lighting": "warm_lamp_golden_orbs",
+      "action": "Wisnu actively scrolls the fake viral news on phone as 6 golden 5W+1H frosted orbs illuminate sequentially (WHAT, WHO, WHEN, WHERE, WHY, HOW)",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH08",
+      "scene": 8,
+      "set": "bedroom",
+      "cue": "s8_pov_write",
+      "camera": "First-Person Top-Down Macro POV Notebook",
+      "lighting": "warm_focused_desk_light",
+      "action": "Left 5-finger hand holds red spiral notebook (Latihan Kritis · Wisnu); right hand writes live: 1. Jeda 5 detik / 2. Bedah 5W 1H / 3. Siapkan 1 tanya -> closes book decisively",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH09",
+      "scene": 9,
+      "set": "seminar",
+      "cue": "s9_seminar_open",
+      "camera": "Wide Auditorium Push-In -> Stage Moderator Medium -> Audience Reaction to Wisnu",
+      "lighting": "bright_warm_auditorium",
+      "action": "PC IPM Panawuan Seminar Hall packed with 28+ students; Moderator speaks on stage inviting Q&A (mouth & hand animated); audience glances silently; Wisnu eyes slide data & red notebook",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH10",
+      "scene": 10,
+      "set": "seminar",
+      "cue": "s10_inner_battle",
+      "camera": "Dutch-Tilt Tight Push-In on Wisnu + Hand Tremble Framing",
+      "lighting": "tunnel_vision_dark_indigo + pulsing_crimson_rim",
+      "action": "Hall lights dim drastically; pulsing crimson rim synced to heartbeat; red panic bubbles surround Wisnu; 5-finger right hand rises halfway trembling then drops back onto red notebook",
+      "subtitleZone": "top"
+    },
+    {
+      "shotId": "SH11",
+      "scene": 11,
+      "set": "seminar",
+      "cue": "s11_breakthrough",
+      "camera": "Symmetrical ECU Eyelids Shut -> Hero Low-Angle Hand Raised -> Stage Moderator Pointing",
+      "lighting": "crimson_shatter -> calm_blue -> golden_breakthrough",
+      "action": "Wisnu closes 3D eyelids 1s, exhales, snaps eyes open determined; right 5-finger hand shoots high into golden beam; red bubbles vanish; nearby students turn attentively; Moderator smiles & calls on him",
+      "subtitleZone": "lower"
+    },
+    {
+      "shotId": "SH12",
+      "scene": 12,
+      "set": "seminar",
+      "cue": "s12_wisnu_asks",
+      "camera": "Medium Hero Wisnu Standing -> Slow Crane Pull-Back -> Minimalist Closing Title",
+      "lighting": "warm_golden_hall -> deep_indigo_clean_end",
+      "action": "Wisnu stands confidently holding red notebook & mic asking his When+Why critical question; camera pulls back across attentive PC IPM Panawuan hall -> clean closing card 'Nalar Pelajar'",
+      "subtitleZone": "lower"
+    }
+  ]
+}

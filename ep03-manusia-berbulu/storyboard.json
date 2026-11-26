@@ -1,0 +1,50 @@
+{
+  "series": "series-evolusi",
+  "episodeNumber": 3,
+  "slug": "ep03-manusia-berbulu",
+  "compositionId": "Ep03ManusiaBerbuluShort",
+  "title": "Kenapa Manusia Tidak Berbulu Seperti Simpanse, Bonobo & Gorila?",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 70
+  },
+  "biomePalette": "savanna_endurance",
+  "scientificBasis": {
+    "population": "Evolusi Homo sapiens vs Kerabat Kera Besar (Simpanse, Bonobo, Gorila)",
+    "region": "Lembah Rift Afrika Timur (Transisi Hutan Hujan ke Sabana Terbuka)",
+    "mapCenterLonLat": [34.5, 0.5],
+    "mapScale": 1950,
+    "studyReferences": [
+      "Nina Jablonski — Thermoregulation, hairlessness & 10x eccrine sweat glands in Homo erectus (~2 Ma)",
+      "Alan Rogers et al. (Current Anthropology, 2004) — MC1R dark skin pigmentation sweep (~1.2 Ma)",
+      "Tina Lasisi et al. (PNAS, 2023) — Scalp hair solar radiation shield protecting human brain",
+      "Kowalczyk et al. (eLife, 2023) — 62-mammal comparative genomics proving ancestral hair blueprint genes remain intact with deactivated regulatory switches"
+    ],
+    "heroOrgan": "skin_sweat_and_brain",
+    "keyMetric": "10x lebih banyak kelenjar keringat aktif dibanding simpanse",
+    "counterProps": [
+      "Hologram Jaket Bulu Tebal dicoret (✕)",
+      "Hologram Baju & Botol Sunblock dicoret (✕)"
+    ]
+  },
+  "audioSpec": {
+    "narratorVoiceId": "nPczCjzI2devNBz1zQrb",
+    "narratorName": "Brian (Warm Documentary Baritone)",
+    "tempo": 1.13,
+    "musicKey": "A minor",
+    "musicBpmHalfTime": 86.15,
+    "musicOstinatoMaxHz": 480,
+    "sonarPingHz": 2637.8,
+    "targetLufs": -14.3
+  },
+  "sequences": [
+    { "seq": 1, "shots": ["E03-SQ01-SH001", "E03-SQ01-SH002"], "theme": "Great Ape Lineup vs Bare Human Contrast" },
+    { "seq": 2, "shots": ["E03-SQ02-SH003", "E03-SQ02-SH004", "E03-SQ02-SH005"], "theme": "Ancient Rainforest -> Drying Savanna Split & East Africa Map" },
+    { "seq": 3, "shots": ["E03-SQ03-SH006", "E03-SQ03-SH007"], "theme": "Midday Savanna Pursuit & Fur-Jacket Thermal Brain Overheat X-Ray" },
+    { "seq": 4, "shots": ["E03-SQ04-SH008", "E03-SQ04-SH009", "E03-SQ04-SH010"], "theme": "Fur X-Out -> 10x Sweat Diagnostic -> Modern Jogger Cooling -> Scalp Hair Umbrella" },
+    { "seq": 5, "shots": ["E03-SQ05-SH011", "E03-SQ05-SH012"], "theme": "Bare Skin UV Burn -> Melanin Natural Sunscreen -> Shirt & Sunblock X-Out" },
+    { "seq": 6, "shots": ["E03-SQ06-SH013", "E03-SQ06-SH014", "E03-SQ06-SH015"], "theme": "3D DNA Gene Switch OFF -> Macro Goosebumps & Ghost Fur -> Forest vs Savanna Finale" }
+  ]
+}

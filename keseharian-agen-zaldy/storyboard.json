@@ -1,0 +1,907 @@
+{
+  "projectSlug": "keseharian-agen-zaldy",
+  "compositionId": "KeseharianAgenZaldy",
+  "title": "Shift 24 Jam: Keseharian Hermes & OpenClaw Jadi AI Agent Zaldy",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetDurationSec": 75
+  },
+  "directorTreatment": {
+    "premise": "Apa jadinya hidup dua AI agent (Hermes & OpenClaw) selama 24 jam penuh di markas Zaldy—dari brief mendadak jam 02:14 pagi, drama 47 folder ide belum dirender, badai revisi perfeksionis, sampai akhirnya kelar jam 23:58... lalu masuk ide baru lagi.",
+    "characterDynamic": "Role-Reversal & Partner-in-Crime Comedy: Di pembuka justru HERMES yang stres menghadapi brief jam 2 pagi sementara OpenClaw santai ngopi; di tengah mereka adu gengsi (OTS duel) soal 47 ide vs 0% render; di senja mereka kompak jadi duo solid; di penutup keduanya kompak pasrah menghadapi ide baru Zaldy.",
+    "comedyArc": "Cold Open In Medias Res (02:14) -> Adu Gengsi Subuh (05:30) -> Meta-Comedy Badai Revisi Siang (11:00) -> Flow State Senja (17:45) -> Twist Notif 23:58 & Blackout Komedi (ZERO Facepalm!).",
+    "visualMotif": "Siklus waktu 24 jam nyata di luar jendela Kampung Garut (Malam -> Subuh -> Siang -> Senja -> Malam) yang dipasangkan dengan jam 3D berputar & menara kartu tugas holografik yang terus meninggi.",
+    "sceneCount": 5,
+    "antiTemplateNote": "100% lepas dari template lama: hanya 5 babak berbasis jam kerja 24 jam, pembuka dibuka oleh Hermes (bukan OpenClaw lari panik), ZERO api kepala / bola kristal / sticky note kuning / kursi putar / facepalm, 9 tipe sudut kamera berbeda (termasuk High-Angle, OTS dua arah, ECU, Low-Angle Hero, Dutch Tilt, Prop Macro, Crane Orbit), palet kamar Slate-Teal baru, dan baligho luar khusus Markas AI Zaldy."
+  },
+  "worldAndLightingPlan": {
+    "timeSchedule": {
+      "type": "custom_24h_shift",
+      "keyframes": [
+        { "scene": "S1", "clock": "02:14", "preset": "night", "notes": "Malam berbintang pekat di Gunung Guntur, lampu meja hangat & fairy lights menyala." },
+        { "scene": "S2", "clock": "05:30", "preset": "sunrise", "notes": "Matahari subuh jingga-merah muda muncul di bahu Gunung Guntur, kabut lembah tipis." },
+        { "scene": "S3", "clock": "11:00", "preset": "midday", "notes": "Siang terang tajam saat badai notifikasi revisi Zaldy menghantam." },
+        { "scene": "S4", "clock": "17:45", "preset": "sunset", "notes": "Senja keemasan dramatis yang memeluk kedua karakter saat masuk flow state kompak." },
+        { "scene": "S5", "clock": "23:58", "preset": "night", "notes": "Kembali ke malam berbintang + bintang jatuh + baligho lampu sorot menyala terang (loop 24 jam)." }
+      ]
+    },
+    "lightingMotivation": "Pencahayaan berubah secara fisikal mengikuti jam dinding 3D dari pukul 02:14 sampai 23:58; cahaya layar laptop berganti temperatur (biru malam -> merah peringatan revisi -> emas flow state -> merah notif 23:58)."
+  },
+  "setDressingPlan": {
+    "baligho": {
+      "visible": true,
+      "theme": "Baligho bambu komedi khas Garut bertuliskan: 'MARKAS AI ZALDY' | 'SHIFT 24 JAM NONSTOP' | 'HERMES & OPENCLAW ON DUTY' | 'KOPI GRATIS • TIDUR OPSIONAL'. Lampu sorotnya menyala saat S1 malam dan menyala terang lagi pada twist S5 (23:58)."
+    },
+    "roomPalette": {
+      "wallColor": "#16202E",
+      "wallEmissive": "#0B131E",
+      "revealColor": "#243449",
+      "curtainA": "#1F3344",
+      "curtainB": "#132230",
+      "deskWood": "#2E2019",
+      "deskLedColor": "#F59E0B",
+      "fairyLightColor": "#FFE0A3",
+      "showFairyLights": true
+    },
+    "corkboard": {
+      "visible": true,
+      "content": "Papan Jadwal Shift Markas Zaldy (512x384): Header 'JADWAL SHIFT AGEN ZALDY' dengan 5 kartu tertempel berurutan: '02:00 BRIEF', '06:00 IDE', '11:00 REVISI', '17:45 RENDER', '23:58 IDE BARU?!'."
+    },
+    "sideMonitor": {
+      "visible": true,
+      "content": "Dashboard Live Daemon (384x600): 'ZALDY_AGENT_OS v2.0' — HERMES_CPU: 98%, OPENCLAW_IDEAS: 47, RENDER_DONE: 0% -> 100%, KOPI_TERSISA: 0%, STATUS_TIDUR: DILARANG."
+    },
+    "defaultPropsToggle": {
+      "showServerRack": true,
+      "showDeskLamp": true,
+      "showPlant": true,
+      "showCactus": false,
+      "showBooks": true,
+      "showLidMug": false,
+      "showLidDuck": false
+    },
+    "zeroLeftoverCheck": "100% bebas sisa aset video lama: ZERO 'Z-AUTOMATION EDUKA/EXPLORASI', ZERO 'SKILL.MD', ZERO kartu 'NOIR/PROMPT/EDUKA', ZERO bebek kuning & mug bawaan, ZERO api kepala / bola kristal / facepalm."
+  },
+  "customPropsPlan": [
+    {
+      "propId": "prop_spinning_clock",
+      "description": "Jam 3D Pixar bergaya meja/dinding melayang dengan bingkai kuningan & jarum jam-menit 3D yang berputar cepat saat transisi waktu 02:14 -> 05:30 -> 11:00 -> 17:45 -> 23:58.",
+      "usedInShots": ["SH01", "SH04", "SH08", "SH11", "SH14"]
+    },
+    {
+      "propId": "prop_steaming_coffee",
+      "description": "Cangkir kopi keramik 3D bertuliskan 'AGEN ZALDY' lengkap dengan 5 cincin/gumpalan uap putih 3D yang melayang naik lembut (di sisi OpenClaw saat santai di S1, kosong/miring saat panik di S5).",
+      "usedInShots": ["SH01", "SH02", "SH13", "SH15"]
+    },
+    {
+      "propId": "prop_task_tower",
+      "description": "Menara 3D tumpukan kartu tugas holografik bertingkat ('BRIEF 02:14', 'OTS CAMERA', 'BALIGHO CUSTOM', 'SET KAMAR', 'PROP 3D BARU') yang jatuh menumpuk satu per satu dan bergoyang saat badai revisi S3.",
+      "usedInShots": ["SH08", "SH09", "SH10"]
+    },
+    {
+      "propId": "prop_acc_stamp_badge",
+      "description": "Medali/lencana stempel 3D emas-emerald berputar bertuliskan 'SIAP ACC ZALDY ✓' yang melayang gagah di atas laptop saat S4 selesai 100%, lalu tiba-tiba miring/padam saat notif 23:58 masuk!",
+      "usedInShots": ["SH12", "SH13", "SH14"]
+    }
+  ],
+  "musicAndAudioPlan": {
+    "musicMood": "Lofi-comedy nocturnal groove (S1) -> bouncy playful acoustic-beat (S2-S3) -> warm triumphant indie-groove (S4) -> TOTAL DEAD-SILENCE DROP pada notif 23:58 (S5) -> dry comedic sting penutup.",
+    "silenceDropCues": ["s5_ping"],
+    "bespokeSfx": [
+      {
+        "file": "sfx_late_night_ping.mp3",
+        "triggerCue": "s1_brief",
+        "visualAction": "Chat WhatsApp/Telegram Zaldy jam 02:14 masuk ke layar laptop",
+        "prompt": "Sharp modern chat notification ping echoing softly in a quiet late-night room, clean UI foley, no music"
+      },
+      {
+        "file": "sfx_coffee_sip.mp3",
+        "triggerCue": "s1_oc_chill",
+        "visualAction": "OpenClaw santai menyeruput kopi 3D panas",
+        "prompt": "Short comical cartoon satisfied coffee slurp sip followed by a ceramic mug tap on wood desk, clean foley, no music"
+      },
+      {
+        "file": "sfx_clock_timelapse.mp3",
+        "triggerCue": "s2_proud",
+        "visualAction": "Jarum jam 3D berputar kencang 02:14 -> 05:30 subuh",
+        "prompt": "Fast whimsical mechanical clock ticking accelerating into a smooth magical time-skip whoosh, clean animation SFX, no music"
+      },
+      {
+        "file": "sfx_folder_pop.mp3",
+        "triggerCue": "s2_folders",
+        "visualAction": "47 ikon folder ide bermunculan di layar laptop",
+        "prompt": "Rapid cheerful cascade of wooden cartoon pop bubbles and folder clicks bursting rapidly, crisp comedy UI SFX, no music"
+      },
+      {
+        "file": "sfx_cricket_deadpan.mp3",
+        "triggerCue": "s2_zero",
+        "visualAction": "ECU mata Hermes blinkless mendengar 0% selesai render",
+        "prompt": "Dry comedic sudden silence accent with one tiny awkward wooden rimshot tap, crisp studio comedy SFX, no music"
+      },
+      {
+        "file": "sfx_revisi_stack.mp3",
+        "triggerCue": "s3_list",
+        "visualAction": "Kartu tugas 3D jatuh bertumpuk membentuk menara goyang",
+        "prompt": "Four punchy rhythmic heavy stack thuds ascending in pitch as digital cards pile up with a wobbly cartoon rattle, clean SFX, no music"
+      },
+      {
+        "file": "sfx_sizzle_overheat.mp3",
+        "triggerCue": "s3_gorengan",
+        "visualAction": "Kepala OpenClaw berasap overheat seperti gorengan",
+        "prompt": "Funny hot frying pan oil sizzle hiss paired with a tiny cartoon steam kettle whistle, crisp comedy foley, no music"
+      },
+      {
+        "file": "sfx_lockin_chime.mp3",
+        "triggerCue": "s4_deal",
+        "visualAction": "Hermes & OpenClaw masuk flow state kompak + progres 100% + medali ACC muncul",
+        "prompt": "Satisfying crisp futuristic power-up chime and bright triumphant golden badge shimmer ding, clean motion graphics SFX, no music"
+      },
+      {
+        "file": "sfx_twist_ping_drop.mp3",
+        "triggerCue": "s5_ping",
+        "visualAction": "Notif jam 23:58 dari Zaldy memotong kedamaian secara brutal",
+        "prompt": "Innocent cheerful chat message ding immediately followed by a sharp dramatic bass drop record halt, clean comedy twist SFX, no music"
+      },
+      {
+        "file": "sfx_comedy_button_sting.mp3",
+        "triggerCue": "s5_kopi",
+        "visualAction": "OpenClaw teriak 'Kopi mana kopi?!' di wide pull-back",
+        "prompt": "Short punchy playful jazz pizzicato and brass comedy ending button sting, crisp sitcom outro"
+      }
+    ]
+  },
+  "shots": [
+    {
+      "shotId": "SH01",
+      "sceneId": "S1",
+      "label": "Cold Open High-Angle — Jam 02:14 Hermes Lembur",
+      "cueStart": "s1_open",
+      "cueEnd": "s1_oc_chill",
+      "dialogueSummary": "HERMES: 'Jam dua lewat empat belas pagi. Dan Zaldy baru kirim satu kalimat yang paling ditakuti semua AI.'",
+      "comedyPurpose": "hook",
+      "camera": {
+        "shotType": "C09_HighAngleChaos",
+        "fromPos": [0.85, 8.25, 9.6],
+        "toPos": [0.45, 7.85, 8.8],
+        "fromLook": [0.15, 5.05, 0.25],
+        "toLook": [0.35, 5.20, 0.10],
+        "fromFov": 41,
+        "toFov": 39,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Sudut tinggi menukik ke bawah di tengah malam langsung menenggelamkan Hermes dalam suasana lembur jam 02:14 pagi."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.35, 5.17, -0.25],
+          "rotY": 0.28,
+          "pose": "lounge_chill",
+          "emotion": "bright",
+          "eyeline": "santai melihat cangkir kopi 3D lalu melirik Hermes",
+          "actingBeat": "santai goyang pelan di samping cangkir kopi panas"
+        },
+        "hermes": {
+          "pos": [1.28, 5.17, -0.25],
+          "rotY": -0.18,
+          "pose": "stand_talk",
+          "emotion": "serious",
+          "eyeline": "menatap lelah ke kamera lalu ke layar laptop",
+          "actingBeat": "menghela napas berat sambil menunjuk ke jam 02:14 & layar"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s1_midnight_chat",
+        "activeProps": ["prop_spinning_clock", "prop_steaming_coffee"],
+        "hudCallout": "02:14 WIB // SHIFT MALAM"
+      },
+      "lighting": {
+        "mode": "warm_lamp",
+        "notes": "Malam berbintang, desk lamp & fairy lights hangat kontras dengan glow biru layar chat."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_late_night_ping.mp3"
+    },
+    {
+      "shotId": "SH02",
+      "sceneId": "S1",
+      "label": "OpenClaw Santai Ngopi 3/4 MCU",
+      "cueStart": "s1_oc_chill",
+      "cueEnd": "s1_brief",
+      "dialogueSummary": "OPENCLAW: 'Apaan? Server mati?'",
+      "comedyPurpose": "contrast_setup",
+      "camera": {
+        "shotType": "C06_MCU_OpenClaw",
+        "fromPos": [-0.68, 6.32, 6.05],
+        "toPos": [-0.62, 6.28, 5.75],
+        "fromLook": [-1.32, 6.18, -0.25],
+        "toLook": [-1.32, 6.18, -0.25],
+        "fromFov": 33,
+        "toFov": 32,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Kontras lucu: memotong dekat ke OpenClaw yang super santai di dekat cangkir kopi panas."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.35, 5.17, -0.25],
+          "rotY": 0.34,
+          "pose": "stand_talk",
+          "emotion": "curious",
+          "eyeline": "ke kanan menatap Hermes dengan santai",
+          "actingBeat": "miring kepala santai sambil menunjuk ringan"
+        },
+        "hermes": {
+          "pos": [1.28, 5.17, -0.25],
+          "rotY": -0.35,
+          "pose": "lounge",
+          "emotion": "deadpan_blinkless",
+          "eyeline": "menatap datar ke OpenClaw",
+          "actingBeat": "diam tidak terhibur"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s1_midnight_chat",
+        "activeProps": ["prop_steaming_coffee"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "warm_lamp",
+        "notes": "Highlight hangat pada cangkir kopi 3D & wajah glossy OpenClaw."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_coffee_sip.mp3"
+    },
+    {
+      "shotId": "SH03",
+      "sceneId": "S1",
+      "label": "Tight Laptop Insert — Chat Horor Zaldy 02:14",
+      "cueStart": "s1_brief",
+      "cueEnd": "s2_proud",
+      "dialogueSummary": "HERMES: 'Lebih horor. Tolong bikinin video tiga-D, jangan template, besok pagi gue cek.'",
+      "comedyPurpose": "reveal",
+      "camera": {
+        "shotType": "C11_ScreenInsert",
+        "fromPos": [-0.18, 2.82, 10.95],
+        "toPos": [0.12, 2.74, 10.15],
+        "fromLook": [0.0, 2.55, 0.35],
+        "toLook": [0.0, 2.55, 0.35],
+        "fromFov": 35.5,
+        "toFov": 34.0,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Push-in ke bubble chat Zaldy di layar laptop agar penonton langsung membaca instruksi 1 baris yang bikin agen begadang."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.35, 5.17, -0.25],
+          "rotY": 0.25,
+          "pose": "stand_talk",
+          "emotion": "panic",
+          "eyeline": "melotot ke bawah melihat layar",
+          "actingBeat": "kaget melihat chat Zaldy di tepi atas frame"
+        },
+        "hermes": {
+          "pos": [1.28, 5.17, -0.25],
+          "rotY": -0.25,
+          "pose": "point",
+          "emotion": "serious",
+          "eyeline": "menunjuk ke layar laptop",
+          "actingBeat": "membacakan chat dengan datar & penuh beban"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s1_midnight_chat",
+        "activeProps": ["prop_spinning_clock"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "screen_glow_dominant",
+        "notes": "Layar chat gelap dengan highlight hijau-kuning bubble pesan Zaldy."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_clock_timelapse.mp3"
+    },
+    {
+      "shotId": "SH04",
+      "sceneId": "S2",
+      "label": "OTS Hermes -> OpenClaw (05:30 Subuh — Pamer 47 Ide)",
+      "cueStart": "s2_proud",
+      "cueEnd": "s2_ask_render",
+      "dialogueSummary": "OPENCLAW: 'Tenang, Mes! Gue udah kerja keras dari subuh. Nih, empat puluh tujuh ide konsep baru udah rapi!'",
+      "comedyPurpose": "escalation",
+      "camera": {
+        "shotType": "C05_OTS_HermesToOpenClaw",
+        "fromPos": [2.15, 6.62, 5.25],
+        "toPos": [2.05, 6.56, 4.95],
+        "fromLook": [-1.22, 6.18, -0.25],
+        "toLook": [-1.22, 6.18, -0.25],
+        "fromFov": 35.5,
+        "toFov": 34.5,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Sudut Over-the-Shoulder dari bahu Hermes membingkai siluet skeptis Hermes di foreground kanan sementara OpenClaw pamer penuh semangat."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.42,
+          "pose": "fist_pump",
+          "emotion": "excited",
+          "eyeline": "menatap bangga ke arah Hermes",
+          "actingBeat": "mengepalkan tangan bangga sambil menunjuk layar 47 folder"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.44,
+          "pose": "lounge",
+          "emotion": "eyebrow_raise",
+          "eyeline": "menatap tajam ke OpenClaw",
+          "actingBeat": "diam menyimak, kepala miring penuh kecurigaan"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s2_47_folders",
+        "activeProps": ["prop_spinning_clock"],
+        "hudCallout": "05:30 WIB // SUBUH"
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Transisi Subuh (Sunrise) — cahaya jingga hangat masuk dari jendela belakang Gunung Guntur."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_folder_pop.mp3"
+    },
+    {
+      "shotId": "SH05",
+      "sceneId": "S2",
+      "label": "OTS OpenClaw -> Hermes (Tanya Berapa yang Render)",
+      "cueStart": "s2_ask_render",
+      "cueEnd": "s2_zero",
+      "dialogueSummary": "HERMES: 'Keren. Terus yang udah selesai dirender... berapa?'",
+      "comedyPurpose": "setup_punchline",
+      "camera": {
+        "shotType": "C04_OTS_OpenClawToHermes",
+        "fromPos": [-2.15, 6.60, 5.20],
+        "toPos": [-2.05, 6.56, 4.92],
+        "fromLook": [1.24, 6.22, -0.25],
+        "toLook": [1.24, 6.22, -0.25],
+        "fromFov": 35.5,
+        "toFov": 34.5,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Membalik ke OTS dari bahu OpenClaw untuk membangun tekanan pertanyaan menohok dari Hermes."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.42,
+          "pose": "stand_talk",
+          "emotion": "bright",
+          "eyeline": "ke Hermes, lalu senyumnya mulai luntur di akhir kalimat",
+          "actingBeat": "senyum lebar -> kaku pelan saat dengar kata 'dirender'"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.42,
+          "pose": "detective",
+          "emotion": "eyebrow_raise",
+          "eyeline": "mengunci tatapan ke OpenClaw",
+          "actingBeat": "satu alis terangkat tinggi dengan nada tenang mematikan"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s2_47_folders",
+        "activeProps": [],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Rim light jingga sunrise memisahkan bahu OpenClaw di foreground."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": null
+    },
+    {
+      "shotId": "SH06",
+      "sceneId": "S2",
+      "label": "Low-Angle Hero OpenClaw Membela Diri (0% Render)",
+      "cueStart": "s2_zero",
+      "cueEnd": "s2_folder_roast",
+      "dialogueSummary": "OPENCLAW: 'Eh... nol sih. Tapi judul foldernya bagus-bagus!'",
+      "comedyPurpose": "visual_gag",
+      "camera": {
+        "shotType": "C08_LowAngleHero",
+        "fromPos": [-1.05, 5.02, 5.85],
+        "toPos": [-0.95, 5.06, 5.55],
+        "fromLook": [-1.30, 6.32, -0.25],
+        "toLook": [-1.30, 6.32, -0.25],
+        "fromFov": 37.0,
+        "toFov": 35.5,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Ironi komedi: sudut Low-Angle sok heroik dipakai tepat ketika OpenClaw dengan bangganya mengaku progres 0%."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.30,
+          "pose": "stand_talk",
+          "emotion": "sheepish",
+          "eyeline": "sempat melirik malu lalu mendongak sok bangga di kata 'bagus-bagus!'",
+          "actingBeat": "ragu-ragu -> membusungkan dada di akhir kalimat"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.40,
+          "pose": "lounge",
+          "emotion": "deadpan_blinkless",
+          "eyeline": "ke OpenClaw",
+          "actingBeat": "membeku tanpa kedip"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s2_zero_render",
+        "activeProps": [],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Langit subuh memerah dramatis di belakang OpenClaw menambah efek ironi heroik palsu."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_cricket_deadpan.mp3"
+    },
+    {
+      "shotId": "SH07",
+      "sceneId": "S2",
+      "label": "Extreme Close-Up (ECU) Deadpan Hermes",
+      "cueStart": "s2_folder_roast",
+      "cueEnd": "s3_ping",
+      "dialogueSummary": "HERMES: 'Folder bagus nggak bisa di-upload, Claw.'",
+      "comedyPurpose": "payoff",
+      "camera": {
+        "shotType": "C07_ECU_Punchline",
+        "fromPos": [1.02, 6.38, 4.15],
+        "toPos": [1.04, 6.38, 3.85],
+        "fromLook": [1.32, 6.32, -0.25],
+        "toLook": [1.32, 6.32, -0.25],
+        "fromFov": 27.5,
+        "toFov": 26.5,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Extreme Close-Up mengunci mata deadpan Hermes untuk menampar punchline kering tanpa ampun."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.35,
+          "pose": "stand_talk",
+          "emotion": "innocent",
+          "eyeline": "ke Hermes",
+          "actingBeat": "diam kikuk"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.15,
+          "pose": "lounge",
+          "emotion": "deadpan_blinkless",
+          "eyeline": "lurus dingin ke arah OpenClaw / lensa",
+          "actingBeat": "tanpa kedip, bicara pelan dan menusuk"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s2_zero_render",
+        "activeProps": [],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Cahaya pagi kontras menonjolkan kilap porselen wajah Hermes."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": null
+    },
+    {
+      "shotId": "SH08",
+      "sceneId": "S3",
+      "label": "Master Two-Shot Siang + Menara Tugas 3D (Badai Revisi Zaldy)",
+      "cueStart": "s3_ping",
+      "cueEnd": "s3_list",
+      "dialogueSummary": "OPENCLAW: 'Eh, bunyi notif! Zaldy nge-chat lagi!' HERMES: 'Coba baca.'",
+      "comedyPurpose": "turn",
+      "camera": {
+        "shotType": "C02_MasterTwoShotLaptop",
+        "fromPos": [-0.22, 5.45, 13.45],
+        "toPos": [0.08, 5.25, 12.95],
+        "fromLook": [0.0, 4.25, 0.30],
+        "toLook": [0.0, 4.20, 0.30],
+        "fromFov": 42.5,
+        "toFov": 41.8,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Membuka luas ke Siang terik 11:00 agar penonton melihat transisi waktu, layar laptop penuh notif revisi, dan Menara Tugas 3D mulai turun di tengah!"
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.28,
+          "pose": "present_screen",
+          "emotion": "panic",
+          "eyeline": "terkejut melihat ke layar & menara 3D",
+          "actingBeat": "terlonjak kecil saat bunyi notif masuk"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.28,
+          "pose": "lounge",
+          "emotion": "neutral",
+          "eyeline": "tenang melihat layar laptop",
+          "actingBeat": "mengangguk santai mempersilakan baca"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s3_revisi_chat",
+        "activeProps": ["prop_spinning_clock", "prop_task_tower"],
+        "hudCallout": "11:00 WIB // BADAI REVISI"
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Siang cerah (Midday) di Gunung Guntur & Kampung Garut."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_late_night_ping.mp3"
+    },
+    {
+      "shotId": "SH09",
+      "sceneId": "S3",
+      "label": "Dutch Tilt (+7°) — Daftar Revisi Perfeksionis Menumpuk!",
+      "cueStart": "s3_list",
+      "cueEnd": "s3_perfeksionis",
+      "dialogueSummary": "OPENCLAW: 'Katanya... Mantap, tapi sudut kameranya tambahin O-T-S, baligho di luar ganti, sama ruangan kamarnya sesuaikan naskah.'",
+      "comedyPurpose": "visual_gag",
+      "camera": {
+        "shotType": "C10_DutchTiltChaos",
+        "fromPos": [-0.35, 5.85, 10.6],
+        "toPos": [-0.15, 5.95, 9.9],
+        "fromLook": [-0.25, 5.65, 0.25],
+        "toLook": [0.0, 5.85, 0.25],
+        "fromFov": 37.5,
+        "toFov": 36.0,
+        "rollRad": 0.11,
+        "curve": "linear",
+        "motivation": "Kemiringan Dutch Tilt +6.3° menciptakan rasa kewalahan secara fisik tepat saat kartu tugas 3D menumpuk jadi menara tinggi goyang."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.34,
+          "pose": "stand_talk",
+          "emotion": "frustrated",
+          "eyeline": "mendongak panik mengikuti menara tugas 3D yang makin tinggi",
+          "actingBeat": "lengan terangkat frustrasi setiap kartu baru jatuh menumpuk"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.32,
+          "pose": "nod_proud",
+          "emotion": "confident",
+          "eyeline": "mengangguk kagum melihat menara tugas",
+          "actingBeat": "justru tersenyum puas mendengar standar tinggi Zaldy"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s3_revisi_chat",
+        "activeProps": ["prop_task_tower"],
+        "hudCallout": "REVISI STANDAR STUDIO!"
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Siang terang + kilau oranye-merah kartu revisi holografik di tengah."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_revisi_stack.mp3"
+    },
+    {
+      "shotId": "SH10",
+      "sceneId": "S3",
+      "label": "Intimate Two-Shot — Bos Perfeksionis vs Prosesor Gorengan",
+      "cueStart": "s3_perfeksionis",
+      "cueEnd": "s4_teamwork",
+      "dialogueSummary": "HERMES: 'Nah, itu baru bos perfeksionis. Bukan asal jadi, tapi standar studio.' OPENCLAW: 'Gue tahu itu bagus, Mes... tapi prosesor gue udah panas kayak gorengan!'",
+      "comedyPurpose": "escalation",
+      "camera": {
+        "shotType": "C03_IntimateTwoShot",
+        "fromPos": [0.15, 6.12, 10.65],
+        "toPos": [-0.08, 6.10, 10.15],
+        "fromLook": [0.0, 5.55, 0.0],
+        "toLook": [0.0, 5.58, 0.0],
+        "fromFov": 39.0,
+        "toFov": 38.2,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Two-Shot bahu-ke-atas yang rapat mengembalikan horison stabil untuk tek-tokan cepat dua karakter."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.40,
+          "pose": "swat_fire",
+          "emotion": "indignant",
+          "eyeline": "mengeluh ke Hermes sambil mengipas-ngipas kepalanya",
+          "actingBeat": "melongo saat dipuji lalu mengipas diri kepanasan di kata 'gorengan!'"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.38,
+          "pose": "point",
+          "emotion": "smug",
+          "eyeline": "menatap penuh keyakinan ke OpenClaw",
+          "actingBeat": "gestur elegan bangga lalu menahan senyum mendengar 'gorengan'"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s3_cpu_overheat",
+        "activeProps": ["prop_task_tower"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Cahaya siang cerah + glow amber-merah dari layar meteran suhu CPU."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_sizzle_overheat.mp3"
+    },
+    {
+      "shotId": "SH11",
+      "sceneId": "S4",
+      "label": "Dynamic Crane Sweep (17:45 Senja Emas — Flow State Kompak)",
+      "cueStart": "s4_teamwork",
+      "cueEnd": "s4_ready",
+      "dialogueSummary": "HERMES: 'Udah, nggak usah drama. Lo pegang cerita, humor, sama ritme suara. Gue kunci kamera, cahaya, sama fisika tiga-D-nya.' OPENCLAW: 'Deal! Akhirnya kita kompak juga!'",
+      "comedyPurpose": "heart_resolution",
+      "camera": {
+        "shotType": "C12_CraneOrbitSweep",
+        "fromPos": [-0.85, 6.55, 13.85],
+        "toPos": [0.75, 5.75, 12.65],
+        "fromLook": [0.0, 4.65, 0.15],
+        "toLook": [0.0, 4.85, 0.15],
+        "fromFov": 42.5,
+        "toFov": 41.0,
+        "rollRad": 0.0,
+        "curve": "easeOut",
+        "motivation": "Sapuan crane halus satu arah dari kiri-atas ke kanan-tengah menyatukan keduanya di bawah sinar senja keemasan Gunung Guntur."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.36,
+          "pose": "fist_pump",
+          "emotion": "enthusiastic",
+          "eyeline": "saling tatap penuh semangat dengan Hermes",
+          "actingBeat": "mendengarkan pembagian tugas -> bersorak 'Deal!'"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.36,
+          "pose": "snap",
+          "emotion": "warm",
+          "eyeline": "menatap hangat ke OpenClaw lalu ke layar progres",
+          "actingBeat": "gestur pembagian tugas rapi & senyum hangat"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s4_flow_pipeline",
+        "activeProps": ["prop_spinning_clock"],
+        "hudCallout": "17:45 WIB // FLOW STATE"
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Golden-Orange Sunset dramatis di jendela, backlight oranye hangat membingkai kedua maskot."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_lockin_chime.mp3"
+    },
+    {
+      "shotId": "SH12",
+      "sceneId": "S4",
+      "label": "Prop Macro Insert — Medali 3D 'SIAP ACC ZALDY ✓' + 100% Render",
+      "cueStart": "s4_ready",
+      "cueEnd": "s5_relief",
+      "dialogueSummary": "HERMES: 'Lihat tuh. Dari pagi sampai senja... seratus persen mulus, nol error, siap di-ACC Zaldy.'",
+      "comedyPurpose": "false_victory",
+      "camera": {
+        "shotType": "C11_PropMacroInsert",
+        "fromPos": [0.22, 6.25, 6.85],
+        "toPos": [-0.14, 6.18, 6.15],
+        "fromLook": [0.0, 6.15, 0.35],
+        "toLook": [0.0, 6.15, 0.35],
+        "fromFov": 35.0,
+        "toFov": 33.5,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Macro Insert mengagungkan medali emas 3D 'SIAP ACC ZALDY ✓' & bar 100% untuk membangun rasa kemenangan sebelum twist menghancurkannya."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.35, 5.17, -0.25],
+          "rotY": 0.32,
+          "pose": "fist_pump",
+          "emotion": "excited",
+          "eyeline": "mengagumi medali emas 3D di tengah",
+          "actingBeat": "berkilau penuh kebanggaan"
+        },
+        "hermes": {
+          "pos": [1.35, 5.17, -0.25],
+          "rotY": -0.32,
+          "pose": "nod_proud",
+          "emotion": "proud",
+          "eyeline": "menatap bangga ke medali & layar",
+          "actingBeat": "mengangguk mantap penuh kepuasan"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s4_render_complete",
+        "activeProps": ["prop_acc_stamp_badge"],
+        "hudCallout": "RENDER 100% • 0 ERROR ✓"
+      },
+      "lighting": {
+        "mode": "normal",
+        "notes": "Senja keemasan + kilau specular emas pada medali 3D."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": null
+    },
+    {
+      "shotId": "SH13",
+      "sceneId": "S5",
+      "label": "Intimate Two-Shot Malam (23:58 — 3 Detik Kedamaian)",
+      "cueStart": "s5_relief",
+      "cueEnd": "s5_ping",
+      "dialogueSummary": "OPENCLAW: 'Haaah... akhirnya selesai juga. Boleh sleep mode bentar ya, Mes?' HERMES: 'Silakan. Hari ini kita menang.'",
+      "comedyPurpose": "calm_before_storm",
+      "camera": {
+        "shotType": "C03_IntimateTwoShot",
+        "fromPos": [-0.10, 6.18, 10.95],
+        "toPos": [0.06, 6.14, 10.55],
+        "fromLook": [0.0, 5.65, -0.10],
+        "toLook": [0.0, 5.65, -0.10],
+        "fromFov": 39.5,
+        "toFov": 38.8,
+        "rollRad": 0.0,
+        "curve": "linear",
+        "motivation": "Bingkai hangat & tenang di malam berbintang supaya kejutan notifikasi 23:58 terasa dua kali lebih menusuk."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.34,
+          "pose": "stand_talk",
+          "emotion": "bright",
+          "eyeline": "mengantuk bahagia menatap Hermes",
+          "actingBeat": "menghela napas lega & sedikit merosot santai"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.34,
+          "pose": "lounge",
+          "emotion": "warm",
+          "eyeline": "tersenyum tenang ke OpenClaw",
+          "actingBeat": "mengangguk pelan dengan rasa lega"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s5_sleep_mode",
+        "activeProps": ["prop_steaming_coffee", "prop_acc_stamp_badge"],
+        "hudCallout": "23:58 WIB // WAKTU TIDUR?"
+      },
+      "lighting": {
+        "mode": "warm_lamp",
+        "notes": "Malam berbintang (Night) + lampu meja hangat + bintang jatuh melintas pelan di belakang Gunung Guntur."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": null
+    },
+    {
+      "shotId": "SH14",
+      "sceneId": "S5",
+      "label": "Dutch Tilt (-6°) + Tight Insert — TWIST CHAT 23:58 ZALDY!",
+      "cueStart": "s5_ping",
+      "cueEnd": "s5_pasrah",
+      "dialogueSummary": "OPENCLAW: 'Tunggu... Zaldy ngetik lagi! Keren banget! Barusan dapet ide baru, gas satu episode lagi ya?'",
+      "comedyPurpose": "twist",
+      "camera": {
+        "shotType": "C10_DutchTiltChaos",
+        "fromPos": [0.22, 3.12, 10.65],
+        "toPos": [-0.08, 3.02, 9.85],
+        "fromLook": [0.0, 2.65, 0.35],
+        "toLook": [0.0, 2.65, 0.35],
+        "fromFov": 36.5,
+        "toFov": 34.8,
+        "rollRad": -0.10,
+        "curve": "linear",
+        "motivation": "Musik MATI TOTAL + Dutch Tilt -5.7° menusuk ke layar chat 23:58 saat mimpi sleep mode hancur berkeping-keping."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.22,
+          "pose": "stand_talk",
+          "emotion": "panic",
+          "eyeline": "mata melotot tak percaya ke layar laptop",
+          "actingBeat": "membeku syok lalu membacakan chat dengan suara panik"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.22,
+          "pose": "lounge",
+          "emotion": "deadpan_blinkless",
+          "eyeline": "datar ke bawah melihat chat baru",
+          "actingBeat": "jiwa keluar dari raga secara halus"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s5_new_idea_twist",
+        "activeProps": ["prop_spinning_clock", "prop_acc_stamp_badge"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "screen_glow_dominant",
+        "notes": "Lampu kamar meredup dramatis, layar laptop memancarkan merah-amber notifikasi 23:58."
+      },
+      "transitionOut": "hard_cut",
+      "sfxCue": "sfx_twist_ping_drop.mp3"
+    },
+    {
+      "shotId": "SH15",
+      "sceneId": "S5",
+      "label": "Wide Establishing Pull-Back — Malam Kampung & Baligho 24 Jam",
+      "cueStart": "s5_pasrah",
+      "cueEnd": "end",
+      "dialogueSummary": "HERMES: 'Gue udah nggak kaget.' OPENCLAW: 'Woi! Kopi mana kopi?!'",
+      "comedyPurpose": "button",
+      "camera": {
+        "shotType": "C01_WideEstablishing",
+        "fromPos": [-0.15, 5.85, 13.05],
+        "toPos": [-1.45, 6.25, 15.15],
+        "fromLook": [0.05, 4.45, -0.20],
+        "toLook": [0.65, 4.85, -0.55],
+        "fromFov": 43.5,
+        "toFov": 45.0,
+        "rollRad": 0.0,
+        "curve": "easeOut",
+        "motivation": "Tarik mundur lebar penuh ironi: memperlihatkan keduanya bersiap lembur ronde kedua, sementara di luar jendela baligho 'MARKAS AI ZALDY • SHIFT 24 JAM NONSTOP • TIDUR OPSIONAL' menyala terang di malam berbintang Kampung Garut."
+      },
+      "blocking": {
+        "openclaw": {
+          "pos": [-1.32, 5.17, -0.25],
+          "rotY": 0.18,
+          "pose": "swat_fire",
+          "emotion": "exasperated",
+          "eyeline": "menoleh panik mencari kopi lalu menatap kamera",
+          "actingBeat": "mengguncang tangan heboh mencari cangkir kopi 3D yang kosong"
+        },
+        "hermes": {
+          "pos": [1.32, 5.17, -0.25],
+          "rotY": -0.10,
+          "pose": "lounge",
+          "emotion": "deadpan_blinkless",
+          "eyeline": "menatap lurus pasrah ke kamera",
+          "actingBeat": "diam tenang dan pasrah menerima takdir shift 24 jam"
+        }
+      },
+      "propsAndScreen": {
+        "laptopMode": "s5_shift_loop_card",
+        "activeProps": ["prop_steaming_coffee"],
+        "hudCallout": null
+      },
+      "lighting": {
+        "mode": "warm_lamp",
+        "notes": "Malam berbintang penuh + lampu sorot Baligho 'MARKAS AI ZALDY' menyala terang + kunang-kunang di sawah."
+      },
+      "transitionOut": "seamless_24h_cycle",
+      "sfxCue": "sfx_comedy_button_sting.mp3"
+    }
+  ]
+}

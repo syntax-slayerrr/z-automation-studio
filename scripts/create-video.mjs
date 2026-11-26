@@ -2,7 +2,7 @@
 /**
  * Z-Automation Studio — Interactive 1-Command Video Project Wizard (`npm run create:video`)
  *
- * Memudahkan orang awam maupun kreator untuk memilih 1 dari 8 Master Video Style Skills,
+ * Memudahkan orang awam maupun kreator untuk memilih 1 dari 9 Master Video Style Skills,
  * menyiapkan folder proyek `<slug>/`, menyalin `.env` bila belum ada, dan menghasilkan
  * Prompt 1-Kalimat siap copy-paste ke AI Agent (Antigravity, Claude Code, Cursor, Windsurf, Codex).
  *
@@ -91,6 +91,15 @@ const STYLES = [
     resolution: "1920x1080 (16:9), 1080x1920 (9:16), atau 1080x1080 (1:1)",
     previewImg: "docs/previews/08-saas-product-promo.jpg",
   },
+  {
+    num: 9,
+    id: "dual-agent-comedy-promo",
+    title: "Dual-Agent 3D Comedy Promo (Hermes & OpenClaw Full HD 1080x1920)",
+    desc: "Komedi dialog 2 maskot 3D glossy (Hermes & OpenClaw) dengan spotlight Noir, hologram 3D, showcase website nyata & facepalm!",
+    goldenRef: "remotion/videos/claude-animasi-promo/ & claude-animasi-promo/scripts/",
+    resolution: "1080x1920 (Full HD 9:16, 30 fps)",
+    previewImg: "docs/previews/09-dual-agent-comedy-promo.jpg",
+  },
 ];
 
 function slugify(text) {
@@ -136,7 +145,7 @@ async function main() {
     const rl = createInterface({ input: process.stdin, output: process.stdout });
     try {
       if (!styleNum) {
-        const ans = await rl.question("👉 Pilih Nomor Style Video (1-8) [default: 1]: ");
+        const ans = await rl.question("👉 Pilih Nomor Style Video (1-9) [default: 1]: ");
         styleNum = Number(ans.trim() || "1");
       }
       if (!topic) {

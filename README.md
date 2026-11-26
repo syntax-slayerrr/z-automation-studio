@@ -1,6 +1,6 @@
 # Z-Automation Studio — Pure-Code AI Video Production Suite & Universal Agent Skills
 
-**Z-Automation Studio** adalah studio produksi video animasi **100% Pure-Code** (berbasis **Remotion + Three.js / React Three Fiber + Custom GLSL Shaders + D3-Geo + SVG + ElevenLabs Audio Mastering Pipeline**) yang telah dikemas menjadi **8 Master Video Style Skills** lintas AI Agent.
+**Z-Automation Studio** adalah studio produksi video animasi **100% Pure-Code** (berbasis **Remotion + Three.js / React Three Fiber + Custom GLSL Shaders + D3-Geo + SVG + ElevenLabs Audio Mastering Pipeline**) yang telah dikemas menjadi **9 Master Video Style Skills** lintas AI Agent.
 
 Dirancang agar **bahkan orang awam (tanpa perlu menulis kode)** cukup membuka project ini di **Antigravity**, **Claude Code**, **Cursor**, **Windsurf**, atau **OpenAI Codex**, lalu mengetik **1 kalimat topik** (atau menjalankan `npm run create:video`) untuk menghasilkan video `.mp4` siap upload (`1080×1920` / `720×1280`, `30/60 fps`, audio broadcast `-14.8 LUFS`, seamless loop).
 
@@ -16,7 +16,7 @@ Dirancang agar **bahkan orang awam (tanpa perlu menulis kode)** cukup membuka pr
 ```bash
 npm run create:video
 ```
-Pilih nomor style (`1–8`), ketik topik pertanyaanmu, dan wizard akan otomatis menyiapkan folder proyek `<slug>/` serta mencetak **1 kalimat prompt** yang tinggal kamu copy-paste ke AI Agent!
+Pilih nomor style (`1–9`), ketik topik pertanyaanmu, dan wizard akan otomatis menyiapkan folder proyek `<slug>/` serta mencetak **1 kalimat prompt** yang tinggal kamu copy-paste ke AI Agent!
 
 ### Opsi B — Langsung Ketik 1 Kalimat ke Chat AI Agent
 Cukup ketik di chat AI Agent (Antigravity / Claude Code / Cursor / Windsurf / Codex):
@@ -24,7 +24,7 @@ Cukup ketik di chat AI Agent (Antigravity / Claude Code / Cursor / Windsurf / Co
 
 ---
 
-## Galeri Visual 8 Master Video Style Skills (`.agents/skills/`)
+## Galeri Visual 9 Master Video Style Skills (`.agents/skills/`)
 
 ### 1. `3d-cutaway-explainer` — Blender-Grade 3D Cutaway & 2-Bone Analytical IK (`1080×1920` Full HD)
 - **File Skill**: [`.agents/skills/3d-cutaway-explainer/SKILL.md`](./.agents/skills/3d-cutaway-explainer/SKILL.md)
@@ -101,6 +101,15 @@ Cukup ketik di chat AI Agent (Antigravity / Claude Code / Cursor / Windsurf / Co
 - **Golden Reference**: [`remotion/compositions/ZAutomationLaunch.tsx`](./remotion/compositions/ZAutomationLaunch.tsx) (`npm run render:reel`) & [`ZAutomationSquarePromo.tsx`](./remotion/compositions/ZAutomationSquarePromo.tsx) (`npm run render:square`).
 
 ![SaaS & 3D Tech Launch Promo](./docs/previews/08-saas-product-promo.jpg)
+
+---
+
+### 9. `dual-agent-comedy-promo` — Bespoke Storyboard-First 3D Dual-Agent Comedy (`1080×1920` Full HD)
+- **File Skill**: [`.agents/skills/dual-agent-comedy-promo/SKILL.md`](./.agents/skills/dual-agent-comedy-promo/SKILL.md)
+- **Ciri Khas (v2.0 Anti-Template)**: Komedi dialog 2 maskot 3D glossy (**Hermes & OpenClaw**, Three.js Pro + synthetic PMREM HDRI + dunia modular 5 Time-of-Day). **Wajib dimulai dari `<slug>/storyboard.json` & `<slug>/storyboard.md` orisinal** untuk setiap topik — struktur babak, variasi sudut kamera (`OTS`, `Low-Angle`, `High-Angle`, `Dutch-Tilt`, `ECU`, `Insert`, `Crane`), custom 3D prop/gag (`CustomProps3D.ts`), jadwal waktu & pencahayaan, serta SFX ElevenLabs `Sound-V3` (`-14.5 LUFS`) dirancang khusus per cerita (bukan template 8-scene/16-shot berulang!).
+- **Engine Aset & Contoh Episode**: [`remotion/videos/claude-animasi-promo/`](./remotion/videos/claude-animasi-promo/) (`npm run render:claude-promo`).
+
+![Dual-Agent 3D Comedy Promo](./docs/previews/09-dual-agent-comedy-promo.jpg)
 
 ---
 
